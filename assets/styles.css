@@ -166,3 +166,22 @@ th{background:#f4f6f5}
   .cta-band{padding:30px 24px}
   .footer-grid{grid-template-columns:1fr}
 }
+
+/* Email report capture */
+.report-capture{margin-top:22px;padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#f5faf8 0%,#ffffff 100%)}
+.report-capture h3{font-size:1.35rem;margin:7px 0 6px}
+.report-capture>p{margin:0 0 16px;color:var(--ink-2)}
+.report-badge{display:inline-flex;align-items:center;border-radius:999px;padding:6px 9px;background:var(--accent-2);color:var(--accent);font-size:.72rem;font-weight:850;letter-spacing:.06em}
+.report-email-label{display:block;margin-bottom:7px}
+.report-email-row{display:grid;grid-template-columns:1fr auto;gap:9px}
+.report-email-row button{border:1px solid var(--accent);background:var(--accent);color:white;border-radius:12px;padding:0 18px;font:inherit;font-weight:800;cursor:pointer}
+.report-email-row button:disabled{opacity:.65;cursor:wait}
+.report-consent{display:flex;align-items:flex-start;gap:9px;margin-top:13px;color:var(--ink-2);font-weight:500;font-size:.84rem}
+.report-consent input{width:auto;margin-top:3px}
+.report-privacy{display:block;color:#718091;margin-top:10px;line-height:1.5}
+.report-privacy a{text-decoration:underline}
+.report-status{min-height:22px;margin-top:10px;font-size:.88rem;font-weight:700}
+.report-status.success{color:var(--accent)}
+.report-status.error{color:var(--danger)}
+.report-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+@media(max-width:600px){.report-email-row{grid-template-columns:1fr}.report-email-row button{padding:13px 16px}}
