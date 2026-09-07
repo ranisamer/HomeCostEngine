@@ -7,9 +7,7 @@ function roofCalc(){
   const area=num("area"), material=val("material"), pitch=Number(val("pitch")), stories=Number(val("stories")),
         market=Number(val("market")), tear=val("tearoff")==="yes";
   if(area<=0) return;
-  const ranges={
-    asphalt:[5.5,9], metal:[9,16], tile:[10,20], wood:[7,14], slate:[15,30]
-  };
+  const ranges={asphalt:[5.5,9], metal:[9,16], tile:[10,20], wood:[7,14], slate:[15,30]};
   let [lo,hi]=ranges[material];
   lo*=pitch*stories*market; hi*=pitch*stories*market;
   if(tear){lo+=1.15;hi+=2.35}
@@ -68,9 +66,78 @@ function hvacCalc(){
   set("unit",`Approx. ${tons.toFixed(1)} ton sizing starting point`);
   set("materials",money(mid*.55)); set("labor",money(mid*.35)); set("other",money(mid*.10));
 }
+
+function currentCalculatorInputs(type){
+  if(type==="roof") return {area:num("area"), material:val("material"), pitch:Number(val("pitch")), stories:Number(val("stories")), tearoff:val("tearoff"), market:Number(val("market"))};
+  if(type==="concrete") return {length:num("length"), width:num("width"), thickness:num("thickness"), waste:Number(val("waste")), yardPrice:num("yardPrice")};
+  if(type==="hvac") return {homeSqft:num("homeSqft"), system:val("system"), efficiency:Number(val("efficiency")), market:Number(val("market"))};
+  if(type==="paint") return {roomLength:num("roomLength"), roomWidth:num("roomWidth"), roomHeight:num("roomHeight"), coats:num("coats"), doors:num("doors"), windows:num("windows"), coverage:num("coverage"), gallonPrice:num("gallonPrice")};
+  if(type==="floor") return {floorArea:num("floorArea"), floorWaste:Number(val("floorWaste")), materialPrice:num("materialPrice"), laborPrice:num("laborPrice")};
+  if(type==="mulch") return {mulchArea:num("mulchArea"), depth:num("depth"), mulchPrice:num("mulchPrice")};
+  return {};
+}
+
+function injectEmailReportForm(type){
+  const shell=document.querySelector(".calc-shell");
+  if(!shell || document.querySelector(".calculator-report-form")) return;
+  const labels={roof:"roof cost", concrete:"concrete", hvac:"HVAC", paint:"paint", floor:"flooring", mulch:"mulch"};
+  const wrap=document.createElement("div");
+  wrap.className="report-capture";
+  wrap.innerHTML=`
+    <div class="report-badge">FREE PERSONALIZED REPORT</div>
+    <h3>Email me my ${labels[type] || "project"} report</h3>
+    <p>Send this estimate and the key assumptions to your inbox so you can compare options later.</p>
+    <form class="calculator-report-form" novalidate>
+      <label class="report-email-label">Email address</label>
+      <div class="report-email-row">
+        <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <button type="submit">Send my report</button>
+      </div>
+      <label class="report-consent">
+        <input name="marketingConsent" type="checkbox">
+        <span>Also send me occasional home-cost tips, calculators and product updates. I can unsubscribe anytime.</span>
+      </label>
+      <input class="report-honeypot" name="companyWebsite" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <small class="report-privacy">Your report is free. Marketing emails are optional. See our <a href="/privacy.html">Privacy Policy</a>.</small>
+      <div class="report-status" data-report-status role="status" aria-live="polite"></div>
+    </form>`;
+  shell.appendChild(wrap);
+
+  const form=wrap.querySelector(".calculator-report-form");
+  form.addEventListener("submit",async event=>{
+    event.preventDefault();
+    const email=(form.elements.email?.value || "").trim();
+    const status=form.querySelector("[data-report-status]");
+    const button=form.querySelector('button[type="submit"]');
+    status.className="report-status"; status.textContent="";
+    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      status.classList.add("error"); status.textContent="Please enter a valid email address."; return;
+    }
+    button.disabled=true; button.textContent="Sending…";
+    try{
+      const res=await fetch("/api/report",{
+        method:"POST", headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          email, reportType:type, calculatorInputs:currentCalculatorInputs(type),
+          marketingConsent:form.elements.marketingConsent?.checked===true,
+          companyWebsite:(form.elements.companyWebsite?.value || "").trim()
+        })
+      });
+      let data={}; try{data=await res.json();}catch{}
+      if(!res.ok) throw new Error(data.error || "Could not send your report. Please try again.");
+      status.classList.add("success"); status.textContent="Report sent. Check your inbox in the next few minutes.";
+      button.textContent="Sent ✓";
+      setTimeout(()=>{button.disabled=false;button.textContent="Send my report";},4000);
+    }catch(err){
+      status.classList.add("error"); status.textContent=err.message || "Could not send your report. Please try again.";
+      button.disabled=false; button.textContent="Send my report";
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded",()=>{
   const type=document.body.dataset.calculator;
   const fn={roof:roofCalc,concrete:concreteCalc,paint:paintCalc,floor:floorCalc,mulch:mulchCalc,hvac:hvacCalc}[type];
   const form=document.getElementById("calculatorForm");
-  if(form&&fn){form.addEventListener("submit",e=>{e.preventDefault();fn()}); fn();}
+  if(form&&fn){form.addEventListener("submit",e=>{e.preventDefault();fn()}); fn(); injectEmailReportForm(type);}
 });
