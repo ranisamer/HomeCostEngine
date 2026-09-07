@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Square Footage Calculator | HomeCostEngine</title>
+<meta name="description" content="Calculate square footage for rectangular, square or circular areas and convert the result to square yards and acres.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#102033">
+<link rel="canonical" href="https://homecostengine.com/calculators/square-footage.html">
+<meta property="og:title" content="Square Footage Calculator | HomeCostEngine">
+<meta property="og:description" content="Calculate square footage for rectangular, square or circular areas and convert the result to square yards and acres.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HomeCostEngine">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body data-calculator="sqft">
+<div class="topbar">Independent planning tools for U.S. homeowners • Estimates are for budgeting, not contractor quotes</div>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a>
+    <nav class="navlinks"><a href="/calculators/">Calculators</a><a href="/guides/">Cost Guides</a><a href="/projects.html">Projects</a><a href="/blog/">Blog</a><a href="/about.html">About</a></nav>
+    <a class="navcta" href="/calculators/">Calculate a Project →</a><button class="menu-btn" aria-label="Open menu">☰</button>
+  </div>
+  <div class="container mobile-menu"><a href="/calculators/">Calculators</a><a href="/guides/">Cost Guides</a><a href="/projects.html">Projects</a><a href="/blog/">Blog</a><a href="/about.html">About</a></div>
+</header>
+<main>
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="/">Home</a> / <a href="/calculators/">Calculators</a> / Square Footage Calculator</div><span class="eyebrow">Free calculator</span><h1>Square Footage Calculator</h1><p class="lead">Calculate square footage for rectangular, square or circular areas and convert the result to square yards and acres.</p></div></section>
+<section class="section" style="padding-top:15px"><div class="container calc-layout">
+<div class="calc-shell"><h2>Your project details</h2><p class="muted">Change the inputs below to match your project.</p><form id="calculatorForm" class="form-grid">
+<div class="field"><label for="areaShape">Shape</label><select id="areaShape"><option value="rectangle">Rectangle</option><option value="square">Square</option><option value="circle">Circle</option></select></div>
+<div class="field"><label for="areaLength">Length / diameter (ft)</label><input id="areaLength" type="number" value="20" min=".01" step=".01"></div>
+<div class="field"><label for="areaWidth">Width (ft, rectangle only)</label><input id="areaWidth" type="number" value="15" min=".01" step=".01"></div><div class="field full"><button class="btn full" type="submit">Calculate →</button></div></form><div class="notice">Planning tool only. Verify field measurements, material specifications and project requirements before ordering materials or starting work.</div></div>
+<aside class="result-card"><span class="kicker">Your result</span><div id="result" class="result-big">—</div><div id="range" class="result-range">Enter your details</div><div class="breakdown">
+<div class="row"><span>Square yards</span><strong id="unit">—</strong></div><div class="row"><span>Acres</span><strong id="materials">—</strong></div><div class="row"><span>Dimensions used</span><strong id="labor">—</strong></div><div class="row"><span>Formula</span><strong id="other">—</strong></div></div>
+<p class="micro" style="color:#aebdca">Save the result with the free email report below.</p></aside>
+</div></section>
+<section class="section alt"><div class="container info-copy"><h2>How to calculate square footage</h2><p>For a rectangle, multiply length by width. For a square, multiply one side by itself. For a circle, use π × radius². The calculator also converts the result to square yards and acres.</p><h3>For irregular spaces</h3><p>Break the area into simple rectangles or other basic shapes, calculate each section separately, then add the results. This is usually more reliable than estimating one complex outline.</p><h3>Related planning</h3><p>Once you know area, use it in the <a class="card-link" href="/calculators/flooring.html">Flooring Cost Calculator</a>, <a class="card-link" href="/calculators/paint.html">Paint Calculator</a> or <a class="card-link" href="/calculators/mulch.html">Mulch Calculator</a>.</p></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a><p>Free planning calculators and practical cost guides for U.S. home improvement projects.</p></div><div><h4>Calculators</h4><a href="/calculators/roof-replacement.html">Roofing</a><a href="/calculators/concrete.html">Concrete</a><a href="/calculators/hvac.html">HVAC</a><a href="/calculators/paint.html">Painting</a></div><div><h4>Explore</h4><a href="/calculators/">All calculators</a><a href="/guides/">Cost guides</a><a href="/blog/">Blog</a><a href="/about.html">Methodology</a><a href="/contact.html">Contact</a></div><div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Estimator disclaimer</a></div></div><div class="footer-bottom">© 2026 HomeCostEngine. Planning estimates only. Always verify pricing, permits, code requirements and scope with qualified local professionals.</div></div></footer>
+<script src="/assets/app.js"></script><script src="/assets/calculators.js"></script>
+</body></html>
