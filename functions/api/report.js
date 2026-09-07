@@ -68,6 +68,41 @@ function calculate(type, raw={}){
       metrics:[["Landscape area",`${Math.round(area).toLocaleString("en-US")} sq ft`],["Depth",`${number(depth,1)} in`],["Calculated volume",`${number(yards,2)} yd³`],["Suggested order quantity",`${Math.ceil(yards)} yd³`],["Estimated material cost",cost===null?"Price per yard not provided":money(cost)]],
       note:"Irregular beds, slopes, settling, delivery minimums and supplier rounding can change the practical order quantity."};
   }
+
+  if(type==="sqft"){
+    const shape=String(raw.areaShape||"rectangle"),a=finite(raw.areaLength,.01,1e9),b=finite(raw.areaWidth,.01,1e9);
+    if(!Number.isFinite(a)) throw new Error("Check your area measurements.");
+    let area=0;
+    if(shape==="circle") area=Math.PI*Math.pow(a/2,2);
+    else if(shape==="square") area=a*a;
+    else { if(!Number.isFinite(b)) throw new Error("Enter a valid width."); area=a*b; }
+    return {title:"Square Footage Report",subject:`Your area: ${number(area,2)} sq ft`,url:"https://homecostengine.com/calculators/square-footage.html",summary:`Your calculated area is ${number(area,2)} square feet.`,metrics:[["Shape",shape],["Square feet",`${number(area,2)} sq ft`],["Square yards",`${number(area/9,2)} sq yd`],["Acres",number(area/43560,4)]],note:"For irregular spaces, split the project into simple shapes and add the results."};
+  }
+  if(type==="cubicyard"){
+    const l=finite(raw.cyLength,.01,1e7),w=finite(raw.cyWidth,.01,1e7),d=finite(raw.cyDepth,.01,1e5),waste=finite(raw.cyWaste,1,2);
+    if(![l,w,d,waste].every(Number.isFinite)) throw new Error("Check your cubic-yard inputs.");
+    const base=(l*w*(d/12))/27,yards=base*waste;
+    return {title:"Cubic Yard Report",subject:`Your volume: ${number(yards,2)} yd³`,url:"https://homecostengine.com/calculators/cubic-yard.html",summary:`Your project volume is about ${number(yards,2)} cubic yards including waste.`,metrics:[["Cubic yards",`${number(yards,2)} yd³`],["Cubic feet",`${number(yards*27,1)} ft³`],["Cubic meters",`${number(yards*.764555,2)} m³`],["Waste allowance",`${number((waste-1)*100,0)}%`]],note:"Supplier order increments, compaction and site conditions can change the practical order quantity."};
+  }
+  if(type==="gravel"){
+    const area=finite(raw.gravelArea,.01,1e9),depth=finite(raw.gravelDepth,.01,1e4),density=finite(raw.gravelType,.5,3),waste=finite(raw.gravelWaste,1,2),price=finite(raw.gravelPrice,0,1e7);
+    if(![area,depth,density,waste].every(Number.isFinite)) throw new Error("Check your gravel inputs.");
+    const yards=area*(depth/12)/27*waste,tons=yards*density,cost=Number.isFinite(price)&&price>0?tons*price:null;
+    return {title:"Gravel Calculator Report",subject:`Your gravel estimate: ${number(tons,2)} tons`,url:"https://homecostengine.com/calculators/gravel.html",summary:`Your project needs about ${number(yards,2)} cubic yards or ${number(tons,2)} estimated tons.`,metrics:[["Area",`${number(area,0)} sq ft`],["Cubic yards",`${number(yards,2)} yd³`],["Estimated tons",number(tons,2)],["Estimated material cost",cost===null?"Price per ton not provided":money(cost)]],note:"Actual gravel density varies by material, moisture and supplier grading. Confirm tonnage with your supplier."};
+  }
+  if(type==="roofsquare"){
+    const area=finite(raw.rsArea,1,1e9),waste=finite(raw.rsWaste,1,2),bundles=finite(raw.rsBundles,1,20);
+    if(![area,waste,bundles].every(Number.isFinite)) throw new Error("Check your roofing-square inputs.");
+    const base=area/100,total=base*waste,bundleCount=Math.ceil(total*bundles);
+    return {title:"Roofing Square Report",subject:`Your roofing quantity: ${number(total,2)} squares`,url:"https://homecostengine.com/calculators/roofing-square.html",summary:`Your roof needs about ${number(total,2)} roofing squares including waste.`,metrics:[["Roof area",`${number(area,0)} sq ft`],["Base squares",number(base,2)],["Squares with waste",number(total,2)],["Approx. bundles",String(bundleCount)]],note:"Bundle counts vary by shingle product. Verify packaging and waste requirements before ordering."};
+  }
+  if(type==="roofpitch"){
+    const rise=finite(raw.pitchRise,0,1e5),run=finite(raw.pitchRun,.01,1e5);
+    if(!Number.isFinite(rise)||!Number.isFinite(run)) throw new Error("Check your rise and run.");
+    const ratio=rise/run,pitch12=ratio*12,angle=Math.atan(ratio)*180/Math.PI,slope=ratio*100,mult=Math.sqrt(1+ratio*ratio);
+    return {title:"Roof Pitch Report",subject:`Your roof pitch: ${number(pitch12,1)}:12`,url:"https://homecostengine.com/calculators/roof-pitch.html",summary:`Your roof pitch is approximately ${number(pitch12,1)}:12, or ${number(angle,1)} degrees.`,metrics:[["Pitch",`${number(pitch12,1)}:12`],["Angle",`${number(angle,1)}°`],["Slope",`${number(slope,1)}%`],["Area multiplier",`${number(mult,3)}×`]],note:"Pitch measurements should be taken safely. Do not access a roof if conditions or equipment make measurement unsafe."};
+  }
+
   throw new Error("Unsupported calculator report.");
 }
 
