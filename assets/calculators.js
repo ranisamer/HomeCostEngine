@@ -67,6 +67,53 @@ function hvacCalc(){
   set("materials",money(mid*.55)); set("labor",money(mid*.35)); set("other",money(mid*.10));
 }
 
+
+function squareFootageCalc(){
+  const shape=val("areaShape"), a=num("areaLength"), b=num("areaWidth");
+  if(a<=0)return;
+  let area=0, formula="", dims="";
+  if(shape==="circle"){area=Math.PI*Math.pow(a/2,2);formula="π × radius²";dims=`Diameter ${a} ft`;}
+  else if(shape==="square"){area=a*a;formula="side × side";dims=`${a} ft × ${a} ft`;}
+  else {if(b<=0)return;area=a*b;formula="length × width";dims=`${a} ft × ${b} ft`;}
+  set("result",`${area.toFixed(2)} sq ft`);
+  set("range",`${(area/9).toFixed(2)} sq yd • ${(area/43560).toFixed(4)} acres`);
+  set("unit",`${(area/9).toFixed(2)} sq yd`);
+  set("materials",`${(area/43560).toFixed(4)} acres`);
+  set("labor",dims); set("other",formula);
+}
+function cubicYardCalc(){
+  const l=num("cyLength"),w=num("cyWidth"),d=num("cyDepth"),waste=Number(val("cyWaste"));
+  if(l<=0||w<=0||d<=0)return;
+  const base=(l*w*(d/12))/27, yards=base*waste, feet=yards*27, meters=yards*.764555;
+  set("result",`${yards.toFixed(2)} yd³`); set("range",`${feet.toFixed(1)} ft³ • ${meters.toFixed(2)} m³`);
+  set("unit",`${feet.toFixed(1)} ft³`); set("materials",`${meters.toFixed(2)} m³`);
+  set("labor",`${((waste-1)*100).toFixed(0)}%`); set("other",`${Math.ceil(yards*2)/2} yd³`);
+}
+function gravelCalc(){
+  const area=num("gravelArea"),depth=num("gravelDepth"),density=Number(val("gravelType")),waste=Number(val("gravelWaste")),price=num("gravelPrice");
+  if(area<=0||depth<=0)return;
+  const yards=area*(depth/12)/27*waste, tons=yards*density, cost=price?tons*price:0;
+  set("result",`${yards.toFixed(2)} yd³`); set("range",`${tons.toFixed(2)} estimated tons`);
+  set("unit",`${yards.toFixed(2)} yd³`); set("materials",`${tons.toFixed(2)} tons`);
+  set("labor",price?money(cost):"Add price / ton"); set("other",`${((waste-1)*100).toFixed(0)}%`);
+}
+function roofingSquareCalc(){
+  const area=num("rsArea"),waste=Number(val("rsWaste")),bundles=num("rsBundles")||3;
+  if(area<=0)return;
+  const base=area/100,total=base*waste,bundleCount=Math.ceil(total*bundles);
+  set("result",`${total.toFixed(2)} squares`); set("range",`${bundleCount} approximate bundles`);
+  set("unit",`${base.toFixed(2)} squares`); set("materials",`${total.toFixed(2)} squares`);
+  set("labor",`${bundleCount} bundles`); set("other",`${((waste-1)*100).toFixed(0)}%`);
+}
+function roofPitchCalc(){
+  const rise=num("pitchRise"),run=num("pitchRun");
+  if(run<=0||rise<0)return;
+  const ratio=rise/run, pitch12=ratio*12, angle=Math.atan(ratio)*180/Math.PI, slope=ratio*100, mult=Math.sqrt(1+ratio*ratio);
+  set("result",`${pitch12.toFixed(1)}:12`); set("range",`${angle.toFixed(1)}° roof angle`);
+  set("unit",`${angle.toFixed(1)}°`); set("materials",`${slope.toFixed(1)}%`);
+  set("labor",`${mult.toFixed(3)}×`); set("other",`${pitch12.toFixed(1)}:12`);
+}
+
 function currentCalculatorInputs(type){
   if(type==="roof") return {area:num("area"), material:val("material"), pitch:Number(val("pitch")), stories:Number(val("stories")), tearoff:val("tearoff"), market:Number(val("market"))};
   if(type==="concrete") return {length:num("length"), width:num("width"), thickness:num("thickness"), waste:Number(val("waste")), yardPrice:num("yardPrice")};
@@ -74,13 +121,18 @@ function currentCalculatorInputs(type){
   if(type==="paint") return {roomLength:num("roomLength"), roomWidth:num("roomWidth"), roomHeight:num("roomHeight"), coats:num("coats"), doors:num("doors"), windows:num("windows"), coverage:num("coverage"), gallonPrice:num("gallonPrice")};
   if(type==="floor") return {floorArea:num("floorArea"), floorWaste:Number(val("floorWaste")), materialPrice:num("materialPrice"), laborPrice:num("laborPrice")};
   if(type==="mulch") return {mulchArea:num("mulchArea"), depth:num("depth"), mulchPrice:num("mulchPrice")};
+  if(type==="sqft") return {areaShape:val("areaShape"), areaLength:num("areaLength"), areaWidth:num("areaWidth")};
+  if(type==="cubicyard") return {cyLength:num("cyLength"), cyWidth:num("cyWidth"), cyDepth:num("cyDepth"), cyWaste:Number(val("cyWaste"))};
+  if(type==="gravel") return {gravelArea:num("gravelArea"), gravelDepth:num("gravelDepth"), gravelType:Number(val("gravelType")), gravelWaste:Number(val("gravelWaste")), gravelPrice:num("gravelPrice")};
+  if(type==="roofsquare") return {rsArea:num("rsArea"), rsWaste:Number(val("rsWaste")), rsBundles:num("rsBundles")};
+  if(type==="roofpitch") return {pitchRise:num("pitchRise"), pitchRun:num("pitchRun")};
   return {};
 }
 
 function injectEmailReportForm(type){
   const shell=document.querySelector(".calc-shell");
   if(!shell || document.querySelector(".calculator-report-form")) return;
-  const labels={roof:"roof cost", concrete:"concrete", hvac:"HVAC", paint:"paint", floor:"flooring", mulch:"mulch"};
+  const labels={roof:"roof cost", concrete:"concrete", hvac:"HVAC", paint:"paint", floor:"flooring", mulch:"mulch", sqft:"square footage", cubicyard:"cubic yard", gravel:"gravel", roofsquare:"roofing square", roofpitch:"roof pitch"};
   const wrap=document.createElement("div");
   wrap.className="report-capture";
   wrap.innerHTML=`
@@ -137,7 +189,7 @@ function injectEmailReportForm(type){
 
 document.addEventListener("DOMContentLoaded",()=>{
   const type=document.body.dataset.calculator;
-  const fn={roof:roofCalc,concrete:concreteCalc,paint:paintCalc,floor:floorCalc,mulch:mulchCalc,hvac:hvacCalc}[type];
+  const fn={roof:roofCalc,concrete:concreteCalc,paint:paintCalc,floor:floorCalc,mulch:mulchCalc,hvac:hvacCalc,sqft:squareFootageCalc,cubicyard:cubicYardCalc,gravel:gravelCalc,roofsquare:roofingSquareCalc,roofpitch:roofPitchCalc}[type];
   const form=document.getElementById("calculatorForm");
   if(form&&fn){form.addEventListener("submit",e=>{e.preventDefault();fn()}); fn(); injectEmailReportForm(type);}
 });
