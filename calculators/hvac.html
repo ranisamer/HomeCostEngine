@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HVAC Replacement Cost Calculator | HomeCostEngine</title>
+<meta name="description" content="Build a rough HVAC replacement budget from home size, system type, efficiency tier and local market level.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#102033">
+<link rel="canonical" href="https://homecostengine.com/">
+<meta property="og:title" content="HVAC Replacement Cost Calculator | HomeCostEngine">
+<meta property="og:description" content="Build a rough HVAC replacement budget from home size, system type, efficiency tier and local market level.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HomeCostEngine">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body data-calculator="hvac">
+
+<div class="topbar">Independent planning tools for U.S. homeowners • Estimates are for budgeting, not contractor quotes</div>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a>
+    <nav class="navlinks">
+      <a href="/calculators/">Calculators</a>
+      <a href="/guides/">Cost Guides</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <a class="navcta" href="/calculators/">Calculate a Project →</a>
+    <button class="menu-btn" aria-label="Open menu">☰</button>
+  </div>
+  <div class="container mobile-menu">
+    <a href="/calculators/">Calculators</a>
+    <a href="/guides/">Cost Guides</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/about.html">About</a>
+  </div>
+</header>
+
+
+<main>
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="/">Home</a> / <a href="/calculators/">Calculators</a> / HVAC Replacement Cost Calculator</div>
+<span class="eyebrow">Free calculator</span><h1>HVAC Replacement Cost Calculator</h1><p class="lead">Build a rough HVAC replacement budget from home size, system type, efficiency tier and local market level.</p></div></section>
+<section class="section" style="padding-top:15px"><div class="container calc-layout">
+  <div class="calc-shell"><h2>Your project details</h2><p class="muted">Change the assumptions below to match your project.</p>
+  <form id="calculatorForm" class="form-grid">
+<div class="field"><label for="homeSqft">Home size (sq ft)</label><input id="homeSqft" type="number" value="2000" min="300"></div>
+<div class="field"><label for="system">System type</label><select id="system"><option value="central">Central AC</option><option value="heatpump">Heat pump</option><option value="furnace">Furnace</option><option value="ductless">Ductless mini-split</option></select></div>
+<div class="field"><label for="efficiency">Efficiency tier</label><select id="efficiency"><option value=".92">Standard</option><option value="1" selected>Mid-tier</option><option value="1.18">High efficiency</option></select></div>
+<div class="field"><label for="market">Local market cost level</label><select id="market"><option value=".9">Lower-cost market</option><option value="1" selected>Typical market</option><option value="1.15">Higher-cost market</option></select></div>
+<div class="field full"><button class="btn full" type="submit">Calculate My Estimate →</button></div></form>
+  <div class="notice">Planning estimate only. Actual contractor pricing varies with scope, access, code requirements, permits, labor availability, product brand, warranty and site conditions.</div>
+  </div>
+  <aside class="result-card"><span class="kicker">Your planning result</span><div id="result" class="result-big">—</div><div id="range" class="result-range">Enter your details</div>
+  <div class="breakdown"><div class="row"><span>Unit / sizing</span><strong id="unit">—</strong></div><div class="row"><span>Materials</span><strong id="materials">—</strong></div><div class="row"><span>Labor</span><strong id="labor">—</strong></div><div class="row"><span>Other / waste</span><strong id="other">—</strong></div></div>
+  <p class="micro" style="color:#aebdca">Use this as a budgeting starting point and compare multiple local quotes before hiring.</p></aside>
+</div></section>
+<section class="section alt"><div class="container info-copy">
+<h2>HVAC budgeting, not load calculation</h2><p>This tool uses home size as a rough starting point for system capacity and a cost range by system type. Correct equipment sizing requires a professional load calculation that considers climate, insulation, windows, air leakage, orientation and ductwork.</p>
+<h3>Before replacing a system</h3><p>Ask for model numbers, efficiency ratings, labor, controls, ductwork scope, permits, disposal and warranty terms on the written proposal. Compare like-for-like scopes rather than total price alone.</p>
+</div></section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a>
+        <p>Free planning calculators and practical cost guides for U.S. home improvement projects.</p>
+      </div>
+      <div><h4>Calculators</h4>
+        <a href="/calculators/roof-replacement.html">Roofing</a>
+        <a href="/calculators/concrete.html">Concrete</a>
+        <a href="/calculators/hvac.html">HVAC</a>
+        <a href="/calculators/paint.html">Painting</a>
+      </div>
+      <div><h4>Explore</h4>
+        <a href="/calculators/">All calculators</a>
+        <a href="/guides/">Cost guides</a>
+        <a href="/about.html">Methodology</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div><h4>Legal</h4>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/disclaimer.html">Estimator disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HomeCostEngine. Planning estimates only. Always verify pricing, permits, code requirements and scope with qualified local professionals.</div>
+  </div>
+</footer>
+<script src="/assets/app.js"></script>
+
+<script src="/assets/calculators.js"></script>
+</body>
+</html>

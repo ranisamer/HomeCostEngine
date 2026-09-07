@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paint Calculator | HomeCostEngine</title>
+<meta name="description" content="Estimate interior wall area, paint gallons and material cost from room dimensions, openings, coats and coverage.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#102033">
+<link rel="canonical" href="https://homecostengine.com/">
+<meta property="og:title" content="Paint Calculator | HomeCostEngine">
+<meta property="og:description" content="Estimate interior wall area, paint gallons and material cost from room dimensions, openings, coats and coverage.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HomeCostEngine">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body data-calculator="paint">
+
+<div class="topbar">Independent planning tools for U.S. homeowners • Estimates are for budgeting, not contractor quotes</div>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a>
+    <nav class="navlinks">
+      <a href="/calculators/">Calculators</a>
+      <a href="/guides/">Cost Guides</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <a class="navcta" href="/calculators/">Calculate a Project →</a>
+    <button class="menu-btn" aria-label="Open menu">☰</button>
+  </div>
+  <div class="container mobile-menu">
+    <a href="/calculators/">Calculators</a>
+    <a href="/guides/">Cost Guides</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/about.html">About</a>
+  </div>
+</header>
+
+
+<main>
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="/">Home</a> / <a href="/calculators/">Calculators</a> / Paint Calculator</div>
+<span class="eyebrow">Free calculator</span><h1>Paint Calculator</h1><p class="lead">Estimate interior wall area, paint gallons and material cost from room dimensions, openings, coats and coverage.</p></div></section>
+<section class="section" style="padding-top:15px"><div class="container calc-layout">
+  <div class="calc-shell"><h2>Your project details</h2><p class="muted">Change the assumptions below to match your project.</p>
+  <form id="calculatorForm" class="form-grid">
+<div class="field"><label for="roomLength">Room length (ft)</label><input id="roomLength" type="number" value="14"></div>
+<div class="field"><label for="roomWidth">Room width (ft)</label><input id="roomWidth" type="number" value="12"></div>
+<div class="field"><label for="roomHeight">Wall height (ft)</label><input id="roomHeight" type="number" value="8"></div>
+<div class="field"><label for="coats">Coats</label><select id="coats"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option></select></div>
+<div class="field"><label for="doors">Doors</label><input id="doors" type="number" value="1" min="0"></div>
+<div class="field"><label for="windows">Windows</label><input id="windows" type="number" value="2" min="0"></div>
+<div class="field"><label for="coverage">Coverage per gallon (sq ft)</label><input id="coverage" type="number" value="350"></div>
+<div class="field"><label for="gallonPrice">Price per gallon</label><input id="gallonPrice" type="number" value="45"></div>
+<div class="field full"><button class="btn full" type="submit">Calculate My Estimate →</button></div></form>
+  <div class="notice">Planning estimate only. Actual contractor pricing varies with scope, access, code requirements, permits, labor availability, product brand, warranty and site conditions.</div>
+  </div>
+  <aside class="result-card"><span class="kicker">Your planning result</span><div id="result" class="result-big">—</div><div id="range" class="result-range">Enter your details</div>
+  <div class="breakdown"><div class="row"><span>Unit / sizing</span><strong id="unit">—</strong></div><div class="row"><span>Materials</span><strong id="materials">—</strong></div><div class="row"><span>Labor</span><strong id="labor">—</strong></div><div class="row"><span>Other / waste</span><strong id="other">—</strong></div></div>
+  <p class="micro" style="color:#aebdca">Use this as a budgeting starting point and compare multiple local quotes before hiring.</p></aside>
+</div></section>
+<section class="section alt"><div class="container info-copy">
+<h2>How many gallons of paint do you need?</h2><p>The calculator estimates four-wall area, subtracts a simple allowance for doors and windows, multiplies by the number of coats, then divides by your paint’s stated coverage.</p>
+<h3>Remember primer and trim</h3><p>Primer, ceilings, doors, baseboards and trim are not included in this wall-paint result. Textured or porous surfaces may also use more paint than the can’s nominal coverage.</p>
+</div></section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a>
+        <p>Free planning calculators and practical cost guides for U.S. home improvement projects.</p>
+      </div>
+      <div><h4>Calculators</h4>
+        <a href="/calculators/roof-replacement.html">Roofing</a>
+        <a href="/calculators/concrete.html">Concrete</a>
+        <a href="/calculators/hvac.html">HVAC</a>
+        <a href="/calculators/paint.html">Painting</a>
+      </div>
+      <div><h4>Explore</h4>
+        <a href="/calculators/">All calculators</a>
+        <a href="/guides/">Cost guides</a>
+        <a href="/about.html">Methodology</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div><h4>Legal</h4>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/disclaimer.html">Estimator disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HomeCostEngine. Planning estimates only. Always verify pricing, permits, code requirements and scope with qualified local professionals.</div>
+  </div>
+</footer>
+<script src="/assets/app.js"></script>
+
+<script src="/assets/calculators.js"></script>
+</body>
+</html>

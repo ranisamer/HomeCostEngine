@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://homecostengine.com/sitemap.xml
