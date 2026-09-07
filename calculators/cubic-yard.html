@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cubic Yard Calculator | HomeCostEngine</title>
+<meta name="description" content="Convert length, width and depth into cubic yards with an optional waste allowance for concrete, gravel, soil and landscaping materials.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#102033">
+<link rel="canonical" href="https://homecostengine.com/calculators/cubic-yard.html">
+<meta property="og:title" content="Cubic Yard Calculator | HomeCostEngine">
+<meta property="og:description" content="Convert length, width and depth into cubic yards with an optional waste allowance for concrete, gravel, soil and landscaping materials.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HomeCostEngine">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body data-calculator="cubicyard">
+<div class="topbar">Independent planning tools for U.S. homeowners • Estimates are for budgeting, not contractor quotes</div>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a>
+    <nav class="navlinks"><a href="/calculators/">Calculators</a><a href="/guides/">Cost Guides</a><a href="/projects.html">Projects</a><a href="/blog/">Blog</a><a href="/about.html">About</a></nav>
+    <a class="navcta" href="/calculators/">Calculate a Project →</a><button class="menu-btn" aria-label="Open menu">☰</button>
+  </div>
+  <div class="container mobile-menu"><a href="/calculators/">Calculators</a><a href="/guides/">Cost Guides</a><a href="/projects.html">Projects</a><a href="/blog/">Blog</a><a href="/about.html">About</a></div>
+</header>
+<main>
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="/">Home</a> / <a href="/calculators/">Calculators</a> / Cubic Yard Calculator</div><span class="eyebrow">Free calculator</span><h1>Cubic Yard Calculator</h1><p class="lead">Convert length, width and depth into cubic yards with an optional waste allowance for concrete, gravel, soil and landscaping materials.</p></div></section>
+<section class="section" style="padding-top:15px"><div class="container calc-layout">
+<div class="calc-shell"><h2>Your project details</h2><p class="muted">Change the inputs below to match your project.</p><form id="calculatorForm" class="form-grid">
+<div class="field"><label for="cyLength">Length (ft)</label><input id="cyLength" type="number" value="20" min=".01" step=".01"></div>
+<div class="field"><label for="cyWidth">Width (ft)</label><input id="cyWidth" type="number" value="10" min=".01" step=".01"></div>
+<div class="field"><label for="cyDepth">Depth (in)</label><input id="cyDepth" type="number" value="4" min=".01" step=".1"></div>
+<div class="field"><label for="cyWaste">Waste allowance</label><select id="cyWaste"><option value="1">0%</option><option value="1.05">5%</option><option value="1.10" selected>10%</option><option value="1.15">15%</option></select></div><div class="field full"><button class="btn full" type="submit">Calculate →</button></div></form><div class="notice">Planning tool only. Verify field measurements, material specifications and project requirements before ordering materials or starting work.</div></div>
+<aside class="result-card"><span class="kicker">Your result</span><div id="result" class="result-big">—</div><div id="range" class="result-range">Enter your details</div><div class="breakdown">
+<div class="row"><span>Cubic feet</span><strong id="unit">—</strong></div><div class="row"><span>Cubic meters</span><strong id="materials">—</strong></div><div class="row"><span>Waste added</span><strong id="labor">—</strong></div><div class="row"><span>Rounded order</span><strong id="other">—</strong></div></div>
+<p class="micro" style="color:#aebdca">Save the result with the free email report below.</p></aside>
+</div></section>
+<section class="section alt"><div class="container info-copy"><h2>Cubic yard formula</h2><p>Multiply length × width × depth to get cubic volume, convert depth from inches to feet, then divide cubic feet by 27. The selected waste allowance is applied after the base volume.</p><h3>When cubic yards are used</h3><p>Bulk concrete, gravel, mulch, topsoil and similar materials are commonly sold by cubic yard. Supplier minimums and delivery increments can affect the practical order quantity.</p><h3>Need a specialized tool?</h3><p>Use the <a class="card-link" href="/calculators/concrete.html">Concrete Calculator</a> for slabs or the <a class="card-link" href="/calculators/gravel.html">Gravel Calculator</a> for estimated tons and cost.</p></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a><p>Free planning calculators and practical cost guides for U.S. home improvement projects.</p></div><div><h4>Calculators</h4><a href="/calculators/roof-replacement.html">Roofing</a><a href="/calculators/concrete.html">Concrete</a><a href="/calculators/hvac.html">HVAC</a><a href="/calculators/paint.html">Painting</a></div><div><h4>Explore</h4><a href="/calculators/">All calculators</a><a href="/guides/">Cost guides</a><a href="/blog/">Blog</a><a href="/about.html">Methodology</a><a href="/contact.html">Contact</a></div><div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Estimator disclaimer</a></div></div><div class="footer-bottom">© 2026 HomeCostEngine. Planning estimates only. Always verify pricing, permits, code requirements and scope with qualified local professionals.</div></div></footer>
+<script src="/assets/app.js"></script><script src="/assets/calculators.js"></script>
+</body></html>
