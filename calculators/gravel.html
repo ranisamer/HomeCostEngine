@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gravel Calculator | HomeCostEngine</title>
+<meta name="description" content="Estimate cubic yards, tons and optional material cost for gravel, crushed stone, pea gravel, river rock or limestone.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#102033">
+<link rel="canonical" href="https://homecostengine.com/calculators/gravel.html">
+<meta property="og:title" content="Gravel Calculator | HomeCostEngine">
+<meta property="og:description" content="Estimate cubic yards, tons and optional material cost for gravel, crushed stone, pea gravel, river rock or limestone.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HomeCostEngine">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body data-calculator="gravel">
+<div class="topbar">Independent planning tools for U.S. homeowners • Estimates are for budgeting, not contractor quotes</div>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a>
+    <nav class="navlinks"><a href="/calculators/">Calculators</a><a href="/guides/">Cost Guides</a><a href="/projects.html">Projects</a><a href="/blog/">Blog</a><a href="/about.html">About</a></nav>
+    <a class="navcta" href="/calculators/">Calculate a Project →</a><button class="menu-btn" aria-label="Open menu">☰</button>
+  </div>
+  <div class="container mobile-menu"><a href="/calculators/">Calculators</a><a href="/guides/">Cost Guides</a><a href="/projects.html">Projects</a><a href="/blog/">Blog</a><a href="/about.html">About</a></div>
+</header>
+<main>
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="/">Home</a> / <a href="/calculators/">Calculators</a> / Gravel Calculator</div><span class="eyebrow">Free calculator</span><h1>Gravel Calculator</h1><p class="lead">Estimate cubic yards, tons and optional material cost for gravel, crushed stone, pea gravel, river rock or limestone.</p></div></section>
+<section class="section" style="padding-top:15px"><div class="container calc-layout">
+<div class="calc-shell"><h2>Your project details</h2><p class="muted">Change the inputs below to match your project.</p><form id="calculatorForm" class="form-grid">
+<div class="field"><label for="gravelArea">Area (sq ft)</label><input id="gravelArea" type="number" value="500" min=".01" step=".1"></div>
+<div class="field"><label for="gravelDepth">Depth (in)</label><input id="gravelDepth" type="number" value="3" min=".01" step=".1"></div>
+<div class="field"><label for="gravelType">Material</label><select id="gravelType"><option value="1.4">Pea gravel</option><option value="1.5" selected>Crushed stone</option><option value="1.35">River rock</option><option value="1.45">Limestone gravel</option></select></div>
+<div class="field"><label for="gravelWaste">Waste allowance</label><select id="gravelWaste"><option value="1">0%</option><option value="1.05">5%</option><option value="1.10" selected>10%</option></select></div>
+<div class="field full"><label for="gravelPrice">Price per ton (optional)</label><input id="gravelPrice" type="number" value="45" min="0" step="1"></div><div class="field full"><button class="btn full" type="submit">Calculate →</button></div></form><div class="notice">Planning tool only. Verify field measurements, material specifications and project requirements before ordering materials or starting work.</div></div>
+<aside class="result-card"><span class="kicker">Your result</span><div id="result" class="result-big">—</div><div id="range" class="result-range">Enter your details</div><div class="breakdown">
+<div class="row"><span>Cubic yards</span><strong id="unit">—</strong></div><div class="row"><span>Estimated tons</span><strong id="materials">—</strong></div><div class="row"><span>Material cost</span><strong id="labor">—</strong></div><div class="row"><span>Waste allowance</span><strong id="other">—</strong></div></div>
+<p class="micro" style="color:#aebdca">Save the result with the free email report below.</p></aside>
+</div></section>
+<section class="section alt"><div class="container info-copy"><h2>Estimate gravel by volume and weight</h2><p>Gravel is often ordered by the ton even though project dimensions produce a volume. This calculator first finds cubic yards, then applies an approximate tons-per-yard factor based on the selected material.</p><h3>Density varies</h3><p>Moisture, stone size and supplier grading change real bulk density. Treat the tonnage as a planning estimate and confirm the supplier's conversion before ordering.</p><h3>Related outdoor tools</h3><p>Compare with the <a class="card-link" href="/calculators/cubic-yard.html">Cubic Yard Calculator</a>, <a class="card-link" href="/calculators/concrete.html">Concrete Calculator</a> and <a class="card-link" href="/calculators/mulch.html">Mulch Calculator</a>.</p></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a><p>Free planning calculators and practical cost guides for U.S. home improvement projects.</p></div><div><h4>Calculators</h4><a href="/calculators/roof-replacement.html">Roofing</a><a href="/calculators/concrete.html">Concrete</a><a href="/calculators/hvac.html">HVAC</a><a href="/calculators/paint.html">Painting</a></div><div><h4>Explore</h4><a href="/calculators/">All calculators</a><a href="/guides/">Cost guides</a><a href="/blog/">Blog</a><a href="/about.html">Methodology</a><a href="/contact.html">Contact</a></div><div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Estimator disclaimer</a></div></div><div class="footer-bottom">© 2026 HomeCostEngine. Planning estimates only. Always verify pricing, permits, code requirements and scope with qualified local professionals.</div></div></footer>
+<script src="/assets/app.js"></script><script src="/assets/calculators.js"></script>
+</body></html>
