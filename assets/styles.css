@@ -185,3 +185,34 @@ th{background:#f4f6f5}
 .report-status.error{color:var(--danger)}
 .report-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
 @media(max-width:600px){.report-email-row{grid-template-columns:1fr}.report-email-row button{padding:13px 16px}}
+
+
+/* AdSense article placements */
+.hce-ad-slot{
+  width:100%;
+  margin:34px 0;
+  padding:12px 0 6px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  text-align:center;
+  overflow:hidden;
+}
+.hce-ad-label{
+  margin-bottom:8px;
+  color:#7a8794;
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.hce-ad-slot .adsbygoogle{
+  width:100%;
+  min-height:110px;
+}
+@media(min-width:900px){
+  .hce-ad-slot .adsbygoogle{min-height:180px}
+}
+@media(max-width:600px){
+  .hce-ad-slot{margin:26px 0;padding-top:10px}
+  .hce-ad-slot .adsbygoogle{min-height:100px}
+}
