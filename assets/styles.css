@@ -216,3 +216,26 @@ th{background:#f4f6f5}
   .hce-ad-slot{margin:26px 0;padding-top:10px}
   .hce-ad-slot .adsbygoogle{min-height:100px}
 }
+
+/* Blog editorial images */
+.blog-figure{margin:28px 0 34px}
+.blog-figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:22px;background:#f2f2ed}
+.blog-figure figcaption{margin-top:8px;color:#748190;font-size:.78rem}
+.source-list{padding-left:20px}
+.source-list li{margin:8px 0;color:var(--ink-2)}
+.source-list a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+
+/* AdSense responsive size targets: 970x250 / 336x280 / 728x90 desktop */
+.hce-ad-band{padding:22px 0}
+.hce-ad-slot{margin:28px auto;padding:12px 0 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;overflow:hidden}
+.hce-ad-label{margin-bottom:8px;color:#7a8794;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.hce-ad-slot .adsbygoogle{display:block;width:100%}
+.hce-ad-top{max-width:970px;min-height:250px}
+.hce-ad-mid{max-width:336px;min-height:280px}
+.hce-ad-bottom{max-width:728px;min-height:90px}
+@media(max-width:700px){
+ .hce-ad-band{padding:12px 0}
+ .hce-ad-slot{margin:22px auto}
+ .hce-ad-top,.hce-ad-mid{max-width:336px;min-height:250px}
+ .hce-ad-bottom{max-width:320px;min-height:100px}
+}

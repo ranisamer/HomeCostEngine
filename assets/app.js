@@ -1,95 +1,88 @@
 /*
-  HomeCostEngine AdSense manual placements.
-  Keep enabled=false until the site is approved in AdSense.
-  Then add your publisher client and the three ad-unit slot IDs.
+  HomeCostEngine AdSense placements.
+  Keep enabled=false until AdSense approval and ad-unit IDs are ready.
+  Responsive units are used; desktop layout targets are:
+  top 970x250, mid 336x280, bottom 728x90.
 */
 const HCE_ADSENSE_CONFIG = {
   enabled: false,
   client: "",
-  slots: {
-    articleAfterIntro: "",
-    articleMidContent: "",
-    articleBeforeRelated: ""
-  }
+  slots: { top: "", mid: "", bottom: "" }
 };
 
 function loadAdSenseScript(client){
   if(!client || document.querySelector('script[data-hce-adsense]')) return;
-  const script = document.createElement("script");
-  script.async = true;
-  script.crossOrigin = "anonymous";
-  script.dataset.hceAdsense = "true";
-  script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + encodeURIComponent(client);
+  const script=document.createElement("script");
+  script.async=true; script.crossOrigin="anonymous"; script.dataset.hceAdsense="true";
+  script.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client="+encodeURIComponent(client);
   document.head.appendChild(script);
 }
 
-function buildAdSenseUnit(placement, slot){
+function buildAdSenseUnit(position, slot){
   if(!HCE_ADSENSE_CONFIG.enabled || !HCE_ADSENSE_CONFIG.client || !slot) return null;
-
-  const wrap = document.createElement("aside");
-  wrap.className = "hce-ad-slot";
-  wrap.dataset.adPlacement = placement;
-  wrap.setAttribute("aria-label", "Advertisement");
-
-  const label = document.createElement("div");
-  label.className = "hce-ad-label";
-  label.textContent = "Advertisement";
-
-  const ins = document.createElement("ins");
-  ins.className = "adsbygoogle";
-  ins.style.display = "block";
-  ins.dataset.adClient = HCE_ADSENSE_CONFIG.client;
-  ins.dataset.adSlot = slot;
-  ins.dataset.adFormat = "auto";
-  ins.dataset.fullWidthResponsive = "true";
-
-  wrap.append(label, ins);
-
-  requestAnimationFrame(() => {
-    try{
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    }catch(e){
-      console.warn("AdSense slot could not initialize.", e);
-    }
-  });
-
+  const wrap=document.createElement("aside");
+  wrap.className="hce-ad-slot hce-ad-"+position;
+  wrap.setAttribute("aria-label","Advertisement");
+  wrap.innerHTML='<div class="hce-ad-label">Advertisement</div>';
+  const ins=document.createElement("ins");
+  ins.className="adsbygoogle"; ins.style.display="block";
+  ins.dataset.adClient=HCE_ADSENSE_CONFIG.client; ins.dataset.adSlot=slot;
+  ins.dataset.adFormat="auto"; ins.dataset.fullWidthResponsive="true";
+  wrap.appendChild(ins);
+  requestAnimationFrame(()=>{try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){console.warn("AdSense slot could not initialize.",e);}});
   return wrap;
 }
 
-function injectArticleAds(){
-  const path = location.pathname.replace(/\/+$/, "");
-  if(!path.startsWith("/blog/") || path === "/blog" || path.endsWith("/index.html")) return;
+function adBand(position,slot){
+  const ad=buildAdSenseUnit(position,slot); if(!ad) return null;
+  const section=document.createElement("section"); section.className="hce-ad-band";
+  const container=document.createElement("div"); container.className="container";
+  container.appendChild(ad); section.appendChild(container); return section;
+}
 
-  const article = document.querySelector("main article.info-copy");
-  if(!article) return;
+function injectBlogArticleAds(){
+  const article=document.querySelector("main article.info-copy"); if(!article) return false;
+  const firstP=Array.from(article.children).find(el=>el.tagName==="P");
+  const top=buildAdSenseUnit("top",HCE_ADSENSE_CONFIG.slots.top);
+  if(firstP&&top) firstP.insertAdjacentElement("afterend",top);
+  const h2s=Array.from(article.children).filter(el=>el.tagName==="H2");
+  const anchor=h2s[1]?.nextElementSibling||h2s[1]||h2s[0]?.nextElementSibling;
+  const mid=buildAdSenseUnit("mid",HCE_ADSENSE_CONFIG.slots.mid);
+  if(anchor&&mid) anchor.insertAdjacentElement("afterend",mid);
+  const notice=article.querySelector(":scope > .notice");
+  const bottom=buildAdSenseUnit("bottom",HCE_ADSENSE_CONFIG.slots.bottom);
+  if(bottom){ if(notice) article.insertBefore(bottom,notice); else article.appendChild(bottom); }
+  return true;
+}
 
-  const config = HCE_ADSENSE_CONFIG;
-  if(!config.enabled || !config.client) return;
-
-  loadAdSenseScript(config.client);
-
-  // Placement 1: after the opening paragraph, visible once the reader has started the article.
-  const firstParagraph = Array.from(article.children).find(el => el.tagName === "P");
-  const topAd = buildAdSenseUnit("article-after-intro", config.slots.articleAfterIntro);
-  if(firstParagraph && topAd) firstParagraph.insertAdjacentElement("afterend", topAd);
-
-  // Placement 2: in the middle of the article, after the second content section.
-  const h2s = Array.from(article.children).filter(el => el.tagName === "H2");
-  const midAnchor = h2s[1]?.nextElementSibling || h2s[1] || h2s[0]?.nextElementSibling;
-  const midAd = buildAdSenseUnit("article-mid-content", config.slots.articleMidContent);
-  if(midAnchor && midAd) midAnchor.insertAdjacentElement("afterend", midAd);
-
-  // Placement 3: after the article body, before the planning CTA / related content.
-  const notice = article.querySelector(":scope > .notice");
-  const endAd = buildAdSenseUnit("article-before-related", config.slots.articleBeforeRelated);
-  if(endAd){
-    if(notice) article.insertBefore(endAd, notice);
-    else article.appendChild(endAd);
+function injectSectionPageAds(){
+  const main=document.querySelector("main"); if(!main) return;
+  const sections=Array.from(main.children).filter(el=>el.tagName==="SECTION");
+  if(!sections.length) return;
+  const topBand=adBand("top",HCE_ADSENSE_CONFIG.slots.top);
+  const midBand=adBand("mid",HCE_ADSENSE_CONFIG.slots.mid);
+  const bottomBand=adBand("bottom",HCE_ADSENSE_CONFIG.slots.bottom);
+  if(topBand) sections[0].insertAdjacentElement("afterend",topBand);
+  if(midBand){
+    const midIndex=Math.max(1,Math.floor(sections.length/2));
+    (sections[midIndex]||sections[sections.length-1]).insertAdjacentElement("afterend",midBand);
   }
+  if(bottomBand) main.appendChild(bottomBand);
+}
+
+function injectSiteAds(){
+  if(!HCE_ADSENSE_CONFIG.enabled || !HCE_ADSENSE_CONFIG.client) return;
+  const path=location.pathname.replace(/\/+$/,"")||"/";
+  const excluded=["/privacy.html","/disclaimer.html","/contact.html","/404.html"];
+  if(excluded.includes(path)) return;
+  loadAdSenseScript(HCE_ADSENSE_CONFIG.client);
+  const isBlogArticle=path.startsWith("/blog/") && path!=="/blog" && !path.endsWith("/index.html");
+  if(isBlogArticle && injectBlogArticleAds()) return;
+  injectSectionPageAds();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  injectArticleAds();
+  injectSiteAds();
   const menuBtn = document.querySelector(".menu-btn");
   const mobile = document.querySelector(".mobile-menu");
   if(menuBtn && mobile){
