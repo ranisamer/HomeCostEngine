@@ -6,6 +6,7 @@
 */
 const HCE_ADSENSE_CONFIG = {
   enabled: false,
+  preview: true, // Shows gray "Advertisement" placeholders until real AdSense IDs are added.
   client: "",
   slots: { top: "", mid: "", bottom: "" }
 };
@@ -19,11 +20,22 @@ function loadAdSenseScript(client){
 }
 
 function buildAdSenseUnit(position, slot){
-  if(!HCE_ADSENSE_CONFIG.enabled || !HCE_ADSENSE_CONFIG.client || !slot) return null;
+  const canServe=HCE_ADSENSE_CONFIG.enabled && HCE_ADSENSE_CONFIG.client && slot;
+  if(!canServe && !HCE_ADSENSE_CONFIG.preview) return null;
+
   const wrap=document.createElement("aside");
-  wrap.className="hce-ad-slot hce-ad-"+position;
+  wrap.className="hce-ad-slot hce-ad-"+position+(canServe?"":" hce-ad-preview");
   wrap.setAttribute("aria-label","Advertisement");
   wrap.innerHTML='<div class="hce-ad-label">Advertisement</div>';
+
+  if(!canServe){
+    const preview=document.createElement("div");
+    preview.className="hce-ad-preview-box";
+    preview.innerHTML='<strong>Google AdSense placement</strong><span>Preview only — real ad will appear here after AdSense is connected.</span>';
+    wrap.appendChild(preview);
+    return wrap;
+  }
+
   const ins=document.createElement("ins");
   ins.className="adsbygoogle"; ins.style.display="block";
   ins.dataset.adClient=HCE_ADSENSE_CONFIG.client; ins.dataset.adSlot=slot;
@@ -42,17 +54,64 @@ function adBand(position,slot){
 
 function injectBlogArticleAds(){
   const article=document.querySelector("main article.info-copy"); if(!article) return false;
+
+  // AD #1: immediately after the first editorial/hero image.
+  const firstFigure=article.querySelector(":scope > .blog-figure");
   const firstP=Array.from(article.children).find(el=>el.tagName==="P");
   const top=buildAdSenseUnit("top",HCE_ADSENSE_CONFIG.slots.top);
-  if(firstP&&top) firstP.insertAdjacentElement("afterend",top);
+  const topAnchor=firstFigure||firstP;
+  if(topAnchor&&top) topAnchor.insertAdjacentElement("afterend",top);
+
+  // AD #2: around the middle of the article, after the second H2 section paragraph.
   const h2s=Array.from(article.children).filter(el=>el.tagName==="H2");
-  const anchor=h2s[1]?.nextElementSibling||h2s[1]||h2s[0]?.nextElementSibling;
+  const secondH2=h2s[1]||h2s[0];
+  let midAnchor=secondH2;
+  if(secondH2){
+    let cursor=secondH2.nextElementSibling;
+    while(cursor && cursor.tagName!=="H2"){
+      midAnchor=cursor;
+      if(cursor.tagName==="P") break;
+      cursor=cursor.nextElementSibling;
+    }
+  }
   const mid=buildAdSenseUnit("mid",HCE_ADSENSE_CONFIG.slots.mid);
-  if(anchor&&mid) anchor.insertAdjacentElement("afterend",mid);
-  const notice=article.querySelector(":scope > .notice");
+  if(midAnchor&&mid) midAnchor.insertAdjacentElement("afterend",mid);
+
+  // AD #3: directly before "Sources and further reading" when present.
+  const sourcesHeading=h2s.find(el=>/sources|further reading/i.test(el.textContent||""));
   const bottom=buildAdSenseUnit("bottom",HCE_ADSENSE_CONFIG.slots.bottom);
-  if(bottom){ if(notice) article.insertBefore(bottom,notice); else article.appendChild(bottom); }
+  if(bottom){
+    if(sourcesHeading) article.insertBefore(bottom,sourcesHeading);
+    else {
+      const notice=article.querySelector(":scope > .notice");
+      if(notice) article.insertBefore(bottom,notice); else article.appendChild(bottom);
+    }
+  }
   return true;
+}
+
+function injectCalculatorAds(){
+  const main=document.querySelector("main"); if(!main) return;
+  const sections=Array.from(main.children).filter(el=>el.tagName==="SECTION");
+  const calcSection=sections.find(section=>section.querySelector(".calc-shell"))||sections[1]||sections[0];
+  const infoSection=sections.find(section=>section!==calcSection && section.querySelector(".info-copy"))||sections[sections.length-1];
+
+  const firstBand=adBand("top",HCE_ADSENSE_CONFIG.slots.top);
+  const secondBand=adBand("bottom",HCE_ADSENSE_CONFIG.slots.bottom);
+  if(firstBand&&calcSection) calcSection.insertAdjacentElement("afterend",firstBand);
+  if(secondBand&&infoSection) infoSection.insertAdjacentElement("afterend",secondBand);
+}
+
+function injectHomeAds(){
+  const main=document.querySelector("main"); if(!main) return;
+  const sections=Array.from(main.children).filter(el=>el.tagName==="SECTION");
+  if(sections.length<2) return;
+  const firstBand=adBand("top",HCE_ADSENSE_CONFIG.slots.top);
+  const secondBand=adBand("bottom",HCE_ADSENSE_CONFIG.slots.bottom);
+  const firstAnchor=sections[Math.min(1,sections.length-1)];
+  const secondAnchor=sections[Math.max(2,Math.floor(sections.length*.65))]||sections[sections.length-1];
+  if(firstBand) firstAnchor.insertAdjacentElement("afterend",firstBand);
+  if(secondBand) secondAnchor.insertAdjacentElement("afterend",secondBand);
 }
 
 function injectSectionPageAds(){
@@ -60,13 +119,8 @@ function injectSectionPageAds(){
   const sections=Array.from(main.children).filter(el=>el.tagName==="SECTION");
   if(!sections.length) return;
   const topBand=adBand("top",HCE_ADSENSE_CONFIG.slots.top);
-  const midBand=adBand("mid",HCE_ADSENSE_CONFIG.slots.mid);
   const bottomBand=adBand("bottom",HCE_ADSENSE_CONFIG.slots.bottom);
   if(topBand) sections[0].insertAdjacentElement("afterend",topBand);
-  if(midBand){
-    const midIndex=Math.max(1,Math.floor(sections.length/2));
-    (sections[midIndex]||sections[sections.length-1]).insertAdjacentElement("afterend",midBand);
-  }
   if(bottomBand) main.appendChild(bottomBand);
 }
 
@@ -104,13 +158,27 @@ function injectBlogFallbackImage(){
 }
 
 function injectSiteAds(){
-  if(!HCE_ADSENSE_CONFIG.enabled || !HCE_ADSENSE_CONFIG.client) return;
+  const canServe=HCE_ADSENSE_CONFIG.enabled && HCE_ADSENSE_CONFIG.client;
+  if(!canServe && !HCE_ADSENSE_CONFIG.preview) return;
+
   const path=location.pathname.replace(/\/+$/,"")||"/";
   const excluded=["/privacy.html","/disclaimer.html","/contact.html","/404.html"];
   if(excluded.includes(path)) return;
-  loadAdSenseScript(HCE_ADSENSE_CONFIG.client);
+  if(canServe) loadAdSenseScript(HCE_ADSENSE_CONFIG.client);
+
   const isBlogArticle=path.startsWith("/blog/") && path!=="/blog" && !path.endsWith("/index.html");
   if(isBlogArticle && injectBlogArticleAds()) return;
+
+  if(path.startsWith("/calculators/") && path!=="/calculators" && !path.endsWith("/index.html")){
+    injectCalculatorAds();
+    return;
+  }
+
+  if(path==="/"){
+    injectHomeAds();
+    return;
+  }
+
   injectSectionPageAds();
 }
 
