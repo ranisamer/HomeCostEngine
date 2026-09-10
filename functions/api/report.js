@@ -120,7 +120,9 @@ function emailHtml(report){
 
 export async function onRequestPost(context){
   const {request,env}=context;
-  if(!env.BREVO_API_KEY || !env.BREVO_SENDER_EMAIL) return json({error:"Email service is not configured yet."},500);
+  const senderEmail=String(env.BREVO_SENDER_EMAIL || "reports@mail.homecostengine.com").trim();
+  const replyToEmail=String(env.BREVO_REPLY_TO || "reports@homecostengine.com").trim();
+  if(!env.BREVO_API_KEY) return json({error:"Email service is temporarily unavailable. Please try again shortly."},503);
 
   const origin=request.headers.get("Origin") || "";
   if(origin){
@@ -148,8 +150,8 @@ export async function onRequestPost(context){
   }
 
   const mailResp=await fetch("https://api.brevo.com/v3/smtp/email",{method:"POST",headers,body:JSON.stringify({
-    sender:{name:"HomeCostEngine",email:env.BREVO_SENDER_EMAIL},to:[{email}],
-    replyTo:{name:"HomeCostEngine",email:env.BREVO_REPLY_TO || env.BREVO_SENDER_EMAIL},
+    sender:{name:"HomeCostEngine",email:senderEmail},to:[{email}],
+    replyTo:{name:"HomeCostEngine",email:replyToEmail},
     subject:report.subject,htmlContent:emailHtml(report)
   })});
   if(!mailResp.ok){console.log("Brevo send error",mailResp.status,await mailResp.text());return json({error:"We couldn't send the report right now. Please try again shortly."},502);}
