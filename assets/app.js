@@ -19,7 +19,10 @@ const HCE_BLOG_TOPICS = {
     ],
     external: [
       ["NRCA Consumer Roofing Information", "https://www.nrca.net/roofing-guidelines/consumer-information"],
-      ["NRCA Roofing Resources", "https://www.nrca.net/roofing-guidelines/resources"]
+      ["NRCA Roofing Resources", "https://www.nrca.net/roofing-guidelines/resources"],
+      ["FEMA Home Repair and Recovery Resources", "https://www.fema.gov/emergency-managers/risk-management/building-science/homeowners"],
+      ["ENERGY STAR Roof Products", "https://www.energystar.gov/products/roof_products"],
+      ["OSHA Roofing Safety", "https://www.osha.gov/roofing"]
     ]
   },
   concrete: {
@@ -33,7 +36,10 @@ const HCE_BLOG_TOPICS = {
     ],
     external: [
       ["American Concrete Institute", "https://www.concrete.org/"],
-      ["National Ready Mixed Concrete Association", "https://www.nrmca.org/"]
+      ["National Ready Mixed Concrete Association", "https://www.nrmca.org/"],
+      ["Portland Cement Association", "https://www.cement.org/"],
+      ["FHWA Concrete Resources", "https://www.fhwa.dot.gov/pavement/concrete/"],
+      ["OSHA Concrete and Masonry Construction", "https://www.osha.gov/concrete-masonry"]
     ]
   },
   hvac: {
@@ -47,7 +53,10 @@ const HCE_BLOG_TOPICS = {
     ],
     external: [
       ["ENERGY STAR: Heat & Cool Efficiently", "https://www.energystar.gov/saveathome/heating-cooling"],
-      ["U.S. Department of Energy: Home Upgrades", "https://www.energy.gov/save/home-upgrades"]
+      ["U.S. Department of Energy: Home Upgrades", "https://www.energy.gov/save/home-upgrades"],
+      ["EPA Refrigerant Management", "https://www.epa.gov/section608"],
+      ["AHRI Certified Product Directory", "https://www.ahridirectory.org/"],
+      ["ASHRAE Homeowner Resources", "https://www.ashrae.org/technical-resources/free-resources"]
     ]
   },
   painting: {
@@ -61,7 +70,10 @@ const HCE_BLOG_TOPICS = {
     ],
     external: [
       ["EPA Lead-Safe Renovation, Repair and Painting", "https://www.epa.gov/lead/steps-lead-safe-renovation-repair-and-painting"],
-      ["EPA Renovation, Repair and Painting Program", "https://www.epa.gov/lead/lead-renovation-repair-and-painting-program"]
+      ["EPA Renovation, Repair and Painting Program", "https://www.epa.gov/lead/lead-renovation-repair-and-painting-program"],
+      ["EPA Indoor Air Quality", "https://www.epa.gov/indoor-air-quality-iaq"],
+      ["CPSC Lead in Paint Guidance", "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Lead"],
+      ["OSHA Painting and Coating Safety", "https://www.osha.gov/etools/shipyard/general-requirements/painting"]
     ]
   },
   flooring: {
@@ -75,7 +87,10 @@ const HCE_BLOG_TOPICS = {
     ],
     external: [
       ["National Wood Flooring Association", "https://nwfa.org/"],
-      ["EPA Indoor Air Quality", "https://www.epa.gov/indoor-air-quality-iaq"]
+      ["EPA Indoor Air Quality", "https://www.epa.gov/indoor-air-quality-iaq"],
+      ["NWFA Homeowner Resources", "https://www.woodfloors.org/"],
+      ["Resilient Floor Covering Institute", "https://rfci.com/"],
+      ["Carpet and Rug Institute", "https://carpet-rug.org/"]
     ]
   },
   gravel: {
@@ -89,7 +104,10 @@ const HCE_BLOG_TOPICS = {
     ],
     external: [
       ["EPA WaterSense Landscaping Tips", "https://www.epa.gov/watersense/landscaping-tips"],
-      ["EPA WaterSense Outdoors", "https://www.epa.gov/watersense/outdoors"]
+      ["EPA WaterSense Outdoors", "https://www.epa.gov/watersense/outdoors"],
+      ["FHWA Gravel Roads Guide", "https://www.fhwa.dot.gov/construction/pubs/ots15002.pdf"],
+      ["USGS Aggregates Information", "https://www.usgs.gov/centers/national-minerals-information-center/aggregates-data"],
+      ["USDA Web Soil Survey", "https://websoilsurvey.nrcs.usda.gov/"]
     ]
   },
   mulch: {
@@ -103,7 +121,10 @@ const HCE_BLOG_TOPICS = {
     ],
     external: [
       ["EPA WaterSense Landscaping Tips", "https://www.epa.gov/watersense/landscaping-tips"],
-      ["EPA WaterSense Outdoors", "https://www.epa.gov/watersense/outdoors"]
+      ["EPA WaterSense Outdoors", "https://www.epa.gov/watersense/outdoors"],
+      ["USDA Natural Resources Conservation Service", "https://www.nrcs.usda.gov/"],
+      ["USDA Web Soil Survey", "https://websoilsurvey.nrcs.usda.gov/"],
+      ["U.S. Forest Service Gardening Resources", "https://www.fs.usda.gov/wildflowers/Native_Plant_Materials/Native_Gardening/index.shtml"]
     ]
   },
   windows: {
@@ -117,7 +138,10 @@ const HCE_BLOG_TOPICS = {
     ],
     external: [
       ["ENERGY STAR Residential Windows, Doors & Skylights", "https://www.energystar.gov/products/res_windows_doors_skylights"],
-      ["U.S. Department of Energy: Home Upgrades", "https://www.energy.gov/save/home-upgrades"]
+      ["U.S. Department of Energy: Home Upgrades", "https://www.energy.gov/save/home-upgrades"],
+      ["National Fenestration Rating Council", "https://nfrc.org/"],
+      ["DOE Energy-Efficient Windows", "https://www.energy.gov/energysaver/energy-efficient-windows"],
+      ["Efficient Windows Collaborative", "https://efficientwindows.org/"]
     ]
   },
   plumbing: {
@@ -131,7 +155,10 @@ const HCE_BLOG_TOPICS = {
     ],
     external: [
       ["U.S. Department of Energy: Water Heating", "https://www.energy.gov/topics/water-heating"],
-      ["EPA WaterSense", "https://www.epa.gov/watersense"]
+      ["EPA WaterSense", "https://www.epa.gov/watersense"],
+      ["EPA Fix a Leak Week", "https://www.epa.gov/watersense/fix-leak-week"],
+      ["CDC Drinking Water Resources", "https://www.cdc.gov/drinking-water/"],
+      ["International Plumbing Code Resources", "https://www.iccsafe.org/products-and-services/i-codes/2024-i-codes/ipc/"]
     ]
   },
   general: {
@@ -145,7 +172,10 @@ const HCE_BLOG_TOPICS = {
     ],
     external: [
       ["NIST Office of Weights and Measures", "https://www.nist.gov/pml/owm"],
-      ["U.S. Department of Energy: Home Upgrades", "https://www.energy.gov/save/home-upgrades"]
+      ["U.S. Department of Energy: Home Upgrades", "https://www.energy.gov/save/home-upgrades"],
+      ["FTC Home Improvement Guidance", "https://consumer.ftc.gov/articles/home-improvement-scams"],
+      ["HUD Healthy Homes", "https://www.hud.gov/hud-partners/healthy-homes"],
+      ["EPA Indoor Air Quality", "https://www.epa.gov/indoor-air-quality-iaq"]
     ]
   }
 };
@@ -241,7 +271,7 @@ function buildSeoLinkPanel(topic){
   const current=location.pathname.replace(/\/+$/,"");
   const internal=topic.internal.filter(([,href])=>href.replace(/\/+$/,"")!==current).slice(0,3);
   const internalHtml=internal.map(([label,href])=>`<li><a href="${href}">${label}</a></li>`).join("");
-  const externalHtml=topic.external.slice(0,2).map(([label,href])=>`<li><a href="${href}" target="_blank" rel="noopener noreferrer">${label} ↗</a></li>`).join("");
+  const externalHtml=topic.external.slice(0,5).map(([label,href])=>`<li><a href="${href}" target="_blank" rel="noopener noreferrer">${label} ↗</a></li>`).join("");
   panel.innerHTML=`<h2>Related tools & trusted resources</h2><p>Continue planning with HomeCostEngine tools and verify important project details with independent industry or government resources.</p><div class="seo-link-grid"><div><h3>On HomeCostEngine</h3><ul>${internalHtml}</ul></div><div><h3>Independent external resources</h3><ul>${externalHtml}</ul></div></div>`;
   return panel;
 }
