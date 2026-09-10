@@ -277,3 +277,107 @@ th{background:#f4f6f5}
   line-height:1.5;
   color:#718091;
 }
+
+
+/* === HCE CLASSIC EDITORIAL REDESIGN v2 === */
+:root{
+  --ink:#142336;
+  --ink-2:#59616a;
+  --paper:#f7f3eb;
+  --card:#fffdf9;
+  --line:#ddd4c6;
+  --accent:#8a6738;
+  --accent-2:#efe5d6;
+  --warm:#bd9158;
+  --danger:#9f443f;
+  --shadow:0 9px 28px rgba(20,35,54,.055);
+  --radius:10px;
+}
+body{background:var(--paper);line-height:1.68;color:var(--ink)}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.025em;line-height:1.14;font-weight:700}
+h1{font-size:clamp(2.45rem,5vw,4rem);max-width:820px}
+.hero{padding:64px 0 52px}
+.hero h1{font-size:clamp(2.7rem,5.3vw,4.15rem);margin-top:17px}
+.page-hero{padding:50px 0 30px}
+.page-hero h1{font-size:clamp(2.25rem,4.7vw,3.45rem);max-width:880px}
+.section{padding:62px 0}
+.section-head h2,.section h2{font-size:clamp(1.75rem,3vw,2.4rem)!important}
+.info-copy{max-width:820px}
+.info-copy h2{font-size:clamp(1.55rem,2.5vw,1.92rem)!important;margin:38px 0 13px}
+.info-copy h3{font-size:1.24rem;margin:27px 0 9px}
+.lead{font-size:1.08rem;line-height:1.72}
+.topbar{background:#0f1d2c;color:#f4efe7;font-size:.82rem;padding:8px 18px;letter-spacing:.01em}
+.site-header{background:rgba(247,243,235,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.nav{min-height:70px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.12rem;letter-spacing:-.015em}
+.brandmark{width:34px;height:34px;border-radius:3px;background:#142336;font-family:Inter,ui-sans-serif,sans-serif;font-size:.72rem;letter-spacing:.04em}
+.navlinks{gap:24px;font-size:.91rem}
+.navcta,.btn{border-radius:5px;background:#142336;border-color:#142336;padding:12px 18px;font-weight:700}
+.navcta:hover,.btn:hover{filter:none;background:#20344b}
+.btn.secondary{background:transparent;color:var(--ink);border-color:#b9aa96}
+.btn.dark{background:#142336;border-color:#142336}
+.eyebrow{border-radius:3px;background:transparent;border:1px solid #c7b79f;color:var(--accent);font-size:.73rem;padding:6px 9px;letter-spacing:.09em}
+.hero-card,.calc-shell,.result-card,.card{border-radius:var(--radius);box-shadow:var(--shadow);border-color:var(--line)}
+.hero-card{padding:28px;background:#fffdf9}
+.hero-card h2{font-size:1.36rem}
+input,select,textarea{border-radius:5px;border-color:#cfc4b4;background:#fffdf9}
+input:focus,select:focus,textarea:focus{border-color:#9d7b4c;box-shadow:0 0 0 3px rgba(138,103,56,.1)}
+.section.alt{background:#f0ebe2;border-color:var(--line)}
+.card{padding:23px;background:#fffdf9}
+.card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(20,35,54,.07)}
+.card-icon{border-radius:4px;background:#eee4d5}
+.card-link{color:#76552f}
+.stats{border-radius:8px;background:var(--line)}
+.stat{background:#fffdf9}
+.tick{border-radius:3px;background:#eee4d5;color:#76552f}
+.quote-box{border-radius:9px;background:#142336;padding:34px}
+.quote-box h3{font-size:1.72rem}
+.quote-result{border-radius:6px;background:#1d3148}
+.quote-result .big{font-family:Georgia,"Times New Roman",serif;font-size:1.85rem;letter-spacing:-.025em}
+.kicker{color:#d0a46b}
+.article{border-radius:8px;background:#fffdf9;box-shadow:0 4px 16px rgba(20,35,54,.035)}
+.article-cover{height:170px;border-radius:0;background:linear-gradient(135deg,#e8dfd1,#d8d0c4)}
+.article-body{padding:21px}
+.article-body h3{font-size:1.18rem;line-height:1.28}
+.cta-band{border-radius:9px;background:#142336;padding:38px}
+.cta-band h2{font-size:clamp(1.85rem,3vw,2.55rem)!important}
+.footer{background:#0f1d2c;margin-top:52px;padding:50px 0 28px}
+.footer p,.footer a{color:#c6c0b8}
+.footer-bottom{color:#a9a197}
+.calc-shell{background:#fffdf9}
+.result-card{border-radius:9px;background:#142336}
+.result-big{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.1rem,5vw,3.55rem);letter-spacing:-.03em}
+.notice{border-radius:6px;border-color:#ddc9a8;background:#fbf2e3;color:#66533d}
+.table-wrap{border-radius:7px;background:#fffdf9}
+th{background:#eee9e1}
+.badge{border-radius:3px;background:#efe5d6;color:#76552f}
+.report-capture{border-radius:8px;background:#f9f5ef}
+.report-badge{border-radius:3px;background:#efe5d6;color:#76552f}
+.report-email-row button{border-radius:5px;background:#142336;border-color:#142336}
+.price-card{border-radius:9px;background:#fffdf9}
+.price-card.featured{background:#fffdf9;border-color:#8a6738}
+.price-tag{border-radius:3px;background:#efe5d6;color:#76552f}
+
+main article.info-copy{font-size:1.015rem}
+main article.info-copy>p{margin:0 0 1.15em}
+.blog-figure{margin:32px -42px 38px}
+.blog-figure img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line);border-radius:7px;background:#f2efe9;box-shadow:0 10px 30px rgba(20,35,54,.06)}
+.blog-figure figcaption{margin-top:9px;padding:0 4px;color:#7b746b;font-size:.76rem;font-style:italic}
+.seo-link-panel{margin:36px 0 22px;padding:22px;border:1px solid #d9cebf!important;border-radius:7px!important;background:#f5efe6!important}
+.seo-link-panel>h2{font-family:Georgia,"Times New Roman",serif!important;font-size:1.42rem!important;margin:0 0 9px!important}
+.seo-link-panel>p{margin:0 0 18px!important}
+.seo-link-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.seo-link-panel h3{font-family:Inter,ui-sans-serif,sans-serif;font-size:.95rem!important;margin:0 0 8px!important;letter-spacing:0;text-transform:uppercase;color:#76552f}
+.seo-link-panel ul{margin:0;padding-left:20px}
+.seo-link-panel li{margin:7px 0;color:var(--ink-2)}
+.seo-link-panel a{color:#76552f;text-decoration:underline;text-underline-offset:2px;font-weight:700}
+.article-cover.hce-photo-cover{height:190px!important;background:#ded6ca!important}
+.article-cover.hce-photo-cover .blog-card-label{padding:40px 18px 14px!important;background:linear-gradient(180deg,transparent,rgba(11,24,39,.9))!important}
+@media(max-width:900px){.hero{padding-top:46px}.blog-figure{margin-left:0;margin-right:0}}
+@media(max-width:650px){.seo-link-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+  h1{font-size:2.25rem}.hero h1{font-size:2.55rem}.page-hero h1{font-size:2.22rem}
+  .section{padding:48px 0}.section-head h2,.section h2{font-size:1.78rem!important}
+  .info-copy h2{font-size:1.5rem!important}.lead{font-size:1rem}.blog-figure{margin:26px 0 30px}
+  .article-cover.hce-photo-cover{height:205px!important}
+}
