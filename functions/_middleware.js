@@ -1,5 +1,87 @@
 const GA_MEASUREMENT_ID = "G-T47EEK5EH0";
 
+const EXTERNAL_RESOURCES = {
+  roofing: [
+    ["NRCA Consumer Roofing Information","https://www.nrca.net/roofing-guidelines/consumer-information"],
+    ["NRCA Roofing Resources","https://www.nrca.net/roofing-guidelines/resources"],
+    ["FEMA Building Science for Homeowners","https://www.fema.gov/emergency-managers/risk-management/building-science/homeowners"],
+    ["ENERGY STAR Roof Products","https://www.energystar.gov/products/roof_products"],
+    ["OSHA Roofing Safety","https://www.osha.gov/roofing"]
+  ],
+  concrete: [
+    ["American Concrete Institute","https://www.concrete.org/"],
+    ["National Ready Mixed Concrete Association","https://www.nrmca.org/"],
+    ["Portland Cement Association","https://www.cement.org/"],
+    ["FHWA Concrete Resources","https://www.fhwa.dot.gov/pavement/concrete/"],
+    ["OSHA Concrete and Masonry Construction","https://www.osha.gov/concrete-masonry"]
+  ],
+  hvac: [
+    ["ENERGY STAR Heating and Cooling","https://www.energystar.gov/saveathome/heating-cooling"],
+    ["U.S. Department of Energy Home Upgrades","https://www.energy.gov/save/home-upgrades"],
+    ["EPA Refrigerant Management","https://www.epa.gov/section608"],
+    ["AHRI Certified Product Directory","https://www.ahridirectory.org/"],
+    ["ASHRAE Technical Resources","https://www.ashrae.org/technical-resources/free-resources"]
+  ],
+  painting: [
+    ["EPA Lead-Safe Renovation Steps","https://www.epa.gov/lead/steps-lead-safe-renovation-repair-and-painting"],
+    ["EPA Renovation, Repair and Painting Program","https://www.epa.gov/lead/lead-renovation-repair-and-painting-program"],
+    ["EPA Indoor Air Quality","https://www.epa.gov/indoor-air-quality-iaq"],
+    ["CPSC Lead Safety Center","https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Lead"],
+    ["OSHA Painting and Coating Safety","https://www.osha.gov/etools/shipyard/general-requirements/painting"]
+  ],
+  flooring: [
+    ["National Wood Flooring Association","https://nwfa.org/"],
+    ["EPA Indoor Air Quality","https://www.epa.gov/indoor-air-quality-iaq"],
+    ["NWFA Homeowner Resources","https://www.woodfloors.org/"],
+    ["Resilient Floor Covering Institute","https://rfci.com/"],
+    ["Carpet and Rug Institute","https://carpet-rug.org/"]
+  ],
+  gravel: [
+    ["EPA WaterSense Landscaping Tips","https://www.epa.gov/watersense/landscaping-tips"],
+    ["EPA WaterSense Outdoors","https://www.epa.gov/watersense/outdoors"],
+    ["FHWA Gravel Roads Guide","https://www.fhwa.dot.gov/construction/pubs/ots15002.pdf"],
+    ["USGS Aggregates Information","https://www.usgs.gov/centers/national-minerals-information-center/aggregates-data"],
+    ["USDA Web Soil Survey","https://websoilsurvey.nrcs.usda.gov/"]
+  ],
+  landscaping: [
+    ["EPA WaterSense Landscaping Tips","https://www.epa.gov/watersense/landscaping-tips"],
+    ["EPA WaterSense Outdoors","https://www.epa.gov/watersense/outdoors"],
+    ["USDA Natural Resources Conservation Service","https://www.nrcs.usda.gov/"],
+    ["USDA Web Soil Survey","https://websoilsurvey.nrcs.usda.gov/"],
+    ["U.S. Forest Service Native Gardening","https://www.fs.usda.gov/wildflowers/Native_Plant_Materials/Native_Gardening/index.shtml"]
+  ],
+  windows: [
+    ["ENERGY STAR Windows, Doors and Skylights","https://www.energystar.gov/products/res_windows_doors_skylights"],
+    ["U.S. Department of Energy Home Upgrades","https://www.energy.gov/save/home-upgrades"],
+    ["National Fenestration Rating Council","https://nfrc.org/"],
+    ["DOE Energy-Efficient Windows","https://www.energy.gov/energysaver/energy-efficient-windows"],
+    ["Efficient Windows Collaborative","https://efficientwindows.org/"]
+  ],
+  plumbing: [
+    ["U.S. Department of Energy Water Heating","https://www.energy.gov/topics/water-heating"],
+    ["EPA WaterSense","https://www.epa.gov/watersense"],
+    ["EPA Fix a Leak Week","https://www.epa.gov/watersense/fix-leak-week"],
+    ["CDC Drinking Water Resources","https://www.cdc.gov/drinking-water/"],
+    ["International Plumbing Code","https://www.iccsafe.org/products-and-services/i-codes/2024-i-codes/ipc/"]
+  ],
+  general: [
+    ["NIST Office of Weights and Measures","https://www.nist.gov/pml/owm"],
+    ["U.S. Department of Energy Home Upgrades","https://www.energy.gov/save/home-upgrades"],
+    ["FTC Home Improvement Guidance","https://consumer.ftc.gov/articles/home-improvement-scams"],
+    ["HUD Healthy Homes","https://www.hud.gov/hud-partners/healthy-homes"],
+    ["EPA Indoor Air Quality","https://www.epa.gov/indoor-air-quality-iaq"]
+  ]
+};
+
+function externalLinksSection(pathname) {
+  const topic = topicForPath(pathname);
+  const links = EXTERNAL_RESOURCES[topic] || EXTERNAL_RESOURCES.general;
+  const items = links.map(([label, href]) =>
+    `<li style="margin:8px 0"><a href="${href}" target="_blank" rel="noopener noreferrer" style="color:#176b5b;font-weight:700;text-decoration:underline">${label} ↗</a></li>`
+  ).join("");
+  return `<aside class="seo-link-panel hce-server-resources" aria-label="Trusted external resources" style="margin:36px 0 22px;padding:22px;border:1px solid #d7e2dd;border-radius:18px;background:#f5faf8"><h2 style="margin:0 0 9px">Trusted external resources</h2><p style="margin:0 0 14px">Verify project details with these independent government and industry resources.</p><ul style="margin:0;padding-left:22px">${items}</ul></aside>`;
+}
+
 function humanizeSlug(pathname) {
   const slug = pathname.split('/').pop().replace(/\.html$/i, '');
   return slug
@@ -172,7 +254,7 @@ export async function onRequest(context) {
   }
 
   const pathname = new URL(context.request.url).pathname;
-  const isBlogArticle = /^\/blog\/[^/]+\.html$/i.test(pathname);
+  const isBlogArticle = /^\/blog\/[^/.]+(?:\\.html)?\/?$/i.test(pathname);
   const rewriter = new HTMLRewriter().on("head", {
     element(element) {
       element.append(
@@ -185,6 +267,7 @@ export async function onRequest(context) {
   if (isBlogArticle) {
     rewriter.on("main article.info-copy", {
       element(element) {
+        element.append(externalLinksSection(pathname), { html: true });
         element.append(depthSection(pathname), { html: true });
       }
     });
