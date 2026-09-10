@@ -1,18 +1,17 @@
 /*
   HomeCostEngine AdSense placements.
-  Keep enabled=false until AdSense approval and ad-unit IDs are ready.
-  Responsive units are used; desktop layout targets are:
-  top 970x250, mid 336x280, bottom 728x90.
+  AdSense publisher connection is active. Manual ad-unit slots stay empty until
+  individual AdSense ad-unit IDs are created. Auto Ads can work with the client code alone.
 */
 const HCE_ADSENSE_CONFIG = {
-  enabled: false,
-  preview: true, // Shows gray "Advertisement" placeholders until real AdSense IDs are added.
-  client: "",
+  enabled: true,
+  preview: false,
+  client: "ca-pub-2351413014734308",
   slots: { top: "", mid: "", bottom: "" }
 };
 
 function loadAdSenseScript(client){
-  if(!client || document.querySelector('script[data-hce-adsense]')) return;
+  if(!client || document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) return;
   const script=document.createElement("script");
   script.async=true; script.crossOrigin="anonymous"; script.dataset.hceAdsense="true";
   script.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client="+encodeURIComponent(client);
@@ -124,7 +123,6 @@ function injectSectionPageAds(){
   if(bottomBand) main.appendChild(bottomBand);
 }
 
-
 function injectBlogFallbackImage(){
   const path=location.pathname.replace(/\/+$/,"");
   if(!path.startsWith("/blog/") || path==="/blog" || path.endsWith("/index.html")) return;
@@ -143,7 +141,7 @@ function injectBlogFallbackImage(){
     else line=(line+" "+word).trim();
   });
   if(line) lines.push(line);
-  const safe=s=>s.replace(/[&<>"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+  const safe=s=>s.replace(/[&<>\"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'\"':"&quot;"}[ch]));
   const textLines=lines.slice(0,3).map((l,i)=>'<text x="70" y="'+(175+i*62)+'" font-size="44" font-weight="800" fill="#102033">'+safe(l)+'</text>').join("");
   const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675"><rect width="1200" height="675" fill="#fbfaf7"/><rect x="45" y="50" width="1110" height="575" rx="34" fill="#f2f2ed"/><rect x="760" y="105" width="330" height="455" rx="30" fill="#d8efe9"/><text x="70" y="105" font-size="20" font-weight="700" fill="#176b5b">'+safe(category)+'</text>'+textLines+'<text x="70" y="535" font-size="26" fill="#405064">HomeCostEngine</text><path d="M825 405l100-120 100 120" fill="#f0b56a" stroke="#102033" stroke-width="7"/><rect x="855" y="405" width="140" height="100" fill="#fff" stroke="#102033" stroke-width="6"/><circle cx="925" cy="455" r="22" fill="#176b5b"/></svg>';
   const figure=document.createElement("figure");
