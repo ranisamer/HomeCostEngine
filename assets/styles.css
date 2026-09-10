@@ -381,3 +381,62 @@ main article.info-copy>p{margin:0 0 1.15em}
   .info-copy h2{font-size:1.5rem!important}.lead{font-size:1rem}.blog-figure{margin:26px 0 30px}
   .article-cover.hce-photo-cover{height:205px!important}
 }
+
+
+/* Unique, article-specific blog card artwork */
+.hce-topic-cover{position:relative;isolation:isolate;overflow:hidden;align-items:flex-end!important;color:#fff;background:linear-gradient(140deg,var(--cover-a),var(--cover-b))!important}
+.hce-topic-cover::before{content:"";position:absolute;inset:-28% -14% auto auto;width:180px;height:180px;border:1px solid rgba(255,255,255,.28);border-radius:50%;box-shadow:0 0 0 26px rgba(255,255,255,.06),0 0 0 55px rgba(255,255,255,.035);z-index:-1}
+.hce-topic-cover::after{content:"";position:absolute;inset:auto -10% -56% 26%;height:150px;background:rgba(255,255,255,.1);transform:skewX(-24deg);z-index:-1}
+.cover-icon{font-family:Georgia,"Times New Roman",serif;font-size:3.15rem;line-height:1;margin-right:15px;text-shadow:0 2px 12px rgba(0,0,0,.18)}
+.cover-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.cover-copy small{font:700 .66rem/1.2 Inter,ui-sans-serif,sans-serif;letter-spacing:.09em;text-transform:uppercase;opacity:.82}
+.cover-copy strong{font:700 .96rem/1.15 Georgia,"Times New Roman",serif;letter-spacing:.015em}
+.article:hover .hce-topic-cover{filter:saturate(1.08) brightness(1.03)}
+.cover-1{--cover-a:#253d5b;--cover-b:#7b9ab6;background-position:7% 93%!important}
+.cover-2{--cover-a:#6e3f31;--cover-b:#c28f6d;background-position:14% 86%!important}
+.cover-3{--cover-a:#334f3f;--cover-b:#84a17f;background-position:21% 79%!important}
+.cover-4{--cover-a:#57456d;--cover-b:#a48db6;background-position:4% 96%!important}
+.cover-5{--cover-a:#1f5960;--cover-b:#70a7a1;background-position:11% 89%!important}
+.cover-6{--cover-a:#704f22;--cover-b:#c5a05d;background-position:18% 82%!important}
+.cover-7{--cover-a:#3f5368;--cover-b:#91a3b4;background-position:1% 99%!important}
+.cover-8{--cover-a:#713d4d;--cover-b:#bc8491;background-position:8% 92%!important}
+.cover-9{--cover-a:#35566e;--cover-b:#74a5bd;background-position:15% 85%!important}
+.cover-10{--cover-a:#445c35;--cover-b:#93a96d;background-position:22% 78%!important}
+.cover-11{--cover-a:#67472f;--cover-b:#b9865d;background-position:5% 95%!important}
+.cover-12{--cover-a:#2d4b4e;--cover-b:#7fa2a0;background-position:12% 88%!important}
+.cover-13{--cover-a:#253d5b;--cover-b:#7b9ab6;background-position:19% 81%!important}
+.cover-14{--cover-a:#6e3f31;--cover-b:#c28f6d;background-position:2% 98%!important}
+.cover-15{--cover-a:#334f3f;--cover-b:#84a17f;background-position:9% 91%!important}
+.cover-16{--cover-a:#57456d;--cover-b:#a48db6;background-position:16% 84%!important}
+.cover-17{--cover-a:#1f5960;--cover-b:#70a7a1;background-position:23% 77%!important}
+.cover-18{--cover-a:#704f22;--cover-b:#c5a05d;background-position:6% 94%!important}
+.cover-19{--cover-a:#3f5368;--cover-b:#91a3b4;background-position:13% 87%!important}
+.cover-20{--cover-a:#713d4d;--cover-b:#bc8491;background-position:20% 80%!important}
+.cover-21{--cover-a:#35566e;--cover-b:#74a5bd;background-position:3% 97%!important}
+.cover-22{--cover-a:#445c35;--cover-b:#93a96d;background-position:10% 90%!important}
+.cover-23{--cover-a:#67472f;--cover-b:#b9865d;background-position:17% 83%!important}
+.cover-24{--cover-a:#2d4b4e;--cover-b:#7fa2a0;background-position:0% 100%!important}
+.cover-25{--cover-a:#253d5b;--cover-b:#7b9ab6;background-position:7% 93%!important}
+.cover-26{--cover-a:#6e3f31;--cover-b:#c28f6d;background-position:14% 86%!important}
+.cover-27{--cover-a:#334f3f;--cover-b:#84a17f;background-position:21% 79%!important}
+.cover-28{--cover-a:#57456d;--cover-b:#a48db6;background-position:4% 96%!important}
+.cover-29{--cover-a:#1f5960;--cover-b:#70a7a1;background-position:11% 89%!important}
+.cover-30{--cover-a:#704f22;--cover-b:#c5a05d;background-position:18% 82%!important}
+.cover-31{--cover-a:#3f5368;--cover-b:#91a3b4;background-position:1% 99%!important}
+.cover-32{--cover-a:#713d4d;--cover-b:#bc8491;background-position:8% 92%!important}
+.cover-33{--cover-a:#35566e;--cover-b:#74a5bd;background-position:15% 85%!important}
+.cover-34{--cover-a:#445c35;--cover-b:#93a96d;background-position:22% 78%!important}
+.cover-35{--cover-a:#67472f;--cover-b:#b9865d;background-position:5% 95%!important}
+.cover-36{--cover-a:#2d4b4e;--cover-b:#7fa2a0;background-position:12% 88%!important}
+.cover-37{--cover-a:#253d5b;--cover-b:#7b9ab6;background-position:19% 81%!important}
+.cover-38{--cover-a:#6e3f31;--cover-b:#c28f6d;background-position:2% 98%!important}
+.cover-39{--cover-a:#334f3f;--cover-b:#84a17f;background-position:9% 91%!important}
+.cover-40{--cover-a:#57456d;--cover-b:#a48db6;background-position:16% 84%!important}
+.cover-41{--cover-a:#1f5960;--cover-b:#70a7a1;background-position:23% 77%!important}
+.cover-42{--cover-a:#704f22;--cover-b:#c5a05d;background-position:6% 94%!important}
+.cover-43{--cover-a:#3f5368;--cover-b:#91a3b4;background-position:13% 87%!important}
+.cover-44{--cover-a:#713d4d;--cover-b:#bc8491;background-position:20% 80%!important}
+.cover-45{--cover-a:#35566e;--cover-b:#74a5bd;background-position:3% 97%!important}
+.cover-46{--cover-a:#445c35;--cover-b:#93a96d;background-position:10% 90%!important}
+.cover-47{--cover-a:#67472f;--cover-b:#b9865d;background-position:17% 83%!important}
+.cover-48{--cover-a:#2d4b4e;--cover-b:#7fa2a0;background-position:0% 100%!important}
