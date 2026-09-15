@@ -2,7 +2,6 @@
   const money = n => new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(Math.round(n || 0));
   const moneyUnit = n => new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(Math.round(n || 0));
   const $ = id => document.getElementById(id);
-
   const projects = {
     kitchen:{name:"Kitchen remodel",unit:"sq ft",qty:200,low:80,high:225,permit:850,demo:.06,mat:.54,labor:.46,timeline:"4–12 weeks",checks:["Cabinet type and installation","Countertop material and edge","Appliance allowance","Plumbing/electrical changes","Flooring and backsplash","Permit responsibility"]},
     bathroom:{name:"Bathroom remodel",unit:"sq ft",qty:60,low:150,high:400,permit:700,demo:.07,mat:.50,labor:.50,timeline:"3–8 weeks",checks:["Tile area and waterproofing","Vanity and countertop","Plumbing relocation","Shower/tub specification","Ventilation and electrical","Permit responsibility"]},
@@ -17,80 +16,14 @@
     garagedoor:{name:"Garage door replacement",unit:"door",qty:1,low:1300,high:3200,permit:150,demo:.04,mat:.67,labor:.33,timeline:"3–8 hours",checks:["Door size","Insulation level","Window / design options","Opener included?","Track / spring replacement","Removal and warranty"]},
     driveway:{name:"Concrete driveway",unit:"sq ft",qty:600,low:8,high:18,permit:350,demo:.12,mat:.50,labor:.50,timeline:"3–7 days + cure",checks:["Slab thickness","Base preparation","Reinforcement","Old driveway removal","Drainage / grading","Finish and control joints"]}
   };
-
   function setBar(id, amount, total){const el=$(id);if(!el)return;el.style.width=`${Math.max(2,Math.min(100,(amount/Math.max(total,1))*100))}%`;}
-
-  function updateProjectUI(){
-    const p=projects[$("projectType").value];
-    const plural=["window","unit","panel","door"].includes(p.unit)?"s":"";
-    $("quantityLabel").textContent=`Project size (${p.unit}${plural})`;
-    $("projectQuantity").value=p.qty;
-    $("projectChecklistTitle").textContent=`${p.name} quote checklist`;
-    $("projectChecks").innerHTML=p.checks.map(x=>`<div class="check">✓ ${x}</div>`).join("");
-    calculate();
-  }
-
+  function updateProjectUI(){const p=projects[$("projectType").value];const plural=["window","unit","panel","door"].includes(p.unit)?"s":"";$("quantityLabel").textContent=`Project size (${p.unit}${plural})`;$("projectQuantity").value=p.qty;$("projectChecklistTitle").textContent=`${p.name} quote checklist`;$("projectChecks").innerHTML=p.checks.map(x=>`<div class="check">✓ ${x}</div>`).join("");calculate();}
   function calculate(){
-    const p=projects[$("projectType").value];
-    const qty=Math.max(1,Number($("projectQuantity").value)||p.qty);
-    const finish=Number($("finishLevel").value)||1;
-    const market=Number($("marketLevel").value)||1;
-    const age=Number($("homeAge").value)||1;
-    const complexity=Number($("complexity").value)||1;
-    const factor=finish*market*age*complexity;
-    const baseLow=qty*p.low*factor;
-    const baseHigh=qty*p.high*factor;
-    const includeDemo=$("demolition").value==="yes";
-    const demoLow=includeDemo?baseLow*p.demo*.85:0;
-    const demoHigh=includeDemo?baseHigh*p.demo*1.15:0;
-    const includePermit=$("permit").value==="auto";
-    const permitMid=includePermit?p.permit*market:0;
-    const permitLow=permitMid*.75;
-    const permitHigh=permitMid*1.35;
-    const subtotalLow=baseLow+demoLow+permitLow;
-    const subtotalHigh=baseHigh+demoHigh+permitHigh;
-    const contingencyPct=Number($("contingency").value)||0;
-    const low=subtotalLow*(1+contingencyPct);
-    const high=subtotalHigh*(1+contingencyPct);
-    const mid=(low+high)/2;
-    const baseMid=(baseLow+baseHigh)/2;
-    const demoMid=(demoLow+demoHigh)/2;
-    const contingencyMid=((subtotalLow+subtotalHigh)/2)*contingencyPct;
-    const materials=baseMid*p.mat;
-    const labor=baseMid*p.labor;
-    $("estimateRange").textContent=`${money(low)} – ${money(high)}`;
-    $("estimateMid").textContent=`Planning midpoint ${money(mid)} • ${p.name}`;
-    $("midpoint").textContent=money(mid);
-    $("unitHeading").textContent=`Cost per ${p.unit}`;
-    $("unitCost").textContent=`${moneyUnit(mid/qty)} / ${p.unit}`;
-    $("timeline").textContent=p.timeline;
-    $("contingencyAmount").textContent=money(contingencyMid);
-    $("materialsCost").textContent=money(materials);
-    $("laborCost").textContent=money(labor);
-    $("demoCost").textContent=money(demoMid);
-    $("permitCost").textContent=money(permitMid);
-    const visibleTotal=materials+labor+demoMid+permitMid;
-    setBar("materialsBar",materials,visibleTotal);setBar("laborBar",labor,visibleTotal);setBar("demoBar",demoMid,visibleTotal);setBar("permitBar",permitMid,visibleTotal);
-    compareQuote(mid);
+    const p=projects[$("projectType").value],qty=Math.max(1,Number($("projectQuantity").value)||p.qty),finish=Number($("finishLevel").value)||1,market=Number($("marketLevel").value)||1,age=Number($("homeAge").value)||1,complexity=Number($("complexity").value)||1,factor=finish*market*age*complexity;
+    const baseLow=qty*p.low*factor,baseHigh=qty*p.high*factor,includeDemo=$("demolition").value==="yes",demoLow=includeDemo?baseLow*p.demo*.85:0,demoHigh=includeDemo?baseHigh*p.demo*1.15:0,includePermit=$("permit").value==="auto",permitMid=includePermit?p.permit*market:0,permitLow=permitMid*.75,permitHigh=permitMid*1.35,subtotalLow=baseLow+demoLow+permitLow,subtotalHigh=baseHigh+demoHigh+permitHigh,contingencyPct=Number($("contingency").value)||0,low=subtotalLow*(1+contingencyPct),high=subtotalHigh*(1+contingencyPct),mid=(low+high)/2,baseMid=(baseLow+baseHigh)/2,demoMid=(demoLow+demoHigh)/2,contingencyMid=((subtotalLow+subtotalHigh)/2)*contingencyPct,materials=baseMid*p.mat,labor=baseMid*p.labor;
+    $("estimateRange").textContent=`${money(low)} – ${money(high)}`;$("estimateMid").textContent=`Planning midpoint ${money(mid)} • ${p.name}`;$("midpoint").textContent=money(mid);$("unitHeading").textContent=`Cost per ${p.unit}`;$("unitCost").textContent=`${moneyUnit(mid/qty)} / ${p.unit}`;$("timeline").textContent=p.timeline;$("contingencyAmount").textContent=money(contingencyMid);$("materialsCost").textContent=money(materials);$("laborCost").textContent=money(labor);$("demoCost").textContent=money(demoMid);$("permitCost").textContent=money(permitMid);
+    const visibleTotal=materials+labor+demoMid+permitMid;setBar("materialsBar",materials,visibleTotal);setBar("laborBar",labor,visibleTotal);setBar("demoBar",demoMid,visibleTotal);setBar("permitBar",permitMid,visibleTotal);compareQuote(mid);
   }
-
-  function compareQuote(mid){
-    const quote=Number($("contractorQuote").value)||0;
-    if(!quote){$("quoteComparison").textContent="Add a quote to see the percentage difference.";return;}
-    const diff=(quote-mid)/mid*100, abs=Math.abs(diff).toFixed(0);
-    let text="";
-    if(Math.abs(diff)<10) text=`This quote is about ${abs}% ${diff>=0?"above":"below"} the planning midpoint. Compare scope, allowances and warranty before drawing a conclusion.`;
-    else if(diff>=10) text=`This quote is about ${abs}% above the planning midpoint. Ask what added scope, material grade, access, code work or warranty explains the difference.`;
-    else text=`This quote is about ${abs}% below the planning midpoint. Check for exclusions, allowances, disposal, permits, product specifications and change-order terms.`;
-    $("quoteComparison").textContent=text;
-  }
-
-  document.addEventListener("DOMContentLoaded",()=>{
-    const form=$("remodelEstimator");if(!form)return;
-    $("projectType").addEventListener("change",updateProjectUI);
-    ["projectQuantity","finishLevel","marketLevel","homeAge","complexity","demolition","permit","contingency"].forEach(id=>{$(id)?.addEventListener("input",calculate);$(id)?.addEventListener("change",calculate);});
-    $("contractorQuote").addEventListener("input",calculate);
-    form.addEventListener("submit",e=>{e.preventDefault();calculate();});
-    updateProjectUI();
-  });
+  function compareQuote(mid){const quote=Number($("contractorQuote").value)||0;if(!quote){$("quoteComparison").textContent="Add a quote to see the percentage difference.";return;}const diff=(quote-mid)/mid*100,abs=Math.abs(diff).toFixed(0);let text="";if(Math.abs(diff)<10)text=`This quote is about ${abs}% ${diff>=0?"above":"below"} the planning midpoint. Compare scope, allowances and warranty before drawing a conclusion.`;else if(diff>=10)text=`This quote is about ${abs}% above the planning midpoint. Ask what added scope, material grade, access, code work or warranty explains the difference.`;else text=`This quote is about ${abs}% below the planning midpoint. Check for exclusions, allowances, disposal, permits, product specifications and change-order terms.`;$("quoteComparison").textContent=text;}
+  document.addEventListener("DOMContentLoaded",()=>{const form=$("remodelEstimator");if(!form)return;const requested=new URLSearchParams(window.location.search).get("project");if(requested&&projects[requested])$("projectType").value=requested;$("projectType").addEventListener("change",updateProjectUI);["projectQuantity","finishLevel","marketLevel","homeAge","complexity","demolition","permit","contingency"].forEach(id=>{$(id)?.addEventListener("input",calculate);$(id)?.addEventListener("change",calculate);});$("contractorQuote").addEventListener("input",calculate);form.addEventListener("submit",e=>{e.preventDefault();calculate();});updateProjectUI();});
 })();
