@@ -102,6 +102,35 @@ function calculate(type, raw={}){
     const ratio=rise/run,pitch12=ratio*12,angle=Math.atan(ratio)*180/Math.PI,slope=ratio*100,mult=Math.sqrt(1+ratio*ratio);
     return {title:"Roof Pitch Report",subject:`Your roof pitch: ${number(pitch12,1)}:12`,url:"https://homecostengine.com/calculators/roof-pitch.html",summary:`Your roof pitch is approximately ${number(pitch12,1)}:12, or ${number(angle,1)} degrees.`,metrics:[["Pitch",`${number(pitch12,1)}:12`],["Angle",`${number(angle,1)}°`],["Slope",`${number(slope,1)}%`],["Area multiplier",`${number(mult,3)}×`]],note:"Pitch measurements should be taken safely. Do not access a roof if conditions or equipment make measurement unsafe."};
   }
+  if(type==="maintenance"){
+    const value=finite(raw.homeValue,1,1e9),rate=finite(raw.rate,0,10),known=finite(raw.known,0,1e9);
+    if(![value,rate,known].every(Number.isFinite)) throw new Error("Check your maintenance budget inputs.");
+    const annual=value*rate/100+known,monthly=annual/12;
+    return {title:"Home Maintenance Budget Report",subject:`Your annual maintenance reserve: ${money(annual)}`,url:"https://homecostengine.com/calculators/home-maintenance-budget.html",summary:`Your planning reserve is ${money(annual)} per year, or about ${money(monthly)} per month.`,metrics:[["Estimated home value",money(value)],["Planning rate",`${number(rate,1)}%`],["Known annual maintenance",money(known)],["Annual reserve",money(annual)],["Monthly set-aside",money(monthly)]],note:"This percentage method is a starting point. Home age, climate, system condition and deferred maintenance can materially change the amount needed."};
+  }
+  if(type==="split"){
+    const total=finite(raw.total,1,1e12),laborPct=finite(raw.labor,0,100),materialPct=finite(raw.material,0,100);
+    if(![total,laborPct,materialPct].every(Number.isFinite)||laborPct+materialPct>100) throw new Error("Check the estimate and percentage shares.");
+    const otherPct=100-laborPct-materialPct;
+    return {title:"Labor and Material Cost Split Report",subject:`Your project cost split: ${money(total)}`,url:"https://homecostengine.com/calculators/labor-material-split.html",summary:`Your ${money(total)} estimate has been separated into labor, materials and other costs.`,metrics:[["Total estimate",money(total)],["Labor",`${money(total*laborPct/100)} (${number(laborPct,1)}%)`],["Materials",`${money(total*materialPct/100)} (${number(materialPct,1)}%)`],["Other / overhead",`${money(total*otherPct/100)} (${number(otherPct,1)}%)`]],note:"Actual cost structures vary by trade and contractor. Use this split for planning and compare written scope, specifications, exclusions and allowances."};
+  }
+  if(type==="contingency"){
+    const base=finite(raw.base,1,1e12),rate=finite(raw.rate,0,100),allowance=finite(raw.allowance,0,1e12);
+    if(![base,rate,allowance].every(Number.isFinite)) throw new Error("Check your contingency inputs.");
+    const reserve=base*rate/100,total=base+allowance+reserve;
+    return {title:"Project Contingency Report",subject:`Your planning budget: ${money(total)}`,url:"https://homecostengine.com/calculators/project-contingency.html",summary:`Your total planning budget is ${money(total)}, including a ${money(reserve)} contingency reserve.`,metrics:[["Base estimate",money(base)],["Known allowances",money(allowance)],["Contingency rate",`${number(rate,1)}%`],["Contingency reserve",money(reserve)],["Total planning budget",money(total)]],note:"Keep contingency separate from known allowances. Release it only for documented changes or unexpected conditions."};
+  }
+  if(type==="quotes"){
+    const quotes=Array.isArray(raw.quotes)?raw.quotes.slice(0,3):[];
+    if(quotes.length!==3) throw new Error("Enter all three contractor quotes.");
+    const metrics=[];quotes.forEach((q,i)=>{const price=finite(q.price,0,1e12),allowance=finite(q.allowance,0,1e12),scope=finite(q.scope,1,5),warranty=finite(q.warranty,1,5);if(![price,allowance,scope,warranty].every(Number.isFinite))throw new Error("Check the contractor quote inputs.");metrics.push([`Quote ${String.fromCharCode(65+i)}`,`${money(price)} total • ${money(Math.max(0,price-allowance))} less allowances • scope ${scope}/5 • warranty ${warranty}/5`]);});
+    return {title:"Contractor Quote Comparison Report",subject:"Your contractor quote comparison",url:"https://homecostengine.com/calculators/contractor-quote-comparison.html",summary:"Your three quotes are organized below so you can compare price, allowances, scope completeness and warranty clarity.",metrics,note:"The lowest price or highest score is not automatically the best contractor. Verify licensing, insurance, references, exclusions, payment terms and written scope."};
+  }
+  if(type==="remodel"){
+    const clean=(v,max=120)=>String(v||"").replace(/[<>]/g,"").slice(0,max);
+    const qty=finite(raw.quantity,1,1e8);if(!Number.isFinite(qty)||!clean(raw.estimateRange)) throw new Error("Build your renovation budget before sending the report.");
+    return {title:"Home Renovation Cost Report",subject:`Your ${clean(raw.projectName,60)} estimate: ${clean(raw.estimateRange,80)}`,url:"https://homecostengine.com/calculators/remodeling-cost.html",summary:`Your planning range for ${clean(raw.projectName,60).toLowerCase()} in ${clean(raw.stateName,80)} is ${clean(raw.estimateRange,80)}.`,metrics:[["Project",clean(raw.projectName,80)],["Location",clean(raw.stateName,80)],["Project size",number(qty,0)],["Estimated range",clean(raw.estimateRange,80)],["Planning midpoint",clean(raw.midpoint,60)],["Unit cost",clean(raw.unitCost,60)],["Typical timeline",clean(raw.timeline,60)],["Materials",clean(raw.materials,60)],["Labor",clean(raw.labor,60)],["Demolition / disposal",clean(raw.demo,60)],["Permit allowance",clean(raw.permitCost,60)],["Contingency",clean(raw.contingencyAmount,60)]],note:"This is a state-adjusted planning model, not a contractor quote. Compare itemized local bids with matching scope, allowances, exclusions and warranty terms."};
+  }
 
   throw new Error("Unsupported calculator report.");
 }
