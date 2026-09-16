@@ -126,13 +126,28 @@ function currentCalculatorInputs(type){
   if(type==="gravel") return {gravelArea:num("gravelArea"), gravelDepth:num("gravelDepth"), gravelType:Number(val("gravelType")), gravelWaste:Number(val("gravelWaste")), gravelPrice:num("gravelPrice")};
   if(type==="roofsquare") return {rsArea:num("rsArea"), rsWaste:Number(val("rsWaste")), rsBundles:num("rsBundles")};
   if(type==="roofpitch") return {pitchRise:num("pitchRise"), pitchRun:num("pitchRun")};
+  if(type==="maintenance") return {homeValue:num("value"), rate:num("rate"), known:num("known")};
+  if(type==="split") return {total:num("total"), labor:num("labor"), material:num("material")};
+  if(type==="contingency") return {base:num("base"), rate:num("rate"), allowance:num("allow")};
+  if(type==="quotes") return {quotes:[0,1,2].map(i=>({price:num(`p${i}`),allowance:num(`a${i}`),scope:num(`s${i}`),warranty:num(`w${i}`)}))};
+  if(type==="remodel") return {
+    projectType:val("projectType"), projectName:document.querySelector("#projectType option:checked")?.textContent||"Renovation project",
+    stateCode:val("stateCode"), stateName:document.querySelector("#stateCode option:checked")?.textContent||"U.S. national baseline",
+    quantity:num("projectQuantity"), finishLevel:Number(val("finishLevel")), marketLevel:Number(val("marketLevel")),
+    homeAge:Number(val("homeAge")), complexity:Number(val("complexity")), demolition:val("demolition"), permit:val("permit"),
+    contingency:Number(val("contingency")), estimateRange:document.getElementById("estimateRange")?.textContent||"",
+    midpoint:document.getElementById("midpoint")?.textContent||"", unitCost:document.getElementById("unitCost")?.textContent||"",
+    timeline:document.getElementById("timeline")?.textContent||"", materials:document.getElementById("materialsCost")?.textContent||"",
+    labor:document.getElementById("laborCost")?.textContent||"", demo:document.getElementById("demoCost")?.textContent||"",
+    permitCost:document.getElementById("permitCost")?.textContent||"", contingencyAmount:document.getElementById("contingencyAmount")?.textContent||""
+  };
   return {};
 }
 
 function injectEmailReportForm(type){
-  const shell=document.querySelector(".calc-shell");
+  const shell=document.querySelector(".calc-shell, .hce-tool");
   if(!shell || document.querySelector(".calculator-report-form")) return;
-  const labels={roof:"roof cost", concrete:"concrete", hvac:"HVAC", paint:"paint", floor:"flooring", mulch:"mulch", sqft:"square footage", cubicyard:"cubic yard", gravel:"gravel", roofsquare:"roofing square", roofpitch:"roof pitch"};
+  const labels={roof:"roof cost", concrete:"concrete", hvac:"HVAC", paint:"paint", floor:"flooring", mulch:"mulch", sqft:"square footage", cubicyard:"cubic yard", gravel:"gravel", roofsquare:"roofing square", roofpitch:"roof pitch", remodel:"renovation cost", maintenance:"home maintenance budget", split:"labor and material split", contingency:"project contingency", quotes:"contractor quote comparison"};
   const wrap=document.createElement("div");
   wrap.className="report-capture";
   wrap.innerHTML=`
@@ -191,5 +206,6 @@ document.addEventListener("DOMContentLoaded",()=>{
   const type=document.body.dataset.calculator;
   const fn={roof:roofCalc,concrete:concreteCalc,paint:paintCalc,floor:floorCalc,mulch:mulchCalc,hvac:hvacCalc,sqft:squareFootageCalc,cubicyard:cubicYardCalc,gravel:gravelCalc,roofsquare:roofingSquareCalc,roofpitch:roofPitchCalc}[type];
   const form=document.getElementById("calculatorForm");
-  if(form&&fn){form.addEventListener("submit",e=>{e.preventDefault();fn()}); fn(); injectEmailReportForm(type);}
+  if(form&&fn){form.addEventListener("submit",e=>{e.preventDefault();fn()}); fn();}
+  if(type) injectEmailReportForm(type);
 });
