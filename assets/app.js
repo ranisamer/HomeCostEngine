@@ -395,7 +395,7 @@ function injectBlogArticleAds(){
 function injectCalculatorAds(){
   const main=document.querySelector("main"); if(!main) return;
   const sections=Array.from(main.children).filter(el=>el.tagName==="SECTION");
-  const calcSection=sections.find(section=>section.querySelector(".calc-shell"))||sections[1]||sections[0];
+  const calcSection=sections.find(section=>section.querySelector(".calc-shell, .hce-tool"))||sections[1]||sections[0];
   const infoSection=sections.find(section=>section!==calcSection && section.querySelector(".info-copy"))||sections[sections.length-1];
   const firstBand=adBand("top",HCE_ADSENSE_CONFIG.slots.top);
   const secondBand=adBand("bottom",HCE_ADSENSE_CONFIG.slots.bottom);
