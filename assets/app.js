@@ -98,9 +98,9 @@ const HCE_BLOG_TOPICS = {
     imageSource: "https://pixabay.com/photos/country-side-gravel-road-nature-5284614/",
     imageCredit: "Gravel road photo on Pixabay",
     internal: [
-      ["Gravel Calculator", "/calculators/gravel.html"],
+      ["Gravel Calculator", "/calculators/gravel"],
       ["Cubic Yard Calculator", "/calculators/cubic-yard.html"],
-      ["Gravel Driveway Cost", "/blog/gravel-driveway-cost.html"]
+      ["Gravel Driveway Cost", "/blog/gravel-driveway-cost"]
     ],
     external: [
       ["EPA WaterSense Landscaping Tips", "https://www.epa.gov/watersense/landscaping-tips"],
