@@ -49,7 +49,7 @@ const HCE_BLOG_TOPICS = {
     internal: [
       ["HVAC Replacement Cost Calculator", "/calculators/hvac.html"],
       ["HVAC Repair vs Replacement", "/blog/hvac-repair-vs-replacement.html"],
-      ["Heat Pump vs Central Air Cost", "/blog/heat-pump-vs-central-air-cost.html"]
+      ["Heat Pump vs Central Air Cost", "/blog/heat-pump-vs-central-air-cost"]
     ],
     external: [
       ["ENERGY STAR: Heat & Cool Efficiently", "https://www.energystar.gov/saveathome/heating-cooling"],
