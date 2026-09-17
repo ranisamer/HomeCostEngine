@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Roof Replacement Cost Calculator (2026) | HomeCostEngine</title>
-<meta name="description" content="Free 2026 roof replacement cost calculator. Estimate roofing cost by roof size, material, pitch, stories, tear-off and local market assumptions.">
+<title>Roof Replacement Cost Calculator (2026) | State & Material</title>
+<meta name="description" content="Estimate 2026 roof replacement cost by roof area, state, material, pitch, stories, tear-off layers, decking repairs, roof details, permits and contingency.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#102033">
-<link rel="canonical" href="https://homecostengine.com/calculators/roof-replacement.html">
-<meta property="og:title" content="Roof Replacement Cost Calculator (2026) | HomeCostEngine">
-<meta property="og:description" content="Estimate roof replacement cost by roof size, material, pitch, stories, tear-off and local market assumptions.">
+<link rel="canonical" href="https://homecostengine.com/calculators/roof-replacement">
+<meta property="og:title" content="Roof Replacement Cost Calculator (2026)">
+<meta property="og:description" content="Build a state-adjusted roof replacement budget with tear-off, decking, roof details, permit and contingency allowances.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HomeCostEngine">
 <link rel="stylesheet" href="/assets/styles.css?v=20260916-value1">
@@ -23,7 +23,7 @@
       <details class="nav-dropdown">
         <summary>Calculators</summary>
         <div class="nav-dropdown-menu">
-          <a href="/calculators/roof-replacement.html"><b>Roof Replacement</b><span>Estimate roofing cost by size and material.</span></a>
+          <a href="/calculators/roof-replacement"><b>Roof Replacement</b><span>Estimate roofing cost by size and material.</span></a>
           <a href="/calculators/hvac.html"><b>HVAC Replacement</b><span>Plan heating and cooling replacement cost.</span></a>
           <a href="/calculators/concrete.html"><b>Concrete Calculator</b><span>Calculate cubic yards and material cost.</span></a>
           <a href="/calculators/paint.html"><b>Paint Calculator</b><span>Estimate wall area, gallons and paint cost.</span></a>
@@ -39,41 +39,52 @@
 </header>
 <main>
 <section class="page-hero"><div class="container"><div class="breadcrumb"><a href="/">Home</a> / <a href="/calculators/">Calculators</a> / Roof Replacement Cost Calculator</div>
-<span class="eyebrow">Free 2026 calculator</span><h1>Roof Replacement Cost Calculator</h1><p class="lead">Use our free roof replacement cost calculator to estimate a roofing budget by roof area, material, pitch, stories, tear-off and local market cost level.</p></div></section>
+<span class="eyebrow">2026 U.S. roofing planner</span><h1>Roof Replacement Cost Calculator</h1><p class="lead">Build a transparent roofing budget by roof area, state, material, pitch, stories, tear-off layers, decking repairs, roof details, permit and contingency.</p><div class="micro">Updated September 17, 2026 • All 50 states + D.C. • Free email report</div></div></section>
 <section class="section" style="padding-top:15px"><div class="container calc-layout">
   <div class="calc-shell"><h2>Your project details</h2><p class="muted">Change the assumptions below to match your project.</p>
   <form id="calculatorForm" class="form-grid">
 <div class="field"><label for="area">Roof area (sq ft)</label><input id="area" type="number" value="2000" min="100"></div>
+<div class="field"><label for="roofState">State price baseline</label><select id="roofState"><option value="US" selected>U.S. national baseline</option></select></div>
 <div class="field"><label for="material">Roof material</label><select id="material"><option value="asphalt">Asphalt shingles</option><option value="metal">Metal roofing</option><option value="tile">Tile</option><option value="wood">Wood shake</option><option value="slate">Slate</option></select></div>
 <div class="field"><label for="pitch">Roof complexity / pitch</label><select id="pitch"><option value="1">Simple / low–standard pitch</option><option value="1.1">Moderate</option><option value="1.25">Steep / complex</option></select></div>
 <div class="field"><label for="stories">Stories</label><select id="stories"><option value="1">1 story</option><option value="1.05" selected>2 stories</option><option value="1.12">3+ stories</option></select></div>
-<div class="field"><label for="tearoff">Remove existing roof?</label><select id="tearoff"><option value="yes">Yes</option><option value="no">No / new construction</option></select></div>
+<div class="field"><label for="tearoff">Existing layers to remove</label><select id="tearoff"><option value="0">None / new construction</option><option value="1" selected>1 layer</option><option value="2">2 layers</option><option value="3">3+ layers</option></select></div>
 <div class="field"><label for="market">Local market cost level</label><select id="market"><option value=".9">Lower-cost market</option><option value="1" selected>Typical market</option><option value="1.15">Higher-cost market</option></select></div>
+<div class="field"><label for="deckArea">Decking repair allowance (sq ft)</label><input id="deckArea" type="number" value="100" min="0" step="10"></div>
+<div class="field"><label for="roofFeatures">Skylights, chimneys & complex details</label><input id="roofFeatures" type="number" value="2" min="0" max="100" step="1"></div>
+<div class="field"><label for="roofPermit">Permit allowance</label><input id="roofPermit" type="number" value="350" min="0" step="50"></div>
+<div class="field"><label for="roofContingency">Planning contingency</label><select id="roofContingency"><option value="0">0%</option><option value=".05">5%</option><option value=".10" selected>10%</option><option value=".15">15%</option></select></div>
 <div class="field full"><button class="btn full" type="submit">Calculate My Estimate →</button></div></form>
-  <div class="notice">Planning estimate only. Actual contractor pricing varies with scope, access, code requirements, permits, labor availability, product brand, warranty and site conditions.</div>
+  <div class="notice"><strong>Planning range:</strong> The state factor is a broad price-level sensitivity, not ZIP-code contractor pricing. Verify the measured roof, product specifications, deck condition, code upgrades and complete scope locally.</div>
   </div>
   <aside class="result-card"><span class="kicker">Your planning result</span><div id="result" class="result-big">—</div><div id="range" class="result-range">Enter your details</div>
-  <div class="breakdown"><div class="row"><span>Unit / sizing</span><strong id="unit">—</strong></div><div class="row"><span>Materials</span><strong id="materials">—</strong></div><div class="row"><span>Labor</span><strong id="labor">—</strong></div><div class="row"><span>Other / waste</span><strong id="other">—</strong></div></div>
+  <div class="breakdown"><div class="row"><span>All-in unit range</span><strong id="unit">—</strong></div><div class="row"><span>Roof system midpoint</span><strong id="materials">—</strong></div><div class="row"><span>Repairs / roof details</span><strong id="labor">—</strong></div><div class="row"><span>Contingency midpoint</span><strong id="other">—</strong></div></div>
   <p class="micro" style="color:#aebdca">Use this as a budgeting starting point and compare multiple local quotes before hiring.</p></aside>
 </div></section>
 <section class="section alt"><div class="container info-copy">
-<h2>How this roof replacement cost calculator works</h2><p>The calculator starts with an installed roofing cost-per-square-foot planning range for the selected material, then adjusts for pitch and complexity, building height, local market level and tear-off. It is designed for budgeting rather than predicting an exact contractor bid.</p>
+<h2>How this roof replacement cost calculator works</h2><p>The calculator starts with an installed cost-per-square-foot planning range for the selected material. It adjusts that range for pitch and complexity, building height, broad state price levels and local-market sensitivity. It then adds tear-off layers, decking-repair allowance, skylights or other complex roof details, permits and owner-controlled contingency.</p>
+<div class="notice"><strong>State methodology:</strong> State selection uses 2024 Regional Price Parities from the U.S. Bureau of Economic Analysis. HomeCostEngine moderates the difference from the national baseline because construction-specific labor, products, insurance, permits and contractor availability do not move exactly with general consumer prices.</div>
 <h2>Roof replacement cost per square foot</h2><p>Roof replacement cost per square foot changes with roofing material, labor, roof access, pitch, tear-off, decking repairs and local pricing. Enter the actual roof surface area above instead of relying only on your home’s interior square footage.</p>
 <h3>Roof replacement cost by house size</h3><p>Planning a common house-size scenario? See our guides for <a class="card-link" href="/blog/roof-replacement-cost-1500-sq-ft-house.html">roof replacement cost for a 1,500 sq ft house</a>, <a class="card-link" href="/blog/roof-replacement-cost-2000-sq-ft-house.html">roof replacement cost for a 2,000 sq ft house</a>, and <a class="card-link" href="/blog/roof-replacement-cost-2500-sq-ft-house.html">roof replacement cost for a 2,500 sq ft house</a>.</p>
-<h3>Roof replacement cost by state</h3><p>Start with our detailed guides for <a class="card-link" href="/states/roof-replacement-cost-texas.html">Texas</a>, <a class="card-link" href="/states/roof-replacement-cost-florida.html">Florida</a>, <a class="card-link" href="/states/roof-replacement-cost-california.html">California</a>, <a class="card-link" href="/states/roof-replacement-cost-new-york.html">New York</a> and <a class="card-link" href="/states/roof-replacement-cost-pennsylvania.html">Pennsylvania</a>, or use the <a class="card-link" href="/calculators/remodeling-cost.html?project=roof">state-adjusted planner</a> for all 50 states.</p>
+<h3>Roof replacement cost by state</h3><p>Start with our detailed guides for <a class="card-link" href="/states/roof-replacement-cost-texas">Texas</a>, <a class="card-link" href="/states/roof-replacement-cost-florida">Florida</a>, <a class="card-link" href="/states/roof-replacement-cost-california">California</a>, <a class="card-link" href="/states/roof-replacement-cost-new-york">New York</a> and <a class="card-link" href="/states/roof-replacement-cost-pennsylvania">Pennsylvania</a>, or use the <a class="card-link" href="/calculators/remodeling-cost.html?project=roof">state-adjusted planner</a> for all 50 states.</p>
 <h3>What can move a real roofing quote?</h3><p>Decking repairs, flashing, ventilation, underlayment, disposal, permits, access, warranty, product brand and local labor can all change the final price. A low quote may also exclude items that a higher quote includes.</p>
+<h3>Compare tear-off, decking and roof details</h3><p>Ask every bidder to state the number of layers being removed, the unit price for unexpected deck replacement, and how chimneys, skylights, valleys and wall transitions are flashed. These scope differences can explain a large price gap between quotes.</p>
 <h3>Compare roofing materials and measurements</h3><p>Use the <a class="card-link" href="/calculators/roofing-square.html">Roofing Square Calculator</a> to convert roof area into roofing squares, the <a class="card-link" href="/calculators/roof-pitch.html">Roof Pitch Calculator</a> to understand slope, and read <a class="card-link" href="/blog/metal-roof-vs-shingles-cost.html">metal roof vs shingles cost</a> before comparing material options.</p>
 <h3>Best way to use the number</h3><p>Use the range to establish a budget, then compare at least three itemized quotes with the same scope. Ask each contractor to identify exclusions and allowances in writing.</p>
+<h2>Frequently asked questions</h2><div class="faq-grid" style="grid-template-columns:1fr"><details><summary>Is house square footage the same as roof area?</summary><p>No. Roof pitch, overhangs, attached garages, porches and the number of stories change actual roof surface area. Use measured roof area when available.</p></details><details><summary>Does the estimate include tear-off and permits?</summary><p>Yes, based on the tear-off layers and permit allowance you enter. Disposal, access and local requirements still need confirmation in contractor proposals.</p></details><details><summary>How should I use the decking repair allowance?</summary><p>Enter a reasonable square-foot allowance for planning, then ask contractors for a written unit price and approval process for deck repairs discovered after tear-off.</p></details><details><summary>Is the state adjustment an exact local quote?</summary><p>No. It is a broad state price-level sensitivity. Metro conditions, storms, contractor availability, product choice, insurance and code requirements can move local pricing.</p></details></div>
+<h2>Official sources and further reading</h2><ul class="source-list"><li><a href="https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area" target="_blank" rel="noopener">U.S. Bureau of Economic Analysis — Regional Price Parities</a></li><li><a href="https://www.fema.gov/emergency-managers/risk-management/building-science" target="_blank" rel="noopener">FEMA — Building Science resources</a></li><li><a href="https://www.fema.gov/node/618044" target="_blank" rel="noopener">FEMA — Check Your Roof Flashing</a></li></ul>
 </div></section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Roof Replacement Cost Calculator","url":"https://homecostengine.com/calculators/roof-replacement","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate roof replacement cost by area, state, material, pitch, stories, tear-off, decking, roof details, permits and contingency."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is house square footage the same as roof area?","acceptedAnswer":{"@type":"Answer","text":"No. Roof pitch, overhangs, attached garages, porches and stories change actual roof surface area. Use measured roof area when available."}},{"@type":"Question","name":"Does the estimate include tear-off and permits?","acceptedAnswer":{"@type":"Answer","text":"Yes, based on the tear-off layers and permit allowance entered. Disposal, access and local requirements still need confirmation."}},{"@type":"Question","name":"How should I use the decking repair allowance?","acceptedAnswer":{"@type":"Answer","text":"Enter a planning allowance, then ask contractors for a written unit price and approval process for deck repairs discovered after tear-off."}},{"@type":"Question","name":"Is the state adjustment an exact local quote?","acceptedAnswer":{"@type":"Answer","text":"No. It is a broad state price-level sensitivity. Local market conditions, storms, products, insurance and code requirements can move pricing."}}]}</script>
 </main>
 <footer class="footer">
   <div class="container"><div class="footer-grid">
       <div><a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a><p>Free planning calculators and practical cost guides for U.S. home improvement projects.</p></div>
-      <div><h4>Calculators</h4><a href="/calculators/roof-replacement.html">Roofing</a><a href="/calculators/concrete.html">Concrete</a><a href="/calculators/hvac.html">HVAC</a><a href="/calculators/paint.html">Painting</a></div>
+      <div><h4>Calculators</h4><a href="/calculators/roof-replacement">Roofing</a><a href="/calculators/concrete.html">Concrete</a><a href="/calculators/hvac.html">HVAC</a><a href="/calculators/paint.html">Painting</a></div>
       <div><h4>Explore</h4><a href="/calculators/">All calculators</a><a href="/guides/">Cost guides</a><a href="/blog/">Blog</a><a href="/about.html">Methodology</a><a href="/contact.html">Contact</a></div>
       <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Estimator disclaimer</a></div>
     </div><div class="footer-bottom">© 2026 HomeCostEngine. Planning estimates only. Always verify pricing, permits, code requirements and scope with qualified local professionals.</div></div>
 </footer>
-<script src="/assets/app.js?v=20260916-value1"></script><script src="/assets/calculators.js?v=20260916-value1"></script>
+<script src="/assets/app.js?v=20260916-value1"></script><script src="/assets/us-state-rpp-2024.js?v=20260915"></script><script src="/assets/calculators.js?v=20260917-roof1"></script>
 </body>
 </html>

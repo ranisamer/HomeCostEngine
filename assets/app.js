@@ -12,7 +12,7 @@ const HCE_BLOG_TOPICS = {
     imageSource: "https://pixabay.com/photos/shingles-roof-house-construction-1283921/",
     imageCredit: "Roofing photo on Pixabay",
     internal: [
-      ["Roof Replacement Cost Calculator", "/calculators/roof-replacement.html"],
+      ["Roof Replacement Cost Calculator", "/calculators/roof-replacement"],
       ["Roofing Square Calculator", "/calculators/roofing-square.html"],
       ["Roof Pitch Calculator", "/calculators/roof-pitch.html"],
       ["Roof Replacement Cost Guide", "/guides/roof-replacement-cost.html"]
@@ -461,7 +461,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       e.preventDefault();
       const project=document.getElementById("quickProject").value;
       const routes={
-        roofing:"/calculators/roof-replacement.html",
+        roofing:"/calculators/roof-replacement",
         concrete:"/calculators/concrete.html",
         hvac:"/calculators/hvac.html",
         painting:"/calculators/paint.html",

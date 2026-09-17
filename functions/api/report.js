@@ -11,14 +11,16 @@ function calculate(type, raw={}){
     const area=finite(raw.area,1,1e8); if(!Number.isFinite(area)) throw new Error("Enter a valid roof area before sending the report.");
     const ranges={asphalt:[5.5,9],metal:[9,16],tile:[10,20],wood:[7,14],slate:[15,30]};
     const material=String(raw.material||"asphalt"); if(!ranges[material]) throw new Error("Choose a valid roofing material.");
-    const pitch=finite(raw.pitch,.5,3), stories=finite(raw.stories,.5,3), market=finite(raw.market,.5,3);
-    if(!Number.isFinite(pitch)||!Number.isFinite(stories)||!Number.isFinite(market)) throw new Error("Check the roof complexity and market selections.");
-    let [lo,hi]=ranges[material]; lo*=pitch*stories*market; hi*=pitch*stories*market; if(String(raw.tearoff||"yes")==="yes"){lo+=1.15;hi+=2.35}
-    const low=area*lo, high=area*hi, mid=(low+high)/2;
-    return {title:"Roof Replacement Cost Report",subject:`Your roof cost estimate: ${money(low)}–${money(high)}`,url:"https://homecostengine.com/calculators/roof-replacement.html",
+    const pitch=finite(raw.pitch,.5,3),stories=finite(raw.stories,.5,3),market=finite(raw.market,.5,3),tearLayers=finite(raw.tearoff,0,3),deckArea=finite(raw.deckArea,0,1e7),features=finite(raw.roofFeatures,0,100),permit=finite(raw.roofPermit,0,1e7),contingency=finite(raw.roofContingency,0,.5);
+    if(![pitch,stories,market,tearLayers,deckArea,features,permit,contingency].every(Number.isFinite)) throw new Error("Check the roof scope and market selections.");
+    const stateFactors={AL:.927,AK:1.015,AZ:1.004,AR:.915,CA:1.070,CO:1.020,CT:1.023,DE:.999,DC:1.064,FL:1.022,GA:.976,HI:1.065,ID:.971,IL:1.000,IN:.957,IA:.920,KS:.935,KY:.936,LA:.923,ME:.981,MD:1.032,MA:1.037,MI:.975,MN:.991,MS:.915,MO:.940,MT:.965,NE:.936,NV:1.000,NH:1.027,NJ:1.057,NM:.949,NY:1.051,NC:.963,ND:.928,OH:.953,OK:.921,OR:1.022,PA:.984,RI:1.015,SC:.959,SD:.926,TN:.947,TX:.981,UT:.993,VT:.987,VA:1.007,WA:1.046,WV:.932,WI:.962,WY:.953};
+    const stateCode=String(raw.roofState||"US").toUpperCase(),stateFactor=stateFactors[stateCode]||1,tearRates={0:[0,0],1:[1.15,2.35],2:[1.75,3.5],3:[2.5,4.75]},tear=tearRates[Math.round(tearLayers)]||tearRates[1];
+    let [lo,hi]=ranges[material];lo*=pitch*stories*market*stateFactor;hi*=pitch*stories*market*stateFactor;
+    const baseLow=area*lo,baseHigh=area*hi,tearLow=area*tear[0],tearHigh=area*tear[1],deckLow=deckArea*3.5,deckHigh=deckArea*7,featureLow=features*250,featureHigh=features*750,subtotalLow=baseLow+tearLow+deckLow+featureLow+permit,subtotalHigh=baseHigh+tearHigh+deckHigh+featureHigh+permit,low=subtotalLow*(1+contingency),high=subtotalHigh*(1+contingency),mid=(low+high)/2;
+    return {title:"Roof Replacement Cost Report",subject:`Your roof cost estimate: ${money(low)}–${money(high)}`,url:"https://homecostengine.com/calculators/roof-replacement",
       summary:`Your planning range is ${money(low)} to ${money(high)}, with a midpoint of about ${money(mid)}.`,
-      metrics:[["Roof area",`${Math.round(area).toLocaleString("en-US")} sq ft`],["Roofing material",material==="asphalt"?"Asphalt shingles":material.charAt(0).toUpperCase()+material.slice(1)],["Estimated range",`${money(low)} – ${money(high)}`],["Midpoint",money(mid)],["Estimated installed unit range",`${money(lo)} – ${money(hi)} / sq ft`]],
-      note:"This is a budgeting range. Decking repairs, flashing, ventilation, permits, access, warranty terms and local labor can change a real contractor quote."};
+      metrics:[["Roof area",`${Math.round(area).toLocaleString("en-US")} sq ft`],["Location",stateCode==="US"?"U.S. national baseline":stateCode],["Roofing material",material==="asphalt"?"Asphalt shingles":material.charAt(0).toUpperCase()+material.slice(1)],["Tear-off layers",String(Math.round(tearLayers))],["Deck repair allowance",`${Math.round(deckArea).toLocaleString("en-US")} sq ft`],["Roof details",`${Math.round(features)} skylight / chimney / complex features`],["Permit allowance",money(permit)],["Contingency",`${number(contingency*100,0)}%`],["Estimated range",`${money(low)} – ${money(high)}`],["Midpoint",money(mid)],["Estimated unit range",`${money(low/area)} – ${money(high/area)} / sq ft`]],
+      note:"This is a budgeting range. Verify measured roof area, decking, flashing, ventilation, underlayment, permits, access, warranty terms and local labor in written contractor proposals."};
   }
   if(type==="concrete"){
     const l=finite(raw.length,.01,1e6), w=finite(raw.width,.01,1e6), t=finite(raw.thickness,.01,1e4), waste=finite(raw.waste,1,2), price=finite(raw.yardPrice,0,1e7);

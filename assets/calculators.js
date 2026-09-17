@@ -5,16 +5,26 @@ const set = (id, value) => { const el=document.getElementById(id); if(el) el.tex
 
 function roofCalc(){
   const area=num("area"), material=val("material"), pitch=Number(val("pitch")), stories=Number(val("stories")),
-        market=Number(val("market")), tear=val("tearoff")==="yes";
+        market=Number(val("market")), tearLayers=Number(val("tearoff")), stateCode=val("roofState"), deckArea=num("deckArea"), features=num("roofFeatures"), permit=num("roofPermit"), contingency=Number(val("roofContingency"));
   if(area<=0) return;
   const ranges={asphalt:[5.5,9], metal:[9,16], tile:[10,20], wood:[7,14], slate:[15,30]};
+  const state=window.HCE_STATE_RPP_2024?.states?.[stateCode];
+  const stateFactor=state?1+((state.rpp/100)-1)*.65:1;
   let [lo,hi]=ranges[material];
-  lo*=pitch*stories*market; hi*=pitch*stories*market;
-  if(tear){lo+=1.15;hi+=2.35}
-  const low=area*lo, high=area*hi, mid=(low+high)/2;
+  lo*=pitch*stories*market*stateFactor; hi*=pitch*stories*market*stateFactor;
+  const tearRates={0:[0,0],1:[1.15,2.35],2:[1.75,3.5],3:[2.5,4.75]},tear=tearRates[tearLayers]||tearRates[1];
+  const baseLow=area*lo,baseHigh=area*hi,tearLow=area*tear[0],tearHigh=area*tear[1],deckLow=deckArea*3.5,deckHigh=deckArea*7,featureLow=features*250,featureHigh=features*750;
+  const subtotalLow=baseLow+tearLow+deckLow+featureLow+permit,subtotalHigh=baseHigh+tearHigh+deckHigh+featureHigh+permit;
+  const low=subtotalLow*(1+contingency), high=subtotalHigh*(1+contingency), mid=(low+high)/2;
   set("result",money(mid)); set("range",`${money(low)} – ${money(high)}`);
-  set("unit",`${money(lo)} – ${money(hi)} / sq ft`);
-  set("materials",money(mid*.44)); set("labor",money(mid*.39)); set("other",money(mid*.17));
+  set("unit",`${money(low/area)} – ${money(high/area)} / sq ft`);
+  set("materials",`${money((baseLow+baseHigh)/2)} roof system`); set("labor",`${money((deckLow+deckHigh+featureLow+featureHigh)/2)} repairs / details`); set("other",`${money(((low-subtotalLow)+(high-subtotalHigh))/2)} contingency`);
+}
+
+function populateRoofStates(){
+  const select=document.getElementById("roofState"),data=window.HCE_STATE_RPP_2024?.states;
+  if(!select||!data||select.options.length>1)return;
+  Object.entries(data).sort((a,b)=>a[1].name.localeCompare(b[1].name)).forEach(([code,item])=>{const option=document.createElement("option");option.value=code;option.textContent=item.name;select.appendChild(option)});
 }
 function concreteCalc(){
   const l=num("length"), w=num("width"), t=num("thickness"), waste=Number(val("waste")), price=num("yardPrice");
@@ -117,7 +127,7 @@ function roofPitchCalc(){
 }
 
 function currentCalculatorInputs(type){
-  if(type==="roof") return {area:num("area"), material:val("material"), pitch:Number(val("pitch")), stories:Number(val("stories")), tearoff:val("tearoff"), market:Number(val("market"))};
+  if(type==="roof") return {area:num("area"), material:val("material"), pitch:Number(val("pitch")), stories:Number(val("stories")), tearoff:Number(val("tearoff")), market:Number(val("market")), roofState:val("roofState"), deckArea:num("deckArea"), roofFeatures:num("roofFeatures"), roofPermit:num("roofPermit"), roofContingency:Number(val("roofContingency"))};
   if(type==="concrete") return {length:num("length"), width:num("width"), thickness:num("thickness"), waste:Number(val("waste")), yardPrice:num("yardPrice")};
   if(type==="hvac") return {homeSqft:num("homeSqft"), system:val("system"), efficiency:Number(val("efficiency")), market:Number(val("market"))};
   if(type==="paint") return {roomLength:num("roomLength"), roomWidth:num("roomWidth"), roomHeight:num("roomHeight"), coats:num("coats"), doors:num("doors"), windows:num("windows"), coverage:num("coverage"), gallonPrice:num("gallonPrice")};
@@ -242,6 +252,7 @@ function injectPlanningValue(type){
 
 document.addEventListener("DOMContentLoaded",()=>{
   const type=document.body.dataset.calculator;
+  if(type==="roof")populateRoofStates();
   const fn={roof:roofCalc,concrete:concreteCalc,paint:paintCalc,floor:floorCalc,mulch:mulchCalc,hvac:hvacCalc,sqft:squareFootageCalc,cubicyard:cubicYardCalc,gravel:gravelCalc,roofsquare:roofingSquareCalc,roofpitch:roofPitchCalc}[type];
   const form=document.getElementById("calculatorForm");
   if(form&&fn){form.addEventListener("submit",e=>{e.preventDefault();fn()}); fn();}
