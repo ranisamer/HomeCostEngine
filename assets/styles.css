@@ -617,7 +617,7 @@ main article.info-copy>p{margin:0 0 1.15em}
   transition:transform .22s ease,box-shadow .22s ease;
 }
 a.book-cover-art:hover{transform:translateY(-4px);box-shadow:0 24px 54px rgba(20,35,54,.22)}
-.book-cover-art>*{display:none!important}
+.book-cover-art>span,.book-cover-art>strong,.book-cover-art>small{display:none!important}
 .cover-art-1{background-image:url("/assets/ebooks/covers/smart-home-renovation-budget-blueprint.svg")}
 .cover-art-2{background-image:url("/assets/ebooks/covers/roof-replacement-planning-handbook.svg")}
 .cover-art-3{background-image:url("/assets/ebooks/covers/kitchen-remodel-cost-planner.svg")}
@@ -631,3 +631,13 @@ a.book-cover-art:hover{transform:translateY(-4px);box-shadow:0 24px 54px rgba(20
 .book-detail-card .book-cover-art.large{width:100%;aspect-ratio:2/3;min-height:0;border-radius:7px}
 .bookstore-home-covers .book-cover-art{min-height:0;aspect-ratio:2/3;padding:0}
 @media(max-width:620px){.book-cover-art{min-height:0}}
+
+.book-cover-inline{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  position:absolute;
+  inset:0;
+}
+.book-cover-art{background-image:none!important;background-color:#142336!important}
+.book-cover-art.large{position:relative}
