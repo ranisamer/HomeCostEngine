@@ -142,6 +142,7 @@ function currentCalculatorInputs(type){
   if(type==="split") return {total:num("total"), labor:num("labor"), material:num("material")};
   if(type==="contingency") return {base:num("base"), rate:num("rate"), allowance:num("allow")};
   if(type==="quotes") return {quotes:[0,1,2].map(i=>({price:num(`p${i}`),allowance:num(`a${i}`),scope:num(`s${i}`),warranty:num(`w${i}`)}))};
+  if(type==="toilet") return {fixture:num("fixture"), labor:num("labor"), removal:num("removal"), connections:num("connections"), valve:num("valve"), flange:num("flange"), floor:num("floor"), permit:num("permit"), tax:num("tax"), contingency:num("contingency")};
   if(type==="remodel") return {
     projectType:val("projectType"), projectName:document.querySelector("#projectType option:checked")?.textContent||"Renovation project",
     stateCode:val("stateCode"), stateName:document.querySelector("#stateCode option:checked")?.textContent||"U.S. national baseline",
@@ -159,7 +160,7 @@ function currentCalculatorInputs(type){
 function injectEmailReportForm(type){
   const shell=document.querySelector(".calc-shell, .hce-tool");
   if(!shell || document.querySelector(".calculator-report-form")) return;
-  const labels={roof:"roof cost", concrete:"concrete", hvac:"HVAC", paint:"paint", floor:"flooring", mulch:"mulch", sqft:"square footage", cubicyard:"cubic yard", gravel:"gravel", roofsquare:"roofing square", roofpitch:"roof pitch", remodel:"renovation cost", maintenance:"home maintenance budget", split:"labor and material split", contingency:"project contingency", quotes:"contractor quote comparison"};
+  const labels={roof:"roof cost", concrete:"concrete", hvac:"HVAC", paint:"paint", floor:"flooring", mulch:"mulch", sqft:"square footage", cubicyard:"cubic yard", gravel:"gravel", roofsquare:"roofing square", roofpitch:"roof pitch", remodel:"renovation cost", maintenance:"home maintenance budget", split:"labor and material split", contingency:"project contingency", quotes:"contractor quote comparison", toilet:"toilet installation cost"};
   const wrap=document.createElement("div");
   wrap.className="report-capture";
   wrap.innerHTML=`
