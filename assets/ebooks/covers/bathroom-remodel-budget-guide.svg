@@ -1,16 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" role="img" aria-label="BATHROOM REMODEL BUDGET GUIDE">
 <defs>
-<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#203242"/><stop offset="1" stop-color="#7B736D"/></linearGradient>
-<pattern id="p" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M0 64L64 0M-16 16L16-16M48 80L80 48" stroke="white" stroke-opacity=".035" stroke-width="2"/></pattern>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#162b3b"/><stop offset=".58" stop-color="#162b3b"/><stop offset="1" stop-color="#77706b"/></linearGradient>
+<radialGradient id="glow" cx=".78" cy=".26" r=".55"><stop stop-color="#ffffff" stop-opacity=".18"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#e8d8bc" stroke-opacity=".08" stroke-width="1"/></pattern>
+<filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000" flood-opacity=".28"/></filter>
 </defs>
-<rect width="1024" height="1536" fill="url(#g)"/><rect width="1024" height="1536" fill="url(#p)"/>
-<rect x="54" y="54" width="916" height="1428" rx="6" fill="none" stroke="#E7D6B9" stroke-opacity=".55" stroke-width="2"/>
-<text x="72" y="120" fill="#E7D6B9" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" letter-spacing="4">HOMECOSTENGINE</text>
-<text x="72" y="215" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="3">BATHROOM REMODELING</text>
-<g opacity=".75" stroke="#E7D6B9" fill="none" stroke-width="5"><rect x="610" y="315" width="300" height="300" rx="14"/><path d="M610 455h300M760 315v300"/><path d="M650 515c0-40 30-65 65-65s65 25 65 65v48H650z"/><path d="M815 370h55v110h-55z"/><circle cx="842" cy="425" r="10"/></g>
-<text x="72" y="805" fill="white" font-family="Georgia,'Times New Roman',serif" font-size="62" font-weight="700"><tspan x="72" dy="0">BATHROOM REMODEL</tspan><tspan x="72" dy="78">BUDGET GUIDE</tspan></text>
-<line x1="72" y1="1060" x2="950" y2="1060" stroke="#E7D6B9" stroke-opacity=".72" stroke-width="2"/>
-<text x="72" y="1125" fill="#F4F0E8" font-family="Arial,Helvetica,sans-serif" font-size="27"><tspan x="72" dy="0">Waterproofing, tile, fixtures, labor and</tspan><tspan x="72" dy="38">hidden-condition planning</tspan></text>
-<text x="72" y="1405" fill="#E7D6B9" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" letter-spacing="3">DIGITAL FIELD GUIDE</text>
-<text x="944" y="1405" text-anchor="end" fill="white" font-family="Georgia,'Times New Roman',serif" font-size="28" font-weight="700">HCE</text>
+<rect width="1024" height="1536" fill="url(#bg)"/>
+<rect width="1024" height="1536" fill="url(#grid)"/>
+<rect width="1024" height="900" fill="url(#glow)"/>
+<rect x="54" y="54" width="916" height="1428" rx="18" fill="none" stroke="#e8d8bc" stroke-opacity=".5" stroke-width="2"/>
+<text x="76" y="125" fill="#e8d8bc" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" letter-spacing="4">HOMECOSTENGINE</text>
+<text x="76" y="216" fill="#fff" fill-opacity=".9" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="3">BATHROOM REMODELING</text>
+<g filter="url(#shadow)" opacity=".92"><g stroke="#e8d8bc" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="620" y="345" width="290" height="300" rx="16"/><path d="M620 485h290M760 345v300"/><path d="M650 550c0-38 30-62 64-62s64 24 64 62v50H650z"/><rect x="810" y="395" width="55" height="115" rx="6"/></g></g>
+<text x="76" y="855" fill="#fff" font-family="Georgia,'Times New Roman',serif" font-size="61" font-weight="700"><tspan x="76" dy="0">BATHROOM REMODEL</tspan><tspan x="76" dy="78">BUDGET GUIDE</tspan></text>
+<line x1="76" y1="1110" x2="948" y2="1110" stroke="#e8d8bc" stroke-opacity=".72" stroke-width="2"/>
+<text x="76" y="1172" fill="#fff" fill-opacity=".88" font-family="Arial,Helvetica,sans-serif" font-size="27"><tspan x="76">Practical planning, worksheets and</tspan><tspan x="76" dy="38">better contractor questions</tspan></text>
+<rect x="76" y="1328" width="280" height="48" rx="24" fill="#e8d8bc" fill-opacity=".12" stroke="#e8d8bc" stroke-opacity=".45"/>
+<text x="100" y="1360" fill="#e8d8bc" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" letter-spacing="2">DIGITAL FIELD GUIDE</text>
+<text x="948" y="1402" text-anchor="end" fill="#fff" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="700">HCE</text>
 </svg>
