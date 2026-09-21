@@ -44,7 +44,7 @@ export async function onRequestPost({request, env}){
     body:JSON.stringify({sender:{name:"HomeCostEngine",email:senderEmail},to:[{email}],replyTo:{name:"HomeCostEngine",email:replyToEmail},subject:"Your free Home Project Cost Planning Guide",htmlContent:html})
   });
   if(!sent.ok){console.log("Brevo ebook send error",sent.status,await sent.text());return json({error:"We couldn't send the email right now. Please use the direct download link."},502);}
-  return json({ok:true,downloadUrl,subscribed:body.marketingConsent===true});
+  return json({ok:true,subscribed:body.marketingConsent===true});
 }
 
 export async function onRequest(){return json({error:"Method not allowed."},405);}
