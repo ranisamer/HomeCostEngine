@@ -212,8 +212,10 @@ th{background:#f4f6f5}
 .ebook-promo p{color:#cfdae3;max-width:700px;font-size:1.05rem}
 .ebook-promo .btn.secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
 .ebook-promo .micro{color:#aebdca}
-.ebook-mini-cover,.ebook-cover{background:linear-gradient(145deg,#102033 0%,#162e45 70%);color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:0 24px 50px rgba(0,0,0,.25)}
-.ebook-mini-cover{min-height:280px;border-radius:10px;padding:30px 25px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(2deg)}
+.ebook-mini-cover,.ebook-cover{position:relative;isolation:isolate;overflow:hidden;background:#102033;color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:0 24px 50px rgba(0,0,0,.25)}
+.ebook-mini-cover:after,.ebook-cover:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,24,39,.86) 0%,rgba(7,24,39,.2) 42%,rgba(7,24,39,.12) 62%,rgba(7,24,39,.86) 100%)}
+.ebook-mini-cover>img,.ebook-cover>img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+.ebook-mini-cover{min-height:340px;border-radius:10px;padding:25px 22px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(2deg)}
 .ebook-mini-cover span,.ebook-mark{display:grid;place-items:center;width:52px;height:52px;border-radius:12px;background:var(--accent);font-weight:900}
 .ebook-mini-cover strong{font-size:1.5rem;line-height:1.15}.ebook-mini-cover small{color:#bfccd6}
 .ebook-hero{padding:62px 0}
@@ -223,7 +225,7 @@ th{background:#f4f6f5}
 .ebook-checks li:before{content:"✓";color:var(--accent);font-weight:900;margin-right:9px}
 .ebook-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
 .ebook-card h2{margin:22px 0 6px;font-size:1.55rem}.ebook-card>p{color:var(--ink-2)}
-.ebook-cover{min-height:300px;border-radius:13px;padding:25px;display:flex;flex-direction:column;justify-content:space-between}
+.ebook-cover{min-height:430px;border-radius:13px;padding:25px;display:flex;flex-direction:column;justify-content:space-between}
 .ebook-cover strong{font-size:1.7rem;line-height:1.15}.ebook-cover small{color:#bfccd6}
 .ebook-direct{display:inline-block;margin-top:13px;color:var(--accent);font-weight:800;text-decoration:underline;text-underline-offset:3px}
 .ebook-card .report-privacy{margin-top:12px}
