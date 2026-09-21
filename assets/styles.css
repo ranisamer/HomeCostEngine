@@ -205,6 +205,30 @@ th{background:#f4f6f5}
 .planning-disclaimer{margin:16px 0 0;color:#718091;font-size:.78rem;line-height:1.55}
 @media(max-width:800px){.planning-value-grid,.planning-links{grid-template-columns:1fr}.planning-value{padding:24px}}
 
+/* Free ebook */
+.ebook-promo-section{padding-top:26px}
+.ebook-promo{display:grid;grid-template-columns:1.35fr .65fr;gap:34px;align-items:center;background:var(--ink);color:#fff;border-radius:30px;padding:42px;overflow:hidden}
+.ebook-promo h2{font-size:clamp(2rem,4vw,3.25rem);margin:14px 0 12px;max-width:760px}
+.ebook-promo p{color:#cfdae3;max-width:700px;font-size:1.05rem}
+.ebook-promo .btn.secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.ebook-promo .micro{color:#aebdca}
+.ebook-mini-cover,.ebook-cover{background:linear-gradient(145deg,#102033 0%,#162e45 70%);color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:0 24px 50px rgba(0,0,0,.25)}
+.ebook-mini-cover{min-height:280px;border-radius:10px;padding:30px 25px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(2deg)}
+.ebook-mini-cover span,.ebook-mark{display:grid;place-items:center;width:52px;height:52px;border-radius:12px;background:var(--accent);font-weight:900}
+.ebook-mini-cover strong{font-size:1.5rem;line-height:1.15}.ebook-mini-cover small{color:#bfccd6}
+.ebook-hero{padding:62px 0}
+.ebook-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:start}
+.ebook-grid h1{font-size:clamp(2.65rem,5.6vw,5rem);margin-top:16px}
+.ebook-checks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px;color:var(--ink-2)}
+.ebook-checks li:before{content:"✓";color:var(--accent);font-weight:900;margin-right:9px}
+.ebook-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+.ebook-card h2{margin:22px 0 6px;font-size:1.55rem}.ebook-card>p{color:var(--ink-2)}
+.ebook-cover{min-height:300px;border-radius:13px;padding:25px;display:flex;flex-direction:column;justify-content:space-between}
+.ebook-cover strong{font-size:1.7rem;line-height:1.15}.ebook-cover small{color:#bfccd6}
+.ebook-direct{display:inline-block;margin-top:13px;color:var(--accent);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.ebook-card .report-privacy{margin-top:12px}
+@media(max-width:850px){.ebook-promo,.ebook-grid{grid-template-columns:1fr}.ebook-mini-cover{max-width:310px}.ebook-promo{padding:30px 24px}}
+
 
 /* AdSense article placements */
 .hce-ad-slot{
