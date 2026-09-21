@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow large image previews and normal snippet generation in search.
 Sitemap: https://homecostengine.com/sitemap.xml
