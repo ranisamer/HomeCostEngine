@@ -5,9 +5,9 @@
   X-Frame-Options: SAMEORIGIN
   X-Robots-Tag: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
 
-/assets/*
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-
 /assets/guides/*.pdf
   X-Robots-Tag: noindex, nofollow, noarchive
   Cache-Control: private, max-age=0, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
