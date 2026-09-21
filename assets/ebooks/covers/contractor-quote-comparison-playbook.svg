@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#15273A"/><stop offset="1" stop-color="#684D3D"/></linearGradient><pattern id="p" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M0 64L64 0M-16 16L16-16M48 80L80 48" stroke="white" stroke-opacity=".035" stroke-width="2"/></pattern></defs>
+<rect width="1024" height="1536" fill="url(#g)"/><rect width="1024" height="1536" fill="url(#p)"/><rect x="54" y="54" width="916" height="1428" rx="6" fill="none" stroke="#E4C79C" stroke-opacity=".55" stroke-width="2"/>
+<text x="72" y="120" fill="#E4C79C" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" letter-spacing="4">HOMECOSTENGINE</text>
+<text x="72" y="215" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="3">HIRING & QUOTES</text>
+<g opacity=".76" stroke="#E4C79C" fill="none" stroke-width="5"><rect x="610" y="300" width="300" height="350" rx="14"/><path d="M660 365h200M660 425h200M660 485h145M660 545h180"/><path d="M650 355l18 18 28-36M650 415l18 18 28-36M650 475l18 18 28-36"/><path d="M610 700h300"/></g>
+<text x="72" y="805" fill="white" font-family="Georgia,'Times New Roman',serif" font-size="62" font-weight="700"><tspan x="72" dy="0">CONTRACTOR QUOTE</tspan><tspan x="72" dy="78">COMPARISON</tspan><tspan x="72" dy="78">PLAYBOOK</tspan></text>
+<line x1="72" y1="1060" x2="950" y2="1060" stroke="#E4C79C" stroke-opacity=".72" stroke-width="2"/>
+<text x="72" y="1125" fill="#F4F0E8" font-family="Arial,Helvetica,sans-serif" font-size="27"><tspan x="72" dy="0">Price, scope, allowances, exclusions,</tspan><tspan x="72" dy="38">warranties and payment terms</tspan></text>
+<text x="72" y="1405" fill="#E4C79C" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" letter-spacing="3">DIGITAL FIELD GUIDE</text>
+<text x="944" y="1405" text-anchor="end" fill="white" font-family="Georgia,'Times New Roman',serif" font-size="28" font-weight="700">HCE</text>
+</svg>
