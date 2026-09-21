@@ -1,16 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" role="img" aria-label="THE ROOF REPLACEMENT PLANNING HANDBOOK">
 <defs>
-<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#17313F"/><stop offset="1" stop-color="#53777A"/></linearGradient>
-<pattern id="p" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M0 64L64 0M-16 16L16-16M48 80L80 48" stroke="white" stroke-opacity=".035" stroke-width="2"/></pattern>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102c38"/><stop offset=".58" stop-color="#102c38"/><stop offset="1" stop-color="#567b7d"/></linearGradient>
+<radialGradient id="glow" cx=".78" cy=".26" r=".55"><stop stop-color="#ffffff" stop-opacity=".18"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#dbc99b" stroke-opacity=".08" stroke-width="1"/></pattern>
+<filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000" flood-opacity=".28"/></filter>
 </defs>
-<rect width="1024" height="1536" fill="url(#g)"/><rect width="1024" height="1536" fill="url(#p)"/>
-<rect x="54" y="54" width="916" height="1428" rx="6" fill="none" stroke="#D8C69B" stroke-opacity=".55" stroke-width="2"/>
-<text x="72" y="120" fill="#D8C69B" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" letter-spacing="4">HOMECOSTENGINE</text>
-<text x="72" y="215" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="3">ROOFING</text>
-<g opacity=".78" stroke="#D8C69B" fill="none" stroke-width="6"><path d="M585 475L760 300 935 475"/><path d="M635 475L760 350 885 475"/><path d="M610 520h300"/><path d="M650 560h220"/><path d="M690 600h140"/><path d="M610 270h300M610 270v36M910 270v36"/></g>
-<text x="72" y="805" fill="white" font-family="Georgia,'Times New Roman',serif" font-size="62" font-weight="700"><tspan x="72" dy="0">THE ROOF REPLACEMENT</tspan><tspan x="72" dy="78">PLANNING HANDBOOK</tspan></text>
-<line x1="72" y1="1060" x2="950" y2="1060" stroke="#D8C69B" stroke-opacity=".72" stroke-width="2"/>
-<text x="72" y="1125" fill="#F4F0E8" font-family="Arial,Helvetica,sans-serif" font-size="27"><tspan x="72" dy="0">Measure the roof, compare systems and</tspan><tspan x="72" dy="38">prepare better contractor questions</tspan></text>
-<text x="72" y="1405" fill="#D8C69B" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" letter-spacing="3">DIGITAL FIELD GUIDE</text>
-<text x="944" y="1405" text-anchor="end" fill="white" font-family="Georgia,'Times New Roman',serif" font-size="28" font-weight="700">HCE</text>
+<rect width="1024" height="1536" fill="url(#bg)"/>
+<rect width="1024" height="1536" fill="url(#grid)"/>
+<rect width="1024" height="900" fill="url(#glow)"/>
+<rect x="54" y="54" width="916" height="1428" rx="18" fill="none" stroke="#dbc99b" stroke-opacity=".5" stroke-width="2"/>
+<text x="76" y="125" fill="#dbc99b" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" letter-spacing="4">HOMECOSTENGINE</text>
+<text x="76" y="216" fill="#fff" fill-opacity=".9" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="3">ROOFING</text>
+<g filter="url(#shadow)" opacity=".92"><g stroke="#dbc99b" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M600 500L760 335 930 500"/><path d="M640 500L760 380 890 500"/><path d="M620 555h290M655 605h220M700 655h130"/></g></g>
+<text x="76" y="855" fill="#fff" font-family="Georgia,'Times New Roman',serif" font-size="61" font-weight="700"><tspan x="76" dy="0">THE ROOF REPLACEMENT</tspan><tspan x="76" dy="78">PLANNING HANDBOOK</tspan></text>
+<line x1="76" y1="1110" x2="948" y2="1110" stroke="#dbc99b" stroke-opacity=".72" stroke-width="2"/>
+<text x="76" y="1172" fill="#fff" fill-opacity=".88" font-family="Arial,Helvetica,sans-serif" font-size="27"><tspan x="76">Practical planning, worksheets and</tspan><tspan x="76" dy="38">better contractor questions</tspan></text>
+<rect x="76" y="1328" width="280" height="48" rx="24" fill="#dbc99b" fill-opacity=".12" stroke="#dbc99b" stroke-opacity=".45"/>
+<text x="100" y="1360" fill="#dbc99b" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" letter-spacing="2">DIGITAL FIELD GUIDE</text>
+<text x="948" y="1402" text-anchor="end" fill="#fff" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="700">HCE</text>
 </svg>
