@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">How roof pitch is measured</title>
+<desc id="desc">HomeCostEngine diagram illustrating a six in twelve roof pitch with six inches of rise over twelve inches of horizontal run.</desc>
+<rect width="1600" height="900" fill="#f3f6f8"/>
+<rect x="90" y="75" width="1420" height="750" rx="34" fill="#fff" stroke="#d7e0e8" stroke-width="3"/>
+<text x="150" y="160" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" fill="#102033">Roof pitch = rise over 12 inches of run</text>
+<text x="150" y="215" font-family="Arial,Helvetica,sans-serif" font-size="28" fill="#526272">Example shown: 6:12 pitch</text>
+<g transform="translate(190 300)">
+<line x1="70" y1="360" x2="930" y2="360" stroke="#102033" stroke-width="10"/>
+<line x1="70" y1="360" x2="930" y2="0" stroke="#102033" stroke-width="10"/>
+<line x1="930" y1="0" x2="930" y2="360" stroke="#8b9aa8" stroke-width="6" stroke-dasharray="15 12"/>
+<line x1="70" y1="420" x2="930" y2="420" stroke="#687988" stroke-width="4"/>
+<line x1="70" y1="400" x2="70" y2="440" stroke="#687988" stroke-width="4"/>
+<line x1="930" y1="400" x2="930" y2="440" stroke="#687988" stroke-width="4"/>
+<text x="500" y="470" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#102033">12 in run</text>
+<line x1="1000" y1="0" x2="1000" y2="360" stroke="#687988" stroke-width="4"/>
+<line x1="980" y1="0" x2="1020" y2="0" stroke="#687988" stroke-width="4"/>
+<line x1="980" y1="360" x2="1020" y2="360" stroke="#687988" stroke-width="4"/>
+<text x="1050" y="190" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#102033">6 in rise</text>
+<path d="M180 360 A110 110 0 0 1 280 318" fill="none" stroke="#8b9aa8" stroke-width="4"/>
+<text x="280" y="345" font-family="Arial,Helvetica,sans-serif" font-size="26" fill="#526272">≈ 26.6°</text>
+</g>
+<text x="800" y="780" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" fill="#526272">For 6:12, slope = 50% and the simple surface-area multiplier is about 1.118.</text>
+</svg>
