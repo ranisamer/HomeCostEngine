@@ -12,7 +12,7 @@
 <meta property="og:description" content="Estimate how much concrete you need in cubic yards and optional material cost from project dimensions.">
 <meta property="og:type" content="website"><meta property="og:site_name" content="HomeCostEngine">
 <link rel="stylesheet" href="/assets/styles.css?v=20260916-value1">
-</head>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Concrete Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","url":"https://homecostengine.com/calculators/concrete.html","description":"Estimate concrete volume in cubic yards from project dimensions, test quantity allowances and optionally estimate material cost."}</script></head>
 <body data-calculator="concrete">
 <div class="topbar">Independent planning tools for U.S. homeowners • Estimates are for budgeting, not contractor quotes</div>
 <header class="site-header"><div class="container nav"><a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a><nav class="navlinks"><details class="nav-dropdown">
@@ -32,11 +32,35 @@
 <div class="field"><label for="length">Length (ft)</label><input id="length" type="number" value="20" min=".1" step=".1"></div><div class="field"><label for="width">Width (ft)</label><input id="width" type="number" value="12" min=".1" step=".1"></div><div class="field"><label for="thickness">Thickness (in)</label><input id="thickness" type="number" value="4" min="1" step=".5"></div><div class="field"><label for="waste">Waste allowance</label><select id="waste"><option value="1.05">5%</option><option value="1.10" selected>10%</option><option value="1.15">15%</option></select></div><div class="field full"><label for="yardPrice">Concrete price per cubic yard (optional)</label><input id="yardPrice" type="number" value="160" min="0" step="1"></div><div class="field full"><button class="btn full" type="submit">Calculate My Estimate →</button></div></form><div class="notice">Planning estimate only. Actual contractor pricing varies with scope, access, code requirements, permits, labor availability, product brand, warranty and site conditions.</div></div>
 <aside class="result-card"><span class="kicker">Your planning result</span><div id="result" class="result-big">—</div><div id="range" class="result-range">Enter your details</div><div class="breakdown"><div class="row"><span>Unit / sizing</span><strong id="unit">—</strong></div><div class="row"><span>Materials</span><strong id="materials">—</strong></div><div class="row"><span>Labor</span><strong id="labor">—</strong></div><div class="row"><span>Other / waste</span><strong id="other">—</strong></div></div><p class="micro" style="color:#aebdca">Use this as a budgeting starting point and compare multiple local quotes before hiring.</p></aside></div></section>
 <section class="section alt"><div class="container info-copy">
-<h2>How much concrete do I need?</h2><p>Concrete volume is calculated from length × width × thickness, converted from cubic feet to cubic yards, then increased by your selected waste allowance. One cubic yard equals 27 cubic feet.</p>
-<h2>Concrete cost per yard</h2><p>If you know the delivered concrete price per cubic yard in your area, enter it above to estimate material cost. Delivery minimums, short-load fees, pumping, reinforcement, forming and labor may be separate. Read our <a class="card-link" href="/blog/concrete-cost-per-yard-explained.html">concrete cost per yard guide</a> for the budgeting factors to check.</p>
-<h3>Concrete slab quantity examples</h3><p>For common project sizes, see <a class="card-link" href="/blog/how-much-concrete-for-10x10-slab.html">how much concrete for a 10×10 slab</a>, <a class="card-link" href="/blog/how-much-concrete-for-12x12-slab.html">how much concrete for a 12×12 slab</a>, and <a class="card-link" href="/blog/how-much-concrete-for-20x20-slab.html">how much concrete for a 20×20 slab</a>.</p>
-<h3>Why add waste?</h3><p>Spillage, uneven subgrade, form variation and ordering increments can leave a project short. A modest waste allowance creates breathing room, but large or structural pours should be verified by the supplier or contractor.</p>
-<h3>Need cubic yards for another material?</h3><p>Use the <a class="card-link" href="/calculators/cubic-yard.html">Cubic Yard Calculator</a> for gravel, soil, mulch and other bulk-material volume planning.</p>
+<h2>Start with geometry, then think about the pour</h2>
+<p>The calculator converts length × width × thickness into cubic feet, divides by 27 to get cubic yards, then applies the allowance you select. That gives a quantity target. It does not yet tell you the final delivered order or installed project cost.</p>
+
+<h2>Worked example: 20 × 12 ft slab at 4 inches</h2>
+<p>Four inches is 0.333 ft. The theoretical volume is 20 × 12 × 0.333 = about 79.9 cubic feet. Divide by 27 and the slab is about 2.96 yd³ before an allowance. With 5% extra, the planning quantity is about 3.11 yd³.</p>
+
+<h2>Do not use “waste” to hide missing geometry</h2>
+<p>If the slab has a thickened edge, footing, step or deeper section, calculate that volume separately and add it. A percentage allowance is for uncertainty and handling loss, not for parts of the project you already know exist.</p>
+
+<h2>What usually sits outside the per-yard material price</h2>
+<table><thead><tr><th>Item</th><th>Why it matters</th></tr></thead><tbody>
+<tr><td>Delivery / short load</td><td>Small orders can carry fixed charges or minimums.</td></tr>
+<tr><td>Pumping or buggy placement</td><td>Needed when the truck cannot discharge close to the forms.</td></tr>
+<tr><td>Base preparation</td><td>Excavation, aggregate and compaction are separate from concrete volume.</td></tr>
+<tr><td>Reinforcement</td><td>Rebar, mesh or fibers depend on the project design.</td></tr>
+<tr><td>Forms and finishing</td><td>Labor can be a large part of installed cost.</td></tr>
+<tr><td>Washout / cleanup</td><td>Site logistics should be planned before delivery.</td></tr>
+</tbody></table>
+
+<h2>Three checks before ordering</h2>
+<ol><li>Re-measure the forms after they are set.</li><li>Confirm the designed thickness and any thickened sections.</li><li>Call the ready-mix supplier for minimum order, increment, delivery and waiting-time rules.</li></ol>
+
+<h2>Allowance scenarios</h2>
+<p>Use the selector to test 5%, 10% and 15% rather than assuming one percentage is always correct. An accurately formed slab over a well-prepared base can have less uncertainty than an irregular excavation with changing depth.</p>
+
+<h2>Related guides</h2>
+<p>See <a href="/blog/how-much-concrete-for-12x12-slab.html">the 12×12 slab example</a>, <a href="/blog/how-much-extra-concrete-should-i-order.html">how much extra concrete to order</a> and <a href="/blog/concrete-cost-per-yard-explained.html">what concrete cost per yard actually includes</a>.</p>
+<div class="notice"><strong>Quantity only:</strong> this calculator does not determine structural thickness, reinforcement, mix design or code requirements.</div>
+<div class="micro">Method reviewed September 21, 2026 • <a href="/cost-methodology.html">Methodology</a></div>
 </div></section>
 </main>
 <footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a><p>Free planning calculators and practical cost guides for U.S. home improvement projects.</p></div><div><h4>Calculators</h4><a href="/calculators/roof-replacement.html">Roofing</a><a href="/calculators/concrete.html">Concrete</a><a href="/calculators/hvac.html">HVAC</a><a href="/calculators/paint.html">Painting</a></div><div><h4>Explore</h4><a href="/calculators/">All calculators</a><a href="/guides/">Cost guides</a><a href="/blog/">Blog</a><a href="/about.html">Methodology</a><a href="/contact.html">Contact</a></div><div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Estimator disclaimer</a></div></div><div class="footer-bottom">© 2026 HomeCostEngine. Planning estimates only. Always verify pricing, permits, code requirements and scope with qualified local professionals.</div></div></footer>
