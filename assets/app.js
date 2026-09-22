@@ -487,3 +487,20 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
   }
 });
+
+
+function ensureBooksNav(){
+  document.querySelectorAll(".navlinks,.mobile-menu").forEach(nav=>{
+    if(nav.querySelector('a[href="/ebooks/"]')) return;
+    const blog=nav.querySelector('a[href="/blog/"]');
+    const about=nav.querySelector('a[href="/about.html"]');
+    const a=document.createElement("a");
+    a.href="/ebooks/";
+    a.textContent="Books";
+    if(about) nav.insertBefore(a,about);
+    else if(blog && blog.nextSibling) nav.insertBefore(a,blog.nextSibling);
+    else nav.appendChild(a);
+  });
+}
+if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",ensureBooksNav);
+else ensureBooksNav();
