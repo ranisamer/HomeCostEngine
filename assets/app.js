@@ -538,3 +538,131 @@ function ensureBooksNav(){
 }
 if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",ensureBooksNav);
 else ensureBooksNav();
+
+
+function hceBookPageCount(){
+  const text=(document.body?.innerText||"");
+  const m=text.match(/\b(\d{2,3})[- ]page\b/i)||text.match(/\b(\d{2,3}) pages\b/i);
+  return m?m[1]:"";
+}
+function hceBookPrice(){
+  return (document.querySelector(".book-price")?.textContent||document.querySelector(".ebook-card h2")?.textContent||"").trim();
+}
+function hceFirstModules(){
+  return Array.from(document.querySelectorAll(".ebook-chapter-list li")).slice(0,3).map(li=>li.textContent.replace(/^\s*\d+\.\s*/,"").trim());
+}
+function makeBookFeatureIcon(symbol,label,value){
+  const item=document.createElement("div");
+  item.className="ebook-feature-icon";
+  item.innerHTML='<span class="ebook-feature-symbol" aria-hidden="true">'+symbol+'</span><span><b>'+label+'</b><small>'+value+'</small></span>';
+  return item;
+}
+function enhanceEbookDetail(){
+  const path=location.pathname;
+  if(!path.startsWith("/ebooks/") || path==="/ebooks/" || path.endsWith("/ebooks/index.html")) return;
+  const h1=document.querySelector("main h1");
+  if(!h1 || document.querySelector(".ebook-product-enhanced")) return;
+  document.body.classList.add("ebook-product-enhanced");
+  const pageCount=hceBookPageCount();
+  const price=hceBookPrice();
+  const mobileCover=document.querySelector(".mobile-book-cover");
+  const desktopCover=document.querySelector(".desktop-book-cover,.ebook-cover-link");
+  const coverAnchor=mobileCover||desktopCover;
+  const heroLead=h1.parentElement?.querySelector(".lead");
+  const topList=h1.parentElement?.querySelector(".ebook-checks");
+  const firstSection=document.querySelector(".book-expanded-content") || document.querySelector("main .section.alt .info-copy");
+
+  // Rating / trust strip: stars are deliberately unrated until verified reader reviews exist.
+  if(coverAnchor && !coverAnchor.nextElementSibling?.classList?.contains("ebook-rating-strip")){
+    const rating=document.createElement("div");
+    rating.className="ebook-rating-strip";
+    rating.innerHTML='<span class="ebook-stars" aria-label="No verified rating yet">☆☆☆☆☆</span><strong>New release</strong><span>Verified reader reviews open</span>';
+    coverAnchor.insertAdjacentElement("afterend",rating);
+  }
+
+  // Product feature icons under the intro/cover.
+  const iconRow=document.createElement("div");
+  iconRow.className="ebook-feature-row";
+  iconRow.append(
+    makeBookFeatureIcon("▤","Pages",pageCount?pageCount+" pages":"Digital guide"),
+    makeBookFeatureIcon("⇩","Format","PDF instant download"),
+    makeBookFeatureIcon("▦","Extras","Printable worksheets")
+  );
+  if(mobileCover){
+    const rating=mobileCover.nextElementSibling;
+    (rating?.classList.contains("ebook-rating-strip")?rating:mobileCover).insertAdjacentElement("afterend",iconRow);
+  }else if(heroLead){
+    heroLead.insertAdjacentElement("afterend",iconRow);
+  }
+
+  // Add a secondary preview CTA in the purchase card.
+  const buyBtn=document.querySelector(".book-buy-button,.buy-book");
+  if(buyBtn && !document.querySelector(".ebook-preview-jump")){
+    const previewBtn=document.createElement("a");
+    previewBtn.href="#sample-pages";
+    previewBtn.className="btn secondary full ebook-preview-jump";
+    previewBtn.textContent="View 3 Sample Pages";
+    buyBtn.insertAdjacentElement("afterend",previewBtn);
+  }
+
+  // Sales copy block similar to the cleaner mobile product layout.
+  if(firstSection && !document.querySelector(".ebook-about-panel")){
+    const about=document.createElement("section");
+    about.className="section ebook-about-panel";
+    const listItems=topList?Array.from(topList.querySelectorAll("li")).slice(0,6).map(li=>'<li>'+li.textContent.trim()+'</li>').join(""):"";
+    about.innerHTML='<div class="container ebook-about-grid"><div><span class="eyebrow">About this book</span><h2>'+h1.textContent.trim()+'</h2><p class="lead">'+(heroLead?.textContent.trim()||"A practical HomeCostEngine field guide for smarter project planning.")+'</p></div><div class="ebook-whats-inside"><h3>What’s inside</h3><ul class="ebook-value-list">'+(listItems||'<li>Project planning guidance</li><li>Printable worksheets</li><li>Contractor quote checks</li><li>Internal calculator links</li>')+'</ul></div></div>';
+    const heroSection=h1.closest("section");
+    heroSection?.insertAdjacentElement("afterend",about);
+  }
+
+  // A safe 3-page preview built from the book's real first planning modules, without exposing the paid PDF.
+  if(!document.getElementById("sample-pages")){
+    const modules=hceFirstModules();
+    const first=modules[0]||"Project scope and existing conditions";
+    const second=modules[1]||"Measurements, materials and allowances";
+    const third=modules[2]||"Contractor quote and decision check";
+    const preview=document.createElement("section");
+    preview.id="sample-pages";
+    preview.className="section alt ebook-sample-section";
+    preview.innerHTML='<div class="container"><div class="section-head"><div><span class="eyebrow">Free preview</span><h2>Read 3 sample planning pages.</h2></div><p>These previews reflect the early planning pages and worksheet style used in the full guide. The complete PDF stays protected behind checkout.</p></div><div class="ebook-sample-grid">'+
+      '<article class="ebook-sample-page"><span>Sample page 1</span><h3>'+first+'</h3><p>Start by separating verified facts from assumptions. Record the existing condition, the result you want, and anything that still needs field confirmation before you compare prices.</p><ul><li>Define included and excluded scope</li><li>Record measurements and product requirements</li><li>Flag permit, access and restoration questions</li></ul></article>'+
+      '<article class="ebook-sample-page"><span>Sample page 2</span><h3>'+second+'</h3><p>Use the worksheet to turn a general idea into written scope. Keep owner selections, contractor responsibilities and allowances visible instead of burying them in one total.</p><div class="sample-lines"><i></i><i></i><i></i><i></i><i></i></div></article>'+
+      '<article class="ebook-sample-page"><span>Sample page 3</span><h3>'+third+'</h3><p>Normalize proposals before comparing the bottom line. Check quantities, exclusions, warranty, cleanup, permits and the conditions that could trigger a change order.</p><div class="sample-checks"><b>✓ Same scope?</b><b>✓ Allowances clear?</b><b>✓ Warranty stated?</b><b>✓ Change-order rules?</b></div></article>'+
+    '</div><div class="ebook-preview-cta"><span>'+ (price?price+" • ":"") +'Instant PDF after secure checkout</span><a class="btn" href="#'+(buyBtn?.id||"top")+'" onclick="window.scrollTo({top:0,behavior:\'smooth\'});return false;">Get the full guide →</a></div></div>';
+    const questions=Array.from(document.querySelectorAll("main section")).find(s=>/Questions & updates/i.test(s.textContent||""));
+    if(questions) questions.insertAdjacentElement("beforebegin",preview); else document.querySelector("main")?.appendChild(preview);
+  }
+
+  // Honest review block: no fabricated review count or score.
+  if(!document.querySelector(".ebook-review-section")){
+    const review=document.createElement("section");
+    review.className="section ebook-review-section";
+    review.innerHTML='<div class="container ebook-review-card"><div><span class="eyebrow">Reader reviews</span><h2>Verified reviews will appear here.</h2><div class="ebook-stars ebook-stars-large">☆☆☆☆☆</div><p>We do not publish invented ratings. Once verified purchasers send feedback, their reviews can be displayed here.</p></div><a class="btn secondary" href="mailto:reports@homecostengine.com?subject='+encodeURIComponent("HomeCostEngine book review: "+h1.textContent.trim())+'">Share your review →</a></div>';
+    const main=document.querySelector("main");
+    main?.appendChild(review);
+  }
+}
+function enhanceEbookLibrary(){
+  const path=location.pathname.replace(/\/+$/,"");
+  if(path!=="/ebooks" && !path.endsWith("/ebooks/index.html")) return;
+  document.body.classList.add("ebook-library-enhanced");
+  document.querySelectorAll(".book-card").forEach(card=>{
+    if(card.querySelector(".book-card-rating")) return;
+    const h2=card.querySelector("h2");
+    const pageTxt=card.querySelector(".book-card-actions span")?.textContent.trim()||"Digital PDF";
+    const rating=document.createElement("div");
+    rating.className="book-card-rating";
+    rating.innerHTML='<span aria-hidden="true">☆☆☆☆☆</span><small>New release</small>';
+    h2?.insertAdjacentElement("afterend",rating);
+    const features=document.createElement("div");
+    features.className="book-card-mini-features";
+    features.innerHTML='<span>▤ '+pageTxt+'</span><span>⇩ Instant PDF</span>';
+    rating.insertAdjacentElement("afterend",features);
+  });
+}
+function enhanceEbookStorefront(){
+  enhanceEbookLibrary();
+  enhanceEbookDetail();
+}
+if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",enhanceEbookStorefront);
+else enhanceEbookStorefront();
