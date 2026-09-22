@@ -489,17 +489,51 @@ document.addEventListener("DOMContentLoaded",()=>{
 });
 
 
+const HCE_BOOK_CATEGORIES=[
+  ["Renovation & Remodeling","/ebooks/#renovation-remodeling","Whole-home, additions, kitchens, baths and basements."],
+  ["Roofing","/ebooks/#roofing","Roof replacement planning, quantities and contractor scope."],
+  ["HVAC & Home Energy","/ebooks/#hvac-home-energy","Heating, cooling, efficiency and energy upgrades."],
+  ["Concrete & Outdoor","/ebooks/#concrete-outdoor-projects","Concrete, decks and landscaping projects."],
+  ["Flooring & Painting","/ebooks/#flooring-painting","Interior finish quantities, labor and planning."],
+  ["Home Maintenance","/ebooks/#home-maintenance","Maintenance schedules, reserves and first-time ownership."],
+  ["Windows & Doors","/ebooks/#windows-doors","Replacement costs, ratings and installation scope."],
+  ["Plumbing","/ebooks/#plumbing","Repair scope, water systems and quote planning."],
+  ["Electrical","/ebooks/#electrical","Panel replacement, circuits, permits and upgrades."],
+  ["Contractors & Quotes","/ebooks/#contractors-quotes","Compare proposals, allowances, exclusions and warranties."]
+];
+
 function ensureBooksNav(){
-  document.querySelectorAll(".navlinks,.mobile-menu").forEach(nav=>{
-    if(nav.querySelector('a[href="/ebooks/"]')) return;
-    const blog=nav.querySelector('a[href="/blog/"]');
-    const about=nav.querySelector('a[href="/about.html"]');
-    const a=document.createElement("a");
-    a.href="/ebooks/";
-    a.textContent="Books";
-    if(about) nav.insertBefore(a,about);
-    else if(blog && blog.nextSibling) nav.insertBefore(a,blog.nextSibling);
-    else nav.appendChild(a);
+  document.querySelectorAll(".navlinks").forEach(nav=>{
+    if(nav.querySelector(".books-nav-dropdown")) return;
+    let books=nav.querySelector('a[href="/ebooks/"]');
+    if(!books){
+      const about=nav.querySelector('a[href="/about.html"]');
+      books=document.createElement("a");
+      books.href="/ebooks/";
+      books.textContent="Books";
+      if(about) nav.insertBefore(books,about); else nav.appendChild(books);
+    }
+    const details=document.createElement("details");
+    details.className="nav-dropdown books-nav-dropdown";
+    details.innerHTML='<summary>Books</summary><div class="nav-dropdown-menu books-dropdown-menu">'+
+      HCE_BOOK_CATEGORIES.map(([label,href,desc])=>'<a href="'+href+'"><b>'+label+'</b><span>'+desc+'</span></a>').join("")+
+      '<a class="nav-dropdown-all" href="/ebooks/"><b>View all books →</b></a></div>';
+    books.replaceWith(details);
+  });
+
+  document.querySelectorAll(".mobile-menu").forEach(nav=>{
+    if(!nav.querySelector('a[href="/ebooks/"]')){
+      const about=nav.querySelector('a[href="/about.html"]');
+      const a=document.createElement("a"); a.href="/ebooks/"; a.textContent="Books";
+      if(about) nav.insertBefore(a,about); else nav.appendChild(a);
+    }
+    if(!nav.querySelector(".mobile-book-categories")){
+      const wrap=document.createElement("div");
+      wrap.className="mobile-book-categories";
+      wrap.innerHTML=HCE_BOOK_CATEGORIES.map(([label,href])=>'<a href="'+href+'">'+label+'</a>').join("");
+      const books=nav.querySelector('a[href="/ebooks/"]');
+      books.insertAdjacentElement("afterend",wrap);
+    }
   });
 }
 if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",ensureBooksNav);
