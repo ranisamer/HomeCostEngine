@@ -641,3 +641,14 @@ a.book-cover-art:hover{transform:translateY(-4px);box-shadow:0 24px 54px rgba(20
 }
 .book-cover-art{background-image:none!important;background-color:#142336!important}
 .book-cover-art.large{position:relative}
+
+
+/* Books category dropdown navigation */
+.books-dropdown-menu{width:min(620px,calc(100vw - 32px));display:grid;grid-template-columns:1fr 1fr;gap:2px 8px}
+.books-dropdown-menu .nav-dropdown-all{grid-column:1/-1}
+.mobile-book-categories{display:none}
+@media(max-width:900px){
+  .mobile-book-categories{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;padding:2px 0 8px 14px;border-left:2px solid var(--line)}
+  .mobile-book-categories a{font-size:.84rem!important;padding:5px 0!important;font-weight:600!important;color:var(--ink-2)!important}
+}
+@media(max-width:560px){.mobile-book-categories{grid-template-columns:1fr}}
