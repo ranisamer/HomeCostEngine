@@ -775,3 +775,56 @@ a.book-cover-art:hover{transform:translateY(-4px);box-shadow:0 24px 54px rgba(20
 @media(max-width:480px){
  .ebook-library-enhanced .book-grid{grid-template-columns:1fr}
 }
+
+
+/* Static ebook storefront controls */
+.ebook-top-buy-panel{
+  margin:18px 0 24px;
+  padding:18px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 14px 34px rgba(16,32,51,.08)
+}
+.ebook-rating-live{display:flex;align-items:center;gap:9px 12px;flex-wrap:wrap;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)}
+.ebook-rating-live strong{font-size:.82rem}
+.ebook-rating-live>span:last-child{font-size:.76rem;color:var(--ink-2)}
+.ebook-stars-visible{color:#b77a28;font-size:1.2rem;letter-spacing:.07em;white-space:nowrap}
+.ebook-icon-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:14px}
+.ebook-icon-strip>div{display:flex;align-items:center;gap:8px;padding:10px;border-radius:10px;background:#f7f2e9;border:1px solid #e8ddce;min-width:0}
+.ebook-icon-strip .ico{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border-radius:8px;background:#efe0ca;color:#9c6334;font-weight:900}
+.ebook-icon-strip b,.ebook-icon-strip small{display:block}
+.ebook-icon-strip b{font-size:.72rem;color:var(--ink);line-height:1.15}
+.ebook-icon-strip small{font-size:.62rem;color:var(--ink-2);line-height:1.15;margin-top:2px}
+.ebook-top-buy-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.ebook-top-buy-row>div{display:flex;flex-direction:column}
+.ebook-top-price{font-family:Georgia,"Times New Roman",serif;font-weight:800;font-size:2rem;color:var(--ink);line-height:1}
+.ebook-top-buy-row small{font-size:.72rem;color:var(--ink-2);margin-top:4px}
+.ebook-buy-accent{
+  background:#b65a46!important;
+  border-color:#b65a46!important;
+  color:#fff!important;
+  box-shadow:0 8px 20px rgba(182,90,70,.22)!important
+}
+.ebook-buy-accent:hover,.ebook-buy-accent:focus-visible{background:#9f4938!important;border-color:#9f4938!important;color:#fff!important}
+.ebook-sample-link{display:inline-block;margin-top:12px;font-size:.8rem;font-weight:800;color:#9c6334;text-decoration:underline}
+.ebook-bottom-buy{background:#102033;color:#fff}
+.ebook-bottom-buy>.container{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.ebook-bottom-buy h2{color:#fff;margin:6px 0!important}
+.ebook-bottom-buy p{color:#d4dce4;margin:0}
+.ebook-bottom-buy .eyebrow{color:#e0b47d}
+.ebook-bottom-buy-btn{min-width:190px}
+.ebook-review-section{padding-top:28px}
+.ebook-review-card{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.ebook-sample-section{scroll-margin-top:90px}
+
+@media(max-width:700px){
+  .ebook-top-buy-panel{margin:12px 0 20px;padding:14px}
+  .ebook-icon-strip{grid-template-columns:1fr}
+  .ebook-icon-strip>div{padding:9px 10px}
+  .ebook-top-buy-row{align-items:stretch;flex-direction:column}
+  .ebook-top-buy-row .ebook-buy-accent{width:100%;font-size:1rem;padding:14px 18px}
+  .ebook-top-price{font-size:1.8rem}
+  .ebook-bottom-buy>.container,.ebook-review-card{align-items:stretch;flex-direction:column}
+  .ebook-bottom-buy-btn{width:100%}
+}
