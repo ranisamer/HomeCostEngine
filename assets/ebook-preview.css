@@ -93,3 +93,30 @@
 @media(prefers-reduced-motion:reduce){
   .hce-book-page.is-flipping,.hce-preview-cover{animation:none!important;transition:none!important;transform:none!important}
 }
+
+
+/* Trailer-first product flow */
+.book-detail .hce-book-preview{
+  padding:28px 0 38px;
+  margin:0;
+  border-bottom:1px solid var(--line);
+}
+.book-detail .hce-book-preview .container{
+  padding-left:0;
+  padding-right:0;
+}
+.book-detail .hce-book-preview + .book-detail-grid{
+  margin-top:42px;
+}
+.hce-buy-after-preview{
+  margin-top:22px;
+}
+@media(max-width:700px){
+  .book-detail .hce-book-preview{
+    padding-top:18px;
+    padding-bottom:28px;
+  }
+  .book-detail .hce-book-preview + .book-detail-grid{
+    margin-top:28px;
+  }
+}
