@@ -193,10 +193,21 @@ function enhanceProduct(){
  const buyPanel=document.querySelector(".ebook-top-buy-panel");
  if(buyPanel){buyPanel.id="buy-book";if(location.hash==="#buy-book")setTimeout(()=>buyPanel.scrollIntoView({behavior:"smooth",block:"center"}),120);}
  section.className="section alt ebook-sample-section hce-book-preview";
+ /* trailer-first placement */
  section.innerHTML='<div class="container">'+
  '<div class="section-head"><div><span class="eyebrow">Free book preview</span><h2>See what’s inside before you buy.</h2></div><p>Read three substantial sample pages built around this guide’s project-planning topics, then unlock the complete digital edition if it fits your project.</p></div>'+
  '<div class="hce-preview-shell"><div class="hce-preview-cover-stage"><div class="hce-preview-cover-wrap">'+(cover?'<img class="hce-preview-cover" src="'+esc(cover)+'" alt="'+esc(title)+' cover">':'')+'</div><div class="hce-preview-cover-copy"><span class="eyebrow">'+esc(cfg.category)+'</span><h3>'+esc(title)+'</h3><p>Preview the planning style, worksheets and decision tools before purchasing the complete guide.</p><div class="hce-preview-meta"><span>'+esc(pages?pages+" pages":"Digital guide")+'</span><span>Worksheets & checklists</span><span>'+esc(price)+' one-time purchase</span></div><button class="btn hce-preview-open" type="button">Read 3 Pages Free</button><span class="hce-preview-no-signup">No signup required to preview</span></div></div>'+
  '<div class="hce-reader" hidden><div class="hce-reader-top"><strong>Interactive preview • '+esc(title)+'</strong><div class="hce-reader-progress"><i></i></div></div><div class="hce-book-spread"><article class="hce-book-page hce-page-left"></article><article class="hce-book-page hce-page-right"></article></div><div class="hce-reader-nav"><button class="btn secondary prev" type="button" aria-label="Previous preview page">← Previous</button><span class="indicator"></span><button class="btn secondary next" type="button" aria-label="Next preview page">Next →</button></div><button class="btn hce-buy-now hce-mobile-buy" type="button">Get the Full Guide — '+esc(price)+'</button></div></div></div>';
+ const detailContainer=document.querySelector(".book-detail .container");
+ const breadcrumb=detailContainer?.querySelector(".breadcrumb");
+ const grid=detailContainer?.querySelector(".book-detail-grid");
+ if(detailContainer&&grid){
+   detailContainer.insertBefore(section,grid);
+ }
+ const topBuy=document.querySelector(".ebook-top-buy-panel");
+ if(topBuy){
+   topBuy.classList.add("hce-buy-after-preview");
+ }
  const shell=section.querySelector(".hce-preview-shell"),coverStage=section.querySelector(".hce-preview-cover-stage"),reader=section.querySelector(".hce-reader"),left=section.querySelector(".hce-page-left"),right=section.querySelector(".hce-page-right"),prev=section.querySelector(".prev"),next=section.querySelector(".next"),indicator=section.querySelector(".indicator"),progress=section.querySelector(".hce-reader-progress i");
  let current=0;
  const maxCurrent=()=>window.innerWidth<=760?3:2;
