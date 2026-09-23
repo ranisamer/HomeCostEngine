@@ -145,6 +145,28 @@ const BOOKS={
  locked:["Home energy inventory","Air-sealing checklist","Insulation worksheet","Upgrade payback table","Rebate tracker","Post-upgrade verification page"]
 }
 };
+const BOOK_CALCULATORS={
+"smart-home-renovation-budget-blueprint":[["Remodeling Cost Calculator","/calculators/remodeling-cost.html"],["Project Contingency Calculator","/calculators/project-contingency.html"],["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"]],
+"roof-replacement-planning-handbook":[["Roof Replacement Calculator","/calculators/roof-replacement"],["Roofing Square Calculator","/calculators/roofing-square.html"],["Roof Pitch Calculator","/calculators/roof-pitch.html"]],
+"kitchen-remodel-cost-planner":[["Remodeling Cost Calculator","/calculators/remodeling-cost.html"],["Project Contingency Calculator","/calculators/project-contingency.html"],["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"]],
+"bathroom-remodel-budget-guide":[["Remodeling Cost Calculator","/calculators/remodeling-cost.html"],["Project Contingency Calculator","/calculators/project-contingency.html"],["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"]],
+"hvac-replacement-buyers-guide":[["HVAC Replacement Calculator","/calculators/hvac.html"],["Project Contingency Calculator","/calculators/project-contingency.html"],["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"]],
+"concrete-project-cost-handbook":[["Concrete Calculator","/calculators/concrete.html"],["Cubic Yard Calculator","/calculators/cubic-yard.html"],["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"]],
+"flooring-project-planner":[["Flooring Calculator","/calculators/flooring.html"],["Square Footage Calculator","/calculators/square-footage.html"],["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"]],
+"painting-budget-and-quote-guide":[["Paint Calculator","/calculators/paint.html"],["Square Footage Calculator","/calculators/square-footage.html"],["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"]],
+"homeowner-maintenance-cost-planner":[["Home Maintenance Budget Calculator","/calculators/home-maintenance-budget.html"],["Project Contingency Calculator","/calculators/project-contingency.html"],["Remodeling Cost Calculator","/calculators/remodeling-cost.html"]],
+"contractor-quote-comparison-playbook":[["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"],["Labor & Material Split Calculator","/calculators/labor-material-split.html"],["Project Contingency Calculator","/calculators/project-contingency.html"]],
+"complete-home-renovation-master-planner":[["Remodeling Cost Calculator","/calculators/remodeling-cost.html"],["Project Contingency Calculator","/calculators/project-contingency.html"],["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"]],
+"first-time-homeowner-cost-maintenance-handbook":[["Home Maintenance Budget Calculator","/calculators/home-maintenance-budget.html"],["Project Contingency Calculator","/calculators/project-contingency.html"],["Remodeling Cost Calculator","/calculators/remodeling-cost.html"]],
+"home-addition-cost-planning-guide":[["Square Footage Calculator","/calculators/square-footage.html"],["Remodeling Cost Calculator","/calculators/remodeling-cost.html"],["Project Contingency Calculator","/calculators/project-contingency.html"]],
+"basement-remodeling-budget-planner":[["Square Footage Calculator","/calculators/square-footage.html"],["Remodeling Cost Calculator","/calculators/remodeling-cost.html"],["Project Contingency Calculator","/calculators/project-contingency.html"]],
+"deck-outdoor-living-cost-planner":[["Concrete Calculator","/calculators/concrete.html"],["Cubic Yard Calculator","/calculators/cubic-yard.html"],["Project Contingency Calculator","/calculators/project-contingency.html"]],
+"window-door-replacement-buyers-guide":[["Square Footage Calculator","/calculators/square-footage.html"],["Remodeling Cost Calculator","/calculators/remodeling-cost.html"],["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"]],
+"plumbing-project-cost-quote-handbook":[["Toilet Installation Cost Calculator","/calculators/toilet-installation-cost.html"],["Project Contingency Calculator","/calculators/project-contingency.html"],["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"]],
+"electrical-upgrade-cost-planning-guide":[["Labor & Material Split Calculator","/calculators/labor-material-split.html"],["Project Contingency Calculator","/calculators/project-contingency.html"],["Contractor Quote Comparison","/calculators/contractor-quote-comparison.html"]],
+"landscaping-backyard-budget-planner":[["Mulch Calculator","/calculators/mulch.html"],["Gravel Calculator","/calculators/gravel.html"],["Cubic Yard Calculator","/calculators/cubic-yard.html"]],
+"home-energy-upgrade-savings-planner":[["HVAC Replacement Calculator","/calculators/hvac.html"],["Home Maintenance Budget Calculator","/calculators/home-maintenance-budget.html"],["Project Contingency Calculator","/calculators/project-contingency.html"]]
+};
 const slug=()=>location.pathname.split("/").filter(Boolean).pop()?.replace(/\.html$/,"")||"";
 function moneyText(){
  return (document.querySelector(".ebook-top-price")?.textContent||document.querySelector(".book-price")?.textContent||"$9").trim();
@@ -162,11 +184,13 @@ function tableHtml(rows){
 }
 function pageHtml(p,i,total,bookTitle){
  if(!p)return"";
+ const tool=p.tool?'<a class="hce-page-tool-link" href="'+esc(p.tool[1])+'"><span>Free calculator</span><strong>'+esc(p.tool[0])+' →</strong></a>':"";
  return '<div class="hce-page-kicker"><span>'+esc(p.label||"Book preview")+'</span><span>Preview '+(i+1)+' of 3</span></div>'+
  '<h3>'+esc(p.title)+'</h3><p class="hce-page-intro">'+esc(p.intro)+'</p>'+
  (p.bullets?'<ul class="hce-page-list">'+p.bullets.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>':"")+
  tableHtml(p.table)+
  (p.note?'<div class="hce-page-note"><strong>Planning note:</strong> '+esc(p.note)+'</div>':"")+
+ tool+
  '<div class="hce-page-footer"><span>'+esc(bookTitle)+'</span><span>Full guide: '+esc(total||"digital")+" pages</span></div>";
 }
 function lockedHtml(cfg,total,price){
@@ -185,19 +209,20 @@ function enhanceProduct(){
  const title=(document.querySelector("main h1")?.textContent||document.title).trim();
  const cover=document.querySelector(".mobile-book-cover img,.desktop-book-cover img,.premium-book-art img")?.src||"";
  const pages=totalPages(),price=moneyText();
+ const calcLinks=BOOK_CALCULATORS[key]||[];
  const data=[
-  Object.assign({label:cfg.category},cfg.p1),
-  Object.assign({label:"Planning worksheet"},cfg.p2),
-  Object.assign({label:"Decision tool"},cfg.p3)
+  Object.assign({label:cfg.category,tool:calcLinks[0]},cfg.p1),
+  Object.assign({label:"Planning worksheet",tool:calcLinks[1]},cfg.p2),
+  Object.assign({label:"Decision tool",tool:calcLinks[2]},cfg.p3)
  ];
  const buyPanel=document.querySelector(".ebook-top-buy-panel");
  if(buyPanel){buyPanel.id="buy-book";if(location.hash==="#buy-book")setTimeout(()=>buyPanel.scrollIntoView({behavior:"smooth",block:"center"}),120);}
  section.className="section alt ebook-sample-section hce-book-preview";
  /* trailer-first placement */
  section.innerHTML='<div class="container">'+
- '<div class="section-head"><div><span class="eyebrow">Free book preview</span><h2>See what’s inside before you buy.</h2></div><p>Read three substantial sample pages built around this guide’s project-planning topics, then unlock the complete digital edition if it fits your project.</p></div>'+
- '<div class="hce-preview-shell"><div class="hce-preview-cover-stage"><div class="hce-preview-cover-wrap">'+(cover?'<img class="hce-preview-cover" src="'+esc(cover)+'" alt="'+esc(title)+' cover">':'')+'</div><div class="hce-preview-cover-copy"><span class="eyebrow">'+esc(cfg.category)+'</span><h3>'+esc(title)+'</h3><p>Preview the planning style, worksheets and decision tools before purchasing the complete guide.</p><div class="hce-preview-meta"><span>'+esc(pages?pages+" pages":"Digital guide")+'</span><span>Worksheets & checklists</span><span>'+esc(price)+' one-time purchase</span></div><button class="btn hce-preview-open" type="button">Read 3 Pages Free</button><span class="hce-preview-no-signup">No signup required to preview</span></div></div>'+
- '<div class="hce-reader" hidden><div class="hce-reader-top"><strong>Interactive preview • '+esc(title)+'</strong><div class="hce-reader-progress"><i></i></div></div><div class="hce-book-spread"><article class="hce-book-page hce-page-left"></article><article class="hce-book-page hce-page-right"></article></div><div class="hce-reader-nav"><button class="btn secondary prev" type="button" aria-label="Previous preview page">← Previous</button><span class="indicator"></span><button class="btn secondary next" type="button" aria-label="Next preview page">Next →</button></div><button class="btn hce-buy-now hce-mobile-buy" type="button">Get the Full Guide — '+esc(price)+'</button></div></div></div>';
+ '<div class="section-head"><div><span class="eyebrow">3-page book trailer</span><h2>Read the book first. Decide after.</h2></div><p>The first thing on this page is a three-page interactive trailer. Explore the content and use the linked HomeCostEngine calculators before you see the purchase section.</p></div>'+
+ '<div class="hce-preview-meta hce-preview-meta-top"><span>'+esc(pages?pages+" pages":"Digital guide")+'</span><span>3-page interactive trailer</span><span>Free calculator links inside</span></div>'+
+ '<div class="hce-preview-shell"><div class="hce-reader"><div class="hce-reader-top"><strong>'+esc(title)+' • Free 3-page trailer</strong><div class="hce-reader-progress"><i></i></div></div><div class="hce-book-spread"><article class="hce-book-page hce-page-left"></article><article class="hce-book-page hce-page-right"></article></div><div class="hce-reader-nav"><button class="btn secondary prev" type="button" aria-label="Previous preview page">← Previous</button><span class="indicator"></span><button class="btn secondary next" type="button" aria-label="Next preview page">Next →</button></div><div class="hce-preview-tools"><strong>Free calculators used with this guide</strong><div>'+calcLinks.map(x=>'<a href="'+esc(x[1])+'">'+esc(x[0])+' →</a>').join("")+'</div></div><button class="btn hce-buy-now hce-mobile-buy" type="button">Get the Full Guide — '+esc(price)+'</button></div></div></div>';
  const detailContainer=document.querySelector(".book-detail .container");
  const breadcrumb=detailContainer?.querySelector(".breadcrumb");
  const grid=detailContainer?.querySelector(".book-detail-grid");
@@ -208,7 +233,7 @@ function enhanceProduct(){
  if(topBuy){
    topBuy.classList.add("hce-buy-after-preview");
  }
- const shell=section.querySelector(".hce-preview-shell"),coverStage=section.querySelector(".hce-preview-cover-stage"),reader=section.querySelector(".hce-reader"),left=section.querySelector(".hce-page-left"),right=section.querySelector(".hce-page-right"),prev=section.querySelector(".prev"),next=section.querySelector(".next"),indicator=section.querySelector(".indicator"),progress=section.querySelector(".hce-reader-progress i");
+ const shell=section.querySelector(".hce-preview-shell"),reader=section.querySelector(".hce-reader"),left=section.querySelector(".hce-page-left"),right=section.querySelector(".hce-page-right"),prev=section.querySelector(".prev"),next=section.querySelector(".next"),indicator=section.querySelector(".indicator"),progress=section.querySelector(".hce-reader-progress i");
  let current=0;
  const maxCurrent=()=>window.innerWidth<=760?3:2;
  function draw(dir){
@@ -228,7 +253,7 @@ function enhanceProduct(){
   progress.style.width=(atEnd?100:((Math.min(current,3)+1)/4*100))+"%";
   shell.classList.toggle("show-mobile-buy",window.innerWidth<=760&&current>=2);
  }
- section.querySelector(".hce-preview-open").addEventListener("click",()=>{coverStage.hidden=true;reader.hidden=false;draw("open");reader.scrollIntoView({behavior:"smooth",block:"start"});});
+ draw("initial");
  prev.addEventListener("click",()=>{if(current>0){current--;draw("prev")}});
  next.addEventListener("click",()=>{const max=maxCurrent();if(current>=max){buy()}else{current++;draw("next")}});
  section.addEventListener("click",e=>{if(e.target.closest(".hce-buy-now"))buy()});
