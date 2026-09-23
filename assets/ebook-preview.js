@@ -1,6 +1,8 @@
 /* HomeCostEngine Interactive Book Preview — 2026-09-23 */
 (function(){
 "use strict";
+if(window.__HCE_EBOOK_PREVIEW_LOADED__) return;
+window.__HCE_EBOOK_PREVIEW_LOADED__=true;
 const BOOKS={
 "smart-home-renovation-budget-blueprint":{
  category:"Smart Renovation",
