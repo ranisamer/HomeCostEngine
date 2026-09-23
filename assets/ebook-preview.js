@@ -170,7 +170,7 @@ function pageHtml(p,i,total,bookTitle){
 function lockedHtml(cfg,total,price){
  const topics=(cfg.locked||[]).map(x=>'<span>'+esc(x)+'</span>').join("");
  return '<div class="hce-lock-content"><div class="hce-page-kicker"><span>Next section</span><span>Locked</span></div><h3>Continue with the complete guide</h3><p class="hce-page-intro">More worksheets, checklists and planning tools continue here.</p>'+tableHtml([["Tool","Status"],["Budget worksheet","Included"],["Quote checklist","Included"],["Planning templates","Included"],["Closeout tools","Included"]])+'</div>'+
- '<div class="hce-lock-panel"><div class="hce-lock-icon">🔒</div><h3>You’ve previewed 3 pages</h3><p>The complete guide contains '+esc(total||"many more")+' pages of project-specific planning content.</p><div class="hce-lock-topics">'+topics+'</div><button class="btn hce-buy-now" type="button">Get the Full Guide — '+esc(price)+'</button></div>';
+ '<div class="hce-lock-panel"><div class="hce-lock-icon">🔒</div><h3>You’ve previewed 3 sample pages</h3><p>The complete guide contains '+esc(total||"many more")+' pages of project-specific planning content.</p><div class="hce-lock-topics">'+topics+'</div><button class="btn hce-buy-now" type="button">Get the Full Guide — '+esc(price)+'</button></div>';
 }
 function buy(){
  const b=document.querySelector(".ebook-top-buy,.book-buy-button,.ebook-bottom-buy-btn");
@@ -189,10 +189,10 @@ function enhanceProduct(){
   Object.assign({label:"Decision tool"},cfg.p3)
  ];
  const buyPanel=document.querySelector(".ebook-top-buy-panel");
- if(buyPanel)buyPanel.id="buy-book";
+ if(buyPanel){buyPanel.id="buy-book";if(location.hash==="#buy-book")setTimeout(()=>buyPanel.scrollIntoView({behavior:"smooth",block:"center"}),120);}
  section.className="section alt ebook-sample-section hce-book-preview";
  section.innerHTML='<div class="container">'+
- '<div class="section-head"><div><span class="eyebrow">Free book preview</span><h2>See what’s inside before you buy.</h2></div><p>Read three substantial preview pages from this guide, then unlock the complete digital edition if it fits your project.</p></div>'+
+ '<div class="section-head"><div><span class="eyebrow">Free book preview</span><h2>See what’s inside before you buy.</h2></div><p>Read three substantial sample pages built around this guide’s project-planning topics, then unlock the complete digital edition if it fits your project.</p></div>'+
  '<div class="hce-preview-shell"><div class="hce-preview-cover-stage"><div class="hce-preview-cover-wrap">'+(cover?'<img class="hce-preview-cover" src="'+esc(cover)+'" alt="'+esc(title)+' cover">':'')+'</div><div class="hce-preview-cover-copy"><span class="eyebrow">'+esc(cfg.category)+'</span><h3>'+esc(title)+'</h3><p>Preview the planning style, worksheets and decision tools before purchasing the complete guide.</p><div class="hce-preview-meta"><span>'+esc(pages?pages+" pages":"Digital guide")+'</span><span>Worksheets & checklists</span><span>'+esc(price)+' one-time purchase</span></div><button class="btn hce-preview-open" type="button">Read 3 Pages Free</button><span class="hce-preview-no-signup">No signup required to preview</span></div></div>'+
  '<div class="hce-reader" hidden><div class="hce-reader-top"><strong>Interactive preview • '+esc(title)+'</strong><div class="hce-reader-progress"><i></i></div></div><div class="hce-book-spread"><article class="hce-book-page hce-page-left"></article><article class="hce-book-page hce-page-right"></article></div><div class="hce-reader-nav"><button class="btn secondary prev" type="button" aria-label="Previous preview page">← Previous</button><span class="indicator"></span><button class="btn secondary next" type="button" aria-label="Next preview page">Next →</button></div><button class="btn hce-buy-now hce-mobile-buy" type="button">Get the Full Guide — '+esc(price)+'</button></div></div></div>';
  const shell=section.querySelector(".hce-preview-shell"),coverStage=section.querySelector(".hce-preview-cover-stage"),reader=section.querySelector(".hce-reader"),left=section.querySelector(".hce-page-left"),right=section.querySelector(".hce-page-right"),prev=section.querySelector(".prev"),next=section.querySelector(".next"),indicator=section.querySelector(".indicator"),progress=section.querySelector(".hce-reader-progress i");
@@ -212,7 +212,7 @@ function enhanceProduct(){
   const atEnd=current===max;
   next.textContent=atEnd?"Unlock Full Guide →":"Next →";
   indicator.textContent=window.innerWidth<=760?(current<3?"Preview page "+(current+1)+" of 3":"Full guide locked"):"Preview spread "+(current+1)+" of "+(max+1);
-  progress.style.width=((Math.min(current,3)+1)/4*100)+"%";
+  progress.style.width=(atEnd?100:((Math.min(current,3)+1)/4*100))+"%";
   shell.classList.toggle("show-mobile-buy",window.innerWidth<=760&&current>=2);
  }
  section.querySelector(".hce-preview-open").addEventListener("click",()=>{coverStage.hidden=true;reader.hidden=false;draw("open");reader.scrollIntoView({behavior:"smooth",block:"start"});});
