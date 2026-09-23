@@ -1,5 +1,43 @@
 const GA_MEASUREMENT_ID = "G-T47EEK5EH0";
 
+const CANONICAL_ORIGIN = "https://homecostengine.com";
+
+function normalizeInternalUrl(value, forceAbsolute = false) {
+  if (!value) return value;
+
+  const trimmed = value.trim();
+  if (
+    !trimmed ||
+    trimmed.startsWith("#") ||
+    /^(?:mailto:|tel:|javascript:|data:)/i.test(trimmed)
+  ) {
+    return value;
+  }
+
+  try {
+    const isAbsolute = /^https?:\/\//i.test(trimmed);
+    if (!isAbsolute && !trimmed.startsWith("/")) {
+      return value;
+    }
+
+    const url = new URL(trimmed, CANONICAL_ORIGIN);
+    const hostname = url.hostname.toLowerCase();
+    if (hostname !== "homecostengine.com" && hostname !== "www.homecostengine.com") {
+      return value;
+    }
+
+    let pathname = url.pathname;
+    pathname = pathname.replace(/\/index\.html$/i, "/");
+    pathname = pathname.replace(/\.html$/i, "");
+
+    const clean = pathname + url.search + url.hash;
+    return forceAbsolute || isAbsolute ? CANONICAL_ORIGIN + clean : clean;
+  } catch {
+    return value;
+  }
+}
+
+
 const EXTERNAL_RESOURCES = {
   roofing: [
     ["NRCA Consumer Roofing Information","https://www.nrca.net/roofing-guidelines/consumer-information"],
@@ -261,6 +299,37 @@ export async function onRequest(context) {
         `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', '${GA_MEASUREMENT_ID}');\n</script>`,
         { html: true }
       );
+    }
+  });
+
+
+  rewriter.on("a[href]", {
+    element(element) {
+      const href = element.getAttribute("href");
+      const normalized = normalizeInternalUrl(href);
+      if (normalized && normalized !== href) {
+        element.setAttribute("href", normalized);
+      }
+    }
+  });
+
+  rewriter.on('link[rel="canonical"][href]', {
+    element(element) {
+      const href = element.getAttribute("href");
+      const normalized = normalizeInternalUrl(href, true);
+      if (normalized && normalized !== href) {
+        element.setAttribute("href", normalized);
+      }
+    }
+  });
+
+  rewriter.on('meta[property="og:url"][content]', {
+    element(element) {
+      const content = element.getAttribute("content");
+      const normalized = normalizeInternalUrl(content, true);
+      if (normalized && normalized !== content) {
+        element.setAttribute("content", normalized);
+      }
     }
   });
 
