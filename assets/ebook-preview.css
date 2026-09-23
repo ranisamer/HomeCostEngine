@@ -120,3 +120,46 @@
     margin-top:28px;
   }
 }
+
+
+/* Calculator links inside the book trailer */
+.hce-preview-meta-top{justify-content:flex-start;margin:14px 0 18px}
+.hce-page-tool-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:16px 0 42px;
+  padding:12px 14px;
+  border:1px solid #d8c8b5;
+  border-radius:10px;
+  background:#f7f1e8;
+  color:#102033;
+  text-decoration:none;
+}
+.hce-page-tool-link span{
+  color:#8e6335;
+  font-size:.66rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.hce-page-tool-link strong{font-size:.78rem;text-align:right}
+.hce-page-tool-link:hover,.hce-page-tool-link:focus-visible{background:#efe3d4;border-color:#b78a59}
+.hce-preview-tools{
+  margin-top:16px;
+  padding:16px 18px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+}
+.hce-preview-tools>strong{display:block;margin-bottom:9px;font-size:.78rem;color:var(--ink)}
+.hce-preview-tools>div{display:flex;gap:8px 16px;flex-wrap:wrap}
+.hce-preview-tools a{font-size:.78rem;font-weight:800;color:#8f6031;text-decoration:underline;text-underline-offset:3px}
+.book-detail .hce-book-preview{padding-top:18px}
+@media(max-width:760px){
+ .hce-preview-meta-top{justify-content:center}
+ .hce-page-tool-link{align-items:flex-start;flex-direction:column;margin-bottom:42px}
+ .hce-page-tool-link strong{text-align:left}
+ .hce-preview-tools>div{display:grid}
+}
