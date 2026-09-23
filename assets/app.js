@@ -666,3 +666,11 @@ function enhanceEbookStorefront(){
 }
 if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",enhanceEbookStorefront);
 else enhanceEbookStorefront();
+
+
+/* Load the reusable interactive ebook preview system. */
+(function(){
+  if(!location.pathname.startsWith("/ebooks")) return;
+  const css=document.createElement("link"); css.rel="stylesheet"; css.href="/assets/ebook-preview.css?v=20260923-1"; document.head.appendChild(css);
+  const js=document.createElement("script"); js.src="/assets/ebook-preview.js?v=20260923-1"; js.defer=true; document.head.appendChild(js);
+})();
