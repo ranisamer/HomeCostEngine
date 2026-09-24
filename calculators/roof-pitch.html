@@ -3,81 +3,228 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Roof Pitch Calculator | HomeCostEngine</title>
-<meta name="description" content="Calculate roof pitch, slope angle, slope percentage and roof-area multiplier from rise and run measurements.">
+<title>Roof Pitch Calculator: Degrees, Slope, Rafter & Roof Area (2026) | HomeCostEngine</title>
+<meta name="description" content="Free roof pitch calculator: convert rise/run, degrees or percent slope; estimate pitch factor, rafter length, roof surface area and roofing squares from building dimensions.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#102033">
 <link rel="canonical" href="https://homecostengine.com/calculators/roof-pitch.html">
-<meta property="og:title" content="Roof Pitch Calculator | HomeCostEngine">
-<meta property="og:description" content="Calculate roof pitch, slope angle, slope percentage and roof-area multiplier from rise and run measurements.">
+<meta property="og:title" content="Roof Pitch Calculator: Degrees, Slope, Rafter & Roof Area">
+<meta property="og:description" content="Convert roof pitch four ways and carry the result into roof area, roofing squares and replacement-budget planning.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HomeCostEngine">
 <link rel="stylesheet" href="/assets/styles.css?v=20260916-value1">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Roof Pitch Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","url":"https://homecostengine.com/calculators/roof-pitch.html","description":"Calculate roof pitch, slope angle, slope percentage and roof-area multiplier from rise and run measurements."}</script></head>
+<style>
+.pitch-mode-note{margin-top:10px}
+.pitch-presets{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.pitch-presets button{border:1px solid #cdd6de;background:#fff;border-radius:999px;padding:8px 12px;font:inherit;font-weight:700;cursor:pointer}
+.pitch-presets button:hover{transform:translateY(-1px)}
+.pitch-fields{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pitch-action{border-top:1px solid #dfe5ea;margin-top:26px;padding-top:22px}
+@media(max-width:700px){.pitch-fields{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Roof Pitch Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","url":"https://homecostengine.com/calculators/roof-pitch.html","description":"Convert rise and run, angle or percent slope into roof pitch, degrees, slope percentage, pitch factor, rafter length and approximate roof area.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What angle is a 6/12 roof pitch?","acceptedAnswer":{"@type":"Answer","text":"A 6:12 roof pitch is approximately 26.6 degrees and a 50% slope. Its pitch factor is about 1.118."}},{"@type":"Question","name":"How do I convert roof pitch to degrees?","acceptedAnswer":{"@type":"Answer","text":"Divide rise by run, take the arctangent of that ratio, then convert the result from radians to degrees. For standard X:12 pitch, use arctangent(X/12)."}},{"@type":"Question","name":"How do I calculate roof area from pitch?","acceptedAnswer":{"@type":"Answer","text":"For simple roof geometry, multiply horizontal roof-plan area by the pitch factor, which is the square root of 1 plus the slope ratio squared. Complex roofs should be measured by individual planes."}},{"@type":"Question","name":"What is the roof pitch factor for 6/12?","acceptedAnswer":{"@type":"Answer","text":"The pitch or area multiplier for 6:12 is approximately 1.118."}},{"@type":"Question","name":"Is roof pitch the same as roof slope?","acceptedAnswer":{"@type":"Answer","text":"They describe the same inclination in different forms. Pitch is commonly expressed as rise over run, while slope can be expressed as a percentage and angle in degrees."}},{"@type":"Question","name":"Can I calculate roofing squares from roof pitch?","acceptedAnswer":{"@type":"Answer","text":"Pitch alone is not enough. You need horizontal roof-plan area or roof dimensions. Once approximate sloped roof area is known, divide by 100 to convert square feet of roof surface into roofing squares."}}]}</script>
+</head>
 <body data-calculator="roofpitch">
 <div class="topbar">Independent planning tools for U.S. homeowners • Estimates are for budgeting, not contractor quotes</div>
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a>
     <nav class="navlinks"><details class="nav-dropdown">
-        <summary>Calculators</summary>
-        <div class="nav-dropdown-menu">
-          <a href="/calculators/roof-replacement.html"><b>Roof Replacement</b><span>Estimate roofing cost by size and material.</span></a>
-          <a href="/calculators/hvac.html"><b>HVAC Replacement</b><span>Plan heating and cooling replacement cost.</span></a>
-          <a href="/calculators/concrete.html"><b>Concrete Calculator</b><span>Calculate cubic yards and material cost.</span></a>
-          <a href="/calculators/paint.html"><b>Paint Calculator</b><span>Estimate wall area, gallons and paint cost.</span></a>
-          <a href="/calculators/contractor-quote-comparison.html"><b>Compare Contractor Quotes</b><span>Compare price, scope and allowances.</span></a>
-          <a class="nav-dropdown-all" href="/calculators/"><b>View all calculators →</b></a>
-        </div>
-      </details><a href="/guides/">Cost Guides</a><a href="/projects.html">Projects</a><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="network-link" href="https://breakevenroascalculator.net/" target="_blank" rel="noopener">Marketing Calculators ↗</a></nav>
+      <summary>Calculators</summary>
+      <div class="nav-dropdown-menu">
+        <a href="/calculators/roof-replacement.html"><b>Roof Replacement</b><span>Estimate roofing cost by size and material.</span></a>
+        <a href="/calculators/roofing-square.html"><b>Roofing Squares</b><span>Convert roof area to squares and bundles.</span></a>
+        <a href="/calculators/roof-decking-replacement-cost.html"><b>Roof Decking Cost</b><span>Plan sheathing panels and per-sheet repair cost.</span></a>
+        <a href="/calculators/contractor-quote-comparison.html"><b>Compare Contractor Quotes</b><span>Compare price, scope and allowances.</span></a>
+        <a class="nav-dropdown-all" href="/calculators/"><b>View all calculators →</b></a>
+      </div>
+    </details><a href="/guides/">Cost Guides</a><a href="/projects.html">Projects</a><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="network-link" href="https://breakevenroascalculator.net/" target="_blank" rel="noopener">Marketing Calculators ↗</a></nav>
     <a class="navcta" href="/calculators/">Calculate a Project →</a><button class="menu-btn" aria-label="Open menu">☰</button>
   </div>
-  <div class="container mobile-menu"><a href="/calculators/">Calculators</a><a href="/guides/">Cost Guides</a><a href="/projects.html">Projects</a><a href="/blog/">Blog</a><a href="/about.html">About</a><a href="https://breakevenroascalculator.net/" target="_blank" rel="noopener">Marketing Calculators ↗</a></div>
+  <div class="container mobile-menu"><a href="/calculators/">Calculators</a><a href="/guides/">Cost Guides</a><a href="/projects.html">Projects</a><a href="/blog/">Blog</a><a href="/about.html">About</a></div>
 </header>
 <main>
-<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="/">Home</a> / <a href="/calculators/">Calculators</a> / Roof Pitch Calculator</div><span class="eyebrow">Free calculator</span><h1>Roof Pitch Calculator</h1><p class="lead">Calculate roof pitch, slope angle, slope percentage and roof-area multiplier from rise and run measurements.</p></div></section>
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="/">Home</a> / <a href="/calculators/">Calculators</a> / Roof Pitch Calculator</div><span class="eyebrow">Free roofing calculator • 4 input methods</span><h1>Roof Pitch Calculator: Degrees, Slope, Rafter Length &amp; Roof Area</h1><p class="lead">Convert rise/run, degrees or percent slope into roof pitch. Or enter simple gable-roof dimensions to estimate pitch factor, rafter length, roof surface area and roofing squares in one workflow.</p></div></section>
+
+<section class="section" style="padding-top:26px;padding-bottom:16px"><article class="container info-copy">
+<div class="notice"><strong>Quick reference:</strong> a <strong>6:12 pitch</strong> = about <strong>26.6°</strong> = <strong>50% slope</strong> = <strong>1.118× pitch factor</strong>. That means a simple 2,000 sq ft horizontal roof plan becomes about 2,236 sq ft of sloped roof surface before irregular geometry or separate overhang adjustments.</div>
+</article></section>
+
 <section class="section" style="padding-top:15px"><div class="container calc-layout">
-<div class="calc-shell"><h2>Your project details</h2><p class="muted">Change the inputs below to match your project.</p><form id="calculatorForm" class="form-grid">
-<div class="field"><label for="pitchRise">Rise (in)</label><input id="pitchRise" type="number" value="6" min="0" step=".1"></div>
-<div class="field"><label for="pitchRun">Run (in)</label><input id="pitchRun" type="number" value="12" min=".01" step=".1"></div><div class="field full"><button class="btn full" type="submit">Calculate →</button></div></form><div class="notice">Planning tool only. Verify field measurements, material specifications and project requirements before ordering materials or starting work.</div></div>
+<div class="calc-shell">
+<h2>Calculate your roof pitch</h2>
+<p class="muted">Choose the measurement you already know. The same result is converted into pitch, degrees, percent slope and area factor.</p>
+<form id="calculatorForm" class="form-grid">
+<div class="field full"><label for="pitchMode">I know...</label><select id="pitchMode">
+<option value="riseRun" selected>Rise and run</option>
+<option value="degrees">Roof angle in degrees</option>
+<option value="percent">Percent slope</option>
+<option value="dimensions">Simple gable roof dimensions + pitch</option>
+</select></div>
+
+<div id="pitchRiseRunFields" class="pitch-fields">
+<div class="field"><label for="pitchRise">Rise</label><input id="pitchRise" type="number" value="6" min="0" step=".1"><small>Vertical rise for the run entered</small></div>
+<div class="field"><label for="pitchRun">Run</label><input id="pitchRun" type="number" value="12" min=".01" step=".1"><small>Standard roof notation normally uses 12 in</small></div>
+<div class="field"><label for="pitchSpan">Optional rafter horizontal span (ft)</label><input id="pitchSpan" type="number" value="0" min="0" step=".1"><small>Horizontal ridge-to-eave distance</small></div>
+<div class="field"><label for="pitchFootprint">Optional horizontal roof plan (sq ft)</label><input id="pitchFootprint" type="number" value="2000" min="0" step="1"><small>Use roof plan / footprint, not interior floor area unless they match</small></div>
+</div>
+
+<div id="pitchDegreesFields" class="pitch-fields" style="display:none">
+<div class="field"><label for="pitchDegrees">Roof angle (degrees)</label><input id="pitchDegrees" type="number" value="26.6" min=".1" max="88.9" step=".1"></div>
+<div class="field"><label for="pitchSpan">Optional rafter span / footprint</label><p class="micro">Use the optional span and footprint fields under Rise &amp; Run after switching back if you want length or area outputs.</p></div>
+</div>
+
+<div id="pitchPercentFields" class="pitch-fields" style="display:none">
+<div class="field"><label for="pitchPercent">Slope (%)</label><input id="pitchPercent" type="number" value="50" min=".1" step=".1"></div>
+<div class="field"><p class="micro">Example: 50% slope = 6:12 pitch. 100% slope = 12:12 pitch.</p></div>
+</div>
+
+<div id="pitchDimensionsFields" class="pitch-fields" style="display:none">
+<div class="field"><label for="pitchDimRise">Pitch rise per 12</label><input id="pitchDimRise" type="number" value="6" min="0" step=".1"></div>
+<div class="field"><label for="pitchBuildingWidth">Building width (ft)</label><input id="pitchBuildingWidth" type="number" value="28" min=".1" step=".1"></div>
+<div class="field"><label for="pitchBuildingLength">Building length (ft)</label><input id="pitchBuildingLength" type="number" value="40" min=".1" step=".1"></div>
+<div class="field"><label for="pitchEave">Eave overhang each side (in)</label><input id="pitchEave" type="number" value="12" min="0" step=".1"></div>
+<div class="field"><label for="pitchGable">Gable/rake overhang each end (in)</label><input id="pitchGable" type="number" value="12" min="0" step=".1"></div>
+<div class="field"><p class="micro">Simple symmetrical gable model only. Hips, valleys, dormers and intersecting roofs should be measured by plane.</p></div>
+</div>
+
+<div class="field full">
+<label>Quick pitch presets</label>
+<div class="pitch-presets">
+<button type="button" data-pitch-preset="2">2:12</button><button type="button" data-pitch-preset="3">3:12</button><button type="button" data-pitch-preset="4">4:12</button><button type="button" data-pitch-preset="5">5:12</button><button type="button" data-pitch-preset="6">6:12</button><button type="button" data-pitch-preset="7">7:12</button><button type="button" data-pitch-preset="8">8:12</button><button type="button" data-pitch-preset="9">9:12</button><button type="button" data-pitch-preset="10">10:12</button><button type="button" data-pitch-preset="12">12:12</button>
+</div>
+</div>
+<div class="field full"><button class="btn full" type="submit">Calculate Roof Pitch →</button></div>
+</form>
+<div class="notice">Planning geometry only. Verify measurements and roof planes before ordering material. Do not access a steep, wet, damaged or otherwise unsafe roof to improve an online estimate.</div>
+</div>
+
 <aside class="result-card"><span class="kicker">Your result</span><div id="result" class="result-big">—</div><div id="range" class="result-range">Enter your details</div><div class="breakdown">
-<div class="row"><span>Slope angle</span><strong id="unit">—</strong></div><div class="row"><span>Slope percentage</span><strong id="materials">—</strong></div><div class="row"><span>Area multiplier</span><strong id="labor">—</strong></div><div class="row"><span>Common pitch</span><strong id="other">—</strong></div></div>
-<p class="micro" style="color:#aebdca">Save the result with the free email report below.</p></aside>
+<div class="row"><span>Slope percentage</span><strong id="unit">—</strong></div>
+<div class="row"><span>Pitch / area factor</span><strong id="materials">—</strong></div>
+<div class="row"><span>Approx. slope / rafter length</span><strong id="labor">—</strong></div>
+<div class="row"><span>Approx. roof surface</span><strong id="other">—</strong></div>
+<div class="row"><span>Roofing squares</span><strong id="pitchSquares">—</strong></div>
+<div class="row"><span>With 10% planning allowance</span><strong id="pitchWaste">—</strong></div>
+<div class="row"><span>Slope category</span><strong id="pitchCategory">—</strong></div>
+</div>
+<p class="micro" style="color:#aebdca">Save the result and assumptions with the free email report below.</p></aside>
 </div></section>
-<section class="section alt"><div class="container info-copy">
-<h2>How the roof pitch calculator works</h2>
-<p>Roof pitch describes vertical rise compared with horizontal run. A 6:12 roof rises 6 inches for every 12 inches of horizontal run. The calculator uses rise and run to return four planning values: pitch ratio, slope angle, slope percentage and an area multiplier.</p>
-<h2>Formulas used</h2>
-<table><thead><tr><th>Result</th><th>Formula</th></tr></thead><tbody>
-<tr><td>Pitch ratio</td><td>Rise : Run</td></tr>
-<tr><td>Slope percentage</td><td>(Rise ÷ Run) × 100</td></tr>
-<tr><td>Slope angle</td><td>arctangent(Rise ÷ Run)</td></tr>
-<tr><td>Area multiplier</td><td>√(Rise² + Run²) ÷ Run</td></tr>
+
+<section class="section alt"><article class="container info-copy">
+<h2>Roof pitch calculator formulas</h2>
+<p>Roof pitch describes how much a roof rises vertically for a given horizontal run. In U.S. residential roofing, a pitch such as <strong>6:12</strong> means the roof rises 6 units for every 12 horizontal units. The calculator converts the same slope into several formats because drawings, contractors, product documents and homeowners may use different notation.</p>
+<table><thead><tr><th>Result</th><th>Formula</th><th>6:12 example</th></tr></thead><tbody>
+<tr><td>Pitch ratio</td><td>Rise ÷ Run, normalized to 12</td><td>6:12</td></tr>
+<tr><td>Percent slope</td><td>(Rise ÷ Run) × 100</td><td>50%</td></tr>
+<tr><td>Angle</td><td>arctan(Rise ÷ Run)</td><td>26.6°</td></tr>
+<tr><td>Pitch factor</td><td>√(1 + slope ratio²)</td><td>1.118×</td></tr>
 </tbody></table>
-<h2>Worked example: 6:12 pitch</h2>
-<p>For a rise of 6 inches and run of 12 inches, slope percentage is 50%, slope angle is about 26.6°, and the area multiplier is about 1.118. A simple 1,000 sq ft horizontal roof footprint would therefore correspond to roughly 1,118 sq ft of sloped surface before overhangs, dormers or other geometry are added.</p>
-<h2>Common pitch reference</h2>
-<table><thead><tr><th>Pitch</th><th>Approx. angle</th><th>Area multiplier</th></tr></thead><tbody>
-<tr><td>3:12</td><td>14.0°</td><td>1.031</td></tr>
-<tr><td>4:12</td><td>18.4°</td><td>1.054</td></tr>
-<tr><td>6:12</td><td>26.6°</td><td>1.118</td></tr>
-<tr><td>8:12</td><td>33.7°</td><td>1.202</td></tr>
-<tr><td>10:12</td><td>39.8°</td><td>1.302</td></tr>
-<tr><td>12:12</td><td>45.0°</td><td>1.414</td></tr>
+
+<h2>Roof pitch to degrees, percent slope and multiplier table</h2>
+<table><thead><tr><th>Pitch</th><th>Degrees</th><th>Percent slope</th><th>Pitch factor</th></tr></thead><tbody>
+<tr><td>1:12</td><td>4.8°</td><td>8.3%</td><td>1.003</td></tr>
+<tr><td>2:12</td><td>9.5°</td><td>16.7%</td><td>1.014</td></tr>
+<tr><td>3:12</td><td>14.0°</td><td>25.0%</td><td>1.031</td></tr>
+<tr><td>4:12</td><td>18.4°</td><td>33.3%</td><td>1.054</td></tr>
+<tr><td>5:12</td><td>22.6°</td><td>41.7%</td><td>1.083</td></tr>
+<tr><td><strong>6:12</strong></td><td><strong>26.6°</strong></td><td><strong>50.0%</strong></td><td><strong>1.118</strong></td></tr>
+<tr><td>7:12</td><td>30.3°</td><td>58.3%</td><td>1.158</td></tr>
+<tr><td>8:12</td><td>33.7°</td><td>66.7%</td><td>1.202</td></tr>
+<tr><td>9:12</td><td>36.9°</td><td>75.0%</td><td>1.250</td></tr>
+<tr><td>10:12</td><td>39.8°</td><td>83.3%</td><td>1.302</td></tr>
+<tr><td>11:12</td><td>42.5°</td><td>91.7%</td><td>1.357</td></tr>
+<tr><td>12:12</td><td>45.0°</td><td>100.0%</td><td>1.414</td></tr>
+<tr><td>14:12</td><td>49.4°</td><td>116.7%</td><td>1.537</td></tr>
+<tr><td>16:12</td><td>53.1°</td><td>133.3%</td><td>1.667</td></tr>
+<tr><td>18:12</td><td>56.3°</td><td>150.0%</td><td>1.803</td></tr>
 </tbody></table>
-<h2>What the area multiplier can and cannot do</h2>
-<p>The multiplier is useful for simple roof planes when you know the horizontal footprint. It does not automatically account for overhangs, valleys, hips, dormers, porch roofs, attached garages or irregular geometry.</p>
-<h2>Measurement safety</h2>
-<p>Do not climb onto a roof only to obtain pitch. Whenever possible, use plans, an attic measurement, a professional roof report or a safe ground-based method. Steep and wet roofs present serious fall hazards.</p>
-<h2>Use pitch in the rest of your planning</h2>
-<p>After calculating pitch, use the <a href="/calculators/roofing-square.html">Roofing Square Calculator</a> to convert surface area into squares, then use the <a href="/calculators/roof-replacement.html">Roof Replacement Cost Calculator</a> for a broader budget.</p>
-<h2>FAQ</h2>
-<h3>Is roof pitch the same as roof angle?</h3><p>No. Pitch is usually expressed as rise over run, while angle is measured in degrees. They describe the same slope in different ways.</p>
-<h3>Can I use pitch to estimate exact roof area?</h3><p>Only for simple geometry. Real roofs often need separate measurements for each plane and overhang.</p>
-<h3>Why does pitch affect cost?</h3><p>Pitch can change roof surface area, access, safety requirements and labor difficulty. The actual price impact varies by contractor and project.</p>
-<div class="micro">Method reviewed September 21, 2026 • <a href="/blog/how-to-measure-roof-pitch.html">Read the measurement guide</a> • <a href="/cost-methodology.html">Methodology</a></div>
-</div></section>
+
+<h2>How to calculate roof area from pitch</h2>
+<p>If you know the <strong>horizontal roof-plan area</strong> for a simple roof, multiply it by the pitch factor to estimate sloped surface area. A 2,000 sq ft horizontal plan at 6:12 uses the 1.118 factor:</p>
+<div class="notice"><strong>2,000 × 1.118 ≈ 2,236 sq ft of sloped roof surface.</strong></div>
+<p>That is approximately <strong>22.36 roofing squares</strong> before a material-order allowance. This is why house living area should not automatically be used as roof area: story count, overhangs, garages, porches and roof geometry can make the two numbers very different.</p>
+
+<h2>Simple gable roof area from building dimensions</h2>
+<p>The fourth calculator mode estimates a simple symmetrical gable roof using building width, building length, pitch and optional overhangs. It first calculates half the horizontal span from ridge to eave, applies the pitch factor to get approximate slope length, then multiplies the slope length by roof length for both roof planes.</p>
+<p>This is useful for a straightforward detached garage, shed or simple house roof. It is not a replacement for a roof-plane takeoff on hips, valleys, dormers, L-shaped buildings, additions or intersecting roofs.</p>
+
+<h2>Roof pitch and rafter length</h2>
+<p>For a simple straight slope, approximate rafter or slope length is the horizontal ridge-to-eave span multiplied by the pitch factor. For example, a 14 ft horizontal span at 6:12 is about 15.65 ft before ridge-board, birdsmouth, tail and construction-detail adjustments. Do not use this planning result as a cut length for structural framing.</p>
+
+<h2>Degrees to roof pitch</h2>
+<p>If you have an angle from a digital level or drawing, the calculator converts degrees back to pitch by taking the tangent of the angle. For example, 26.6° is approximately a 6:12 roof, while 45° is a 12:12 roof. Use the <strong>Roof angle in degrees</strong> mode rather than manually converting.</p>
+
+<h2>Percent slope to roof pitch</h2>
+<p>Percent slope equals rise divided by run multiplied by 100. A 33.3% slope is about 4:12; 50% is 6:12; 100% is 12:12. This conversion is helpful when a survey, civil drawing or other document reports slope as a percentage instead of X:12.</p>
+
+<h2>Why roof pitch affects replacement cost</h2>
+<p>Pitch can affect a roof replacement budget in two different ways. First, steeper pitch creates more roof surface over the same horizontal plan, which increases material quantity. Second, access, staging and fall-protection requirements can change labor. The exact labor premium varies by contractor and project, so the calculator keeps the geometry separate from cost assumptions.</p>
+<p>After confirming roof surface area, use the <a href="/calculators/roofing-square.html">Roofing Square Calculator</a> to plan squares and bundles, then use the <a href="/calculators/roof-replacement.html">Roof Replacement Cost Calculator</a> to model material, tear-off, decking, state and contingency assumptions.</p>
+
+<h2>Roof pitch, roofing squares and shingle quantity</h2>
+<p>Roof pitch is only the first quantity step. Once you know approximate roof surface area:</p>
+<ol>
+<li>Divide roof surface area by 100 to get base roofing squares.</li>
+<li>Add a justified material allowance based on geometry and the selected product.</li>
+<li>Use the exact product's package coverage to convert squares into bundles or panels.</li>
+<li>Keep starter, ridge/hip cap, underlayment, flashing and other accessories separate unless the product system says otherwise.</li>
+</ol>
+<p>The <a href="/calculators/roofing-square.html">roofing square and shingle bundle calculator</a> performs that next conversion and includes common 1,000–5,000 sq ft examples.</p>
+
+<h2>How to measure roof pitch without unsafe roof access</h2>
+<p>Do not climb onto a roof merely to get a better online estimate. Depending on the building, pitch may be obtained from plans, an accessible attic rafter, a professional measurement report or a safe ground-based method. If a roof is steep, wet, damaged, icy or storm-affected, leave roof access to qualified professionals. OSHA identifies falls as a major construction hazard and publishes <a href="https://www.osha.gov/stop-falls" target="_blank" rel="noopener">fall-prevention resources</a>.</p>
+
+<h2>Common roof pitch mistakes</h2>
+<ul>
+<li><strong>Using house square footage as roof surface:</strong> living area is not automatically the roof plan or sloped roof area.</li>
+<li><strong>Applying pitch twice:</strong> if an aerial or contractor report already gives sloped roof surface, do not multiply by a pitch factor again.</li>
+<li><strong>Ignoring overhangs:</strong> eaves and rake overhangs can add measurable area.</li>
+<li><strong>Assuming one pitch covers every plane:</strong> additions and complex roofs can have several slopes.</li>
+<li><strong>Using rafter planning length as a structural cut length:</strong> real framing details require more information.</li>
+<li><strong>Ordering directly from a geometry estimate:</strong> product coverage and roof layout determine the final material order.</li>
+</ul>
+
+<h2>Roof pitch action plan: turn the number into a roof decision</h2>
+<div class="pitch-action">
+<ol>
+<li><strong>Calculate:</strong> convert your known measurement into pitch, degrees, slope and pitch factor above.</li>
+<li><strong>Verify area:</strong> add a horizontal footprint or simple gable dimensions, or use a reliable roof measurement report for complex geometry.</li>
+<li><strong>Convert quantity:</strong> open the <a href="/calculators/roofing-square.html">Roofing Square Calculator</a> and record base squares plus your material allowance.</li>
+<li><strong>Build the budget:</strong> run the <a href="/calculators/roof-replacement.html">Roof Replacement Cost Calculator</a> using actual roof surface—not interior living area.</li>
+<li><strong>Compare contractor measurements:</strong> if two bids use different square counts, ask each roofer to show net roof area, waste, overhangs and excluded sections before comparing price.</li>
+</ol>
+</div>
+<div class="notice"><strong>Your output should be:</strong> Pitch ____:12 • Angle ____° • Roof surface ____ sq ft • Base roofing squares ____ • Contractor measurement A ____ • B ____ • C ____.</div>
+
+<h2>Roof pitch FAQ</h2>
+<h3>What angle is a 4:12 roof pitch?</h3><p>Approximately 18.4°, with a 33.3% slope and a pitch factor of about 1.054.</p>
+<h3>What angle is a 6:12 roof pitch?</h3><p>Approximately 26.6°, with a 50% slope and a pitch factor of about 1.118.</p>
+<h3>What angle is an 8:12 roof pitch?</h3><p>Approximately 33.7°, with a 66.7% slope and a pitch factor of about 1.202.</p>
+<h3>What angle is a 12:12 roof pitch?</h3><p>45°, with a 100% slope and a pitch factor of about 1.414.</p>
+<h3>What is roof pitch factor?</h3><p>Pitch factor, sometimes called slope or area multiplier, converts horizontal run or plan area into approximate sloped length or area for simple geometry.</p>
+<h3>Can this calculator give exact roof area?</h3><p>It can estimate simple geometry. Complex roofs should be split into individual planes or measured with plans, field measurement or a professional roof report.</p>
+<h3>What pitch is a 30-degree roof?</h3><p>The tangent of 30° is about 0.577. Multiplied by 12, that is about 6.9:12, commonly rounded for discussion to roughly 7:12.</p>
+<h3>What pitch is a 45-degree roof?</h3><p>45° equals a 12:12 pitch because rise equals horizontal run.</p>
+<h3>Can I use roof pitch to estimate shingle bundles?</h3><p>Only after you also know roof surface area. Use this page to estimate surface, then the Roofing Square Calculator to convert area into squares and product-specific bundle quantity.</p>
+
+<h2>Related roofing tools</h2>
+<ul>
+<li><a href="/calculators/roofing-square.html">Roofing Square &amp; Shingle Bundle Calculator</a></li>
+<li><a href="/calculators/roof-replacement.html">Roof Replacement Cost Calculator</a></li>
+<li><a href="/calculators/roof-decking-replacement-cost.html">Roof Decking Replacement Cost Calculator</a></li>
+<li><a href="/blog/how-to-measure-roof-pitch.html">How to Measure Roof Pitch</a></li>
+<li><a href="/blog/roof-replacement-cost-2000-sq-ft-house.html">Roof Replacement Planning for a 2,000 Sq Ft House</a></li>
+</ul>
+<div class="micro">Method reviewed September 24, 2026 • Geometry formulas are shown above • <a href="/cost-methodology.html">HomeCostEngine methodology</a></div>
+</article></section>
 </main>
-<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a><p>Free planning calculators and practical cost guides for U.S. home improvement projects.</p></div><div><h4>Calculators</h4><a href="/calculators/roof-replacement.html">Roofing</a><a href="/calculators/concrete.html">Concrete</a><a href="/calculators/hvac.html">HVAC</a><a href="/calculators/paint.html">Painting</a></div><div><h4>Explore</h4><a href="/calculators/">All calculators</a><a href="/guides/">Cost guides</a><a href="/blog/">Blog</a><a href="/about.html">Methodology</a><a href="/contact.html">Contact</a></div><div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Estimator disclaimer</a></div></div><div class="footer-bottom">© 2026 HomeCostEngine. Planning estimates only. Always verify pricing, permits, code requirements and scope with qualified local professionals.</div></div></footer>
-<script src="/assets/app.js?v=20260916-value1"></script><script src="/assets/calculators.js?v=20260916-value1"></script>
+<footer class="footer"><div class="container"><div class="footer-grid">
+<div><a class="brand" href="/"><span class="brandmark">HCE</span> HomeCostEngine</a><p>Free planning calculators and practical cost guides for U.S. home improvement projects.</p></div>
+<div><h4>Calculators</h4><a href="/calculators/roof-replacement.html">Roofing</a><a href="/calculators/roofing-square.html">Roofing squares</a><a href="/calculators/hvac.html">HVAC</a><a href="/calculators/concrete.html">Concrete</a></div>
+<div><h4>Explore</h4><a href="/calculators/">All calculators</a><a href="/guides/">Cost guides</a><a href="/blog/">Blog</a><a href="/cost-methodology.html">Methodology</a><a href="/contact.html">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Estimator disclaimer</a></div>
+</div><div class="footer-bottom">© 2026 HomeCostEngine. Planning estimates only. Always verify pricing, permits, code requirements and scope with qualified local professionals.</div></div></footer>
+<script src="/assets/app.js?v=20260916-value1"></script><script src="/assets/calculators.js?v=20260924-pitch2"></script>
 </body></html>
