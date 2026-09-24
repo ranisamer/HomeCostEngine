@@ -131,14 +131,75 @@ function roofDeckCalc(){
   set("other",extra?money(extra):"No extra allowance");
 }
 function roofPitchCalc(){
-  const rise=num("pitchRise"),run=num("pitchRun");
-  if(run<=0||rise<0)return;
-  const ratio=rise/run, pitch12=ratio*12, angle=Math.atan(ratio)*180/Math.PI, slope=ratio*100, mult=Math.sqrt(1+ratio*ratio);
-  set("result",`${pitch12.toFixed(1)}:12`); set("range",`${angle.toFixed(1)}° roof angle`);
-  set("unit",`${angle.toFixed(1)}°`); set("materials",`${slope.toFixed(1)}%`);
-  set("labor",`${mult.toFixed(3)}×`); set("other",`${pitch12.toFixed(1)}:12`);
+  const mode=val("pitchMode")||"riseRun";
+  let ratio=0,rise=0,run=12,angle=0,slope=0,mult=1,rafter=null,roofArea=null,sourceLabel="";
+  if(mode==="degrees"){
+    angle=num("pitchDegrees");
+    if(angle<=0||angle>=89)return;
+    ratio=Math.tan(angle*Math.PI/180); rise=ratio*12; run=12; sourceLabel=`${angle.toFixed(1)}° input`;
+  }else if(mode==="percent"){
+    slope=num("pitchPercent");
+    if(slope<=0)return;
+    ratio=slope/100; rise=ratio*12; run=12; angle=Math.atan(ratio)*180/Math.PI; sourceLabel=`${slope.toFixed(1)}% slope input`;
+  }else if(mode==="dimensions"){
+    rise=num("pitchDimRise"); run=12;
+    const width=num("pitchBuildingWidth"),length=num("pitchBuildingLength"),eave=num("pitchEave"),gable=num("pitchGable");
+    if(rise<0||width<=0||length<=0)return;
+    ratio=rise/12; angle=Math.atan(ratio)*180/Math.PI; slope=ratio*100; mult=Math.sqrt(1+ratio*ratio);
+    const halfHorizontal=(width/2)+(Math.max(0,eave)/12);
+    rafter=halfHorizontal*mult;
+    const roofLength=length+(2*Math.max(0,gable)/12);
+    roofArea=2*rafter*roofLength;
+    sourceLabel="simple gable dimensions";
+  }else{
+    rise=num("pitchRise"); run=num("pitchRun");
+    if(run<=0||rise<0)return;
+    ratio=rise/run; angle=Math.atan(ratio)*180/Math.PI; slope=ratio*100; mult=Math.sqrt(1+ratio*ratio); sourceLabel=`${rise.toFixed(1)}:${run.toFixed(1)} input`;
+  }
+  if(mode!=="dimensions"){
+    angle=angle||Math.atan(ratio)*180/Math.PI;
+    slope=slope||ratio*100;
+    mult=Math.sqrt(1+ratio*ratio);
+    const span=num("pitchSpan"),footprint=num("pitchFootprint");
+    if(span>0) rafter=span*mult;
+    if(footprint>0) roofArea=footprint*mult;
+  }
+  const pitch12=ratio*12;
+  set("result",`${pitch12.toFixed(1)}:12`);
+  set("range",`${angle.toFixed(1)}° roof angle • ${sourceLabel}`);
+  set("unit",`${slope.toFixed(1)}%`);
+  set("materials",`${mult.toFixed(3)}×`);
+  set("labor",rafter!==null?`${rafter.toFixed(2)} ft`:"Add span or dimensions");
+  set("other",roofArea!==null?`${Math.round(roofArea).toLocaleString()} sq ft`:"Add footprint or dimensions");
+  set("pitchSquares",roofArea!==null?`${(roofArea/100).toFixed(2)} squares`:"—");
+  set("pitchWaste",roofArea!==null?`${(roofArea/100*1.10).toFixed(2)} squares at 10% allowance`:"—");
+  const category=pitch12<2?"very low slope":pitch12<4?"low slope":pitch12<=6?"moderate slope":pitch12<=9?"steep":pitch12<=12?"very steep":"very steep / specialty";
+  set("pitchCategory",category);
 }
 
+function initRoofPitchControls(){
+  const mode=document.getElementById("pitchMode");
+  if(!mode)return;
+  const groups={
+    riseRun:document.getElementById("pitchRiseRunFields"),
+    degrees:document.getElementById("pitchDegreesFields"),
+    percent:document.getElementById("pitchPercentFields"),
+    dimensions:document.getElementById("pitchDimensionsFields")
+  };
+  const update=()=>{
+    Object.entries(groups).forEach(([key,el])=>{if(el)el.style.display=mode.value===key?"grid":"none"});
+    roofPitchCalc();
+  };
+  mode.addEventListener("change",update);
+  document.querySelectorAll("[data-pitch-preset]").forEach(btn=>btn.addEventListener("click",()=>{
+    mode.value="riseRun";
+    const rise=document.getElementById("pitchRise"),run=document.getElementById("pitchRun");
+    if(rise)rise.value=btn.dataset.pitchPreset;
+    if(run)run.value="12";
+    update();
+  }));
+  update();
+}
 function currentCalculatorInputs(type){
   if(type==="roof") return {area:num("area"), material:val("material"), pitch:Number(val("pitch")), stories:Number(val("stories")), tearoff:Number(val("tearoff")), market:Number(val("market")), roofState:val("roofState"), deckArea:num("deckArea"), roofFeatures:num("roofFeatures"), roofPermit:num("roofPermit"), roofContingency:Number(val("roofContingency"))};
   if(type==="concrete") return {length:num("length"), width:num("width"), thickness:num("thickness"), waste:Number(val("waste")), yardPrice:num("yardPrice")};
@@ -151,7 +212,7 @@ function currentCalculatorInputs(type){
   if(type==="gravel") return {gravelLength:num("gravelLength"), gravelWidth:num("gravelWidth"), gravelDepth:num("gravelDepth"), gravelType:Number(val("gravelType")), gravelWaste:Number(val("gravelWaste")), gravelPrice:num("gravelPrice"), gravelDelivery:num("gravelDelivery"), gravelPrepRate:num("gravelPrepRate")};
   if(type==="roofsquare") return {rsArea:num("rsArea"), rsWaste:Number(val("rsWaste")), rsBundles:num("rsBundles")};
   if(type==="roofdeck") return {rdArea:num("rdArea"), rdWaste:Number(val("rdWaste")), rdRate:num("rdRate"), rdExtra:num("rdExtra")};
-  if(type==="roofpitch") return {pitchRise:num("pitchRise"), pitchRun:num("pitchRun")};
+  if(type==="roofpitch") return {pitchMode:val("pitchMode"), pitchRise:num("pitchRise"), pitchRun:num("pitchRun"), pitchDegrees:num("pitchDegrees"), pitchPercent:num("pitchPercent"), pitchSpan:num("pitchSpan"), pitchFootprint:num("pitchFootprint"), pitchDimRise:num("pitchDimRise"), pitchBuildingWidth:num("pitchBuildingWidth"), pitchBuildingLength:num("pitchBuildingLength"), pitchEave:num("pitchEave"), pitchGable:num("pitchGable")};
   if(type==="maintenance") return {homeValue:num("value"), rate:num("rate"), known:num("known")};
   if(type==="split") return {total:num("total"), labor:num("labor"), material:num("material")};
   if(type==="contingency") return {base:num("base"), rate:num("rate"), allowance:num("allow")};
@@ -269,6 +330,7 @@ function injectPlanningValue(type){
 document.addEventListener("DOMContentLoaded",()=>{
   const type=document.body.dataset.calculator;
   if(type==="roof")populateRoofStates();
+  if(type==="roofpitch")initRoofPitchControls();
   const fn={roof:roofCalc,concrete:concreteCalc,paint:paintCalc,floor:floorCalc,mulch:mulchCalc,hvac:hvacCalc,sqft:squareFootageCalc,cubicyard:cubicYardCalc,gravel:gravelCalc,roofsquare:roofingSquareCalc,roofdeck:roofDeckCalc,roofpitch:roofPitchCalc}[type];
   const form=document.getElementById("calculatorForm");
   if(form&&fn){form.addEventListener("submit",e=>{e.preventDefault();fn()}); fn();}
