@@ -117,6 +117,19 @@ function roofingSquareCalc(){
   set("unit",`${base.toFixed(2)} squares`); set("materials",`${total.toFixed(2)} squares`);
   set("labor",`${bundleCount} bundles`); set("other",`${((waste-1)*100).toFixed(0)}%`);
 }
+function roofDeckCalc(){
+  const area=num("rdArea"),waste=Number(val("rdWaste"))||1,rate=num("rdRate"),extra=num("rdExtra");
+  if(area<=0||rate<0)return;
+  const adjustedArea=area*waste,sheets=Math.ceil(adjustedArea/32),panelCost=sheets*rate,total=panelCost+extra;
+  const lowPerSheet=64,highPerSheet=160;
+  const marketLow=sheets*lowPerSheet+extra,marketHigh=sheets*highPerSheet+extra;
+  set("result",money(total));
+  set("range",`${sheets} × 4×8 sheets • ${money(marketLow)} – ${money(marketHigh)} broad 2026 planning band`);
+  set("unit",`${money(rate)} / installed sheet`);
+  set("materials",`${sheets} sheets for ${adjustedArea.toFixed(0)} sq ft incl. allowance`);
+  set("labor",area?`${money(total/area)} / damaged sq ft using your rate`:"—");
+  set("other",extra?money(extra):"No extra allowance");
+}
 function roofPitchCalc(){
   const rise=num("pitchRise"),run=num("pitchRun");
   if(run<=0||rise<0)return;
@@ -137,6 +150,7 @@ function currentCalculatorInputs(type){
   if(type==="cubicyard") return {cyLength:num("cyLength"), cyWidth:num("cyWidth"), cyDepth:num("cyDepth"), cyWaste:Number(val("cyWaste"))};
   if(type==="gravel") return {gravelLength:num("gravelLength"), gravelWidth:num("gravelWidth"), gravelDepth:num("gravelDepth"), gravelType:Number(val("gravelType")), gravelWaste:Number(val("gravelWaste")), gravelPrice:num("gravelPrice"), gravelDelivery:num("gravelDelivery"), gravelPrepRate:num("gravelPrepRate")};
   if(type==="roofsquare") return {rsArea:num("rsArea"), rsWaste:Number(val("rsWaste")), rsBundles:num("rsBundles")};
+  if(type==="roofdeck") return {rdArea:num("rdArea"), rdWaste:Number(val("rdWaste")), rdRate:num("rdRate"), rdExtra:num("rdExtra")};
   if(type==="roofpitch") return {pitchRise:num("pitchRise"), pitchRun:num("pitchRun")};
   if(type==="maintenance") return {homeValue:num("value"), rate:num("rate"), known:num("known")};
   if(type==="split") return {total:num("total"), labor:num("labor"), material:num("material")};
@@ -160,7 +174,7 @@ function currentCalculatorInputs(type){
 function injectEmailReportForm(type){
   const shell=document.querySelector(".calc-shell, .hce-tool");
   if(!shell || document.querySelector(".calculator-report-form")) return;
-  const labels={roof:"roof cost", concrete:"concrete", hvac:"HVAC", paint:"paint", floor:"flooring", mulch:"mulch", sqft:"square footage", cubicyard:"cubic yard", gravel:"gravel", roofsquare:"roofing square", roofpitch:"roof pitch", remodel:"renovation cost", maintenance:"home maintenance budget", split:"labor and material split", contingency:"project contingency", quotes:"contractor quote comparison", toilet:"toilet installation cost"};
+  const labels={roof:"roof cost", concrete:"concrete", hvac:"HVAC", paint:"paint", floor:"flooring", mulch:"mulch", sqft:"square footage", cubicyard:"cubic yard", gravel:"gravel", roofsquare:"roofing square", roofdeck:"roof decking replacement cost", roofpitch:"roof pitch", remodel:"renovation cost", maintenance:"home maintenance budget", split:"labor and material split", contingency:"project contingency", quotes:"contractor quote comparison", toilet:"toilet installation cost"};
   const wrap=document.createElement("div");
   wrap.className="report-capture";
   wrap.innerHTML=`
@@ -217,6 +231,7 @@ function injectEmailReportForm(type){
 
 const HCE_VALUE_GUIDES={
   roof:{title:"Turn this roof estimate into a quote-ready plan",intro:"Use the range as a screening benchmark, then compare written scopes—not just totals.",diy:"DIY is generally limited to measuring, photographing damage and collecting product preferences. Roofing work involves fall, structural and weatherproofing risks.",pro:"Hire a qualified roofing contractor for tear-off, deck inspection, flashing, ventilation and code or permit decisions.",checks:["Confirm measured roof area, pitch and waste","Request matching material and warranty specifications","Separate tear-off, deck repairs, permits and disposal"],links:[["Compare contractor quotes","/calculators/contractor-quote-comparison.html"],["Roof replacement checklist","/blog/roof-replacement-checklist.html"],["Choose a roofing contractor","/blog/how-to-choose-roofing-contractor.html"]]},
+  roofdeck:{title:"Turn the decking allowance into a controlled change order",intro:"Decking is often concealed until tear-off, so the best budget uses a documented quantity and a written per-sheet rate rather than an undefined wood allowance.",diy:"Homeowners can review photos, panel counts, contract terms and invoices from the ground. Open-roof work, structural assessment and sheathing installation are high-risk tasks.",pro:"Use a qualified roofing contractor for deck inspection and replacement. Structural framing damage, code questions or unusual conditions may require additional professional review.",checks:["Get the installed per-sheet rate in writing before tear-off","Require photos or marked quantities for replaced panels","Separate sheathing from rafter, fascia, mold and interior repair"],links:[["Roof decking replacement guide","/blog/roof-decking-replacement-cost.html"],["Roof replacement cost calculator","/calculators/roof-replacement.html"],["Compare contractor quotes","/calculators/contractor-quote-comparison.html"]]},
   concrete:{title:"Plan the order before the truck arrives",intro:"Volume is only the starting point. Confirm subgrade, forms, reinforcement, access and delivery minimums before ordering.",diy:"Small non-structural pads may be manageable if you can prepare forms, place and finish concrete safely before it sets.",pro:"Consider a concrete contractor for structural slabs, difficult access, drainage-sensitive work, large pours or projects requiring permits.",checks:["Verify compacted base and finished thickness","Ask about short-load, delivery and pumping fees","Confirm reinforcement, joints, slope and curing plan"],links:[["Cubic yard calculator","/calculators/cubic-yard.html"],["Ready-mix vs bags","/blog/ready-mix-concrete-vs-bags.html"],["Concrete cost per yard","/blog/concrete-cost-per-yard-explained.html"]]},
   hvac:{title:"Convert the HVAC range into comparable proposals",intro:"Equipment price alone is not a complete system quote. Sizing, ductwork, electrical work and commissioning can materially change cost.",diy:"Homeowners can document comfort problems, filter size, equipment age and utility use. Refrigerant and electrical work should not be treated as DIY tasks.",pro:"Use a licensed HVAC professional for load calculations, equipment selection, refrigerant handling, permits and startup testing.",checks:["Ask for Manual J or documented sizing assumptions","Compare efficiency ratings and exact model numbers","Separate duct, electrical, thermostat and permit work"],links:[["HVAC repair vs replacement","/blog/hvac-repair-vs-replacement.html"],["SEER2 explained","/blog/seer2-explained-for-homeowners.html"],["Compare contractor quotes","/calculators/contractor-quote-comparison.html"]]},
   paint:{title:"Build a practical painting shopping list",intro:"The gallon estimate helps with purchasing, while prep condition and number of color changes usually drive labor.",diy:"DIY can make sense for accessible interiors when you have time for patching, masking, sanding and multiple coats.",pro:"Hire a professional for high walls, damaged surfaces, exterior access, lead-safe work or a tight completion schedule.",checks:["Confirm wall condition and primer needs","Keep the same product and sheen assumptions","Add trim, ceilings, repairs and protection separately"],links:[["Room painting cost guide","/blog/how-much-does-it-cost-to-paint-a-room.html"],["Painting labor cost","/blog/painting-labor-cost-per-square-foot.html"],["Compare contractor quotes","/calculators/contractor-quote-comparison.html"]]},
@@ -254,7 +269,7 @@ function injectPlanningValue(type){
 document.addEventListener("DOMContentLoaded",()=>{
   const type=document.body.dataset.calculator;
   if(type==="roof")populateRoofStates();
-  const fn={roof:roofCalc,concrete:concreteCalc,paint:paintCalc,floor:floorCalc,mulch:mulchCalc,hvac:hvacCalc,sqft:squareFootageCalc,cubicyard:cubicYardCalc,gravel:gravelCalc,roofsquare:roofingSquareCalc,roofpitch:roofPitchCalc}[type];
+  const fn={roof:roofCalc,concrete:concreteCalc,paint:paintCalc,floor:floorCalc,mulch:mulchCalc,hvac:hvacCalc,sqft:squareFootageCalc,cubicyard:cubicYardCalc,gravel:gravelCalc,roofsquare:roofingSquareCalc,roofdeck:roofDeckCalc,roofpitch:roofPitchCalc}[type];
   const form=document.getElementById("calculatorForm");
   if(form&&fn){form.addEventListener("submit",e=>{e.preventDefault();fn()}); fn();}
   if(type){injectEmailReportForm(type);injectPlanningValue(type);}
