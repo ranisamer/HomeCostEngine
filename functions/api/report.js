@@ -98,6 +98,13 @@ function calculate(type, raw={}){
     const base=area/100,total=base*waste,bundleCount=Math.ceil(total*bundles);
     return {title:"Roofing Square Report",subject:`Your roofing quantity: ${number(total,2)} squares`,url:"https://homecostengine.com/calculators/roofing-square.html",summary:`Your roof needs about ${number(total,2)} roofing squares including waste.`,metrics:[["Roof area",`${number(area,0)} sq ft`],["Base squares",number(base,2)],["Squares with waste",number(total,2)],["Approx. bundles",String(bundleCount)]],note:"Bundle counts vary by shingle product. Verify packaging and waste requirements before ordering."};
   }
+  if(type==="roofdeck"){
+    const area=finite(raw.rdArea,1,1e9),waste=finite(raw.rdWaste,1,2),rate=finite(raw.rdRate,0,1e6),extra=finite(raw.rdExtra,0,1e8);
+    if(![area,waste,rate,extra].every(Number.isFinite)) throw new Error("Check your roof decking inputs.");
+    const adjustedArea=area*waste,sheets=Math.ceil(adjustedArea/32),panelCost=sheets*rate,total=panelCost+extra;
+    const marketLow=sheets*64+extra,marketHigh=sheets*160+extra;
+    return {title:"Roof Decking Replacement Cost Report",subject:`Your roof decking allowance: ${money(total)}`,url:"https://homecostengine.com/calculators/roof-decking-replacement-cost.html",summary:`Your inputs produce a planning allowance of ${money(total)} for about ${sheets} standard 4×8 panels.`,metrics:[["Damaged / replacement area",`${number(area,0)} sq ft`],["Allowance factor",`${number((waste-1)*100,0)}%`],["Estimated 4×8 sheets",String(sheets)],["Your installed rate",`${money(rate)} / sheet`],["Extra allowance",money(extra)],["Planning total",money(total)],["Broad 2026 reference band",`${money(marketLow)} – ${money(marketHigh)}`]],note:"The broad reference band derives from current published installed ranges around $2–$5 per square foot, equivalent to roughly $64–$160 for a 32-square-foot panel. Use your contractor’s written unit rate for project decisions and verify what the rate includes."};
+  }
   if(type==="roofpitch"){
     const rise=finite(raw.pitchRise,0,1e5),run=finite(raw.pitchRun,.01,1e5);
     if(!Number.isFinite(rise)||!Number.isFinite(run)) throw new Error("Check your rise and run.");
