@@ -828,3 +828,23 @@ a.book-cover-art:hover{transform:translateY(-4px);box-shadow:0 24px 54px rgba(20
   .ebook-bottom-buy>.container,.ebook-review-card{align-items:stretch;flex-direction:column}
   .ebook-bottom-buy-btn{width:100%}
 }
+
+
+/* === Local Cost Intelligence === */
+.local-intel{padding:20px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,#fff,#f8fafb)}
+.local-intel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:6px}
+.local-intel-head h3{margin:5px 0 0;font-size:1.25rem}
+.local-live-badge{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;background:#eaf5ee;color:#246b43;font-size:.74rem;font-weight:800;white-space:nowrap}
+.local-live-badge:before{content:"";width:7px;height:7px;border-radius:50%;background:#2f8b58}
+.local-zip-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;margin-top:14px}
+.local-zip-row input{min-width:0}
+.local-zip-status{min-height:20px;margin-top:9px;font-size:.82rem;color:var(--ink-2)}
+.local-zip-status.success{color:#246b43;font-weight:700}
+.local-zip-status.error{color:var(--danger);font-weight:700}
+.local-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:15px}
+.local-metrics>div{display:flex;flex-direction:column;gap:4px;padding:13px;border:1px solid var(--line);border-radius:11px;background:#fff}
+.local-metrics span{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2);font-weight:800}
+.local-metrics strong{font-size:1.12rem;color:var(--ink)}
+.local-metrics small{font-size:.72rem;color:var(--ink-2);line-height:1.35}
+.local-data-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:.7rem;color:var(--ink-2)}
+@media(max-width:700px){.local-intel-head{flex-direction:column}.local-zip-row{grid-template-columns:1fr}.local-zip-row .btn{width:100%}.local-metrics{grid-template-columns:1fr}}
