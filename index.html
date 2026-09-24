@@ -73,16 +73,17 @@
       <h2>What are you planning?</h2>
       <p class="muted">Pick the job you are working on and open the calculator that matches it.</p>
       <form id="quickProjectForm" class="form-grid">
-        <div class="field full"><label for="quickProject">Project</label>
+        <div class="field"><label for="quickProject">Project</label>
           <select id="quickProject">
             <option value="roofing">Roof replacement</option><option value="concrete">Concrete project</option>
             <option value="hvac">HVAC replacement</option><option value="painting">Interior painting</option>
             <option value="flooring">Flooring</option><option value="landscaping">Mulch / landscaping</option>
           </select>
         </div>
+        <div class="field"><label for="quickZip">ZIP code</label><input id="quickZip" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="e.g. 33101"></div>
         <div class="field full"><button class="btn full" type="submit">Estimate My Project →</button></div>
       </form>
-      <div class="micro">The calculators use clearly stated assumptions. Where local pricing is unknown, the result stays a planning estimate rather than pretending to be a local quote.</div>
+      <div class="micro">Add your ZIP to carry location context into supported calculators. We label official monthly market data separately from HomeCostEngine planning estimates.</div>
     </div>
   </div>
 </section>
