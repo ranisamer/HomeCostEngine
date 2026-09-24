@@ -106,10 +106,39 @@ function calculate(type, raw={}){
     return {title:"Roof Decking Replacement Cost Report",subject:`Your roof decking allowance: ${money(total)}`,url:"https://homecostengine.com/calculators/roof-decking-replacement-cost.html",summary:`Your inputs produce a planning allowance of ${money(total)} for about ${sheets} standard 4×8 panels.`,metrics:[["Damaged / replacement area",`${number(area,0)} sq ft`],["Allowance factor",`${number((waste-1)*100,0)}%`],["Estimated 4×8 sheets",String(sheets)],["Your installed rate",`${money(rate)} / sheet`],["Extra allowance",money(extra)],["Planning total",money(total)],["Broad 2026 reference band",`${money(marketLow)} – ${money(marketHigh)}`]],note:"The broad reference band derives from current published installed ranges around $2–$5 per square foot, equivalent to roughly $64–$160 for a 32-square-foot panel. Use your contractor’s written unit rate for project decisions and verify what the rate includes."};
   }
   if(type==="roofpitch"){
-    const rise=finite(raw.pitchRise,0,1e5),run=finite(raw.pitchRun,.01,1e5);
-    if(!Number.isFinite(rise)||!Number.isFinite(run)) throw new Error("Check your rise and run.");
-    const ratio=rise/run,pitch12=ratio*12,angle=Math.atan(ratio)*180/Math.PI,slope=ratio*100,mult=Math.sqrt(1+ratio*ratio);
-    return {title:"Roof Pitch Report",subject:`Your roof pitch: ${number(pitch12,1)}:12`,url:"https://homecostengine.com/calculators/roof-pitch.html",summary:`Your roof pitch is approximately ${number(pitch12,1)}:12, or ${number(angle,1)} degrees.`,metrics:[["Pitch",`${number(pitch12,1)}:12`],["Angle",`${number(angle,1)}°`],["Slope",`${number(slope,1)}%`],["Area multiplier",`${number(mult,3)}×`]],note:"Pitch measurements should be taken safely. Do not access a roof if conditions or equipment make measurement unsafe."};
+    const mode=String(raw.pitchMode||"riseRun");
+    let ratio=0,rise=0,run=12,angle=0,slope=0,mult=1,rafter=null,roofArea=null;
+    if(mode==="degrees"){
+      angle=finite(raw.pitchDegrees,.01,88.9);
+      if(!Number.isFinite(angle)) throw new Error("Check your roof angle.");
+      ratio=Math.tan(angle*Math.PI/180); rise=ratio*12;
+    }else if(mode==="percent"){
+      slope=finite(raw.pitchPercent,.01,10000);
+      if(!Number.isFinite(slope)) throw new Error("Check your slope percentage.");
+      ratio=slope/100; rise=ratio*12; angle=Math.atan(ratio)*180/Math.PI;
+    }else if(mode==="dimensions"){
+      rise=finite(raw.pitchDimRise,0,1000);
+      const width=finite(raw.pitchBuildingWidth,.01,100000),length=finite(raw.pitchBuildingLength,.01,100000),eave=finite(raw.pitchEave,0,10000),gable=finite(raw.pitchGable,0,10000);
+      if(![rise,width,length,eave,gable].every(Number.isFinite)) throw new Error("Check your building dimensions.");
+      ratio=rise/12; angle=Math.atan(ratio)*180/Math.PI; slope=ratio*100; mult=Math.sqrt(1+ratio*ratio);
+      const halfHorizontal=(width/2)+(eave/12),roofLength=length+(2*gable/12);
+      rafter=halfHorizontal*mult; roofArea=2*rafter*roofLength;
+    }else{
+      rise=finite(raw.pitchRise,0,100000); run=finite(raw.pitchRun,.01,100000);
+      if(!Number.isFinite(rise)||!Number.isFinite(run)) throw new Error("Check your rise and run.");
+      ratio=rise/run; angle=Math.atan(ratio)*180/Math.PI;
+    }
+    slope=slope||ratio*100; mult=Math.sqrt(1+ratio*ratio);
+    if(mode!=="dimensions"){
+      const span=finite(raw.pitchSpan,0,100000),footprint=finite(raw.pitchFootprint,0,1e9);
+      if(Number.isFinite(span)&&span>0) rafter=span*mult;
+      if(Number.isFinite(footprint)&&footprint>0) roofArea=footprint*mult;
+    }
+    const pitch12=ratio*12;
+    const metrics=[["Pitch",`${number(pitch12,1)}:12`],["Angle",`${number(angle,1)}°`],["Slope",`${number(slope,1)}%`],["Pitch / area multiplier",`${number(mult,3)}×`]];
+    if(rafter!==null) metrics.push(["Approx. rafter / slope length",`${number(rafter,2)} ft`]);
+    if(roofArea!==null){metrics.push(["Approx. roof surface",`${number(roofArea,0)} sq ft`]);metrics.push(["Roofing squares",number(roofArea/100,2)]);}
+    return {title:"Roof Pitch & Area Report",subject:`Your roof pitch: ${number(pitch12,1)}:12`,url:"https://homecostengine.com/calculators/roof-pitch.html",summary:`Your roof pitch is approximately ${number(pitch12,1)}:12, or ${number(angle,1)} degrees, with a ${number(mult,3)}× area multiplier.`,metrics,note:"Use roof pitch as one input in material and cost planning. Complex roofs, hips, valleys, dormers and uneven overhangs should be measured by roof plane. Do not access an unsafe roof to improve an online estimate."};
   }
   if(type==="heatcompare"){
     const hpInstall=finite(raw.hpInstall,0,1e8),acInstall=finite(raw.acInstall,0,1e8),furnaceInstall=finite(raw.furnaceInstall,0,1e8),hpAnnual=finite(raw.hpAnnual,0,1e7),traditionalAnnual=finite(raw.traditionalAnnual,0,1e7),years=finite(raw.comparisonYears,1,25),incentive=finite(raw.hpIncentive,0,1e8);
