@@ -470,7 +470,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       };
       const target=routes[project]||"/calculators/";
       const zip=String(document.getElementById("quickZip")?.value||"").trim();
-      location.href=/^\\d{5}$/.test(zip)?target+"?zip="+encodeURIComponent(zip):target;
+      location.href=/^\d{5}$/.test(zip)?target+"?zip="+encodeURIComponent(zip):target;
     });
   }
 
