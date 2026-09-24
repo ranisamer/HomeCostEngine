@@ -200,6 +200,41 @@ function initRoofPitchControls(){
   }));
   update();
 }
+
+function roofTearOffCalc(){
+  const area=num("rtoArea"),layers=Math.max(1,Math.min(3,Math.round(num("rtoLayers")||1))),material=val("rtoMaterial")||"asphalt",dump=num("rtoDump");
+  if(area<=0)return;
+  const rates={asphalt:[1,3],metal:[1,3],wood:[1.5,3.5],tile:[2,5],slate:[2,5]};
+  const base=rates[material]||rates.asphalt,layerFactor=1+(layers-1)*.55;
+  const low=area*base[0]*layerFactor+dump,high=area*base[1]*layerFactor+dump,mid=(low+high)/2;
+  set("result",money(mid));set("range",money(low)+" – "+money(high)+" planning range");
+  set("unit",money(low/(area/100))+" – "+money(high/(area/100))+" / roofing square");
+  set("materials",layers+" layer"+(layers===1?"":"s")+" • "+material);
+  set("labor",money(area*base[0]*layerFactor)+" – "+money(area*base[1]*layerFactor));
+  set("other",dump?money(dump)+" disposal allowance":"Add disposal allowance");
+}
+function roofUnderlaymentCalc(){
+  const area=num("ruArea"),waste=Number(val("ruWaste"))||1,coverage=num("ruCoverage"),rollPrice=num("ruRollPrice"),laborRate=num("ruLaborRate");
+  if(area<=0||coverage<=0)return;
+  const orderArea=area*waste,rolls=Math.ceil(orderArea/coverage),material=rolls*rollPrice,labor=area*laborRate,total=material+labor;
+  const benchmarkLow=area*.60,benchmarkHigh=area*2.70;
+  set("result",money(total));set("range",money(benchmarkLow)+" – "+money(benchmarkHigh)+" broad installed benchmark");
+  set("unit",area?money(total/area)+" / sq ft using your inputs":"—");
+  set("materials",rolls+" rolls • "+money(material));
+  set("labor",money(labor)+" at "+money(laborRate)+" / sq ft");
+  set("other",((waste-1)*100).toFixed(0)+"% overlap / waste");
+}
+function roofFlashingCalc(){
+  const lf=num("rfLength"),rate=num("rfRate"),chimneys=num("rfChimneys"),chimneyCost=num("rfChimneyCost"),vents=num("rfVents"),ventCost=num("rfVentCost"),skylights=num("rfSkylights"),skylightCost=num("rfSkylightCost");
+  const linear=lf*rate,chimney=chimneys*chimneyCost,vent=vents*ventCost,sky=skylights*skylightCost,total=linear+chimney+vent+sky;
+  if(total<0)return;
+  set("result",money(total));set("range","Entered scope: "+lf.toFixed(0)+" linear ft + "+chimneys+" chimney + "+vents+" vent + "+skylights+" skylight");
+  set("unit",money(rate)+" / linear ft");
+  set("materials",money(linear)+" linear flashing");
+  set("labor",money(chimney+sky)+" chimney / skylight");
+  set("other",money(vent)+" vent boots");
+}
+
 function currentCalculatorInputs(type){
   if(type==="roof") return {area:num("area"), material:val("material"), pitch:Number(val("pitch")), stories:Number(val("stories")), tearoff:Number(val("tearoff")), market:Number(val("market")), roofState:val("roofState"), deckArea:num("deckArea"), roofFeatures:num("roofFeatures"), roofPermit:num("roofPermit"), roofContingency:Number(val("roofContingency"))};
   if(type==="concrete") return {length:num("length"), width:num("width"), thickness:num("thickness"), waste:Number(val("waste")), yardPrice:num("yardPrice")};
@@ -212,6 +247,9 @@ function currentCalculatorInputs(type){
   if(type==="gravel") return {gravelLength:num("gravelLength"), gravelWidth:num("gravelWidth"), gravelDepth:num("gravelDepth"), gravelType:Number(val("gravelType")), gravelWaste:Number(val("gravelWaste")), gravelPrice:num("gravelPrice"), gravelDelivery:num("gravelDelivery"), gravelPrepRate:num("gravelPrepRate")};
   if(type==="roofsquare") return {rsArea:num("rsArea"), rsWaste:Number(val("rsWaste")), rsBundles:num("rsBundles")};
   if(type==="roofdeck") return {rdArea:num("rdArea"), rdWaste:Number(val("rdWaste")), rdRate:num("rdRate"), rdExtra:num("rdExtra")};
+  if(type==="rooftearoff") return {rtoArea:num("rtoArea"), rtoLayers:num("rtoLayers"), rtoMaterial:val("rtoMaterial"), rtoDump:num("rtoDump")};
+  if(type==="roofunderlayment") return {ruArea:num("ruArea"), ruWaste:Number(val("ruWaste")), ruCoverage:num("ruCoverage"), ruRollPrice:num("ruRollPrice"), ruLaborRate:num("ruLaborRate")};
+  if(type==="roofflashing") return {rfLength:num("rfLength"), rfRate:num("rfRate"), rfChimneys:num("rfChimneys"), rfChimneyCost:num("rfChimneyCost"), rfVents:num("rfVents"), rfVentCost:num("rfVentCost"), rfSkylights:num("rfSkylights"), rfSkylightCost:num("rfSkylightCost")};
   if(type==="roofpitch") return {pitchMode:val("pitchMode"), pitchRise:num("pitchRise"), pitchRun:num("pitchRun"), pitchDegrees:num("pitchDegrees"), pitchPercent:num("pitchPercent"), pitchSpan:num("pitchSpan"), pitchFootprint:num("pitchFootprint"), pitchDimRise:num("pitchDimRise"), pitchBuildingWidth:num("pitchBuildingWidth"), pitchBuildingLength:num("pitchBuildingLength"), pitchEave:num("pitchEave"), pitchGable:num("pitchGable")};
   if(type==="maintenance") return {homeValue:num("value"), rate:num("rate"), known:num("known")};
   if(type==="split") return {total:num("total"), labor:num("labor"), material:num("material")};
@@ -235,7 +273,7 @@ function currentCalculatorInputs(type){
 function injectEmailReportForm(type){
   const shell=document.querySelector(".calc-shell, .hce-tool");
   if(!shell || document.querySelector(".calculator-report-form")) return;
-  const labels={roof:"roof cost", concrete:"concrete", hvac:"HVAC", paint:"paint", floor:"flooring", mulch:"mulch", sqft:"square footage", cubicyard:"cubic yard", gravel:"gravel", roofsquare:"roofing square", roofdeck:"roof decking replacement cost", roofpitch:"roof pitch", remodel:"renovation cost", maintenance:"home maintenance budget", split:"labor and material split", contingency:"project contingency", quotes:"contractor quote comparison", toilet:"toilet installation cost"};
+  const labels={roof:"roof cost", concrete:"concrete", hvac:"HVAC", paint:"paint", floor:"flooring", mulch:"mulch", sqft:"square footage", cubicyard:"cubic yard", gravel:"gravel", roofsquare:"roofing square", roofdeck:"roof decking replacement cost", rooftearoff:"roof tear-off cost", roofunderlayment:"roof underlayment cost", roofflashing:"roof flashing cost", roofpitch:"roof pitch", remodel:"renovation cost", maintenance:"home maintenance budget", split:"labor and material split", contingency:"project contingency", quotes:"contractor quote comparison", toilet:"toilet installation cost"};
   const wrap=document.createElement("div");
   wrap.className="report-capture";
   wrap.innerHTML=`
@@ -331,7 +369,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   const type=document.body.dataset.calculator;
   if(type==="roof")populateRoofStates();
   if(type==="roofpitch")initRoofPitchControls();
-  const fn={roof:roofCalc,concrete:concreteCalc,paint:paintCalc,floor:floorCalc,mulch:mulchCalc,hvac:hvacCalc,sqft:squareFootageCalc,cubicyard:cubicYardCalc,gravel:gravelCalc,roofsquare:roofingSquareCalc,roofdeck:roofDeckCalc,roofpitch:roofPitchCalc}[type];
+  const fn={roof:roofCalc,concrete:concreteCalc,paint:paintCalc,floor:floorCalc,mulch:mulchCalc,hvac:hvacCalc,sqft:squareFootageCalc,cubicyard:cubicYardCalc,gravel:gravelCalc,roofsquare:roofingSquareCalc,roofdeck:roofDeckCalc,rooftearoff:roofTearOffCalc,roofunderlayment:roofUnderlaymentCalc,roofflashing:roofFlashingCalc,roofpitch:roofPitchCalc}[type];
   const form=document.getElementById("calculatorForm");
   if(form&&fn){form.addEventListener("submit",e=>{e.preventDefault();fn()}); fn();}
   if(type){injectEmailReportForm(type);injectPlanningValue(type);}
