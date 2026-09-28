@@ -281,14 +281,15 @@ function enhanceBlogArticle(){
   if(!article) return;
   const topic=HCE_BLOG_TOPICS[blogTopicForPath(location.pathname)]||HCE_BLOG_TOPICS.general;
   const title=(document.querySelector(".page-hero h1")?.textContent||document.title||"Home improvement guide").trim();
+  const hasLocalHero=Boolean(article.querySelector('img[src*="/assets/blog/"]'));
   let figure=article.querySelector(":scope > .blog-figure");
-  const shouldReplace=figure && (()=>{
+  const shouldReplace=!hasLocalHero && figure && (()=>{
     const src=figure.querySelector("img")?.getAttribute("src")||"";
-    return !src || src.startsWith("data:") || src.endsWith(".svg") || src.includes("/assets/blog/");
+    return !src || src.startsWith("data:") || src.endsWith(".svg");
   })();
   if(shouldReplace){
     figure.replaceWith(makeExternalPhoto(topic,title));
-  } else if(!figure){
+  } else if(!figure && !hasLocalHero){
     const firstP=Array.from(article.children).find(el=>el.tagName==="P");
     if(firstP) firstP.insertAdjacentElement("afterend",makeExternalPhoto(topic,title));
   }
