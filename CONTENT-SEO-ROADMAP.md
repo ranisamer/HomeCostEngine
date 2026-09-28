@@ -10,6 +10,16 @@ Reviewed 2026-09-27. These are editorial hypotheses based on existing site cover
 | How much extra concrete for a 20×20 slab | `/blog/how-much-extra-concrete-should-i-order.html` | Volume from measured thickness and thickened edges, then explicit waste reserve without double counting. | `/calculators/concrete.html` |
 | Subfloor replacement cost after water damage | `/blog/subfloor-replacement-cost.html` | Scope of demolition, moisture correction, panel replacement and floor finish exclusions. | `/calculators/flooring.html` |
 
+## Next intent tests — 2026-09-28
+
+These are long-tail editorial hypotheses, not measured low-competition keywords. Review U.S. Search Console query-page pairs before assigning priority or claiming ranking opportunity. Each query maps to one existing canonical URL because a new page would overlap its core answer.
+
+| Candidate U.S. homeowner query | Canonical answer | Distinct addition and next step |
+| --- | --- | --- |
+| How to size a heat pump after air sealing and insulation | `/blog/how-to-size-a-heat-pump-for-your-home.html` | Added a before/after load scenario and retrofit sequencing; connect to HVAC planning. |
+| How much extra concrete for uneven subgrade and a thickened patio edge | `/blog/how-much-extra-concrete-should-i-order.html` | Added measured low spot and edge calculations before allowance or supplier rounding. |
+| How to compare window replacement quotes when trim repair is excluded | `/blog/window-replacement-cost-per-window.html` | Added an opening-by-opening normalized example and an explicit change-order method. |
+
 ## Publishing rules
 
 1. Inspect the existing URL and competing intent before commissioning another article. Add a useful section or worked example to the primary page when the intent overlaps.
