@@ -48,6 +48,49 @@
 <tr><td>Finish details</td><td>Are thresholds, door undercuts, trim and transitions included?</td><td>Are thresholds, door undercuts, trim and transitions included?</td></tr>
 </tbody></table>
 <p>The answers must come from the specific manufacturer instructions, not a general claim that one material type always needs the same installation. Shaw Floors, for example, explicitly calls out <a href="https://shawfloors.com/en-us/plan-and-install/vinyl">subfloor preparation, expansion space and product-specific underlayment</a> for luxury vinyl installation. Its <a href="https://shawfloors.com/en-us/plan-and-install/laminate">laminate installation guidance</a> separately discusses site conditions and preparation. These are examples of what to verify; follow the selected SKU's current documentation.</p>
+<style>
+.floor-compare{margin:32px 0;padding:24px;border:1px solid #c9ded7;border-radius:20px;background:#f5faf8}
+.floor-compare h2{margin-top:0}.floor-compare .fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.floor-compare label{display:block;font-weight:700;font-size:.93rem}.floor-compare input{box-sizing:border-box;width:100%;margin-top:6px;padding:11px;border:1px solid #9db7ae;border-radius:9px;background:#fff;color:#102033;font:inherit}
+.floor-compare fieldset{border:1px solid #ccdcd6;border-radius:12px;margin:16px 0;padding:16px}.floor-compare legend{font-weight:800;padding:0 5px}
+.floor-compare button{border:0;border-radius:10px;padding:12px 18px;background:#166b5c;color:white;font:inherit;font-weight:700;cursor:pointer}.floor-compare button:focus-visible,.floor-compare input:focus-visible{outline:3px solid #d89b40;outline-offset:2px}
+.floor-compare output{display:block;margin-top:16px}.floor-compare .results{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.floor-compare .results div{padding:14px;background:#fff;border:1px solid #d5e5df;border-radius:12px}
+.floor-compare small{display:block;line-height:1.5}
+</style>
+<section class="floor-compare" aria-labelledby="floor-compare-title">
+<h2 id="floor-compare-title">Compare two flooring quotes with your own prices</h2>
+<p>Enter the measured floor area and each product's carton details. This worksheet rounds cartons up separately and adds labor plus the scope items you enter. It is a planning comparison, not a supplier quote. Use the selected product's instructions for waste, underlayment and substrate requirements.</p>
+<form id="floor-compare-form">
+<div class="fields">
+<label>Measured floor area (sq ft)<input name="area" type="number" min="0.01" step="any" value="900" required></label>
+<label>Cutting allowance (%)<input name="waste" type="number" min="0" max="100" step="any" value="8" required></label>
+<label>Removal and disposal for whole project ($)<input name="removal" type="number" min="0" step="any" value="0" required></label>
+</div>
+<fieldset><legend>Vinyl plank</legend><div class="fields">
+<label>Coverage per carton (sq ft)<input name="vCoverage" type="number" min="0.01" step="any" placeholder="e.g. 20" required></label>
+<label>Price per carton ($)<input name="vPrice" type="number" min="0" step="any" placeholder="Your supplier price" required></label>
+<label>Installation labor per measured sq ft ($)<input name="vLabor" type="number" min="0" step="any" placeholder="Your quote" required></label>
+<label>Prep, approved underlayment and moisture work ($)<input name="vPrep" type="number" min="0" step="any" value="0" required></label>
+<label>Trim, thresholds and other extras ($)<input name="vExtras" type="number" min="0" step="any" value="0" required></label>
+</div></fieldset>
+<fieldset><legend>Laminate</legend><div class="fields">
+<label>Coverage per carton (sq ft)<input name="lCoverage" type="number" min="0.01" step="any" placeholder="e.g. 22" required></label>
+<label>Price per carton ($)<input name="lPrice" type="number" min="0" step="any" placeholder="Your supplier price" required></label>
+<label>Installation labor per measured sq ft ($)<input name="lLabor" type="number" min="0" step="any" placeholder="Your quote" required></label>
+<label>Prep, approved underlayment and moisture work ($)<input name="lPrep" type="number" min="0" step="any" value="0" required></label>
+<label>Trim, thresholds and other extras ($)<input name="lExtras" type="number" min="0" step="any" value="0" required></label>
+</div></fieldset>
+<button type="submit">Compare project totals</button>
+</form><output id="floor-compare-result" aria-live="polite"></output>
+<p><small>Formula for each option: rounded-up cartons × carton price + measured area × labor rate + removal + prep + extras. Zero in a scope field means excluded from this calculation; confirm whether it is truly included in the contractor's quote. Taxes, delivery, permits and hidden repairs must be added where applicable. No entries are sent to a server.</small></p>
+</section>
+<script>
+(()=>{const form=document.getElementById('floor-compare-form'),out=document.getElementById('floor-compare-result'),money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(n);
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const f=new FormData(form),n=k=>Number(f.get(k)),area=n('area'),purchase=area*(1+n('waste')/100),option=k=>{const cartons=Math.ceil((purchase-1e-9)/n(k+'Coverage'));return {cartons,material:cartons*n(k+'Price'),labor:area*n(k+'Labor'),total:cartons*n(k+'Price')+area*n(k+'Labor')+n('removal')+n(k+'Prep')+n(k+'Extras')}};const v=option('v'),l=option('l');
+const card=(label,x)=>'<div><strong>'+label+': '+money(x.total)+'</strong><br>'+x.cartons+' cartons · materials '+money(x.material)+' · labor '+money(x.labor)+'</div>';
+out.innerHTML='<p>Purchase target before carton rounding: <strong>'+purchase.toFixed(2)+' sq ft</strong>. Difference between totals: <strong>'+money(Math.abs(v.total-l.total))+'</strong>. The lower entered total is <strong>'+(v.total===l.total?'a tie':v.total<l.total?'vinyl plank':'laminate')+'</strong>.</p><div class="results">'+card('Vinyl plank',v)+card('Laminate',l)+'</div>';});
+})();
+</script>
 <h2>Measure the floor before comparing cartons</h2>
 <p>Measure each room's length and width, subtract only areas the new floor truly will not cover, and add the room totals. Do not assume the house's advertised square footage equals the installation area. Closets, angled walls, islands and doorways affect the takeoff. The <a href="/blog/how-much-flooring-do-i-need.html">flooring quantity guide</a> explains how to turn the room measurements into an area that can be checked against an installer estimate.</p>
 <p>Separate three quantities in your worksheet: net measured area, planned cutting allowance, and actual carton purchase. For a simple 900-square-foot measured project, an <em>illustrative</em> 8% allowance gives 900 × 1.08 = 972 square feet to order before carton rounding. That 8% is an example, not a universal manufacturer requirement. A straight installation in simple rooms can behave differently from a diagonal pattern, herringbone layout, many closets or narrow hallways. Use the <a href="/blog/how-much-flooring-waste-should-i-add.html">flooring waste planning guide</a> to choose and record an allowance that matches the layout.</p>
