@@ -337,7 +337,7 @@ export async function onRequest(context) {
     rewriter.on("main article.info-copy", {
       element(element) {
         element.append(externalLinksSection(pathname), { html: true });
-        element.append(depthSection(pathname), { html: true });
+        // Article-specific depth belongs in the source page, not repeated server-side copy.
       }
     });
   }
