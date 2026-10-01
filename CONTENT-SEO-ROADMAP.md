@@ -39,3 +39,17 @@ A repository audit found 39 indexable blog articles with fewer than roughly 600 
 Before adding articles, improve one existing thin, indexable canonical page per run. Start with `blog/how-much-mulch-do-i-need.html`, `blog/how-much-paint-do-i-need-for-a-room.html`, `blog/concrete-driveway-cost-per-square-foot.html`, `blog/mulch-cost-per-yard.html`, and `blog/toilet-repair-vs-replacement.html`, adjusting priority if fresh U.S. Search Console query–page data supports another page. Give each a distinct answer, calculations or quote method, scope and exclusions, local caveats, relevant primary sources, and 3–5 descriptive in-body internal links. Do not pad to a word count or create house-size variants with the same answer. Verify forms, links, canonical URLs, structured data and mobile layout before each atomic commit.
 
 Each week compare U.S.-filtered Web Search Console query–page pairs over the latest 28 days versus the preceding 28 days: impressions, clicks, CTR, average position, index status and the page improved. The current screenshot is a page-indexing summary, not U.S. traffic evidence. Reassess whether to request AdSense review only after the indexable thin-page backlog and duplicate-content patterns have been substantively addressed.
+
+## Daily quality update — 2026-10-01
+
+- Primary intent: how much paint is needed for one room, including openings, finish coats and separate primer/ceiling quantities.
+- Canonical: `/blog/how-much-paint-do-i-need-for-a-room`. Preserved the live extensionless URL; aligned source canonical and Article URL with it.
+- Replaced the approximately 246-word source answer with a topic-specific measurement method, a 12 × 14 ft worked room, coverage sensitivity, package rounding, exclusions and five visible FAQs.
+- Added five unique descriptive links within the main text and contextual inbound guidance from painting-labor and interior-painting cost pages.
+- Sources checked October 1: Behr's product-specific coverage guidance and EPA's pre-1978 consumer renovation guidance. No national prices or ranking difficulty invented.
+- Fresh U.S.-filtered Search Console query-page access is unavailable. The September 30 export remains a dated all-country baseline; automated live performance tracking is unavailable.
+- Source audit scanned 71 blog article files. With the current method (main article text, excluding related asides), 41 were below 600 words before this update, including three noindex pages; 38 indexable articles were below 600 words and 37 remain after this update. This differs from the September 29 audit and is a count to track consistently, not evidence that new thin articles were published. Confirm indexability and actual content before selecting each next page.
+- Room quantity page was listed in the September 29 recovery queue; the September 21 edit still left it without worked quantity math. This substantive recovery resolves that observed gap.
+- Image: existing quantity page has no hero; this is an existing-page update, so no new-article raster image was required.
+- Next queue: concrete driveway cost per square foot, mulch cost per yard, toilet repair versus replacement. Preserve recent substantive improvements; review current content and history before choosing.
+- Outcome checks: formula arithmetic, source/visible FAQ alignment, extensionless canonical, internal destinations and live output required before marking publication complete.
