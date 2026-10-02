@@ -342,5 +342,8 @@ export async function onRequest(context) {
     });
   }
 
+
+  rewriter.on("head", { element(element) { element.append("<style id=\"site-whatsapp-style\">a.site-whatsapp{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:900;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;border-radius:999px;background:#075e54;color:#fff;font:600 15px/1.2 system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 16px #0003}a.site-whatsapp:hover{background:#064c44}a.site-whatsapp:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px #075e54}a.site-whatsapp svg{width:24px;height:24px;flex:none}@media(max-width:600px){a.site-whatsapp{padding:12px;bottom:max(16px,env(safe-area-inset-bottom))}a.site-whatsapp span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}@media print{a.site-whatsapp{display:none}}</style>", { html: true }); } });
+  rewriter.on("body", { element(element) { element.append("<a class=\"site-whatsapp\" href=\"https://wa.me/971552473989?text=Hi%2C%20I%20have%20a%20question%20about%20HomeCostEngine.\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Chat with us on WhatsApp (opens in a new tab)\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"M21 11.5a9 9 0 0 1-13.3 7.9L3 21l1.6-4.7A9 9 0 1 1 21 11.5Z\"/><path d=\"M8 7.5c-.7 1.8.5 4.2 2.2 5.9s4.1 2.9 5.9 2.2l.7-2.1-2.5-1.1-1 1c-1.3-.5-2.6-1.8-3.1-3.1l1-1-1.1-2.5Z\"/></svg><span>Chat on WhatsApp</span></a>", { html: true }); } });
   return rewriter.transform(response);
 }
