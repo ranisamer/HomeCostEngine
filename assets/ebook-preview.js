@@ -1,4 +1,4 @@
-/* HomeCostEngine Interactive Book Preview — 2026-09-23 */
+/* HomeCostEngine Interactive Book Preview, 2026-09-23 */
 (function(){
 "use strict";
 if(window.__HCE_EBOOK_PREVIEW_LOADED__) return;
@@ -120,7 +120,7 @@ const BOOKS={
  category:"Plumbing",
  p1:{title:"Separate the Plumbing Repair From the Access Repair",intro:"A plumbing job can require opening and restoring walls, ceilings, floors or cabinets. The quote should state who owns each part.",bullets:["Identify fixture, pipe or equipment being repaired.","Document how the plumber will gain access.","Clarify drywall, tile, paint and cabinet restoration.","Ask whether shutoff, drain-down and testing are included."]},
  p2:{title:"Build the Full Repair Budget",intro:"Use separate allowances for plumbing and restoration.",table:[["Cost item","Example"],["Plumbing labor","$1,450"],["Pipe / fittings","$420"],["Access opening","$250"],["Wall / ceiling repair","$650"],["Paint / finish repair","$300"],["Contingency","$400"]],note:"Emergency, after-hours and difficult-access work may use different rates. Ask before authorizing service."},
- p3:{title:"Compare Plumbing Proposals",intro:"For larger repairs, compare material, access and testing scope—not just hourly rate.",table:[["Scope","Plumber A","Plumber B"],["Material specified","Yes","Generic"],["Pressure / leak test","Included","Included"],["Permit","Included","If required extra"],["Restoration","Excluded","Allowance"],["Warranty","2 yr","1 yr"]],note:"For concealed piping, ask what happens if the opened area reveals a larger damaged section."},
+ p3:{title:"Compare Plumbing Proposals",intro:"For larger repairs, compare material, access and testing scope, not just hourly rate.",table:[["Scope","Plumber A","Plumber B"],["Material specified","Yes","Generic"],["Pressure / leak test","Included","Included"],["Permit","Included","If required extra"],["Restoration","Excluded","Allowance"],["Warranty","2 yr","1 yr"]],note:"For concealed piping, ask what happens if the opened area reveals a larger damaged section."},
  locked:["Plumbing scope worksheet","Access & restoration checklist","Fixture allowance page","Water-heater comparison","Quote normalization sheet","Leak-test closeout page"]
 },
 "electrical-upgrade-cost-planning-guide":{
@@ -196,7 +196,7 @@ function pageHtml(p,i,total,bookTitle){
 function lockedHtml(cfg,total,price){
  const topics=(cfg.locked||[]).map(x=>'<span>'+esc(x)+'</span>').join("");
  return '<div class="hce-lock-content"><div class="hce-page-kicker"><span>Next section</span><span>Locked</span></div><h3>Continue with the complete guide</h3><p class="hce-page-intro">More worksheets, checklists and planning tools continue here.</p>'+tableHtml([["Tool","Status"],["Budget worksheet","Included"],["Quote checklist","Included"],["Planning templates","Included"],["Closeout tools","Included"]])+'</div>'+
- '<div class="hce-lock-panel"><div class="hce-lock-icon">🔒</div><h3>You’ve previewed 3 sample pages</h3><p>The complete guide contains '+esc(total||"many more")+' pages of project-specific planning content.</p><div class="hce-lock-topics">'+topics+'</div><button class="btn hce-buy-now" type="button">Get the Full Guide — '+esc(price)+'</button></div>';
+ '<div class="hce-lock-panel"><div class="hce-lock-icon">🔒</div><h3>You’ve previewed 3 sample pages</h3><p>The complete guide contains '+esc(total||"many more")+' pages of project-specific planning content.</p><div class="hce-lock-topics">'+topics+'</div><button class="btn hce-buy-now" type="button">Get the Full Guide: '+esc(price)+'</button></div>';
 }
 function buy(){
  const b=document.querySelector(".ebook-top-buy,.book-buy-button,.ebook-bottom-buy-btn");
@@ -222,7 +222,7 @@ function enhanceProduct(){
  section.innerHTML='<div class="container">'+
  '<div class="section-head"><div><span class="eyebrow">3-page book trailer</span><h2>Read the book first. Decide after.</h2></div><p>The first thing on this page is a three-page interactive trailer. Explore the content and use the linked HomeCostEngine calculators before you see the purchase section.</p></div>'+
  '<div class="hce-preview-meta hce-preview-meta-top"><span>'+esc(pages?pages+" pages":"Digital guide")+'</span><span>3-page interactive trailer</span><span>Free calculator links inside</span></div>'+
- '<div class="hce-preview-shell"><div class="hce-reader"><div class="hce-reader-top"><strong>'+esc(title)+' • Free 3-page trailer</strong><div class="hce-reader-progress"><i></i></div></div><div class="hce-book-spread"><article class="hce-book-page hce-page-left"></article><article class="hce-book-page hce-page-right"></article></div><div class="hce-reader-nav"><button class="btn secondary prev" type="button" aria-label="Previous preview page">← Previous</button><span class="indicator"></span><button class="btn secondary next" type="button" aria-label="Next preview page">Next →</button></div><div class="hce-preview-tools"><strong>Free calculators used with this guide</strong><div>'+calcLinks.map(x=>'<a href="'+esc(x[1])+'">'+esc(x[0])+' →</a>').join("")+'</div></div><button class="btn hce-buy-now hce-mobile-buy" type="button">Get the Full Guide — '+esc(price)+'</button></div></div></div>';
+ '<div class="hce-preview-shell"><div class="hce-reader"><div class="hce-reader-top"><strong>'+esc(title)+' • Free 3-page trailer</strong><div class="hce-reader-progress"><i></i></div></div><div class="hce-book-spread"><article class="hce-book-page hce-page-left"></article><article class="hce-book-page hce-page-right"></article></div><div class="hce-reader-nav"><button class="btn secondary prev" type="button" aria-label="Previous preview page">← Previous</button><span class="indicator"></span><button class="btn secondary next" type="button" aria-label="Next preview page">Next →</button></div><div class="hce-preview-tools"><strong>Free calculators used with this guide</strong><div>'+calcLinks.map(x=>'<a href="'+esc(x[1])+'">'+esc(x[0])+' →</a>').join("")+'</div></div><button class="btn hce-buy-now hce-mobile-buy" type="button">Get the Full Guide: '+esc(price)+'</button></div></div></div>';
  const detailContainer=document.querySelector(".book-detail .container");
  const breadcrumb=detailContainer?.querySelector(".breadcrumb");
  const grid=detailContainer?.querySelector(".book-detail-grid");
@@ -271,7 +271,7 @@ function enhanceLibrary(){
   const href=titleLink.getAttribute("href");
   const primary=actions.querySelector(".btn");
   if(primary){primary.textContent="Preview Book";primary.href=href+"#sample-pages";}
-  const buyLink=document.createElement("a");buyLink.className="btn hce-card-buy";buyLink.href=href+"#buy-book";buyLink.textContent="Buy Now — "+price;actions.appendChild(buyLink);actions.classList.add("hce-library-actions");
+  const buyLink=document.createElement("a");buyLink.className="btn hce-card-buy";buyLink.href=href+"#buy-book";buyLink.textContent="Buy Now: "+price;actions.appendChild(buyLink);actions.classList.add("hce-library-actions");
   const note=document.createElement("span");note.className="hce-library-preview-note";note.textContent="3-page interactive preview • Instant digital access";actions.insertAdjacentElement("afterend",note);
  });
 }

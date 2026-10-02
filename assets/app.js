@@ -223,7 +223,7 @@ function makeExternalPhoto(topic, title){
   figure.className="blog-figure hce-external-photo";
   const img=document.createElement("img");
   img.src=topic.image;
-  img.alt=title ? `${title} — project photo` : "Home improvement project photo";
+  img.alt=title ? `${title}, project photo` : "Home improvement project photo";
   img.loading="lazy";
   img.decoding="async";
   img.referrerPolicy="no-referrer";
@@ -332,7 +332,7 @@ function buildAdSenseUnit(position, slot){
   if(!canServe){
     const preview=document.createElement("div");
     preview.className="hce-ad-preview-box";
-    preview.innerHTML='<strong>Google AdSense placement</strong><span>Preview only — real ad will appear here after AdSense is connected.</span>';
+    preview.innerHTML='<strong>Google AdSense placement</strong><span>Preview only, real ad will appear here after AdSense is connected.</span>';
     wrap.appendChild(preview);
     return wrap;
   }

@@ -7,7 +7,7 @@
 
   const byId=id=>document.getElementById(id);
   const fmtPct=value=>{
-    if(value===null||value===undefined||!Number.isFinite(Number(value)))return "—";
+    if(value===null||value===undefined||!Number.isFinite(Number(value)))return "N/A";
     const n=Number(value);
     return (n>0?"+":"")+n.toFixed(1)+"%";
   };
