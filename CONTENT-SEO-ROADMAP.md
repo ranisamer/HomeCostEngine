@@ -53,3 +53,17 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Image: existing quantity page has no hero; this is an existing-page update, so no new-article raster image was required.
 - Next queue: concrete driveway cost per square foot, mulch cost per yard, toilet repair versus replacement. Preserve recent substantive improvements; review current content and history before choosing.
 - Outcome checks: formula arithmetic, source/visible FAQ alignment, extensionless canonical, internal destinations and live output required before marking publication complete.
+
+
+## Daily quality update — 2026-10-02
+
+- Primary intent: concrete driveway cost per square foot as a comparable installed-scope metric, not a national price claim.
+- Canonical: `/blog/concrete-driveway-cost-per-square-foot`. Source canonical and Article URL now align with the extensionless live URL normalized by site middleware.
+- Replaced the approximately 327-word source answer with a homeowner quote-normalization method, a 720 sq ft quantity example, low/typical/high-complexity scope logic, inclusions, exclusions, permit caveats and five visible FAQs.
+- Added five unique descriptive links within the main text and contextual inbound links from the concrete-patio-thickness and gravel-driveway-cost pages.
+- Sources checked October 2: NRMCA joint guidance, American Concrete Pavement Association subgrade/subbase guidance and ACI curing guidance. No national installed prices or ranking difficulty invented.
+- Fresh U.S.-filtered Search Console query-page access is unavailable. The September 30 export remains a dated all-country baseline; automated live performance tracking is unavailable.
+- The tracked indexable thin-page backlog moves from 37 to approximately 36 after this substantive update; reverify current indexability and source word count before selecting the next page.
+- Image: existing page has no hero; this is an existing-page update, so no new-article raster image was required.
+- Next queue: mulch cost per yard, then toilet repair versus replacement, unless verified fresh query-page evidence supports a different existing page.
+- Outcome checks: quantity arithmetic, source/visible FAQ alignment, extensionless canonical, internal destinations, changed files and live output required before marking publication complete.
