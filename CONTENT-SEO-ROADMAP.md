@@ -67,3 +67,15 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Image: existing page has no hero; this is an existing-page update, so no new-article raster image was required.
 - Next queue: mulch cost per yard, then toilet repair versus replacement, unless verified fresh query-page evidence supports a different existing page.
 - Outcome checks: quantity arithmetic, source/visible FAQ alignment, extensionless canonical, internal destinations, changed files and live output required before marking publication complete.
+
+
+## Daily quality update, 2026-10-03
+
+- Primary canonical intent: toilet repair versus replacement, diagnosed failure and complete installed scope. URL: /blog/toilet-repair-vs-replacement.
+- Replaced 342 source words (excluding related aside) with 1,200 substantive words, a three-year quote comparison formula, a 2,336-gallon annual savings quantity example, scope scenarios, exclusions and five visible FAQs.
+- Five unique in-body links to the installation calculator, hidden-leak article, installation scope article, quote comparison calculator and bathroom guide; contextual inbound links added in the hidden-leak article and bathroom guide.
+- Source canonical and Article URL aligned with live extensionless URL; Article review date and author updated, matching FAQPage added. Existing 1200 x 675 SVG kept and linked to canonical; redundant planning graphic removed.
+- Primary references verified October 3: EPA WaterSense Home Maintenance and Residential Toilets. No contractor prices, probabilities or promised payback invented.
+- Current source audit: 71 articles, 36 indexable source articles below 600 words before this update; 35 remain after it. Counts exclude related asides and do not claim every longer page meets quality standards.
+- No fresh U.S.-filtered Search Console access is available. September 30 export remains a dated all-country snapshot, not live query-page evidence.
+- Next action: mulch pricing is still short, but its September 21 substantive update is within 14 days. Preserve it for now; select another verified thin page unless fresh evidence or a concrete bug changes priority.
