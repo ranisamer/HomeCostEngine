@@ -79,3 +79,16 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Current source audit: 71 articles, 36 indexable source articles below 600 words before this update; 35 remain after it. Counts exclude related asides and do not claim every longer page meets quality standards.
 - No fresh U.S.-filtered Search Console access is available. September 30 export remains a dated all-country snapshot, not live query-page evidence.
 - Next action: mulch pricing is still short, but its September 21 substantive update is within 14 days. Preserve it for now; select another verified thin page unless fresh evidence or a concrete bug changes priority.
+
+
+## Daily quality update, 2026-10-04
+
+- Primary canonical intent: complete installed gravel driveway cost per square foot, separating refresh, rebuild and difficult-site scopes. URL: `/blog/gravel-driveway-cost`. Existing quantity and calculator pages keep their separate tasks; no new phrase-variant page created.
+- Replaced the 524-word source answer with a layer-by-layer quantity example, supplier conversion caveats, a complete budget formula, scope scenarios, exclusions, permit checks and five matching FAQs. No invented national or local prices.
+- Five unique contextual internal destinations in the main text, plus a linked canonical hero. Strengthened inbound paragraphs in the driveway quantity guide and gravel calculator.
+- Replaced the unstable external hero with an original text-free 1600 x 900 WebP at `assets/blog/gravel-driveway-cost.webp`; linked to the canonical and added alt text and explicit dimensions.
+- Primary sources verified October 4: EPA-hosted Gravel Roads manual sections on Surface Gravel and Drainage, and MnDOT access/driveway permit forms. Road guidance is background, not a private driveway design specification.
+- Additional scoped accessibility improvement: the gravel calculator's result now has a polite status announcement for assistive technology. No form logic or design changes.
+- Source audit: 71 article files, 35 indexable articles below 600 source words before this update; 34 remain after it, excluding related asides. Word count alone does not establish complete quality.
+- Fresh U.S.-filtered Search Console access is unavailable. The September 30 all-country export is a dated baseline, not live query-page evidence or proof of U.S. keyword positions.
+- Next action: preserve mulch pricing until its 14-day window has passed; reaudit thin quantity and cost pages and select the next useful existing intent. Continue using measured U.S. query-page evidence when access becomes available.
