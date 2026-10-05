@@ -93,3 +93,18 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Fresh U.S.-filtered Search Console access is unavailable. The September 30 all-country export is a dated baseline, not live query-page evidence or proof of U.S. keyword positions.
 - Next action: preserve mulch pricing until its 14-day window has passed; reaudit thin quantity and cost pages and select the next useful existing intent. Continue using measured U.S. query-page evidence when access becomes available.
 - Live interaction check found a pre-existing step mismatch: length, width and depth used min 0.01 with step 0.1, rejecting whole-number dimensions including the default example. A corrective follow-up allows any positive dimension at or above 0.01 without changing the calculation formula. Verify 50 x 12 ft at 4 inches with a 10% allowance produces 8.15 cubic yards and 12.22 tons at the illustrative 1.5 density; zero remains invalid.
+
+
+## Daily quality update, 2026-10-05
+
+- Primary canonical intent: mulch cost per cubic yard including delivery, purchase rounding and installed scope. URL: `/blog/mulch-cost-per-yard`. No new overlapping bagged-versus-bulk page.
+- Replaced 356 source words with 1,379 words of distinct quantity, delivered-cost, bag conversion and scope comparison guidance. All example dollar figures explicitly hypothetical; no national or local prices invented.
+- Four unique descriptive internal links in the main body; improved contextual inbound anchors in the mulch quantity guide and mulch calculator.
+- Published September 8; reviewed October 5; editorial byline and five visible FAQs match Article and FAQPage markup. Source canonical aligned with established extensionless URL.
+- Primary references checked October 5: University of Minnesota Extension mulch application and University of Maryland Extension excess mulch guidance.
+- Existing page has no hero. This is an existing-page update, not a new article; no image generated.
+- Additional scoped accessibility improvement: mulch calculator result announces updates using a polite atomic status. Form inputs and calculation logic unchanged.
+- Reaudit: 71 articles; 34 indexable article bodies below 600 words before this update, 33 after. Counts exclude related asides; length alone does not establish quality.
+- Monday performance review: no live U.S.-filtered Search Console query-page access. September 30 export (actual September 8-27) remains stale: 2,392 all-country impressions, zero clicks; U.S. country aggregate 2,136 impressions and average position 75.66. No equal completed 28-day comparison can be calculated; query and page aggregates are not joined.
+- Owner's October 5 coverage exports are indexing evidence, not U.S. performance: 19 discovered/currently-not-indexed, 2 crawled/currently-not-indexed, 78 redirect pages, 1 redirect error and 4 noindex pages. Redirect counts alone do not establish a bug. Drilldown includes historical .html URLs and epoch placeholders for last-crawl dates; do not treat those placeholders as real crawl times.
+- Next action: investigate the one redirect error when its URL is identified, and audit remaining thin pages against the discovered list (flooring cost per square foot, double-pane versus triple-pane windows, cubic-yard guide). Preserve pages substantively improved within 14 days. Track actual U.S. clicks when fresh access becomes available.
