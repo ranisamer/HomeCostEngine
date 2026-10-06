@@ -108,3 +108,16 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Monday performance review: no live U.S.-filtered Search Console query-page access. September 30 export (actual September 8-27) remains stale: 2,392 all-country impressions, zero clicks; U.S. country aggregate 2,136 impressions and average position 75.66. No equal completed 28-day comparison can be calculated; query and page aggregates are not joined.
 - Owner's October 5 coverage exports are indexing evidence, not U.S. performance: 19 discovered/currently-not-indexed, 2 crawled/currently-not-indexed, 78 redirect pages, 1 redirect error and 4 noindex pages. Redirect counts alone do not establish a bug. Drilldown includes historical .html URLs and epoch placeholders for last-crawl dates; do not treat those placeholders as real crawl times.
 - Next action: investigate the one redirect error when its URL is identified, and audit remaining thin pages against the discovered list (flooring cost per square foot, double-pane versus triple-pane windows, cubic-yard guide). Preserve pages substantively improved within 14 days. Track actual U.S. clicks when fresh access becomes available.
+
+## Daily quality update, 2026-10-06
+
+- Primary canonical intent: complete installed flooring cost per square foot, including removal and subfloor preparation. URL: `/blog/flooring-cost-per-square-foot`. No material-only or phrase-variant page created.
+- Replaced the 409-word source answer with a detailed quote-normalization method, scope-based low/typical/high-complexity logic and a 900 sq ft worked example. Hypothetical rates are labeled and no national prices were invented.
+- Six unique descriptive internal links in the main body; contextual inbound links added from the flooring quantity guide and the 1,000 sq ft installation guide.
+- Published September 8; reviewed October 6; editorial byline and five visible FAQs match Article and FAQPage markup. Canonical and Article URL now use the established extensionless live URL.
+- Primary references checked October 6: EPA remodeling moisture guidance and EPA asbestos guidance for suspect materials that may be disturbed.
+- Existing page has no hero. This is an existing-page update, not a new article, so no image was generated.
+- Additional scoped accessibility improvement: the Blog navigation links on the worked page now expose `aria-current="page"`.
+- Reaudit basis: 33 indexable article bodies were below 600 words after the October 5 update; this verified 409-word page is removed from that backlog, leaving approximately 32. Recheck current indexability and source text before selecting the next page.
+- Fresh U.S.-filtered Search Console query-page access remains unavailable. The September 30 export is a dated all-country baseline, not live performance data.
+- Next action: audit double-pane versus triple-pane windows and the cubic-yard quantity guide, while preserving pages substantively improved within 14 days. Investigate the reported redirect error once its exact URL is available.
