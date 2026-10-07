@@ -121,3 +121,17 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Reaudit basis: 33 indexable article bodies were below 600 words after the October 5 update; this verified 409-word page is removed from that backlog, leaving approximately 32. Recheck current indexability and source text before selecting the next page.
 - Fresh U.S.-filtered Search Console query-page access remains unavailable. The September 30 export is a dated all-country baseline, not live performance data.
 - Next action: audit double-pane versus triple-pane windows and the cubic-yard quantity guide, while preserving pages substantively improved within 14 days. Investigate the reported redirect error once its exact URL is available.
+
+
+## Daily quality update, 2026-10-07
+
+- Primary canonical intent: whether triple-pane windows are worth the incremental installed cost versus double-pane during replacement. URL: `/blog/double-pane-vs-triple-pane-windows`. Preserved the existing topic and design; no synonym page created.
+- Replaced the 485-word source body with a matched-quote method, $2,400 hypothetical upgrade example, dimensional U-factor comparison and payback sensitivity check. Dollar figures and performance inputs are illustrative, not market prices or savings promises.
+- Five unique descriptive internal links in the main body. Contextual inbound paragraphs added to the window replacement cost guide and window/door buyer's guide.
+- Reviewed October 7 with editorial byline; five visible FAQs match FAQPage markup. Article dateModified and extensionless canonical/Article URL aligned; sitemap lastmod updated.
+- Primary references verified: NFRC residential ratings, ENERGY STAR window selection and EPA lead-safe renovation consumer guidance.
+- Existing page has no visible hero; retained its existing referenced SVG illustration (1200×675). No new article or image generated.
+- Scoped accessibility improvement: Blog navigation indicates the current section using aria-current on the worked page.
+- Reaudit: 71 source blog articles, 32 indexable bodies below 600 words before this update, 31 after. Counts exclude related-content asides and are triage, not a quality score.
+- Live U.S.-filtered Search Console query-page access remains unavailable. September 30 all-country exports are stale baseline evidence, not live U.S. performance or joined query-page data.
+- Next action: audit the cubic-yard quantity guide and remaining thin backlog; preserve recent substantive improvements. Investigate the reported redirect error once its exact URL is available. Track real U.S. clicks when fresh authorized data exists.
