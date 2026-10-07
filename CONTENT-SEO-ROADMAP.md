@@ -135,3 +135,13 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Reaudit: 71 source blog articles, 32 indexable bodies below 600 words before this update, 31 after. Counts exclude related-content asides and are triage, not a quality score.
 - Live U.S.-filtered Search Console query-page access remains unavailable. September 30 all-country exports are stale baseline evidence, not live U.S. performance or joined query-page data.
 - Next action: audit the cubic-yard quantity guide and remaining thin backlog; preserve recent substantive improvements. Investigate the reported redirect error once its exact URL is available. Track real U.S. clicks when fresh authorized data exists.
+
+
+## Live U.S. GSC connection verified, 2026-10-07
+
+- Read-only Search Console API access is now working through `.github/workflows/gsc-report.yml`; the first real run succeeded: https://github.com/ranisamer/HomeCostEngine/actions/runs/37603208948.
+- Daily SEO work must fetch the newest successful main-branch U.S. Search Console report workflow run, download its `gsc-us-web-report` artifact and inspect `report.json` before prioritizing pages. See GSC-REPORTING.md for the workflow/artifact retrieval method. This replaces the old assumption that only manually uploaded exports are available; this is an API data pipeline via GitHub, not a direct ChatGPT GSC connector.
+- First verified report: U.S. Web, finalized data, September 7–October 4, 2026 (Pacific dates): 2,991 impressions, 0 clicks, average position 69.10. Query–page rows are truly grouped together by the API. The preceding 28-day window has limited recorded history; do not claim comparable growth/decline.
+- Reports refresh at 00:37 UTC (04:37 Dubai), subject to GitHub scheduling delays, through December 29. Finalized data is delayed; report generation time is not the performance end date.
+- Choose improvements using measured U.S. clicks first, then impressions, relevant intent coverage and positions; respect recent-update cooldowns and the thin-content recovery queue. Do not interpret impressions as visits or fabricate search difficulty.
+- If a run fails or its report is stale, state the actual failure/date and use the latest verified evidence. The secret remains in Actions, and the reporting workflow never changes live page content or indexing settings.
