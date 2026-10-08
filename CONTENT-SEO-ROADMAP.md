@@ -157,3 +157,12 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Checks: calculator example and invalid inputs, HTML/FAQ JSON-LD, internal targets, changed-file scope and live output. Publication commit: the atomic commit containing this dated log (see this file's Git history).
 - Access caveat: direct HTTP verification returned 403 from this environment; the five internal destinations rendered successfully in the browser. The ads.txt check was blocked by the browser client and unavailable through web retrieval, so its live status is unverified today.
 - Blog thin backlog remains approximately 31; today's roofing-guide repair is separate from that count. Next: evaluate actual asphalt/tile query-page behavior after recrawl; continue thin-blog recovery and preserve recent revisions.
+
+
+## Repeat-visit funnel implementation, 2026-10-08
+
+- Added contextual workbook entry points to existing calculator/library content. The download email points to useful follow-on tools. Optional marketing consent stays unchecked.
+- Kept a direct PDF fallback and accurate provider-error/subscription states. No ad-click encouragement or scheduled marketing claims.
+- Added TRAFFIC-RETENTION-PLAN.md with the 90-day operating plan and explicit email integration boundary. This supplements the SEO schedule without changing it.
+- Publication commit: the atomic commit containing this log (see file Git history). Next: verify owner-authorized inbox delivery and configure the separate opt-in learning sequence in Brevo; account access is required.
+- Reused the existing 14-page planning PDF; linked it from roof replacement and quote comparison. Subscription status now reflects the provider response instead of assuming consent equals enrollment.
