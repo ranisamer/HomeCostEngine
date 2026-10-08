@@ -145,3 +145,15 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Reports refresh at 00:37 UTC (04:37 Dubai), subject to GitHub scheduling delays, through December 29. Finalized data is delayed; report generation time is not the performance end date.
 - Choose improvements using measured U.S. clicks first, then impressions, relevant intent coverage and positions; respect recent-update cooldowns and the thin-content recovery queue. Do not interpret impressions as visits or fabricate search difficulty.
 - If a run fails or its report is stale, state the actual failure/date and use the latest verified evidence. The secret remains in Actions, and the reporting workflow never changes live page content or indexing settings.
+
+
+## Daily execution update, 2026-10-08
+
+- Latest successful main-branch GSC run 37603208948, artifact 11473821403: generated October 7 at 09:49 UTC; property sc-domain:homecostengine.com; usa / web / final; current September 7–October 4. Totals: 2,991 impressions, 0 clicks, average position 69.10. Historical comparison remains limited.
+- Selected `/roofing/tile-roof-cost`: actual query-page row `tile roof cost calculator`, 11 impressions, 0 clicks, average position 5. This small sample is not sustained ranking. The September 24 substantive revision is outside the 14-day protection window; October 2 was punctuation cleanup.
+- Added a quote-driven calculator with no default market rates; area/rate/exclusions/contingency inputs, itemized results and stale-result clearing. Expanded the short guide with takeoff, hypothetical worked math, reset-versus-new scope, regional/structural caveats, five FAQs and editorial review date.
+- Five descriptive in-body internal destinations and contextual inbound support from the underlayment and tear-off guides. Kept canonical/design and existing no-hero status. No new article or image needed. Added accessible status output to the planner. Updated sitemap.
+- Sources: TRIA installation guides and technical briefs, Eagle Roofing technical bulletins. No market prices, savings or ranking promises invented.
+- Checks: calculator example and invalid inputs, HTML/FAQ JSON-LD, internal targets, changed-file scope and live output. Publication commit: the atomic commit containing this dated log (see this file's Git history).
+- Access caveat: direct HTTP verification returned 403 from this environment; the five internal destinations rendered successfully in the browser. The ads.txt check was blocked by the browser client and unavailable through web retrieval, so its live status is unverified today.
+- Blog thin backlog remains approximately 31; today's roofing-guide repair is separate from that count. Next: evaluate actual asphalt/tile query-page behavior after recrawl; continue thin-blog recovery and preserve recent revisions.
