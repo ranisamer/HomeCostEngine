@@ -1,5 +1,20 @@
 # U.S. long-tail search roadmap
 
+
+## Daily quality and useful-visit update, 2026-10-09
+
+- Read GSC-REPORTING.md, TRAFFIC-RETENTION-PLAN.md and LEARNING-EMAIL-SEQUENCE.md before selection. Latest successful main GSC run: 37738490319; artifact 11532458750; generated 2026-10-08T06:36:05Z; sc-domain:homecostengine.com, usa / web / final. No newer run appears in the run list checked today. Current finalized period September 7–October 4: 2,991 impressions, 0 clicks, CTR 0%, average position 69.10. Prior August 10–September 6 totals are empty; history caution applies. This is the last verified API evidence, not a newly generated October 9 report.
+- Primary canonical intent: measure cubic yards and turn exact geometry into a supplier order. URL: /blog/how-many-cubic-yards-do-i-need. Actual joined query-page evidence includes "formula for cubic yards": 3 U.S. impressions, 0 clicks, position 6.67. Other variants have one impression each; these tiny samples are not sustained top-ten rankings. Thin recovery and homeowner usefulness determine selection.
+- Source audit of all 71 blog HTML files at main: 31 indexable article bodies below 600 words before this change, excluding related asides. Primary body was 412 words; now 1,222 words by parsed article text. Approximately 30 remain. Length is triage, not a quality score. Last substantive primary update September 21; October 2 was punctuation cleanup, so the 14-day protection is respected.
+- Added the inches-based /324 formula, exact 12×16×4 quantity, explicit allowance and supplier increment rounding, depth sensitivity, non-overlapping shapes, loose/compacted conversion caveats, bags/tons examples and an ordering checklist. No market prices or compaction factors invented.
+- Six descriptive in-body destinations: cubic-yard, concrete, gravel and mulch calculators, extra-concrete guide and existing planning workbook. Two contextual inbound paragraphs: cubic-yard calculator and ready-mix-versus-bags article. No separate variant page or forced promotion.
+- Canonical and Article URL aligned to established extensionless URL; published date retained, editorial byline/reviewed date October 9; five visible FAQs match FAQPage JSON-LD. Sitemap lastmod updated. Existing article has no visible hero; no new page or image created.
+- Additional scoped tool bug: browser confirmed cyDepth min .01 / step .1 rejects default 4 with stepMismatch, leaving the previous result when Calculate is pressed. Changed only depth step to any; positive minimum and formula remain unchanged. Validate the 12×16×4 / 10% example (2.61 yd³) and zero rejection after deployment.
+- Validation before publication: arithmetic assertions, parsed HTML, Article/FAQ JSON-LD and visible alignment passed; all six in-body targets returned HTTP 200 via curl. ads.txt returned the authorized publisher line. Existing PDF downloaded and identified as 14 pages. Live workbook marketing checkbox remains unchecked; no message sent. Direct Python HTTP client was restricted, while curl and browser checks succeeded.
+- Primary sources checked October 9: NIST unit conversions, NRMCA/ASCC pre-construction ordering checklists and University of Maryland Extension mulch guidance. Worked calculations are original illustrative geometry.
+- Publication commit: the atomic commit containing this dated log, identifiable in this file's Git history. After publishing, confirm live article, inbound text, canonical/schema and calculator example; report any deployment blocker honestly.
+- Next: preserve this guide and recent roofing/window updates. Continue the remaining thin backlog using newer U.S. query-page evidence when the reporting workflow refreshes. Timed Brevo learning emails still require account configuration and owner-authorized delivery/unsubscribe testing; templates alone are not an active sequence. Tool usage and return visits have not been measured by this report. Indexing anomalies require separate URL evidence.
+
 Reviewed 2026-09-27. These are editorial hypotheses based on existing site coverage and public result patterns, not verified search-volume or ranking-difficulty estimates. Check U.S. Search Console data before changing priority. One search intent should have one primary URL; related phrases can be answered within that page.
 
 | Search intent / candidate query | Primary URL | Distinct answer to provide | Supporting internal link |
@@ -166,3 +181,4 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Added TRAFFIC-RETENTION-PLAN.md with the 90-day operating plan and explicit email integration boundary. This supplements the SEO schedule without changing it.
 - Publication commit: the atomic commit containing this log (see file Git history). Next: verify owner-authorized inbox delivery and configure the separate opt-in learning sequence in Brevo; account access is required.
 - Reused the existing 14-page planning PDF; linked it from roof replacement and quote comparison. Subscription status now reflects the provider response instead of assuming consent equals enrollment.
+

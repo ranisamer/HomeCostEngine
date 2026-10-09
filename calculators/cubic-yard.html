@@ -40,7 +40,7 @@
 <div class="calc-shell"><h2>Your project details</h2><p class="muted">Change the inputs below to match your project.</p><form id="calculatorForm" class="form-grid">
 <div class="field"><label for="cyLength">Length (ft)</label><input id="cyLength" type="number" value="20" min=".01" step=".01"></div>
 <div class="field"><label for="cyWidth">Width (ft)</label><input id="cyWidth" type="number" value="10" min=".01" step=".01"></div>
-<div class="field"><label for="cyDepth">Depth (in)</label><input id="cyDepth" type="number" value="4" min=".01" step=".1"></div>
+<div class="field"><label for="cyDepth">Depth (in)</label><input id="cyDepth" type="number" value="4" min=".01" step="any"></div>
 <div class="field"><label for="cyWaste">Waste allowance</label><select id="cyWaste"><option value="1">0%</option><option value="1.05">5%</option><option value="1.10" selected>10%</option><option value="1.15">15%</option></select></div><div class="field full"><button class="btn full" type="submit">Calculate →</button></div></form><div class="notice">Planning tool only. Verify field measurements, material specifications and project requirements before ordering materials or starting work.</div></div>
 <aside class="result-card"><span class="kicker">Your result</span><div id="result" class="result-big">N/A</div><div id="range" class="result-range">Enter your details</div><div class="breakdown">
 <div class="row"><span>Cubic feet</span><strong id="unit">N/A</strong></div><div class="row"><span>Cubic meters</span><strong id="materials">N/A</strong></div><div class="row"><span>Waste added</span><strong id="labor">N/A</strong></div><div class="row"><span>Rounded order</span><strong id="other">N/A</strong></div></div>
@@ -53,6 +53,7 @@
 <p>Four inches is 0.333 ft. Multiply 20 × 10 × 0.333 to get about 66.7 cubic feet. Divide by 27 and the base volume is about 2.47 cubic yards. A 5% allowance would bring that to roughly 2.59 yd³.</p>
 <h2>Why the material matters after the math</h2>
 <p>The geometry tells you how much space needs to be filled. It does not tell you how a supplier will sell the product. Ready-mix is commonly ordered by cubic yard. Gravel may be sold by the ton. Mulch may be sold by the yard or by bag. Topsoil can settle. The volume calculation stays the same; the purchasing step changes.</p>
+<p>Before rounding an order, use the <a href="/blog/how-many-cubic-yards-do-i-need">cubic-yard measurement and supplier-ordering guide</a> to separate exact geometry, handling allowance and sale increments. Its depth comparison helps check whether a small measurement error is driving the result.</p>
 <h2>Do not hide irregular sections inside “waste”</h2>
 <p>If the project has a thickened edge, footing, step or deeper low spot, calculate that section separately and add it to the base volume. A waste allowance should cover uncertainty and handling loss, not missing geometry.</p>
 <h2>Quick depth reference</h2>
