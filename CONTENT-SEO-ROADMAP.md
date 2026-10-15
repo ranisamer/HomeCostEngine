@@ -1,5 +1,19 @@
 # U.S. long-tail search roadmap
 
+## Daily quality and useful-visit update, 2026-10-15
+
+- Additional scoped bug fix discovered in live testing: concrete calculator used ceil(yards × 1.35) for 80-lb bags, producing 5 bags for 3.259 yards. Corrected to ceil(yards × 27 / 0.60) = 147 for an explicitly stated 0.60 ft³ product yield; added manufacturer reference and calculator script cache version. Other calculator formulas unchanged. Validate alternate allowances and zero rejection live.
+
+- Inspected main at f9e032e1b0a3a7462f0ecedc68f0bf6a7ecbcdf9 and read reporting, traffic-retention and learning-sequence documents. Workflow-run listing was rejected with GitHub INVALID_ARGUMENT (HTTP 400), so a newer successful run cannot be established. Retrieved artifact 11599821758 from last verified main run 37894550715; available ZIP digest matches d92d87fb92c7d4a0ac94f6018f44aba6e126fba24dfeb816c9ca5d2177ef627b. report.json generated October 9 06:38 UTC: sc-domain:homecostengine.com, usa / web / final, September 8–October 5. These are dated evidence, not fresh October 15 results.
+- Selected /blog/concrete-cost-per-yard-explained: canonical page aggregate 63 U.S. impressions, zero clicks, 0% CTR, average position 67.44. Joined query-page row "concrete cost per yard": five impressions, zero clicks, average position 60.8. Historical .html aggregate separately has 28 impressions at 68.75; this alone does not establish duplicate indexing. Current source is about 491 words with September 21 substantive review, outside cooldown.
+- Replaced the thin answer with a specified-mix delivered-versus-installed comparison, quantity formula, 2.963-yard slab / 3.259-yard allowance / illustrative 3.50-yard order, and hypothetical supplier comparison ($895 versus $827.50 before tax). All dollar inputs and order increments are explicitly illustrative, not national/local price claims. Added exclusions, regional/permit caveats and delivery checklist.
+- Five descriptive main-body destinations: concrete calculator, order-allowance guide, quote-comparison calculator, ready-mix-versus-bags guide and existing free workbook. Contextual inbound paragraphs added to concrete calculator and ready-mix-versus-bags guide; their primary content and calculator logic are unchanged.
+- Retained title, URL and visual design. Aligned source canonical and Article URL with established extensionless live URL; reviewed byline/date October 15 and five matching FAQs. Existing live illustrative project photo retained; no new page/image needed. NRMCA CIP 31 ordering and CIP 11 curing sources verified October 15; this is original planning methodology, not a reproduction of those sheets.
+- Thin backlog: prior consistent 71-file audit left approximately 27 indexable bodies below 600 words; verified target removed today, leaving approximately 26. Counts are triage and do not certify every longer article. Prepublication checks: arithmetic assertions, HTML parsing, JSON-LD/visible FAQ agreement, five internal paths, canonical and sitemap date.
+- Publication commit: the atomic commit containing this entry (see file Git history). Live article/image, inbound links, calculator result, workbook download and unchecked consent must be checked after push; report any blocked check honestly. ads.txt status is separate from AdSense approval.
+- Brevo timed marketing remains prepared, not activated: account access and owner-authorized inbox/unsubscribe tests are still required. No email, external post, subscription mutation or analytics engagement claim.
+- Next: preserve this primary page through October 29 unless a documented bug/new evidence warrants revision. Restore newest-report retrieval and audit shingles takeoff or another thin page outside cooldown; use actual clicks first and do not infer visits from impressions.
+
 ## Daily quality and useful-visit update, 2026-10-14
 
 - Read GSC-REPORTING.md, TRAFFIC-RETENTION-PLAN.md and LEARNING-EMAIL-SEQUENCE.md on main at 3b5a657af2b3c910190e5ee578058db1c050a517. The reporting workflow-run listing URL was rejected by the GitHub connection with INVALID_ARGUMENT; no newest successful run could be established. Retrieved artifact 11599821758 from the last verified main run 37894550715 and matched its available ZIP SHA-256 to d92d87fb92c7d4a0ac94f6018f44aba6e126fba24dfeb816c9ca5d2177ef627b. Inspected report.json: generated October 9 at 06:38 UTC; sc-domain:homecostengine.com; country usa, search_type web, data_state final; September 8–October 5. Site totals: 3,114 impressions, 0 clicks, 0% CTR, average position 68.58. This is dated last-verified evidence, not today's performance.
@@ -222,5 +236,6 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Added TRAFFIC-RETENTION-PLAN.md with the 90-day operating plan and explicit email integration boundary. This supplements the SEO schedule without changing it.
 - Publication commit: the atomic commit containing this log (see file Git history). Next: verify owner-authorized inbox delivery and configure the separate opt-in learning sequence in Brevo; account access is required.
 - Reused the existing 14-page planning PDF; linked it from roof replacement and quote comparison. Subscription status now reflects the provider response instead of assuming consent equals enrollment.
+
 
 

@@ -31,7 +31,7 @@ function concreteCalc(){
   if(l<=0||w<=0||t<=0) return;
   const yards=(l*w*(t/12))/27*waste;
   const cost=price?yards*price:0;
-  set("result",`${yards.toFixed(2)} yd³`); set("range",`${Math.ceil(yards*1.35)} × 80-lb bags (approx.)`);
+  set("result",`${yards.toFixed(2)} yd³`); set("range",`${Math.ceil(yards*27/0.60)} × 80-lb bags (0.60 ft³/bag assumed)`);
   set("unit",`${(l*w).toFixed(0)} sq ft surface`);
   set("materials",price?money(cost):"Add price/yd³"); set("labor","Not included"); set("other",`${((waste-1)*100).toFixed(0)}% waste`);
 }
@@ -402,3 +402,4 @@ document.addEventListener("DOMContentLoaded",()=>{
   if(form&&fn){form.addEventListener("submit",e=>{e.preventDefault();fn()}); fn();}
   if(type){injectEmailReportForm(type);injectPlanningValue(type);}
 });
+
