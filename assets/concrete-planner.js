@@ -61,6 +61,8 @@
     const readNumber = id => Number(byId(id).value);
     const actions = Array.from(document.querySelectorAll('[data-concrete-action]'));
     let last = null;
+    let lastInputKey = null;
+    const inputKey = () => JSON.stringify(Array.from(form.querySelectorAll('input')).map(input => [input.id, input.type === 'checkbox' ? input.checked : input.value, input.disabled, input.validity.valid]));
     function read() {
       return { version: 2, zones: Array.from(form.querySelectorAll('[data-concrete-zone]')).map(zone => ({ length: Number(zone.querySelector('[data-dimension="length"]').value), width: Number(zone.querySelector('[data-dimension="width"]').value), thickness: Number(zone.querySelector('[data-dimension="thickness"]').value) })), edge: { enabled: byId('edgeEnabled').checked, width: readNumber('edgeWidth'), depth: readNumber('edgeDepth') }, allowance: readNumber('waste'), increment: readNumber('orderIncrement'), bagYield: readNumber('bagYield'), yardPrice: byId('yardPrice').value.trim() === '' ? null : readNumber('yardPrice'), delivery: readNumber('deliveryFee'), placement: readNumber('placementFee') };
     }
@@ -71,6 +73,9 @@
       byId('edgeDepth').disabled = !enabled;
     }
     function dirty() {
+      const key = inputKey();
+      if (key === lastInputKey) return;
+      lastInputKey = key;
       last = null;
       actions.forEach(button => button.disabled = true);
       text('result', 'Update your plan');
@@ -121,6 +126,7 @@
       try { plan = read(); result = calculate(plan); }
       catch (error) { dirty(); text('calculatorError', error.message); byId('calculatorError').focus(); return false; }
       last = { plan, result };
+      lastInputKey = inputKey();
       actions.forEach(button => button.disabled = false);
       byId('concreteDetail').hidden = false;
       document.querySelector('.concrete-detail-grid').hidden = false;
@@ -187,7 +193,9 @@
     byId('downloadConcretePlan').addEventListener('click', () => {
       if (!last) return;
       const url = URL.createObjectURL(new Blob([byId('concreteExport').value], { type: 'text/plain;charset=utf-8' }));
-      const a = document.createElement('a'); a.href = url; a.download = 'homecostengine-concrete-plan.txt'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+      const a = document.createElement('a'); a.href = url; a.download = 'homecostengine-concrete-plan.txt'; document.body.appendChild(a); a.click();
+      // Keep the blob alive while the browser hands the download to its file service.
+      setTimeout(() => { a.remove(); URL.revokeObjectURL(url); }, 30000);
       text('concreteStatus', 'Worksheet download requested. Keep it with your supplier quote.');
     });
     byId('printConcretePlan').addEventListener('click', () => {
