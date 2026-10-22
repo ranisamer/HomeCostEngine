@@ -883,3 +883,18 @@ a.book-cover-art:hover{transform:translateY(-4px);box-shadow:0 24px 54px rgba(20
   .project-slide-copy em{font-size:.78rem}
 }
 @media(prefers-reduced-motion:reduce){.project-slide img,.project-slider-dots button{transition:none!important}}
+
+/* Per-article source-linked images, also usable without JavaScript. */
+.hce-sourced-hero{margin:24px 0 32px}
+.hce-sourced-hero>a{display:block;border-radius:20px;overflow:hidden;background:#e9edf0}
+.hce-sourced-hero img{display:block;width:100%;height:auto;max-height:620px;object-fit:contain}
+.hce-sourced-hero figcaption{margin-top:10px;color:#5b6772;font-size:.9rem;line-height:1.6}
+.hce-sourced-hero figcaption a{text-decoration:underline;text-underline-offset:3px}
+.hce-sourced-hero>a:focus-visible{outline:3px solid #126b86;outline-offset:4px}
+
+/* Article covers share the assigned article image, never a category default. */
+.article-cover.hce-photo-cover{display:block;height:190px;overflow:hidden;background:#e9edf0}
+.article-cover.hce-photo-cover img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .2s ease}
+.article-cover.hce-photo-cover:hover img{transform:scale(1.025)}
+.article-cover.hce-photo-cover:focus-visible{outline:3px solid #126b86;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.article-cover.hce-photo-cover img{transition:none}}
