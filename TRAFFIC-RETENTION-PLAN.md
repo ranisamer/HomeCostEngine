@@ -2,6 +2,12 @@
 
 Updated October 8, 2026. Goal: genuine U.S. organic clicks, useful calculator sessions, consented subscriptions and return visits. Advertising clicks must arise from genuine interest; never request, reward or simulate them.
 
+## October 22 owner instruction: paid-acquisition hold
+
+No advertising spend to generate AdSense revenue. Before proposing any paid test, verify genuine calculator use, workbook requests, and the complete book payment-to-file journey. An approved budget is still required later; passing these checks does not authorize spend.
+
+Roofing is the first measured funnel. See FUNNEL-VALIDATION.md for event definitions, QA exclusion, current failures and release gates. GSC impressions are not visits; a download-link click is not proof that a file was saved or read; a checkout attempt is not a purchase. Stripe settled payments remain the sales source of truth.
+
 ## Live first step
 
 Connect a calculator to a relevant free workbook, requested download email and a self-guided sequence of useful tool links. Keep marketing consent optional and unchecked. Provider failures must not be described as successful subscriptions. Public download fallback keeps the resource useful when delivery fails.
@@ -38,3 +44,4 @@ Proposed sequence: immediate requested workbook (transactional), then optional l
 ## Weekly operating rule
 
 Record the page, intent, measured evidence, new value, links, validation, publication commit and next action in CONTENT-SEO-ROADMAP.md. The existing daily SEO schedule remains unchanged. Email and social distribution are not represented as running until their integrations are configured and validated.
+
