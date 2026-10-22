@@ -38,3 +38,11 @@ In GA4, verify the named events on genuinely consented/allowed real traffic; con
 5. Review the actual sample: useful organic actions, completed downloads where observable, settled sales, refunds and fulfillment errors. There is no invented minimum or guaranteed conversion rate. Keep spend at zero until this evidence is reviewed and a separate budget is approved.
 
 No claim of AdSense approval, live sales, inbox delivery or return visitors is made by implementing instrumentation.
+
+## Post-deployment QA, October 22
+
+- At ?hce_qa=1, no googletagmanager script was present. A 2,400 sq ft submitted roof scenario produced 26,780 midpoint; exactly one local roof_calculation message appeared, then workbook_open and workbook_download_click on their respective actions.
+- Browser download completed: free PDF 74,460 bytes with a valid %PDF- header. Optional marketing checkbox remained unchecked; no email submission occurred.
+- Re-tested the live roof-book purchase button: checkout_attempt and checkout_error appeared locally; the runtime still reports Checkout is not configured yet. No payment was made.
+- Payment return without a session reveals no paid download and loads no GA script. A follow-up guard excludes that utility page from generic bookstore preview enhancements, which had been injecting irrelevant sales content there.
+- Implementation commit: e35401a9572dc9476c435031d80483a3b6dea074. Follow-up utility-page guard is in the commit containing this post-deployment entry.
