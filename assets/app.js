@@ -285,6 +285,7 @@ function enhanceBlog(){
 }
 
 function loadAdSenseScript(client){
+  if(new URLSearchParams(location.search).get('hce_qa')==='1') return;
   if(!client || document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) return;
   const script=document.createElement("script");
   script.async=true;
@@ -399,6 +400,7 @@ function injectSectionPageAds(){
 }
 
 function injectSiteAds(){
+  if(new URLSearchParams(location.search).get('hce_qa')==='1') return;
   const canServe=HCE_ADSENSE_CONFIG.enabled && HCE_ADSENSE_CONFIG.client;
   if(!canServe && !HCE_ADSENSE_CONFIG.preview) return;
   const path=location.pathname.replace(/\/+$/,"")||"/";

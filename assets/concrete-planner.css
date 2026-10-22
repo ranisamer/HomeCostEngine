@@ -8,3 +8,9 @@
 @media(max-width:950px){.concrete-workbench{grid-template-columns:1fr}.concrete-result-card{position:static}.concrete-detail-grid{grid-template-columns:1fr}.concrete-save-bar{align-items:flex-start;flex-direction:column}.concrete-input-card{padding:24px}}
 @media(max-width:500px){.concrete-zone-grid{grid-template-columns:1fr}.concrete-input-card,.concrete-result-card{padding:20px}.concrete-step-head{gap:10px}.concrete-result-actions{grid-template-columns:1fr}.concrete-pills{gap:6px}.concrete-pills span{font-size:.76rem}.concrete-save-bar{padding:20px}.concrete-worked-example{padding:18px}.concrete-table-scroll table{font-size:.8rem}}
 @media print{body{background:#fff!important}.topbar,.site-header,.footer,.concrete-hero,.concrete-workbench-section,.concrete-save-bar,.concrete-action-status,.concrete-detail-grid,.concrete-method,.concrete-summary-details>summary,.concrete-summary-details>label,.whatsapp-float,[class*="adsense"]{display:none!important}.concrete-summary-details{display:block!important;border:0;margin:0;padding:0}.concrete-summary-details textarea{display:none}.concrete-summary-details:after{content:attr(data-print-summary);white-space:pre-wrap;font:11pt/1.5 monospace;color:#000}.concrete-plan-details{padding:0}.concrete-plan-details .container{width:100%;padding:0}}
+
+/* Override the site's broad editorial heading rule inside compact tool controls. */
+.concrete-planner-page .concrete-step-head h2{font-size:1.3rem!important}
+.concrete-planner-page .concrete-result-card h2{font-size:1.25rem!important;line-height:1.4}
+.concrete-planner-page .concrete-detail-grid h2{font-size:1.5rem!important}
+@media(max-width:500px){.concrete-planner-page .concrete-step-head h2{font-size:1.15rem!important}}
