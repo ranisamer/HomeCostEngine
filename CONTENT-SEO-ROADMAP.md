@@ -1,4 +1,16 @@
 
+## Owner-approved expansion kickoff, 2026-10-23
+
+- Owner approved the staged plan after sitemap inspection confirmed 157 unique submitted URLs; this is not proof that Google indexed 157 pages. Added CONTENT-EXPANSION-PLAN.md with repair queue, independent-intent research candidates, 200/250 checkpoints and later 500/1,000 gates based on usefulness and outcomes.
+- Read traffic/retention and learning-email plans. Latest verified report remains run 39904887440, artifact 12480396215, generated 2026-10-23T05:17:07.395775+00:00, sc-domain:homecostengine.com, usa/web/final, September 22–October 19: 1 click, 2,835 impressions, position 53.39. No exact current patio-guide query/page evidence is present; selection is a verified weak-answer gap, not a measured keyword opportunity.
+- First primary repair: /blog/how-much-concrete-do-i-need-for-a-patio. Last substantive edit September 21 (5ce7e74623279aeb3c2054139ddc3ca3bc8b1e3f), outside cooldown. Retained title, URL and design; aligned extensionless canonical/Article URL with live redirect.
+- Added exact form-measurement method, distinct base/concrete layers, two non-overlapping rectangles, a separate solid step, no-double-count geometry, product-specific bags and final supplier rounding. Original 12×16×4/12=64 ft³=2.370370 yd³; with 10%=2.607407 yd³. Extension adds16 ft³ and step6; 86×1.10/27=3.503704 yd³, rounding up at hypothetical .25-yard increments=3.75. Base patio's70.4 ft³ requires118 bags at.60 yield or157 at.45. No universal thickness, allowance, mix or local price.
+- Four natural internal destinations: concrete calculator, extra-concrete guide, ready-mix-versus-bags comparison and free workbook. Contextual inbound link from concrete calculator. Four visible/structured FAQs, reviewed date/byline and sitemap lastmod updated. Source-linked unique Pexels4134382 hero with dimensions/alt/license; Article image matches. Primary QUIKRETE patio instructions and No.1101 data sheet checked October23.
+- Prepublication checks: all worked math, FAQ agreement, JSON-LD, canonical, internal paths, image source and sitemap. Verify live image, calculator and inbound paragraph after deployment. Commit is the atomic commit containing this entry (see Git history). Approximately18 short-body articles remain after this repair; length alone does not establish quality.
+- Sitemap count stays157 because this release repairs an existing page. Next: flooring-waste and roof-quote review, reprioritized by fresh completed U.S. clicks and verified gaps. Preserve both today's gravel and patio primary pages through November6 unless a concrete bug/new evidence warrants revision.
+- Brevo timed marketing and paid acquisition remain inactive. No message, subscription mutation, purchase or fabricated engagement. Direct workbook save previously timed out in browser; no inbox delivery claimed without authorized testing.
+
+
 ## Daily quality and useful-visit update, 2026-10-23
 
 - Verified newest successful main gsc-report.yml run 39904887440, artifact 12480396215. report.json generated 2026-10-23T05:17:07.395775+00:00; sc-domain:homecostengine.com, usa / web / final; September 22–October 19: 1 click, 2,835 impressions, CTR 0.0353%, position 53.39. Earlier history is incomplete. No clicked query is disclosed in joined rows; do not invent the term or infer tool use from impressions.
