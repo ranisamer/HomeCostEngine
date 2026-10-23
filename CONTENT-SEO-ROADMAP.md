@@ -1,3 +1,15 @@
+
+## Daily quality and useful-visit update, 2026-10-23
+
+- Verified newest successful main gsc-report.yml run 39904887440, artifact 12480396215. report.json generated 2026-10-23T05:17:07.395775+00:00; sc-domain:homecostengine.com, usa / web / final; September 22–October 19: 1 click, 2,835 impressions, CTR 0.0353%, position 53.39. Earlier history is incomplete. No clicked query is disclosed in joined rows; do not invent the term or infer tool use from impressions.
+- Reaudited 71 source articles; 20 indexable article bodies remained below the approximate 600-word triage threshold before work. Selected /blog/how-much-gravel-do-i-need as one weak existing canonical, last core review September 21. No current exact query-page row or page aggregate exists for this general guide; the 8 impressions on the separate driveway guide must not be attributed to it. Selection is a verified coverage/usefulness gap, with recent primary pages protected.
+- Expanded general landscape gravel ordering with exact rectangular and separate-area takeoff, overlap control, supplier density/short-ton unit checks, bag-volume guidance, explicit low spots, no-double-count compaction/handling allowances, delivery scope and regional caveats. Preserved the driveway guide's distinct layer-design workflow and linked to it rather than adding a synonym page.
+- Worked arithmetic: 40×10×3/324=3.703704 yd³; separate 12×4×2/324=0.296296; sum 4.000000; illustrative 5%=4.20; hypothetical 1.40 short tons/yd³=5.88 short tons; supplier half-ton roundup example=6.0. No universal density, allowance, depth or price asserted.
+- Four descriptive internal destinations in body: gravel calculator, cubic-yard calculator, driveway takeoff guide and free project workbook. Contextual inbound paragraph added from /calculators/gravel. Existing URL/title/design retained; extensionless canonical and Article URL aligned with the observed live path; reviewed/byline, four matching visible/structured FAQs and sitemap updated.
+- Added one source-linked illustrative Pexels gravel detail photo (17856899), with alt, dimensions and visible license/source credit, instead of the category fallback. Article image points to that actual hero. Primary references checked October 23: Vulcan aggregate calculator and QUIKRETE All-Purpose Gravel product page. No new article.
+- Checks: arithmetic, HTML/JSON-LD, FAQ agreement, unique IDs, internal targets, image loading, calculator workflow, canonical and deployment. Publication commit: atomic commit containing this dated entry (Git history); live-check limitations reported separately. Remaining short-body triage approximately 19; length alone does not establish AdSense quality.
+- Brevo timed learning remains inactive pending account access and owner-authorized delivery/unsubscribe testing. Paid acquisition remains on hold; no messages, subscription changes, ad clicks or purchase claims. Next: preserve this guide through November 6 and continue eligible thin answers using fresh U.S. clicks first. Indexing anomalies require separate evidence.
+
 # U.S. long-tail search roadmap
 
 ## Owner-directed concrete conversion workflow, 2026-10-22
