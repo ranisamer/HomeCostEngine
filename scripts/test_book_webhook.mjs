@@ -25,11 +25,11 @@ const load=(file,extra={})=>{const ctx={...globals,...extra,exports:{}};vm.runIn
 const verify=load('functions/api/verify-purchase.js');
 const hook=load('functions/api/stripe-webhook.js',{verifyPurchase:verify.onRequestGet});
 function reset(){purchase={metadata:{book:'project-quote-mini-workbook'},livemode:true,payment_status:'paid',status:'complete',customer_details:{email:'owner@example.invalid'},amount_total:50,currency:'gbp'};mailCount=0;failMail=false;failMarker=false;duplicateMail=false;}
-async function send({signature=true,age=0,tamper=false,type='checkout.session.completed',live=true}={}){
+async function send({signature=true,age=0,tamper=false,type='checkout.session.completed',live=true,signingSecret=env.STRIPE_WEBHOOK_SECRET,headerOverride}={}){
   const body=JSON.stringify({type,livemode:live,data:{object:{id:'cs_live_mock',customer_email:'attacker@example.invalid'}}});
   const t=Math.floor(Date.now()/1000)-age;
-  const sig=createHmac('sha256',env.STRIPE_WEBHOOK_SECRET).update(t+'.'+body).digest('hex');
-  return hook.onRequestPost({env,request:new Request('https://homecostengine.com/api/stripe-webhook',{method:'POST',headers:signature?{'stripe-signature':`t=${t},v1=${sig}`}:{},body:tamper?body+' ':body})});
+  const sig=createHmac('sha256',signingSecret).update(t+'.'+body).digest('hex');
+  return hook.onRequestPost({env,request:new Request('https://homecostengine.com/api/stripe-webhook',{method:'POST',headers:signature?{'stripe-signature':headerOverride??`t=${t},v1=${sig}`}:{},body:tamper?body+' ':body})});
 }
 reset();assert.equal((await send({signature:false})).status,400);assert.equal(mailCount,0);
 assert.equal((await send({tamper:true})).status,400);assert.equal((await send({age:600})).status,400);
@@ -50,3 +50,22 @@ reset();purchase.customer_details.email='';assert.equal((await send()).status,50
 const readiness=await hook.onRequestGet({env:{}});assert.equal(readiness.status,503);
 assert.deepEqual((await readiness.json()).missing,['STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET','BREVO_API_KEY']);
 console.log('PASS: raw signature/timestamp; re-fetched buyer; live paid-only delivery; book/price/link; retry/deduplication; missing config; no marketing contact or external send.');
+
+
+reset();
+assert.equal((await (await send({signature:false})).json()).code,'signature_header_missing');
+assert.equal((await (await send({tamper:true})).json()).code,'signature_mismatch');
+assert.equal((await (await send({age:600})).json()).code,'signature_timestamp_outside_tolerance');
+assert.equal((await (await send({age:-600})).json()).code,'signature_timestamp_outside_tolerance');
+assert.equal((await (await send({headerOverride:'t=bad,v1=00'})).json()).code,'signature_timestamp_invalid');
+assert.equal((await (await send({headerOverride:'t='+Math.floor(Date.now()/1000)+',v1=bad'})).json()).code,'signature_v1_missing_or_invalid');
+const originalSecret=env.STRIPE_WEBHOOK_SECRET;
+env.STRIPE_WEBHOOK_SECRET=' \n'+originalSecret+'\r\n ';
+assert.equal((await send({signingSecret:originalSecret})).status,200);
+reset();env.STRIPE_WEBHOOK_SECRET='not-a-webhook-secret';
+const invalid=await send();assert.equal(invalid.status,503);
+const invalidBody=await invalid.text();assert.ok(!invalidBody.includes(env.STRIPE_WEBHOOK_SECRET));
+assert.equal(JSON.parse(invalidBody).code,'webhook_secret_format_invalid');
+assert.equal(mailCount,0);
+env.STRIPE_WEBHOOK_SECRET=originalSecret;
+console.log('PASS: secret boundary whitespace normalized; distinct diagnostics; stale/future/tampered/malformed headers denied; no secret disclosure.');
