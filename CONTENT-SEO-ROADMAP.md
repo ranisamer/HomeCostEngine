@@ -1,3 +1,14 @@
+## First book fulfillment release — 2026-10-24
+
+- Owner explicitly requested one real book at a time using the supplied reference's broad reading order, with the same successful payment/email/download flow as the mini workbook. Primary existing product: /ebooks/smart-home-renovation-budget-blueprint, preserved £9 GBP price and title. This is an owner-prioritized product improvement, not a new GSC query opportunity or evidence of ranking gains.
+- Replaced the unsupported 104-page description with an original 64-page, 21-chapter handbook: preface, foundations, methods, trade applications and afterword/source notes. Includes 19 scope-specific examples, 19 worksheets with 95 fillable text fields, accurate hypothetical USD arithmetic and five primary-source notes. PDF SHA-256 and build/QA details are in books/RENOVATION-BLUEPRINT-RELEASE.md.
+- Updated the product description, truthful Book metadata, first catalog card and original typographic cover. Replaced simulated first-book previews with actual PDF pages 7–9. Removed its unsupported editorial star score. In-body workflow links: contingency, contractor quote comparison, concrete quantity and paint calculators; existing catalog card links into the product/preview.
+- Connected first book to a distinct server-bundled PDF endpoint using Stripe paid-and-complete verification and an exact product match; mini-workbook behavior remains covered. Existing signed webhook sends the book-specific thank-you and private order-page link. No new charge, email, marketing enrollment or consent change performed in this release.
+- Validation: all 64 pages rendered/inspected; 21 PDF outline entries; 95 fields; sample saved field values persisted; worked arithmetic independently checked. Mock delivery covers unpaid/incomplete/wrong-product/missing-session denial, byte-for-byte paid download, fixed £9 GBP/64-page checkout, valid JSON-LD/JS, signed book-specific email and retry deduplication. Live deployment/checkout verification reported with the release commit in Git history.
+- Commerce evidence correction: the owner previously confirmed the real £0.50 mini-workbook purchase, successful webhook acceptance and receipt of the thank-you email/product link. That proves the mini flow, not a new paid purchase of this £9 book. Inbox placement remains unverified; the owner reported the earlier message in spam. Timed marketing delivery remains a separate inactive integration, and paid acquisition remains on hold.
+- Next: owner reviews the first real book; proceed to the next catalog product individually. Do not interpret stored PDFs, templates or a live checkout page as proof that all other catalog books or email inbox placement are verified.
+- Atomic release: the commit containing this entry, inspectable in Git history.
+
 ## Daily quality and useful-visit update, 2026-10-24
 
 - Read GSC-REPORTING.md, TRAFFIC-RETENTION-PLAN.md, LEARNING-EMAIL-SEQUENCE.md and CONTENT-EXPANSION-PLAN.md; inspected main `977dbcb7eb5222bc513c9654b71308798be8dcd7`. Retrieved newest successful main gsc-report.yml run 40064441022, artifact 12548518561, digest `72615e5f98341a8624c13f01f8cc7d0f93f5eb12e5205a7306425f01f993acde`.
@@ -389,6 +400,7 @@ Each week compare U.S.-filtered Web Search Console query–page pairs over the l
 - Added TRAFFIC-RETENTION-PLAN.md with the 90-day operating plan and explicit email integration boundary. This supplements the SEO schedule without changing it.
 - Publication commit: the atomic commit containing this log (see file Git history). Next: verify owner-authorized inbox delivery and configure the separate opt-in learning sequence in Brevo; account access is required.
 - Reused the existing 14-page planning PDF; linked it from roof replacement and quote comparison. Subscription status now reflects the provider response instead of assuming consent equals enrollment.
+
 
 
 

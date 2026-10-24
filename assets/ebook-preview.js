@@ -205,7 +205,7 @@ function buy(){
 }
 function enhanceProduct(){
  const key=slug(),cfg=BOOKS[key],section=document.getElementById("sample-pages");
- if(!cfg||!section)return;
+ if(!cfg||!section||section.dataset.realPdfPreview==="true")return;
  const title=(document.querySelector("main h1")?.textContent||document.title).trim();
  const cover=document.querySelector(".mobile-book-cover img,.desktop-book-cover img,.premium-book-art img")?.src||"";
  const pages=totalPages(),price=moneyText();
@@ -272,9 +272,10 @@ function enhanceLibrary(){
   const primary=actions.querySelector(".btn");
   if(primary){primary.textContent="Preview Book";primary.href=href+"#sample-pages";}
   const buyLink=document.createElement("a");buyLink.className="btn hce-card-buy";buyLink.href=href+"#buy-book";buyLink.textContent="Buy Now: "+price;actions.appendChild(buyLink);actions.classList.add("hce-library-actions");
-  const note=document.createElement("span");note.className="hce-library-preview-note";note.textContent="3-page interactive preview • Instant digital access";actions.insertAdjacentElement("afterend",note);
+  const note=document.createElement("span");note.className="hce-library-preview-note";note.textContent=card.dataset.actualEdition==="2026-10-24"?"3 actual PDF pages • 64-page fillable handbook":"3-page interactive preview • Instant digital access";actions.insertAdjacentElement("afterend",note);
  });
 }
 function init(){enhanceLibrary();enhanceProduct();}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
 })();
+
