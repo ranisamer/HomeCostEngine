@@ -561,6 +561,7 @@ function makeBookFeatureIcon(symbol,label,value){
   return item;
 }
 function enhanceEbookDetail(){
+  if(document.body.dataset.miniWorkbook === "true") return;
   const path=location.pathname;
   if(!path.startsWith("/ebooks/") || path==="/ebooks/" || path.endsWith("/ebooks/index.html")) return;
   const h1=document.querySelector("main h1");
@@ -674,6 +675,7 @@ else enhanceEbookStorefront();
 
 /* Load the reusable interactive ebook preview system. */
 (function(){
+  if(document.body.dataset.miniWorkbook === "true") return;
   if(!location.pathname.startsWith("/ebooks") || /^\/ebooks\/success(?:\.html)?\/?$/.test(location.pathname)) return;
   const css=document.createElement("link"); css.rel="stylesheet"; css.href="/assets/ebook-preview.css?v=20260923-1"; document.head.appendChild(css);
   const js=document.createElement("script"); js.src="/assets/ebook-preview.js?v=20260923-1"; js.defer=true; document.head.appendChild(js);
@@ -761,3 +763,4 @@ function initHomeProjectSlider(){
 
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initHomeProjectSlider);
 else initHomeProjectSlider();
+

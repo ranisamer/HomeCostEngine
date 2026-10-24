@@ -169,7 +169,7 @@ const BOOK_CALCULATORS={
 };
 const slug=()=>location.pathname.split("/").filter(Boolean).pop()?.replace(/\.html$/,"")||"";
 function moneyText(){
- return (document.querySelector(".ebook-top-price")?.textContent||document.querySelector(".book-price")?.textContent||"$9").trim();
+ return (document.querySelector(".ebook-top-price")?.textContent||document.querySelector(".book-price")?.textContent||"£9").trim();
 }
 function totalPages(){
  const t=document.body.innerText||"";
@@ -266,7 +266,7 @@ function enhanceLibrary(){
  const p=location.pathname.replace(/\/+$/,"");
  if(p!=="/ebooks"&&!p.endsWith("/ebooks/index.html"))return;
  document.querySelectorAll(".book-card").forEach(card=>{
-  const titleLink=card.querySelector("h2 a"),actions=card.querySelector(".book-card-actions"),price=card.querySelector(".book-meta strong")?.textContent.trim()||"$9";
+  const titleLink=card.querySelector("h2 a"),actions=card.querySelector(".book-card-actions"),price=card.querySelector(".book-meta strong")?.textContent.trim()||"£9";
   if(!titleLink||!actions||actions.classList.contains("hce-library-actions"))return;
   const href=titleLink.getAttribute("href");
   const primary=actions.querySelector(".btn");
