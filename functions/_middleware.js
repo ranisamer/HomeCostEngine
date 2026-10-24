@@ -297,12 +297,23 @@ export async function onRequest(context) {
   const isBlogArticle = /^\/blog\/[^/.]+(?:\\.html)?\/?$/i.test(pathname);
   const rewriter = new HTMLRewriter().on("head", {
     element(element) {
-      // Payment-return URLs contain checkout tokens. QA never enters production analytics.
+      // Payment-return URLs contain checkout tokens. Exclude them and QA from GA4 and Clarity.
       if (qa || privateCheckoutReturn) return;
       element.append(
         `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', '${GA_MEASUREMENT_ID}');\n</script>`,
         { html: true }
       );
+      element.append(
+        `<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "z2t6t6bmwa");
+</script>`,
+        { html: true }
+      );
+
     }
   });
 
