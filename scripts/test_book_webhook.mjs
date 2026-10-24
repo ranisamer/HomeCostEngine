@@ -75,3 +75,16 @@ assert.ok(mail.subject.includes('The Smart Home Renovation Budget Blueprint'));a
 assert.ok(mail.textContent.includes('/ebooks/success.html?session_id=cs_live_mock'));
 assert.equal((await send()).status,200);assert.equal(mailCount,1);
 console.log('PASS: first-book signed webhook produces correct £9 thank-you and verified order link; retries deduplicate. Mock provider only.');
+
+// Every catalog product uses the same verified transactional delivery path.
+const checkoutCatalog=JSON.parse(fs.readFileSync(path.join(root,'functions/api/create-checkout-session.js'),'utf8').match(/const catalog=(\{.*?\});/s)[1]);
+for(const [slug,book] of Object.entries(checkoutCatalog)){
+ reset();purchase.metadata.book=slug;purchase.amount_total=book.amount||900;
+ assert.equal((await send()).status,200,slug);assert.equal(mailCount,1,slug);
+ assert.ok(mail.subject.includes(book.title),slug+' title');
+ assert.ok(mail.textContent.includes('/ebooks/success.html?session_id=cs_live_mock'),slug+' private order URL');
+ assert.ok(mail.textContent.includes(new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(purchase.amount_total/100)),slug+' amount');
+ assert.ok(mail.htmlContent.includes('positive or negative'),slug+' neutral feedback');
+ assert.equal((await send()).status,200);assert.equal(mailCount,1,slug+' deduplication');
+}
+console.log('PASS: all 21 products (20 books + mini) thank buyer with correct title, GBP amount, private order link and neutral feedback; retries deduplicate. No external send.');

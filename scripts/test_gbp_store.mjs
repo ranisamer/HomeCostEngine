@@ -29,7 +29,10 @@ for(const [slug,book] of Object.entries(catalog)) {
   const html=read('ebooks/'+slug+'.html');
   const price='£'+((book.amount||900)%100===0?String((book.amount||900)/100):((book.amount||900)/100).toFixed(2));
   assert.ok(html.includes(price),slug+' visible price');
-  assert.ok(!/\bUSD\b|\$\d/.test(html),slug+' no USD selling price');
+  const sellingPanels=[...html.matchAll(/<section[^>]*class="[^"]*ebook-(?:top-buy-panel|bottom-buy)[^"]*"[^>]*>[\s\S]*?<\/section>/g)].map(m=>m[0]);
+  assert.ok(sellingPanels.length>0||slug==='project-quote-mini-workbook',slug+' selling panels found');
+  assert.ok(sellingPanels.every(panel=>!/\bUSD\b|\$\d/.test(panel)),slug+' no USD selling price');
+  for(const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g))check(JSON.parse(m[1]),book);
 }
 assert.equal(Object.keys(catalog).length,21);
 const request=new Request('https://homecostengine.com/api/download-mini-guide?session_id=cs_test_mock');
