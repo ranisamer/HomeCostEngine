@@ -16,7 +16,7 @@ Inspect current source, history, canonical and latest joined query-page data bef
 | Queue | Existing intent/page | Required distinct answer |
 |---|---|---|
 | Released first | Patio concrete quantity | Measured forms, non-overlapping extension, extra solid step, exact yield and supplier rounding. |
-| Next review | /blog/how-much-flooring-waste-should-i-add | Product layout and carton rounding, separating cutting loss from measured extra rooms. |
+| Repaired October 24 | /blog/how-much-flooring-waste-should-i-add | Product/layout allowance audit, carton sensitivity, missing-area correction and reserved repair stock. |
 | Next review | /blog/how-to-compare-roofing-quotes | A worked scope normalization with uncertain decking kept separate. |
 | Next review | /blog/roof-replacement-cost-per-square-foot | Roof-surface denominator and complete scope rather than floor-area pricing. |
 | Next review | /blog/seer2-explained-for-homeowners | Rating interpretation and limits of comparing system or operating-cost scenarios. |
@@ -60,3 +60,7 @@ Link to the existing free workbook only when it supports the task. Keep optional
 ## Operating record
 
 For each release log the target, evidence, value, sources/image, links, checks, publication commit and next action in CONTENT-SEO-ROADMAP.md. The daily schedule and December 29 end date are unchanged. A manual extra repair does not reset or duplicate an automation. Do not create new automation tasks as part of this plan.
+
+## October 24 checkpoint
+
+Reaudited 71 source articles: 18 short indexable bodies before the flooring-waste repair and approximately 17 afterward. This is triage, not a quality or indexing verdict. The flooring-waste update preserves its canonical intent and adds two supporting inbound links. The sitemap remains 157 URLs. Latest verified U.S. Web final report, generated October 24, covers September 23–October 20: 1 click and 2,904 impressions; the clicked query remains undisclosed. Continue eligible existing-answer repairs before adding distinct new URLs.
