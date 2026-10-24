@@ -1,3 +1,3 @@
 Cloudflare Pages production redeploy marker.
-2026-10-24: reload owner-configured Stripe webhook signing secret for transactional book delivery.
+2026-10-24: reload replaced owner-configured webhook signing secret after signature verification failure.
 No credentials are stored in this file.
