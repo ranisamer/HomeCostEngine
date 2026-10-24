@@ -651,7 +651,7 @@ function enhanceEbookLibrary(){
   if(path!=="/ebooks" && !path.endsWith("/ebooks/index.html")) return;
   document.body.classList.add("ebook-library-enhanced");
   document.querySelectorAll(".book-card").forEach(card=>{
-    if(card.dataset.actualEdition==="2026-10-24" || card.querySelector(".book-card-rating")) return;
+    if(card.dataset.actualEdition || card.querySelector(".book-card-rating")) return;
     const h2=card.querySelector("h2");
     const pageTxt=card.querySelector(".book-card-actions span")?.textContent.trim()||"Digital PDF";
     const rating=document.createElement("div");
