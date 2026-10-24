@@ -1,1 +1,3 @@
-Force Cloudflare Pages production deployment for ebook cover fix. Build marker: 2026-09-21-inlinecovers-production.
+Cloudflare Pages production redeploy marker.
+2026-10-24: reload owner-configured Stripe environment secret for ebook checkout.
+No credentials are stored in this file.
