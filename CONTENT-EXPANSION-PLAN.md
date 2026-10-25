@@ -17,7 +17,7 @@ Inspect current source, history, canonical and latest joined query-page data bef
 |---|---|---|
 | Released first | Patio concrete quantity | Measured forms, non-overlapping extension, extra solid step, exact yield and supplier rounding. |
 | Repaired October 24 | /blog/how-much-flooring-waste-should-i-add | Product/layout allowance audit, carton sensitivity, missing-area correction and reserved repair stock. |
-| Next review | /blog/how-to-compare-roofing-quotes | A worked scope normalization with uncertain decking kept separate. |
+| Repaired October 25 | /blog/how-to-compare-roofing-quotes | Matched known scope, separate deck scenarios and allowance double-count checks. |
 | Next review | /blog/roof-replacement-cost-per-square-foot | Roof-surface denominator and complete scope rather than floor-area pricing. |
 | Next review | /blog/seer2-explained-for-homeowners | Rating interpretation and limits of comparing system or operating-cost scenarios. |
 | Next review | /blog/water-heater-repair-vs-replacement | Diagnosis, compatible installation scope and quote-based decision method. |
@@ -64,3 +64,7 @@ For each release log the target, evidence, value, sources/image, links, checks, 
 ## October 24 checkpoint
 
 Reaudited 71 source articles: 18 short indexable bodies before the flooring-waste repair and approximately 17 afterward. This is triage, not a quality or indexing verdict. The flooring-waste update preserves its canonical intent and adds two supporting inbound links. The sitemap remains 157 URLs. Latest verified U.S. Web final report, generated October 24, covers September 23–October 20: 1 click and 2,904 impressions; the clicked query remains undisclosed. Continue eligible existing-answer repairs before adding distinct new URLs.
+
+## October 25 checkpoint
+
+Reaudited the current 71 article files; 17 short source article bodies before the roofing-quote repair and approximately 16 after. The guide now normalizes confirmed exclusions and tests unknown deck quantities separately, with two contextual inbound links and a unique source-linked photo. Sitemap remains 157 URLs. Fresh usa/web/final report generated October 25 covers September 24–October 21: 1 click, 2,902 impressions, 0.03446% CTR, position 51.74466. No clicked query is disclosed; preceding history remains incomplete. Next review is the roof-surface unit-cost guide, subject to current intent and cooldown checks.
