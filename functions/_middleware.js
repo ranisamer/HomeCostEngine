@@ -362,6 +362,7 @@ export async function onRequest(context) {
   rewriter.on("body", { element(element) { element.append("<a class=\"site-whatsapp\" href=\"https://wa.me/971552473989?text=Hi%2C%20I%20have%20a%20question%20about%20HomeCostEngine.\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Chat with us on WhatsApp (opens in a new tab)\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"M21 11.5a9 9 0 0 1-13.3 7.9L3 21l1.6-4.7A9 9 0 1 1 21 11.5Z\"/><path d=\"M8 7.5c-.7 1.8.5 4.2 2.2 5.9s4.1 2.9 5.9 2.2l.7-2.1-2.5-1.1-1 1c-1.3-.5-2.6-1.8-3.1-3.1l1-1-1.1-2.5Z\"/></svg><span>Chat on WhatsApp</span></a>", { html: true }); } });
   rewriter.on('body', { element(element) {
     element.append('<script defer src="/assets/funnel.js?v=20261022-2"></script>', {html:true});
+    element.append('<script defer src="/assets/book-demand.js?v=20261025-1"></script>', {html:true});
   }});
   return rewriter.transform(response);
 }

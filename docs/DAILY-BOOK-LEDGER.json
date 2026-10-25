@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "started": "2026-10-25",
+  "existing_books": 20,
+  "completed_new_books": [],
+  "companion_articles": [
+    {
+      "date": "2026-10-25",
+      "book": "home-energy-upgrade-savings-planner",
+      "article": "is-home-energy-audit-worth-it",
+      "status": "published"
+    }
+  ]
+}
