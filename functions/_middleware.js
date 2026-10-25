@@ -348,7 +348,7 @@ export async function onRequest(context) {
     }
   });
 
-  if (isBlogArticle) {
+  if (isBlogArticle && pathname.replace(/\.html$/, "") !== "/blog/is-home-energy-audit-worth-it") {
     rewriter.on("main article.info-copy", {
       element(element) {
         element.append(externalLinksSection(pathname), { html: true });
