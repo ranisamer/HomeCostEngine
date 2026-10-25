@@ -1,0 +1,182 @@
+[
+  {
+    "number": 1,
+    "slug": "smart-home-renovation-budget-blueprint",
+    "title": "The Smart Home Renovation Budget Blueprint",
+    "price_gbp": "9.00",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "d6aa02886a7f20f61e3a6022b2916eae20f990d54c88ec5cb902b4ea88d49803"
+  },
+  {
+    "number": 2,
+    "slug": "roof-replacement-planning-handbook",
+    "title": "The Roof Replacement Planning Handbook",
+    "price_gbp": "9.00",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "b89ca77fe57edd28529d8d694ebafd1dbaa3bcc79bbca1bc558c399c10c4c3e1"
+  },
+  {
+    "number": 3,
+    "slug": "kitchen-remodel-cost-planner",
+    "title": "Kitchen Remodel Cost Planner",
+    "price_gbp": "9.00",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "66504782f854d9a0d24c0cf4e837e5d3061ad2c1c7138ea4b0ee1be730ac6ed7"
+  },
+  {
+    "number": 4,
+    "slug": "bathroom-remodel-budget-guide",
+    "title": "Bathroom Remodel Budget Guide",
+    "price_gbp": "9.00",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "2b0990af5f816d2c28110c6dc42b0206911c553f838e347150835c278e394a39"
+  },
+  {
+    "number": 5,
+    "slug": "hvac-replacement-buyers-guide",
+    "title": "HVAC Replacement Buyer\u2019s Guide",
+    "price_gbp": "9.00",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "0b04965c7fcb70dabbf4037981fd922c1f409c7653bc892cbe934d3583f70d51"
+  },
+  {
+    "number": 6,
+    "slug": "concrete-project-cost-handbook",
+    "title": "Concrete Project Cost & Quantity Handbook",
+    "price_gbp": "9.00",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "0ced148fd32f0e97ce982b2db729945f1bf74cfb7bb2e9c7c047982a0c3591d6"
+  },
+  {
+    "number": 7,
+    "slug": "flooring-project-planner",
+    "title": "Flooring Project Planner",
+    "price_gbp": "9.00",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "d52c1325b42a73b0edf700ce613538657412672d001942994f9807582fd2c0bf"
+  },
+  {
+    "number": 8,
+    "slug": "painting-budget-and-quote-guide",
+    "title": "Painting Budget & Quote Guide",
+    "price_gbp": "9.00",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "c0f1118eea7352985bfaa1455e893d3e5dc9d1a0dd61a17e514bea6d2c19fa07"
+  },
+  {
+    "number": 9,
+    "slug": "homeowner-maintenance-cost-planner",
+    "title": "Homeowner Maintenance Cost Planner",
+    "price_gbp": "9.00",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "9eb276376cdd5118debb93e50c6bc1b0703cef6d2dde7ebe6d91a9351c87501d"
+  },
+  {
+    "number": 10,
+    "slug": "contractor-quote-comparison-playbook",
+    "title": "Contractor Quote Comparison Playbook",
+    "price_gbp": "9.00",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "b69eb6fd16bfeb09ba0a5facf52b61952c2bb854ba7689fb183afe11d4831152"
+  },
+  {
+    "number": 11,
+    "slug": "complete-home-renovation-master-planner",
+    "title": "Home Remodeling Cost Guide & Renovation Planner",
+    "price_gbp": "18.99",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "3f2938f4d1b1a30ff6f16474a25d7fbaf9731766648011be1c8b19badb186418"
+  },
+  {
+    "number": 12,
+    "slug": "first-time-homeowner-cost-maintenance-handbook",
+    "title": "Home Maintenance Checklist & Cost Planner",
+    "price_gbp": "9.99",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "e788202a56a2fca9eacfae09365e5d30ac26328f0e1c65bfa7450b6d00915cd8"
+  },
+  {
+    "number": 13,
+    "slug": "home-addition-cost-planning-guide",
+    "title": "Home Addition Cost Per Square Foot Guide",
+    "price_gbp": "16.99",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "a5ec19fc23bbebbde7c7323cf79f055b95697824fb21465bec0cd97baf4404c4"
+  },
+  {
+    "number": 14,
+    "slug": "basement-remodeling-budget-planner",
+    "title": "Basement Remodel Cost Guide",
+    "price_gbp": "13.99",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "b78682b5460c6af0db4189a7fa4d50e0c98e1b31b4c00b306693be3a487392de"
+  },
+  {
+    "number": 15,
+    "slug": "deck-outdoor-living-cost-planner",
+    "title": "Deck Building Cost Guide",
+    "price_gbp": "10.99",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "de01fb598a3ce3b99b963035632d7352c848ffacbf11c03923b2ba1a7c74e528"
+  },
+  {
+    "number": 16,
+    "slug": "window-door-replacement-buyers-guide",
+    "title": "Window Replacement Cost Guide",
+    "price_gbp": "9.99",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "d8b623a8bd4e187afe679e453a0077a041306c103c37049912af57c90c7912a8"
+  },
+  {
+    "number": 17,
+    "slug": "plumbing-project-cost-quote-handbook",
+    "title": "Plumbing Repair Cost Guide",
+    "price_gbp": "11.99",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "e78934dc770d6fc055fef5f43a39a60ee44ebd7220f2fc2047f2014ebdcb0083"
+  },
+  {
+    "number": 18,
+    "slug": "electrical-upgrade-cost-planning-guide",
+    "title": "Electrical Panel Replacement Cost Guide",
+    "price_gbp": "13.99",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "f6cb6160bdaa58ac4d94de28ec870f77afa5270c58bac585673192d487cc9859"
+  },
+  {
+    "number": 19,
+    "slug": "landscaping-backyard-budget-planner",
+    "title": "Landscaping Cost Guide",
+    "price_gbp": "9.99",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "2539e5b9c9f5cb5922a2ae13102a5b2a89d03eb4d4be8bd06136106430f81e27"
+  },
+  {
+    "number": 20,
+    "slug": "home-energy-upgrade-savings-planner",
+    "title": "Home Energy Audit Cost Guide",
+    "price_gbp": "14.99",
+    "pages": 64,
+    "fillable_fields": 95,
+    "sha256": "4c534b168c6acb5b1aecfb13b737d7e52a2ea3df449783ebb10fa801cb314b19"
+  }
+]
