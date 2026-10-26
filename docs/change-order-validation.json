@@ -1,0 +1,22 @@
+{
+  "pages": 22,
+  "fields": 30,
+  "widgets": 30,
+  "sha256": "f13b7d06c1662054c0521d7485a8c1713f80ea5cf7e4e99d802ff3f8dbb2abcd",
+  "cases": {
+    "substitution": 814,
+    "quantity_low": 1010.88,
+    "quantity_high": 1237.68,
+    "forecast": 44174.88,
+    "gap": 950
+  },
+  "sources_checked": "2026-10-26",
+  "status": "release checks passed",
+  "arithmetic": "six Decimal checks pass",
+  "field_roundtrip": "all 30 canonical and widget values + appearances pass",
+  "prose_exact_copy_screen": "0 of 44 substantive paragraphs copied; conceptual overlap disclosed",
+  "visual_review": "22-page contact sheet, full-size worksheet and saved-field appearance inspected; no clipping observed",
+  "editorial_originality": "new title-specific prose, examples and worksheets; only general planning concepts overlap; no automated semantic originality percentage claimed",
+  "old_prices": "unchanged",
+  "demand": "not validated; no live paid/refund data or reader trials available"
+}

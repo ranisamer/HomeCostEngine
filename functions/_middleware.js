@@ -348,7 +348,7 @@ export async function onRequest(context) {
     }
   });
 
-  if (isBlogArticle && pathname.replace(/\.html$/, "") !== "/blog/is-home-energy-audit-worth-it") {
+  if (isBlogArticle && !["/blog/is-home-energy-audit-worth-it", "/blog/check-contractor-change-order-price"].includes(pathname.replace(/\.html$/, ""))) {
     rewriter.on("main article.info-copy", {
       element(element) {
         element.append(externalLinksSection(pathname), { html: true });

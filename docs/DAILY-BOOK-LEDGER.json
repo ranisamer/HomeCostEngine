@@ -2,13 +2,55 @@
   "version": 1,
   "started": "2026-10-25",
   "existing_books": 20,
-  "completed_new_books": [],
+  "completed_new_books": [
+    {
+      "date": "2026-10-26",
+      "queue_day": 1,
+      "slug": "change-order-cost-control-workbook",
+      "title": "Change-Order Cost Control Workbook",
+      "status": "committed_pending_deployment",
+      "proposed_price_gbp": "9.99",
+      "implemented_price_gbp": "9.99",
+      "price_reason": "Focused change-to-invoice workflow, 3 original checked cases, 6 reusable worksheets and 30 fields; test price, no validated willingness to pay.",
+      "pages": 22,
+      "fillable_fields": 30,
+      "article": "check-contractor-change-order-price",
+      "source_checks": [
+        {
+          "url": "https://consumer.ftc.gov/articles/how-avoid-home-improvement-scam",
+          "checked": "2026-10-26",
+          "result": "retrieved primary source",
+          "scope": "FTC"
+        },
+        {
+          "url": "https://www.cslb.ca.gov/Consumers/Hire_A_Contractor/Home_Improvement_Contracts/What_Is_A_Contract.aspx",
+          "checked": "2026-10-26",
+          "result": "retrieved primary source",
+          "scope": "California CSLB"
+        },
+        {
+          "url": "https://www.msboc.us/wp-content/uploads/2026/03/CONSUMERS-GUIDE-TO-HOME-IMPROVEMENT-CONTRACTS.pdf",
+          "checked": "2026-10-26",
+          "result": "retrieved primary source",
+          "scope": "Mississippi State Board of Contractors"
+        }
+      ],
+      "checks": "PDF layout, field save/reopen, Decimal arithmetic, links, schema, 21 book delivery regressions, 22 GBP checkouts, 22 mocked webhook deliveries, privacy event regression passed",
+      "demand": "No live Stripe paid/refund access, current U.S. acquisition export or real reader test available; GitHub report-artifacts fetch endpoint rejected; no demand metrics inferred."
+    }
+  ],
   "companion_articles": [
     {
       "date": "2026-10-25",
       "book": "home-energy-upgrade-savings-planner",
       "article": "is-home-energy-audit-worth-it",
       "status": "published"
+    },
+    {
+      "date": "2026-10-26",
+      "book": "change-order-cost-control-workbook",
+      "article": "check-contractor-change-order-price",
+      "status": "committed_pending_deployment"
     }
   ]
 }
