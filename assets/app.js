@@ -278,7 +278,7 @@ function buildSeoLinkPanel(topic){
 
 function enhanceBlogArticle(){
   const article=document.querySelector("main article.info-copy");
-  if(!article) return;
+  if(!article || article.dataset.contextualSources === "true") return;
   const topic=HCE_BLOG_TOPICS[blogTopicForPath(location.pathname)]||HCE_BLOG_TOPICS.general;
   const title=(document.querySelector(".page-hero h1")?.textContent||document.title||"Home improvement guide").trim();
   const hasLocalHero=Boolean(article.querySelector('img[src*="/assets/blog/"]'));

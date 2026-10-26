@@ -8,7 +8,7 @@
       "queue_day": 1,
       "slug": "change-order-cost-control-workbook",
       "title": "Change-Order Cost Control Workbook",
-      "status": "committed_pending_deployment",
+      "status": "published",
       "proposed_price_gbp": "9.99",
       "implemented_price_gbp": "9.99",
       "price_reason": "Focused change-to-invoice workflow, 3 original checked cases, 6 reusable worksheets and 30 fields; test price, no validated willingness to pay.",
@@ -36,7 +36,12 @@
         }
       ],
       "checks": "PDF layout, field save/reopen, Decimal arithmetic, links, schema, 21 book delivery regressions, 22 GBP checkouts, 22 mocked webhook deliveries, privacy event regression passed",
-      "demand": "No live Stripe paid/refund access, current U.S. acquisition export or real reader test available; GitHub report-artifacts fetch endpoint rejected; no demand metrics inferred."
+      "demand": "No live Stripe paid/refund access, current U.S. acquisition export or real reader test available; GitHub report-artifacts fetch endpoint rejected; no demand metrics inferred.",
+      "release_commit": "e58a0f197e49b8f34083cbda626ef8187252b646",
+      "deployment": "Cloudflare Pages check 121413958721 succeeded",
+      "product_url": "https://homecostengine.com/ebooks/change-order-cost-control-workbook",
+      "blog_url": "https://homecostengine.com/blog/check-contractor-change-order-price",
+      "live_checks": "Desktop product layout, \u00a39.99 GBP, 22 pages/30 fields, real sample links and blog reciprocal link verified in browser; no real checkout started."
     }
   ],
   "companion_articles": [
@@ -50,7 +55,7 @@
       "date": "2026-10-26",
       "book": "change-order-cost-control-workbook",
       "article": "check-contractor-change-order-price",
-      "status": "committed_pending_deployment"
+      "status": "published"
     }
   ]
 }
