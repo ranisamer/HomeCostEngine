@@ -4,7 +4,7 @@
   "widgets": 40,
   "sha256": "97677c5afd2910f4f0d9ae505ff9702c3d1b1a6f291d25816f85332f5063d029",
   "sources_checked": "2026-10-27",
-  "status": "release QA passed; deployment pending",
+  "status": "published; Cloudflare success and live UI verified",
   "arithmetic": "all four cases independently checked with Decimal, including rounding and bill cross-reconciliation",
   "field_roundtrip": "40 canonical/widget values and nonempty appearances verified after save/reopen",
   "copy_screen": "0 of 48 substantive paragraphs exactly copied; conceptual overlap disclosed; semantic originality reviewed editorially",
@@ -12,5 +12,8 @@
   "prices": "all existing catalog entries unchanged; new product 999 pence GBP",
   "visual_review": "25-page contact sheet, full-size escalator case and source page, saved-field worksheet inspected without observed clipping",
   "build_artifact_protection": "direct /output paths denied before static lookup; public preview and paid route regressions pass",
-  "demand": "unvalidated; no live paid/refund data, current U.S. acquisition export or reader trial available"
+  "demand": "unvalidated; no live paid/refund data, current U.S. acquisition export or reader trial available",
+  "release_commit": "5dbf78e371dfbd6f444bf8f092cb54baf208fcee",
+  "cloudflare_check": 122027201189,
+  "live_ui": "Product/article exact clean URLs, price/counts, cover and 3 loaded previews, 4 contextual sources, reciprocal link; desktop screenshot and no horizontal overflow verified. No mobile-device trial."
 }

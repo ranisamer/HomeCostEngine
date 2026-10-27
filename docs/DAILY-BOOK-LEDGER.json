@@ -48,7 +48,7 @@
       "queue_day": 2,
       "slug": "solar-quote-comparison-workbook",
       "title": "Solar Quote Comparison Workbook",
-      "status": "committed_pending_deployment",
+      "status": "published",
       "queue_price_hypothesis_gbp": "12.99",
       "proposed_price_gbp": "9.99",
       "implemented_price_gbp": "9.99",
@@ -83,7 +83,12 @@
         }
       ],
       "checks": "Decimal arithmetic for 4 cases; 40 field canonical/widget save-reopen values/appearances; actual page count and visual layout; local links/schema/sitemap; 22 book delivery regressions; 23 GBP checkout products and matching mocked thank-you deliveries; analytics privacy regression; private build-artifact guard.",
-      "demand": "No live Stripe paid/refund data or real reader feedback accessible. GitHub current GSC workflow-run endpoint rejected; no current U.S. acquisition export obtained. No invented metrics."
+      "demand": "No live Stripe paid/refund data or real reader feedback accessible. GitHub current GSC workflow-run endpoint rejected; no current U.S. acquisition export obtained. No invented metrics.",
+      "release_commit": "5dbf78e371dfbd6f444bf8f092cb54baf208fcee",
+      "deployment": "Cloudflare Pages check 122027201189 completed successfully",
+      "product_url": "https://homecostengine.com/ebooks/solar-quote-comparison-workbook",
+      "blog_url": "https://homecostengine.com/blog/why-same-size-solar-quotes-differ",
+      "live_checks": "Both exact clean URLs opened in browser; desktop layout and no horizontal overflow; \u00a39.99 GBP and 25/4/8/40 counts; cover and 3 real preview images loaded; article has 4 contextual primary references, reciprocal book link and no extra generic source panel. No real checkout started; no mobile-device trial."
     }
   ],
   "companion_articles": [
@@ -103,7 +108,7 @@
       "date": "2026-10-27",
       "book": "solar-quote-comparison-workbook",
       "article": "why-same-size-solar-quotes-differ",
-      "status": "committed_pending_deployment"
+      "status": "published"
     }
   ]
 }

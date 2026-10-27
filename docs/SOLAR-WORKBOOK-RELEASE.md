@@ -16,4 +16,4 @@ The PDF bytes are durable in the server route, with manuscript/build/QA sources 
 
 Current U.S. acquisition export, live Stripe paid/refunds and real feedback were unavailable. Attempt to fetch current GSC workflow runs through connected GitHub was rejected by the tool's allowed-endpoint boundary. Publishing and successful technical delivery are not demand validation.
 
-Live UI and Cloudflare deployment verification pending at this source commit.
+Cloudflare Pages check 122027201189 completed successfully for release commit 5dbf78e371dfbd6f444bf8f092cb54baf208fcee. Live product and companion article clean URLs opened in browser and show correct title, £9.99 GBP, 25 pages / 4 cases / 8 sheets / 40 fields. Cover and all 3 actual PDF preview images loaded. Product has no horizontal overflow at inspected desktop width. Article has exactly 4 contextual primary links, a reciprocal book link and no generic source panel. No live checkout started. No mobile-device trial claimed.
