@@ -42,6 +42,48 @@
       "product_url": "https://homecostengine.com/ebooks/change-order-cost-control-workbook",
       "blog_url": "https://homecostengine.com/blog/check-contractor-change-order-price",
       "live_checks": "Desktop product layout, \u00a39.99 GBP, 22 pages/30 fields, real sample links and blog reciprocal link verified in browser; no real checkout started."
+    },
+    {
+      "date": "2026-10-27",
+      "queue_day": 2,
+      "slug": "solar-quote-comparison-workbook",
+      "title": "Solar Quote Comparison Workbook",
+      "status": "committed_pending_deployment",
+      "queue_price_hypothesis_gbp": "12.99",
+      "proposed_price_gbp": "9.99",
+      "implemented_price_gbp": "9.99",
+      "price_reason": "Focused solar-offer packet with 4 independently checked cases and 8 reusable sheets. Conservative test price below initial queue hypothesis; no validated willingness to pay. Existing prices unchanged.",
+      "pages": 25,
+      "fillable_fields": 40,
+      "article": "why-same-size-solar-quotes-differ",
+      "source_checks": [
+        {
+          "url": "https://consumer.ftc.gov/articles/solar-power-your-home",
+          "checked": "2026-10-27",
+          "result": "retrieved primary source",
+          "scope": "Buying, leasing and PPA distinctions; bid and contract-review context. Used for limited general consumer facts, not current tax eligibility."
+        },
+        {
+          "url": "https://www.consumerfinance.gov/data-research/research-reports/issue-spotlight-solar-financing/",
+          "checked": "2026-10-27",
+          "result": "retrieved primary source",
+          "scope": "August 7, 2024 historical report: embedded financing costs and assumed-prepayment risks. Its tax-credit and market data are not current 2026 guidance."
+        },
+        {
+          "url": "https://pvwatts.nlr.gov/",
+          "checked": "2026-10-27",
+          "result": "retrieved primary source",
+          "scope": "National Laboratory of the Rockies model: input-dependent energy estimates and explicit uncertainty. No home-specific model run or endorsement is claimed."
+        },
+        {
+          "url": "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+          "checked": "2026-10-27",
+          "result": "retrieved primary source",
+          "scope": "Current page explicitly excludes property placed in service after December 31, 2025. Used narrowly for that cutoff; individual tax advice is outside scope."
+        }
+      ],
+      "checks": "Decimal arithmetic for 4 cases; 40 field canonical/widget save-reopen values/appearances; actual page count and visual layout; local links/schema/sitemap; 22 book delivery regressions; 23 GBP checkout products and matching mocked thank-you deliveries; analytics privacy regression; private build-artifact guard.",
+      "demand": "No live Stripe paid/refund data or real reader feedback accessible. GitHub current GSC workflow-run endpoint rejected; no current U.S. acquisition export obtained. No invented metrics."
     }
   ],
   "companion_articles": [
@@ -56,6 +98,12 @@
       "book": "change-order-cost-control-workbook",
       "article": "check-contractor-change-order-price",
       "status": "published"
+    },
+    {
+      "date": "2026-10-27",
+      "book": "solar-quote-comparison-workbook",
+      "article": "why-same-size-solar-quotes-differ",
+      "status": "committed_pending_deployment"
     }
   ]
 }

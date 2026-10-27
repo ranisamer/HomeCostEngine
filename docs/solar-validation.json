@@ -1,0 +1,16 @@
+{
+  "pages": 25,
+  "fields": 40,
+  "widgets": 40,
+  "sha256": "97677c5afd2910f4f0d9ae505ff9702c3d1b1a6f291d25816f85332f5063d029",
+  "sources_checked": "2026-10-27",
+  "status": "release QA passed; deployment pending",
+  "arithmetic": "all four cases independently checked with Decimal, including rounding and bill cross-reconciliation",
+  "field_roundtrip": "40 canonical/widget values and nonempty appearances verified after save/reopen",
+  "copy_screen": "0 of 48 substantive paragraphs exactly copied; conceptual overlap disclosed; semantic originality reviewed editorially",
+  "links": "new local links, single H1, four contextual primary article sources, sitemap XML passed",
+  "prices": "all existing catalog entries unchanged; new product 999 pence GBP",
+  "visual_review": "25-page contact sheet, full-size escalator case and source page, saved-field worksheet inspected without observed clipping",
+  "build_artifact_protection": "direct /output paths denied before static lookup; public preview and paid route regressions pass",
+  "demand": "unvalidated; no live paid/refund data, current U.S. acquisition export or reader trial available"
+}

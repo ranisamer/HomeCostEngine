@@ -284,6 +284,12 @@ function depthSection(pathname) {
 }
 
 export async function onRequest(context) {
+  // Build artifacts are not public storefront downloads. Paid routes verify entitlement.
+  let artifactPath = new URL(context.request.url).pathname;
+  try { artifactPath = decodeURIComponent(artifactPath); } catch {}
+  if (artifactPath === '/output' || artifactPath.startsWith('/output/')) {
+    return new Response('Not found', {status:404, headers:{'cache-control':'private, no-store','x-robots-tag':'noindex, nofollow'}});
+  }
   const response = await context.next();
   const contentType = response.headers.get("content-type") || "";
 
@@ -348,7 +354,7 @@ export async function onRequest(context) {
     }
   });
 
-  if (isBlogArticle && !["/blog/is-home-energy-audit-worth-it", "/blog/check-contractor-change-order-price"].includes(pathname.replace(/\.html$/, ""))) {
+  if (isBlogArticle && !["/blog/is-home-energy-audit-worth-it", "/blog/check-contractor-change-order-price", "/blog/why-same-size-solar-quotes-differ"].includes(pathname.replace(/\.html$/, ""))) {
     rewriter.on("main article.info-copy", {
       element(element) {
         element.append(externalLinksSection(pathname), { html: true });

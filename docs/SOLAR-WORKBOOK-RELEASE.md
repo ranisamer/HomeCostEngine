@@ -1,0 +1,19 @@
+# Solar workbook release - October 27, 2026
+
+Current main inspected at 82c945be519502ac44835be43a8e627832e0c541. Fresh isolated checkout; no applicable AGENTS.md present. Current plan/ledger/catalog and energy, quote and renovation manuscripts reviewed. Queue day 2 was not already present. New title-specific outcome is a matched solar-offer packet covering system scope, ownership, production, energy value, payment schedules and transfer evidence.
+
+All 48 substantive module paragraphs, four worked cases and eight worksheet sets were newly authored. General bill/scope/budget concepts overlap and are disclosed. Literal-copy screen finds no exact reused paragraph; that is not a semantic similarity score. Editorial comparison finds the solar-specific substantive content meets the 80% original-content gate. Reused components are document layout/build code and the established checkout/delivery pattern.
+
+25 US Letter pages, 40 fields across 8 worksheets; outline navigation, real PDF cover and 3 real interior previews. Full contact sheet, full-size case/source pages and filled worksheet inspected. Decimal checks independently reconcile scope per watt, use/export value and bill totals, fixed payment sums and escalating lease/PPA sums/rounding. All 40 canonical values, widget values and appearance streams pass save/reopen verification. No physical print or homeowner trial performed.
+
+£9.99 is proposed and implemented, below the initial queue £12.99 hypothesis. Value is the original usable record set, not a promise of savings or a compilation of official text. All prior catalog entries and GBP currency remain unchanged.
+
+Four primary sources retrieved October 27, 2026: FTC solar consumer guide; CFPB August 7, 2024 report used only for historical financing-risk context; PVWatts current model/uncertainty context; IRS Residential Clean Energy Credit explicit placed-in-service cutoff after December 31, 2025. Old tax wording in historical sources is not treated as current eligibility. No actual home production model, local utility tariff or individual tax assessment was performed.
+
+Existing paid+complete matching-book entitlement and transactional thank-you path extended through server catalogs. All 23 products' mocked webhook title/GBP/private order URL/deduplication tests pass; 22 book delivery regressions plus mini and legacy paid-order tests pass. No external payment or customer email sent. Custom analytics behavior remains unchanged. Both server and client generic article insertions are suppressed for the contextual-source article.
+
+The PDF bytes are durable in the server route, with manuscript/build/QA sources in git. A plain solar PDF is not added to the published static tree. Middleware now refuses direct /output build-artifact paths before static lookup, including the previously committed build folder, while public covers and paid routes pass their tests. The public GitHub source still contains bundled PDF bytes, so this is checkout gating, not DRM.
+
+Current U.S. acquisition export, live Stripe paid/refunds and real feedback were unavailable. Attempt to fetch current GSC workflow runs through connected GitHub was rejected by the tool's allowed-endpoint boundary. Publishing and successful technical delivery are not demand validation.
+
+Live UI and Cloudflare deployment verification pending at this source commit.
