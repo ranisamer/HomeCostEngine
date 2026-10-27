@@ -19,7 +19,7 @@ Inspect current source, history, canonical and latest joined query-page data bef
 | Repaired October 24 | /blog/how-much-flooring-waste-should-i-add | Product/layout allowance audit, carton sensitivity, missing-area correction and reserved repair stock. |
 | Repaired October 25 | /blog/how-to-compare-roofing-quotes | Matched known scope, separate deck scenarios and allowance double-count checks. |
 | Repaired October 26 | /blog/roof-replacement-cost-per-square-foot | Roof-surface denominator audit, system/project subtotals, order allowance and separate repair sensitivity. |
-| Next review | /blog/seer2-explained-for-homeowners | Rating interpretation and limits of comparing system or operating-cost scenarios. |
+| Repaired October 27 | /blog/seer2-explained-for-homeowners | Matched ratings, equal-output cooling-energy arithmetic, tariff sensitivity and installation-scope limits. |
 | Next review | /blog/water-heater-repair-vs-replacement | Diagnosis, compatible installation scope and quote-based decision method. |
 | Later audit | Other remaining short articles | Use the current audit and real query evidence; consolidate overlapping house-size or synonym intents where justified. |
 
@@ -68,3 +68,7 @@ Reaudited 71 source articles: 18 short indexable bodies before the flooring-wast
 ## October 25 checkpoint
 
 Reaudited the current 71 article files; 17 short source article bodies before the roofing-quote repair and approximately 16 after. The guide now normalizes confirmed exclusions and tests unknown deck quantities separately, with two contextual inbound links and a unique source-linked photo. Sitemap remains 157 URLs. Fresh usa/web/final report generated October 25 covers September 24–October 21: 1 click, 2,902 impressions, 0.03446% CTR, position 51.74466. No clicked query is disclosed; preceding history remains incomplete. Next review is the roof-surface unit-cost guide, subject to current intent and cooldown checks.
+
+## October 27 checkpoint
+
+Reaudited the current article inventory against main blob SHAs: 15 short indexable bodies before SEER2 repair and approximately 14 after. The guide now audits matched ratings, cooling-only energy ratios, upgrade premium and tariff sensitivity. Two supporting inbound links and one unique source-linked photo added. Sitemap remains 162 unique URLs, not an indexed-page claim. Latest available successful report was generated October 26, covers September 25–October 22 and records 1 U.S. click/2,930 impressions; the clicked dimensions remain undisclosed. Next: water-heater repair versus replacement, with fresh evidence and cooldown checks.
