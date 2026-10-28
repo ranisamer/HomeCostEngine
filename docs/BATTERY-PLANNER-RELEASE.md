@@ -1,6 +1,6 @@
 # Home Battery Backup Budget Planner — October 28, 2026
 
-Status: local authoring and delivery tests passed; deployment and live verification pending.
+Status: published. Release 825eca1b44279e558325f4f7afbb1898faefd145; Cloudflare Pages check 122647101807 completed successfully. Both clean live URLs verified.
 
 The third queued title helps a U.S. homeowner prepare a selected-load outage brief, distinguish energy from output/starting power, identify conditional duration and recharge assumptions, and compare complete battery proposal scope. It does not design or size an installation. It is distinct from solar generation/ownership comparisons and the broader energy guide; that overlap is disclosed.
 
@@ -46,4 +46,10 @@ GA4 U.S. product sessions, article-to-product activity, preview and checkout cou
 
 Existing server-controlled GBP checkout, paid+complete matching entitlement, private download and matching thank-you order link are reused. No actual payment, external email, customer session or spending occurred. The public repository contains embedded PDF bytes in its server routes: the live route gate is not source confidentiality or DRM. Electrical design, emergency suitability, household performance and applicable approvals require qualified providers.
 
-Next outcome to record: exact release commit, successful existing Cloudflare check and clean live product/article verification.
+## Live verification
+
+Both exact clean product and article URLs above opened successfully in the browser after deployment. At the observed 1348 px desktop width, neither page overflowed horizontally. Both GBP price panels and Book schema show £9.99; 26 pages, 4 cases, 7 sheets, 35 fields and 2 completed demonstrations match the PDF. The actual cover and all three 796 × 1030 interior previews loaded. The article retains four contextual primary links and its reciprocal book link without generic injected source panels.
+
+The live download route without a session returned "Invalid checkout session." Paid delivery and thank-you title/amount/link are covered by mocks; no live customer purchase or external email was performed. No mobile-device or real-reader trial occurred. The initial browser visit preceded deployment and returned a temporary 404; after the successful deployment, reload returned the intended product. No persistent live-page failure remains.
+
+The ledger marks queue day 3 complete. The next queued topic remains EV Charger Installation Quote Planner; no additional title was created in this run.

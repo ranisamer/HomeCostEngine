@@ -4,7 +4,7 @@
   "widgets": 35,
   "sha256": "f67ef0f3477917261c8e82802297c9aee7a05bab1b1c35680024fac26b26c292",
   "sources_checked": "2026-10-28",
-  "status": "passed local automated and visual QA; deployment and live checks pending",
+  "status": "passed; published and live verified",
   "arithmetic": "all 4 cases independently recomputed with Decimal, including recharge timing versus aggregate gap",
   "field_roundtrip": "35 canonical and widget values over 100 characters, saved appearances, 1,000-character limits, 5 URL links and 26 outline entries verified",
   "demonstrations": "two labeled completed records use the five prompts of worksheets 1 and 6; no actual customer data",
@@ -18,5 +18,8 @@
     "No actual paid checkout, external email or live customer session used.",
     "Field values and saved appearances checked with explicit multiline input; compatibility across all PDF readers not tested.",
     "Technical tests and editorial review do not validate willingness to pay or actual reader usefulness."
-  ]
+  ],
+  "release_commit": "825eca1b44279e558325f4f7afbb1898faefd145",
+  "cloudflare_check": 122647101807,
+  "live": "Both exact clean product/article URLs opened in browser. Desktop layout at 1348 px without horizontal overflow; both \u00a39.99 GBP price panels and 26/4/7/35/2 counts; Book schema; cover and three actual interior previews loaded. Article has four contextual primary links, reciprocal product link and no extra generic resources panel. Missing-session download returns Invalid checkout session. No real checkout, payment or external email; no mobile-device or real-reader trial."
 }

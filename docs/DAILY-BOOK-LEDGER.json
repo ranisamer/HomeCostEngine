@@ -95,7 +95,7 @@
       "queue_day": 3,
       "slug": "home-battery-backup-budget-planner",
       "title": "Home Battery Backup Budget Planner",
-      "status": "ready_pending_deployment",
+      "status": "published",
       "proposed_price_gbp": "9.99",
       "implemented_price_gbp": "9.99",
       "price_reason": "Focused outage brief through complete quote comparison; 4 independently recomputed cases, 7 reusable sheets, 35 fields and 2 completed demonstrations. Conservative test price, not validated willingness to pay. All 23 prior product amounts preserved.",
@@ -133,7 +133,9 @@
       "demand": "Latest available U.S. GSC export: run 40455797015, artifact 12711219903, generated 2026-10-27; finalized 2026-09-26 through 2026-10-23, USA Web, 2,951 impressions and 1 click for the whole property. No returned battery/backup query rows; top/anonymized query limits apply. Predates this book. GA4 article-to-product, preview and checkout counts, live Stripe orders/refunds/net revenue and real reader feedback not accessible. Missing data is not zero; demand/usefulness unvalidated.",
       "product_url": "https://homecostengine.com/ebooks/home-battery-backup-budget-planner",
       "blog_url": "https://homecostengine.com/blog/what-to-ask-before-comparing-home-battery-prices",
-      "live_checks": "Pending deployment; no claim of live publication yet."
+      "live_checks": "Both exact clean product/article URLs opened in browser. Desktop layout at 1348 px without horizontal overflow; both \u00a39.99 GBP price panels and 26/4/7/35/2 counts; Book schema; cover and three actual interior previews loaded. Article has four contextual primary links, reciprocal product link and no extra generic resources panel. Missing-session download returns Invalid checkout session. No real checkout, payment or external email; no mobile-device or real-reader trial.",
+      "release_commit": "825eca1b44279e558325f4f7afbb1898faefd145",
+      "deployment": "Cloudflare Pages check 122647101807 completed successfully"
     }
   ],
   "companion_articles": [
@@ -159,7 +161,7 @@
       "date": "2026-10-28",
       "book": "home-battery-backup-budget-planner",
       "article": "what-to-ask-before-comparing-home-battery-prices",
-      "status": "ready_pending_deployment"
+      "status": "published"
     }
   ]
 }
