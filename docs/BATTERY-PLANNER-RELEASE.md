@@ -53,3 +53,5 @@ Both exact clean product and article URLs above opened successfully in the brows
 The live download route without a session returned "Invalid checkout session." Paid delivery and thank-you title/amount/link are covered by mocks; no live customer purchase or external email was performed. No mobile-device or real-reader trial occurred. The initial browser visit preceded deployment and returned a temporary 404; after the successful deployment, reload returned the intended product. No persistent live-page failure remains.
 
 The ledger marks queue day 3 complete. The next queued topic remains EV Charger Installation Quote Planner; no additional title was created in this run.
+
+A subsequent live catalog check found the inherited headline still said 20 books, all 64 pages, and daily cards were inserted in the first category. Corrected the catalog to 23 books with explicit varied lengths; battery and solar are under HVAC & Home Energy, change orders under Contractors & Quotes. Updated the battery store builder to retain those categories and accurate totals. Store schema/GBP and artifact QA passed again. No existing price changed.

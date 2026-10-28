@@ -135,7 +135,8 @@
       "blog_url": "https://homecostengine.com/blog/what-to-ask-before-comparing-home-battery-prices",
       "live_checks": "Both exact clean product/article URLs opened in browser. Desktop layout at 1348 px without horizontal overflow; both \u00a39.99 GBP price panels and 26/4/7/35/2 counts; Book schema; cover and three actual interior previews loaded. Article has four contextual primary links, reciprocal product link and no extra generic resources panel. Missing-session download returns Invalid checkout session. No real checkout, payment or external email; no mobile-device or real-reader trial.",
       "release_commit": "825eca1b44279e558325f4f7afbb1898faefd145",
-      "deployment": "Cloudflare Pages check 122647101807 completed successfully"
+      "deployment": "Cloudflare Pages check 122647101807 completed successfully",
+      "catalogue_correction": "Post-deploy catalog review found stale inherited 20-book/all-64-page headline and first-category daily card placement. Corrected to 23 books with actual per-product lengths; solar/battery in HVAC & Home Energy and change orders in Contractors & Quotes. No price changes."
     }
   ],
   "companion_articles": [
