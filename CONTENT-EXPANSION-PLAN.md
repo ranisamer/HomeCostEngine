@@ -20,7 +20,7 @@ Inspect current source, history, canonical and latest joined query-page data bef
 | Repaired October 25 | /blog/how-to-compare-roofing-quotes | Matched known scope, separate deck scenarios and allowance double-count checks. |
 | Repaired October 26 | /blog/roof-replacement-cost-per-square-foot | Roof-surface denominator audit, system/project subtotals, order allowance and separate repair sensitivity. |
 | Repaired October 27 | /blog/seer2-explained-for-homeowners | Matched ratings, equal-output cooling-energy arithmetic, tariff sensitivity and installation-scope limits. |
-| Next review | /blog/water-heater-repair-vs-replacement | Diagnosis, compatible installation scope and quote-based decision method. |
+| Repaired October 28 | /blog/water-heater-repair-vs-replacement | Diagnosed fault, scope-matched repair/replacement cash, credits and energy-screening limits. |
 | Later audit | Other remaining short articles | Use the current audit and real query evidence; consolidate overlapping house-size or synonym intents where justified. |
 
 Each repair must add a decision method, worked takeoff, usable tool workflow or verified answer. Preserve URLs and useful design. Do not append a standard block of generic paragraphs to pass a word threshold.
@@ -72,3 +72,7 @@ Reaudited the current 71 article files; 17 short source article bodies before th
 ## October 27 checkpoint
 
 Reaudited the current article inventory against main blob SHAs: 15 short indexable bodies before SEER2 repair and approximately 14 after. The guide now audits matched ratings, cooling-only energy ratios, upgrade premium and tariff sensitivity. Two supporting inbound links and one unique source-linked photo added. Sitemap remains 162 unique URLs, not an indexed-page claim. Latest available successful report was generated October 26, covers September 25–October 22 and records 1 U.S. click/2,930 impressions; the clicked dimensions remain undisclosed. Next: water-heater repair versus replacement, with fresh evidence and cooldown checks.
+
+## October 28 checkpoint
+
+Reaudited 72 current indexable articles by matching Git blob hashes; no missing source. Fourteen short bodies before water-heater decision repair, approximately thirteen after. Added a diagnosed-fault and decision-date cash method with explicitly hypothetical quote arithmetic, two inbound links and a unique generated source-linked illustration. Sitemap remains 164 unique URLs, not an indexing count. Latest usa/web/final report generated October 27 covers September 26–October 23: 1 click, 2,951 impressions; clicked dimensions remain undisclosed. Next: inspect AC repair-versus-replacement and HVAC budget intent gaps before expansion.
