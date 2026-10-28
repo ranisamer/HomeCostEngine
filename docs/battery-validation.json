@@ -1,0 +1,22 @@
+{
+  "pages": 26,
+  "fields": 35,
+  "widgets": 35,
+  "sha256": "f67ef0f3477917261c8e82802297c9aee7a05bab1b1c35680024fac26b26c292",
+  "sources_checked": "2026-10-28",
+  "status": "passed local automated and visual QA; deployment and live checks pending",
+  "arithmetic": "all 4 cases independently recomputed with Decimal, including recharge timing versus aggregate gap",
+  "field_roundtrip": "35 canonical and widget values over 100 characters, saved appearances, 1,000-character limits, 5 URL links and 26 outline entries verified",
+  "demonstrations": "two labeled completed records use the five prompts of worksheets 1 and 6; no actual customer data",
+  "copy_screen": "0 of 48 substantive paragraphs exactly copied from existing manuscript files; semantic originality assessed editorially",
+  "links": "new local links, one H1, four primary article references, sitemap XML passed",
+  "prices": "all 23 prior catalog amounts preserved against immutable recorded baseline; 999 pence for new product",
+  "visual": "26-page contact sheet inspected; full-size completed examples, references and saved multiline form inspected. No observed overlap or clipping in reviewed renders.",
+  "delivery": "23 book routes plus mini entitlement regression passed; all 24 GBP catalog products and matching mocked webhook thank-you deliveries passed",
+  "privacy": "book-demand event sanitization, QA exclusion and private build-artifact denial regressions passed",
+  "limitations": [
+    "No actual paid checkout, external email or live customer session used.",
+    "Field values and saved appearances checked with explicit multiline input; compatibility across all PDF readers not tested.",
+    "Technical tests and editorial review do not validate willingness to pay or actual reader usefulness."
+  ]
+}

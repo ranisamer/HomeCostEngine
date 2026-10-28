@@ -89,6 +89,51 @@
       "product_url": "https://homecostengine.com/ebooks/solar-quote-comparison-workbook",
       "blog_url": "https://homecostengine.com/blog/why-same-size-solar-quotes-differ",
       "live_checks": "Both exact clean URLs opened in browser; desktop layout and no horizontal overflow; \u00a39.99 GBP and 25/4/8/40 counts; cover and 3 real preview images loaded; article has 4 contextual primary references, reciprocal book link and no extra generic source panel. No real checkout started; no mobile-device trial."
+    },
+    {
+      "date": "2026-10-28",
+      "queue_day": 3,
+      "slug": "home-battery-backup-budget-planner",
+      "title": "Home Battery Backup Budget Planner",
+      "status": "ready_pending_deployment",
+      "proposed_price_gbp": "9.99",
+      "implemented_price_gbp": "9.99",
+      "price_reason": "Focused outage brief through complete quote comparison; 4 independently recomputed cases, 7 reusable sheets, 35 fields and 2 completed demonstrations. Conservative test price, not validated willingness to pay. All 23 prior product amounts preserved.",
+      "pages": 26,
+      "fillable_fields": 35,
+      "article": "what-to-ask-before-comparing-home-battery-prices",
+      "source_checks": [
+        {
+          "url": "https://www.energy.gov/cmei/systems/articles/solar-plus-storage-101",
+          "checked": "2026-10-28",
+          "result": "retrieved primary source",
+          "scope": "March 11, 2019 terminology background on energy, power and storage duration only; utility-scale cost/market figures are not current residential pricing."
+        },
+        {
+          "url": "https://ww2.arb.ca.gov/capp/cst/tch/welcome-to-the-zero-emissions-residential-backup-power-tool",
+          "checked": "2026-10-28",
+          "result": "retrieved primary source",
+          "scope": "California Air Resources Board general backup tool: power/energy arithmetic, starting-demand and generic-assumption limits. Not a household design or national product recommendation."
+        },
+        {
+          "url": "https://www.tesla.com/support/energy/powerwall/learn/what-can-powerwall-back-up",
+          "checked": "2026-10-28",
+          "result": "retrieved primary source",
+          "scope": "Manufacturer-specific distinction between partial/whole-home backup and need for a final detailed design. Not a cross-brand capability guarantee or endorsement."
+        },
+        {
+          "url": "https://www.tesla.com/support/energy/powerwall/mobile-app/backup-reserve",
+          "checked": "2026-10-28",
+          "result": "retrieved primary source",
+          "scope": "Manufacturer-specific explanation that reserved backup energy becomes available during an outage. Used to distinguish reserve from a protected shutdown floor, not to prescribe settings."
+        }
+      ],
+      "checks": "All 4 cases independently recomputed with Decimal; 35 canonical/widget fields saved and reopened with multiline entries and saved appearances; 26 outline entries and 5 PDF URL links; visual layout; product/article links/schema/sitemap; 23 book delivery regressions; 24 GBP products and matching mocked thank-you deliveries; analytics privacy and private-build guard.",
+      "originality": "Editorial assessment meets at least 80% substantive originality target: 48 new method paragraphs, 4 new cases, 7 new prompt sets and 2 completed records. Literal screen found no copied method paragraph; it is not an automated semantic originality percentage. Reused layout and delivery code excluded from substantive content.",
+      "demand": "Latest available U.S. GSC export: run 40455797015, artifact 12711219903, generated 2026-10-27; finalized 2026-09-26 through 2026-10-23, USA Web, 2,951 impressions and 1 click for the whole property. No returned battery/backup query rows; top/anonymized query limits apply. Predates this book. GA4 article-to-product, preview and checkout counts, live Stripe orders/refunds/net revenue and real reader feedback not accessible. Missing data is not zero; demand/usefulness unvalidated.",
+      "product_url": "https://homecostengine.com/ebooks/home-battery-backup-budget-planner",
+      "blog_url": "https://homecostengine.com/blog/what-to-ask-before-comparing-home-battery-prices",
+      "live_checks": "Pending deployment; no claim of live publication yet."
     }
   ],
   "companion_articles": [
@@ -109,6 +154,12 @@
       "book": "solar-quote-comparison-workbook",
       "article": "why-same-size-solar-quotes-differ",
       "status": "published"
+    },
+    {
+      "date": "2026-10-28",
+      "book": "home-battery-backup-budget-planner",
+      "article": "what-to-ask-before-comparing-home-battery-prices",
+      "status": "ready_pending_deployment"
     }
   ]
 }

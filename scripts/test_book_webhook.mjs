@@ -87,4 +87,4 @@ for(const [slug,book] of Object.entries(checkoutCatalog)){
  assert.ok(mail.htmlContent.includes('positive or negative'),slug+' neutral feedback');
  assert.equal((await send()).status,200);assert.equal(mailCount,1,slug+' deduplication');
 }
-console.log('PASS: all 23 products (22 books + mini) thank buyer with correct title, GBP amount, private order link and neutral feedback; retries deduplicate. No external send.');
+console.log('PASS: all 24 products (23 books + mini) thank buyer with correct title, GBP amount, private order link and neutral feedback; retries deduplicate. No external send.');
