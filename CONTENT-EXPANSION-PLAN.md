@@ -21,6 +21,7 @@ Inspect current source, history, canonical and latest joined query-page data bef
 | Repaired October 26 | /blog/roof-replacement-cost-per-square-foot | Roof-surface denominator audit, system/project subtotals, order allowance and separate repair sensitivity. |
 | Repaired October 27 | /blog/seer2-explained-for-homeowners | Matched ratings, equal-output cooling-energy arithmetic, tariff sensitivity and installation-scope limits. |
 | Repaired October 28 | /blog/water-heater-repair-vs-replacement | Diagnosed fault, scope-matched repair/replacement cash, credits and energy-screening limits. |
+| Repaired October 29 | /blog/how-to-budget-for-hvac-replacement | Scope ledger, allowance reconciliation and cash still due versus project total. |
 | Later audit | Other remaining short articles | Use the current audit and real query evidence; consolidate overlapping house-size or synonym intents where justified. |
 
 Each repair must add a decision method, worked takeoff, usable tool workflow or verified answer. Preserve URLs and useful design. Do not append a standard block of generic paragraphs to pass a word threshold.
@@ -76,3 +77,8 @@ Reaudited the current article inventory against main blob SHAs: 15 short indexab
 ## October 28 checkpoint
 
 Reaudited 72 current indexable articles by matching Git blob hashes; no missing source. Fourteen short bodies before water-heater decision repair, approximately thirteen after. Added a diagnosed-fault and decision-date cash method with explicitly hypothetical quote arithmetic, two inbound links and a unique generated source-linked illustration. Sitemap remains 164 unique URLs, not an indexing count. Latest usa/web/final report generated October 27 covers September 26–October 23: 1 click, 2,951 impressions; clicked dimensions remain undisclosed. Next: inspect AC repair-versus-replacement and HVAC budget intent gaps before expansion.
+
+
+## October 29 checkpoint
+
+Audited 73 current indexable articles with no missing source. Fourteen short bodies before the HVAC budget repair, thirteen after; this is triage, not an AdSense verdict. Added an installed-scope and payment-timing ledger, two inbound links and a unique source-linked generated illustration. Preserved independent EV-charger publication and sitemap additions. Latest usa/web/final report generated October 28 covers September 27–October 24: 1 click and 2,918 impressions; clicked dimensions remain undisclosed. Next inspect AC/HVAC repair intent overlap before choosing the next eligible existing-answer repair.
