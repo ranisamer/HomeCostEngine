@@ -1,6 +1,6 @@
 # EV Charger Installation Quote Planner — October 29, 2026
 
-Status: local quality gates passed; deployment pending. Queue day 4 only; no duplicate existing title found in current ledger/catalog/manuscripts.
+Status: published. Release ccff7392d8e2268fc1a319aefd54497ed8928816; Cloudflare Pages check 123285488248 succeeded. Queue day 4 only; no duplicate existing title found in current ledger/catalog/manuscripts.
 
 Product: https://homecostengine.com/ebooks/ev-charger-installation-quote-planner
 
@@ -34,3 +34,8 @@ Current successful GSC run https://github.com/ranisamer/HomeCostEngine/actions/r
 GA4 U.S. funnel activity, live Stripe orders/refunds/net revenue and reader feedback are not connected. Missing is not zero. No real-reader usefulness test, live paid checkout, external email or mobile-device trial performed. PDF-reader compatibility is not universal; long entries scroll and detail belongs in attachments.
 
 Known inherited protection limit: embedded PDF bytes are in a public repository. The live paid route gate is not DRM or source confidentiality. No credentials or customer information added.
+
+## Live verification
+Exact clean product and article URLs opened. Desktop width 1348 px, no horizontal overflow; £7.99 panels and Book schema, 25 pages/4 cases/6 sheets/30 fields/2 records verified; cover and all three real previews loaded; article has three contextual primary links and reciprocal product/tool links without injected generic resources. Missing-session download rejected as Invalid checkout session. Live catalogue shows 24 books and EV title in Electrical. No real purchase/email or mobile-device/reader trial.
+
+Queue day 4 completed. Next topic: Garage Conversion Decision Workbook; no second book created in this run.

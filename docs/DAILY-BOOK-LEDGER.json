@@ -143,7 +143,7 @@
       "queue_day": 4,
       "slug": "ev-charger-installation-quote-planner",
       "title": "EV Charger Installation Quote Planner",
-      "status": "ready_pending_deployment",
+      "status": "published",
       "proposed_price_gbp": "7.99",
       "implemented_price_gbp": "7.99",
       "price_reason": "Focused vehicle/parking-to-handover workflow, 4 checked cases, 6 reusable sheets and 2 completed examples; conservative queue-aligned test price, no validated willingness to pay. All prior prices unchanged.",
@@ -176,7 +176,7 @@
         "widgets": 30,
         "sha256": "dba845daa60fdda50eb4793a25158b90aeac567cf40d79f4898d069831334aa6",
         "sources_checked": "2026-10-29",
-        "status": "local automated and visual QA passed; live deployment pending",
+        "status": "passed; published and live verified",
         "arithmetic": "all 4 cases independently recomputed with Decimal: grid/battery boundary, quote exclusions, incremental route and allowance, whole-home tariff",
         "field_roundtrip": "30 canonical and widget values over 100 characters, saved appearances, 1,000-character limits, 4 URL links and 25 outline entries verified",
         "demonstrations": "two labeled completed records use the five prompts of worksheets 1 and 4; no actual customer data",
@@ -191,7 +191,9 @@
       "demand": "Latest available USA Web GSC report run 40642504704 / artifact 12795484785 generated 2026-10-28. Finalized 2026-09-27 through 2026-10-24: 2,918 property impressions, 1 click, average position 50.80. No returned EV-charger query rows; top/anonymized query limits apply. Period predates this title. No GA4 funnel counts, live Stripe paid/refund/net-revenue data or real reader feedback connected; missing is not zero. Demand/usefulness unvalidated.",
       "product_url": "https://homecostengine.com/ebooks/ev-charger-installation-quote-planner",
       "blog_url": "https://homecostengine.com/blog/what-is-included-home-ev-charger-installation-quote",
-      "live_checks": "Pending deployment."
+      "live_checks": "Exact clean product and article URLs opened. Desktop width 1348 px, no horizontal overflow; \u00a37.99 panels and Book schema, 25 pages/4 cases/6 sheets/30 fields/2 records verified; cover and all three real previews loaded; article has three contextual primary links and reciprocal product/tool links without injected generic resources. Missing-session download rejected as Invalid checkout session. Live catalogue shows 24 books and EV title in Electrical. No real purchase/email or mobile-device/reader trial.",
+      "release_commit": "ccff7392d8e2268fc1a319aefd54497ed8928816",
+      "deployment": "Cloudflare Pages check 123285488248 completed successfully"
     }
   ],
   "companion_articles": [
@@ -223,7 +225,7 @@
       "date": "2026-10-29",
       "book": "ev-charger-installation-quote-planner",
       "article": "what-is-included-home-ev-charger-installation-quote",
-      "status": "ready_pending_deployment"
+      "status": "published"
     }
   ]
 }

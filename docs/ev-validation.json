@@ -4,7 +4,7 @@
   "widgets": 30,
   "sha256": "dba845daa60fdda50eb4793a25158b90aeac567cf40d79f4898d069831334aa6",
   "sources_checked": "2026-10-29",
-  "status": "local automated and visual QA passed; live deployment pending",
+  "status": "passed; published and live verified",
   "arithmetic": "all 4 cases independently recomputed with Decimal: grid/battery boundary, quote exclusions, incremental route and allowance, whole-home tariff",
   "field_roundtrip": "30 canonical and widget values over 100 characters, saved appearances, 1,000-character limits, 4 URL links and 25 outline entries verified",
   "demonstrations": "two labeled completed records use the five prompts of worksheets 1 and 4; no actual customer data",
@@ -13,5 +13,8 @@
   "prices": "all 24 prior catalog amounts preserved against immutable recorded baseline; 799 pence for new product",
   "visual": "25-page contact sheet inspected; full-size case 1, completed allowance record, source notes and saved multiline sheet inspected; no observed clipping/overlap.",
   "delivery": "24 book delivery routes plus mini regression passed; 25 GBP checkouts and matching mocked webhook thank-you deliveries passed; privacy and direct-artifact guard passed.",
-  "limits": "No live purchase or external email; no real reader or all-viewer/mobile-device trial. Technical delivery does not validate demand."
+  "limits": "No live purchase or external email; no real reader or all-viewer/mobile-device trial. Technical delivery does not validate demand.",
+  "release_commit": "ccff7392d8e2268fc1a319aefd54497ed8928816",
+  "cloudflare_check": 123285488248,
+  "live": "Exact clean product and article URLs opened. Desktop width 1348 px, no horizontal overflow; \u00a37.99 panels and Book schema, 25 pages/4 cases/6 sheets/30 fields/2 records verified; cover and all three real previews loaded; article has three contextual primary links and reciprocal product/tool links without injected generic resources. Missing-session download rejected as Invalid checkout session. Live catalogue shows 24 books and EV title in Electrical. No real purchase/email or mobile-device/reader trial."
 }
