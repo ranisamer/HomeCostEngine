@@ -34,7 +34,7 @@ for(const [slug,book] of Object.entries(catalog)) {
   assert.ok(sellingPanels.every(panel=>!/\bUSD\b|\$\d/.test(panel)),slug+' no USD selling price');
   for(const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g))check(JSON.parse(m[1]),book);
 }
-assert.equal(Object.keys(catalog).length,24);
+assert.equal(Object.keys(catalog).length,25);
 const request=new Request('https://homecostengine.com/api/download-mini-guide?session_id=cs_test_mock');
 stripeSession={metadata:{book:'project-quote-mini-workbook'},payment_status:'unpaid',status:'open'};
 assert.equal((await download.onRequestGet({request,env})).status,402);
@@ -70,4 +70,4 @@ function check(obj, book) {
 check(data);
 assert.ok(!read('index.html').includes('projectSliderTitle'));
 assert.ok(read('ebooks/project-quote-mini-workbook.html').includes('data-mini-workbook="true"'));
-console.log('PASS: 24 GBP prices; fixed currency; schema/inline JS; paid/unpaid/invalid/wrong-product PDF; legacy paid orders; carousel removed. No real payment performed.');
+console.log('PASS: 25 GBP prices; fixed currency; schema/inline JS; paid/unpaid/invalid/wrong-product PDF; legacy paid orders; carousel removed. No real payment performed.');

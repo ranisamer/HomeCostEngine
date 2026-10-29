@@ -137,6 +137,61 @@
       "release_commit": "825eca1b44279e558325f4f7afbb1898faefd145",
       "deployment": "Cloudflare Pages check 122647101807 completed successfully",
       "catalogue_correction": "Post-deploy catalog review found stale inherited 20-book/all-64-page headline and first-category daily card placement. Corrected to 23 books with actual per-product lengths; solar/battery in HVAC & Home Energy and change orders in Contractors & Quotes. No price changes."
+    },
+    {
+      "date": "2026-10-29",
+      "queue_day": 4,
+      "slug": "ev-charger-installation-quote-planner",
+      "title": "EV Charger Installation Quote Planner",
+      "status": "ready_pending_deployment",
+      "proposed_price_gbp": "7.99",
+      "implemented_price_gbp": "7.99",
+      "price_reason": "Focused vehicle/parking-to-handover workflow, 4 checked cases, 6 reusable sheets and 2 completed examples; conservative queue-aligned test price, no validated willingness to pay. All prior prices unchanged.",
+      "pages": 25,
+      "fillable_fields": 30,
+      "article": "what-is-included-home-ev-charger-installation-quote",
+      "source_checks": [
+        {
+          "url": "https://afdc.energy.gov/fuels/electricity-charging-home",
+          "checked": "2026-10-29",
+          "result": "primary page retrieved",
+          "scope": "Qualified electrical assessment and state/local requirements. No installation procedure or current price/tariff benchmark reproduced."
+        },
+        {
+          "url": "https://www.epa.gov/greenvehicles/getting-started-home-ev-charging",
+          "checked": "2026-10-29",
+          "result": "primary page retrieved",
+          "scope": "Vehicle, parking, connector and professional-assessment context. Its generic sizing shortcuts and numerical cost ranges are not used as a home-specific assessment."
+        },
+        {
+          "url": "https://www.energystar.gov/products/ev_chargers",
+          "checked": "2026-10-29",
+          "result": "primary page retrieved",
+          "scope": "Certified-product listings and connected-feature context only. No claimed household savings percentage, universal compatibility or incentive eligibility."
+        }
+      ],
+      "checks": {
+        "pages": 25,
+        "fields": 30,
+        "widgets": 30,
+        "sha256": "dba845daa60fdda50eb4793a25158b90aeac567cf40d79f4898d069831334aa6",
+        "sources_checked": "2026-10-29",
+        "status": "local automated and visual QA passed; live deployment pending",
+        "arithmetic": "all 4 cases independently recomputed with Decimal: grid/battery boundary, quote exclusions, incremental route and allowance, whole-home tariff",
+        "field_roundtrip": "30 canonical and widget values over 100 characters, saved appearances, 1,000-character limits, 4 URL links and 25 outline entries verified",
+        "demonstrations": "two labeled completed records use the five prompts of worksheets 1 and 4; no actual customer data",
+        "copy_screen": "0 of 36 substantive paragraphs exactly copied from existing manuscript files; semantic originality assessed editorially",
+        "links": "new local links, one H1, three primary article references, sitemap XML passed",
+        "prices": "all 24 prior catalog amounts preserved against immutable recorded baseline; 799 pence for new product",
+        "visual": "25-page contact sheet inspected; full-size case 1, completed allowance record, source notes and saved multiline sheet inspected; no observed clipping/overlap.",
+        "delivery": "24 book delivery routes plus mini regression passed; 25 GBP checkouts and matching mocked webhook thank-you deliveries passed; privacy and direct-artifact guard passed.",
+        "limits": "No live purchase or external email; no real reader or all-viewer/mobile-device trial. Technical delivery does not validate demand."
+      },
+      "originality": "36 newly authored substantive paragraphs, 4 original hypothetical cases, 6 new EV prompt sets and 2 completed records; editorial assessment meets 80% original-content goal. General scope/evidence techniques, layout and delivery are reused/disclosed. Exact paragraph screen is not a semantic originality measurement.",
+      "demand": "Latest available USA Web GSC report run 40642504704 / artifact 12795484785 generated 2026-10-28. Finalized 2026-09-27 through 2026-10-24: 2,918 property impressions, 1 click, average position 50.80. No returned EV-charger query rows; top/anonymized query limits apply. Period predates this title. No GA4 funnel counts, live Stripe paid/refund/net-revenue data or real reader feedback connected; missing is not zero. Demand/usefulness unvalidated.",
+      "product_url": "https://homecostengine.com/ebooks/ev-charger-installation-quote-planner",
+      "blog_url": "https://homecostengine.com/blog/what-is-included-home-ev-charger-installation-quote",
+      "live_checks": "Pending deployment."
     }
   ],
   "companion_articles": [
@@ -163,6 +218,12 @@
       "book": "home-battery-backup-budget-planner",
       "article": "what-to-ask-before-comparing-home-battery-prices",
       "status": "published"
+    },
+    {
+      "date": "2026-10-29",
+      "book": "ev-charger-installation-quote-planner",
+      "article": "what-is-included-home-ev-charger-installation-quote",
+      "status": "ready_pending_deployment"
     }
   ]
 }

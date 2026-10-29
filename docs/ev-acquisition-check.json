@@ -1,0 +1,22 @@
+{
+  "generated": "2026-10-28T06:13:09.925828+00:00",
+  "period": [
+    "2026-09-27",
+    "2026-10-24"
+  ],
+  "totals": [
+    {
+      "clicks": 1,
+      "impressions": 2918,
+      "ctr": 0.0003427004797806717,
+      "position": 50.800548320767646
+    }
+  ],
+  "queries": [],
+  "limitations": [
+    "API returns available top rows, not a guaranteed exhaustive keyword inventory.",
+    "Anonymized queries are omitted. Query/page row totals may differ from property totals.",
+    "No activity on a date does not distinguish zero traffic from unavailable history.",
+    "This report does not measure calculator engagement or diagnose indexing coverage."
+  ]
+}

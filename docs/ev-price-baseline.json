@@ -1,0 +1,29 @@
+{
+  "base_commit": "028955805148900f0ef62e2ff607544e8afbe679",
+  "amounts": {
+    "smart-home-renovation-budget-blueprint": 900,
+    "roof-replacement-planning-handbook": 900,
+    "kitchen-remodel-cost-planner": 900,
+    "bathroom-remodel-budget-guide": 900,
+    "hvac-replacement-buyers-guide": 900,
+    "concrete-project-cost-handbook": 900,
+    "flooring-project-planner": 900,
+    "painting-budget-and-quote-guide": 900,
+    "homeowner-maintenance-cost-planner": 900,
+    "contractor-quote-comparison-playbook": 900,
+    "complete-home-renovation-master-planner": 1899,
+    "first-time-homeowner-cost-maintenance-handbook": 999,
+    "home-addition-cost-planning-guide": 1699,
+    "basement-remodeling-budget-planner": 1399,
+    "deck-outdoor-living-cost-planner": 1099,
+    "window-door-replacement-buyers-guide": 999,
+    "plumbing-project-cost-quote-handbook": 1199,
+    "electrical-upgrade-cost-planning-guide": 1399,
+    "landscaping-backyard-budget-planner": 999,
+    "home-energy-upgrade-savings-planner": 1499,
+    "project-quote-mini-workbook": 50,
+    "change-order-cost-control-workbook": 999,
+    "solar-quote-comparison-workbook": 999,
+    "home-battery-backup-budget-planner": 999
+  }
+}

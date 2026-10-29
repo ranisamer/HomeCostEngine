@@ -1,0 +1,17 @@
+{
+  "pages": 25,
+  "fields": 30,
+  "widgets": 30,
+  "sha256": "dba845daa60fdda50eb4793a25158b90aeac567cf40d79f4898d069831334aa6",
+  "sources_checked": "2026-10-29",
+  "status": "local automated and visual QA passed; live deployment pending",
+  "arithmetic": "all 4 cases independently recomputed with Decimal: grid/battery boundary, quote exclusions, incremental route and allowance, whole-home tariff",
+  "field_roundtrip": "30 canonical and widget values over 100 characters, saved appearances, 1,000-character limits, 4 URL links and 25 outline entries verified",
+  "demonstrations": "two labeled completed records use the five prompts of worksheets 1 and 4; no actual customer data",
+  "copy_screen": "0 of 36 substantive paragraphs exactly copied from existing manuscript files; semantic originality assessed editorially",
+  "links": "new local links, one H1, three primary article references, sitemap XML passed",
+  "prices": "all 24 prior catalog amounts preserved against immutable recorded baseline; 799 pence for new product",
+  "visual": "25-page contact sheet inspected; full-size case 1, completed allowance record, source notes and saved multiline sheet inspected; no observed clipping/overlap.",
+  "delivery": "24 book delivery routes plus mini regression passed; 25 GBP checkouts and matching mocked webhook thank-you deliveries passed; privacy and direct-artifact guard passed.",
+  "limits": "No live purchase or external email; no real reader or all-viewer/mobile-device trial. Technical delivery does not validate demand."
+}

@@ -1,0 +1,249 @@
+{
+  "slug": "ev-charger-installation-quote-planner",
+  "title": "EV Charger Installation Quote Planner",
+  "subtitle": "Turn a parking-and-driving brief into comparable installed offers and a clear handover request.",
+  "date": "2026-10-29",
+  "price_pence": 799,
+  "route": "download-ev-charger-planner",
+  "article": "what-is-included-home-ev-charger-installation-quote",
+  "cover_lines": [
+    "4 independently checked hypothetical cases",
+    "6 reusable worksheets / 30 fillable fields",
+    "2 completed record demonstrations"
+  ],
+  "outcome": "Prepare one vehicle-and-parking brief, a matched installed-cost comparison, an allowance revision record and a list of professional answers needed before purchasing.",
+  "intro": [
+    "Audience: U.S. homeowners seeking a professionally assessed home EV charging installation. Bring vehicle documents and actual proposals. Shared parking and rental arrangements need their own permissions and are not resolved by this book.",
+    "Start with Worksheet 1, then request the assessment and complete scope. Worksheets 3 and 4 keep the quoted offer separate from owner analysis. Worksheet 5 tests energy and tariff assumptions; Worksheet 6 collects permissions and completion evidence.",
+    "Examples use invented USD inputs. The \u00a37.99 GBP charge buys this planning workbook, not electrical design, legal approval, utility-rate advice or an installed service. No national installation-price range, incentive eligibility or actual savings is claimed.",
+    "This book gives no wiring, breaker, conductor, outlet testing or charger-setting instructions. Do not open equipment or use an unverified connection to gather inputs. Use qualified providers and manufacturer guidance for actual technical decisions."
+  ],
+  "sections": [
+    {
+      "title": "Start with the next departure, not the biggest charger",
+      "paras": [
+        "Prepare one charging-use brief before asking for equipment prices. Name the actual vehicle, normal parking place, arrival and departure times, and driving pattern. The decision is which professionally assessed proposal meets that brief at a complete stated cost. A more impressive equipment label does not by itself describe a better fit.",
+        "Write two use patterns: an ordinary day and an infrequent demanding day. Include whether the vehicle is actually available during each charging window. A car parked for ten hours may have only six hours under a preferred tariff. Keep an alternative transport or charging arrangement separate rather than assuming the home installation will solve every unusual trip.",
+        "The output of this planner is a proposal request, an assumptions register and a clarification list. It is not permission to use an existing outlet or modify equipment. No electrical measurements, panel opening, testing, wiring, circuit selection or charger-setting changes are needed to complete these records."
+      ]
+    },
+    {
+      "title": "Case 1: translate travel into a conditional energy request",
+      "paras": [
+        "Invented inputs: 45 miles of travel require 0.30 kWh per mile at the vehicle battery boundary. The modeled battery energy is 45 x 0.30 = 13.50 kWh. A fictional assessor supplies a 90% grid-to-battery energy factor for this scenario only. The required grid energy is therefore 13.50 / 0.90 = 15.00 kWh. This is not a typical efficiency or a recommended design allowance.",
+        "If that energy is delivered uniformly within six hours, the arithmetic average at the grid boundary is 15.00 / 6 = 2.50 kW. A four-hour window would require 3.75 kW on the same simplified basis. Neither number is a circuit rating or an instruction to choose a charger. Vehicle acceptance, interruptions, conditions and the assessed equipment configuration can change the actual result.",
+        "Show the provider both the energy boundary and the window. Do not multiply by the efficiency factor when converting required battery energy to a larger grid requirement. Ask for vehicle-specific evidence and an appropriate alternative-day scenario. This arithmetic illustration does not guarantee departure charge, mileage or performance."
+      ]
+    },
+    {
+      "title": "Create a vehicle and parking compatibility record",
+      "paras": [
+        "Keep the selected vehicle's exact model and relevant manufacturer charging documentation beside the proposed charging equipment model. Ask the seller or qualified installer to confirm connector and vehicle compatibility in writing. EPA's home-charging guide distinguishes connector choices and vehicle considerations [EPA]. This workbook makes no universal adapter or cross-brand compatibility claim.",
+        "Describe where the car normally stops, where its inlet is located, and which people need to move through the area. Request a site-specific placement and reach assessment from the provider. Do not route a cable across a walkway, extend a charging cable, or improvise a connection based on a sketch in this book. A parking description is an input, not an installation plan.",
+        "Record whether the parking is exclusively controlled by the homeowner. Shared parking, rental terms, association rules and inaccessible work areas can change who must agree to what. Ask the actual responsible parties for requirements; no nationwide right-to-charge or permission rule is provided here. Keep pending permission separate from a confirmed usable location."
+      ]
+    },
+    {
+      "title": "Ask for the assessment before buying supporting work",
+      "paras": [
+        "DOE's AFDC directs owners to qualified electrical help for capacity and relevant installation requirements [AFDC]. Ask the electrician for the assessment reference, its date, the charging brief considered and the proposed solution's limitations. An owner should be able to understand the conclusion without performing the load calculation.",
+        "Request an explanation of which alternatives were considered for the actual household. A proposed equipment package, managed charging option or broader electrical project needs its own defined boundary. Do not assume that all charging installations require the same upgrade, or that a familiar service label proves one unnecessary.",
+        "Give the provider committed future equipment information, but label vague possibilities as unselected. Ask whether a second vehicle changes today's proposal or remains a later assessment. Keep any optional readiness purchase priced separately. This book does not choose load management, circuit sharing, electrical capacity or a control strategy."
+      ]
+    },
+    {
+      "title": "Define the quoted installation boundary",
+      "paras": [
+        "Give every proposal the same vehicle, parking and use brief. Request separate identification of equipment supply, assessment, installation, provider-defined route scope, approvals, supporting work, finish restoration and handover. Keep unknown inclusions as questions. An equipment listing and an installed service offer are different purchasing objects.",
+        "Ask whether a route quantity is a firm surveyed quantity, an included allowance or an estimate awaiting site review. The provider must determine the physical route and technical method. For purchasing purposes, record the billed unit and what the price includes, such as access and restoration. Do not convert a visible straight-line distance into an installation measurement.",
+        "Clarify owner-supplied equipment before purchase: exact accepted model, delivery timing, return responsibility, compatibility verification and labor warranty treatment. Keep a missing or unapproved equipment specification as a procurement gate. A cheaper online unit is not a saving on an installed system until scope and acceptance are matched."
+      ]
+    },
+    {
+      "title": "Case 2: reconcile an equipment-and-labor headline",
+      "paras": [
+        "Invented Offer A shows $650 equipment plus $980 installation, a $1,630 headline. The same written proposal separately excludes $240 site assessment, $420 supporting-work allowance and $110 application charges. On this fictional scope the owner analysis is $650 + $980 + $240 + $420 + $110 = $2,400.",
+        "Invented Offer B is $2,290 and explicitly includes the same equipment and functional outcome, assessment, installation, applications and a $420 allowance for the same supporting work. On those stipulated assumptions B is $110 lower than A's complete analysis. The headline-only comparison would misleadingly show A as $660 lower than B.",
+        "The calculation depends on the stated equivalence; it does not establish it. If B covers a different parking location, excludes restoration that A includes, or relies on an unconfirmed vehicle specification, keep the offers unranked until clarified. Owner additions are not a contractor's amended offer. Ask for a complete written revision."
+      ]
+    },
+    {
+      "title": "Case 3: apply a route allowance without double billing",
+      "paras": [
+        "Invented revision rule: a $2,400 complete baseline includes 18 provider-confirmed billable route feet. The actual assessed route is later confirmed as 45 feet. The written pricing rule is $19 per additional foot, including the defined access scope. Additional quantity is 45 - 18 = 27 feet; the increment is 27 x $19 = $513. These are fictional billing inputs, not a physical route recommendation.",
+        "The baseline also contains a $200 finish-restoration allowance. The provider's revised price for that same restoration scope is $300, so replace the allowance by adding only $100. Revised analysis is $2,400 + $513 + $100 = $3,013. Do not add all 45 feet as new work or add the full $300 on top of the included $200.",
+        "Against an invented $3,200 owner ceiling, the revised analysis leaves $187 before any other unresolved costs. That headroom is not evidence that the site is feasible or fully funded. Confirm which quantities, access conditions and restoration work the revised offer actually fixes, and record the remaining unknowns separately."
+      ]
+    },
+    {
+      "title": "Make permissions and timing visible",
+      "paras": [
+        "AFDC notes that state and local requirements apply and appropriate permits may be required [AFDC]. Ask the actual authority and provider who establishes the requirements, submits documents, pays relevant fees, arranges inspections and supplies final records. This planner does not name a universal exemption or code edition.",
+        "Build a dependency list for equipment availability, site access, required permissions, provider assessment and any utility coordination. Use status words such as requested, submitted, confirmed and completed. An application payment is not an issued approval, and a provider's tentative work date is not a completed readiness check.",
+        "Decide what happens if the vehicle arrives before the project is ready. Record an appropriate independently verified charging or transport alternative and any budget separately. Do not begin using unfinished equipment because a schedule worksheet shows a desired date. Actual completion and authorization remain with the responsible professionals and parties."
+      ]
+    },
+    {
+      "title": "Case 4: test the whole tariff change",
+      "paras": [
+        "Invented monthly energy only: charging draws 300 kWh at the meter. Under a flat $0.18/kWh assumption, that costs $54.00. A proposed tariff scenario assigns 70% of charging energy to $0.12/kWh and 30% to $0.28/kWh. The split is 210 and 90 kWh; cost is $25.20 + $25.20 = $50.40. This is a scheduling assumption, not observed charging.",
+        "Now assume the same tariff change also moves 600 kWh of other household use from $0.18 to $0.22/kWh. Other energy cost changes from $108.00 to $132.00. Combined modeled energy cost therefore rises from $162.00 to $182.40, an increase of $20.40, even though the EV-only line falls by $3.60.",
+        "These invented rates omit fixed charges, taxes, demand charges, minimum bills and other tariff terms. They are not a utility comparison or advice to switch rates. Ask the actual utility for the full applicable terms and estimate using household data. Keep an advertised off-peak rate separate from proof that the whole bill will fall."
+      ]
+    },
+    {
+      "title": "Separate connected features from the required service",
+      "paras": [
+        "ENERGY STAR provides certified-product listings and describes connected features for some models [ENERGY STAR]. Record the exact product rather than assuming every charger has the same app, scheduling, access controls or data export. Certification context does not establish that a specific model is compatible with a particular household or utility program.",
+        "Ask what happens when home internet or a vendor service is unavailable. Which functions require an account, subscription or ongoing connection? Who can access use data, and what information is needed for a utility program? Do not give a contractor an unrelated account password to complete a planning worksheet.",
+        "Record recurring charges beside the installed total, without treating a hypothetical future fee as certain. Keep the basic charging requirement distinct from optional dashboards. Request actual documentation for warranties, update support, service contacts and product transfer arrangements before assigning value to a connected feature."
+      ]
+    },
+    {
+      "title": "Use a completed record, then build your own packet",
+      "paras": [
+        "The two filled demonstrations show how the vehicle-and-window brief and allowance register can hold both known assumptions and unresolved questions. Their data is invented and links directly to Cases 1 and 3. They are teaching records, not examples of customer savings, actual provider approval or completed installations.",
+        "Complete the brief first, attach relevant vehicle documents, and list questions you cannot answer. Send the same factual brief when requesting proposals. Keep provider findings with dates and document versions; do not overwrite an owner's assumption with a technical-looking number whose origin you cannot identify.",
+        "At comparison time, keep the original quote untouched and maintain a separate owner analysis. When a provider revises scope, record which earlier version it replaces. The five prompts on each reusable sheet summarize the decision; use attachments for detailed line items and full evidence. Fields store notes and do not calculate."
+      ]
+    },
+    {
+      "title": "Close the purchasing decision with evidence",
+      "paras": [
+        "Before selecting an offer, name the unresolved question that could change the outcome. It might be vehicle compatibility, assessed parking reach, undefined route access, supporting-work scope or an approval dependency. A useful result can be a precise request for clarification rather than a ranking of every price.",
+        "Ask the provider what completion records and demonstration will be supplied under the actual agreement. Track outstanding items, accepted equipment, applicable final approvals and service contacts. A completed invoice is not by itself evidence that every agreed handover item has been supplied. The owner record does not substitute for professional commissioning.",
+        "This title's main result is an EV-specific charging brief linked to installation allowances, vehicle acceptance, tariff-window assumptions and handover evidence. The electrical panel guide covers broader system projects; the battery book covers outage supply. Related general scope concepts are disclosed, while the wording, EV cases and six record sets here are newly authored."
+      ]
+    }
+  ],
+  "worksheets": [
+    [
+      "Vehicle and parking-window brief",
+      [
+        "Vehicle model / document reference / connector question",
+        "Ordinary and demanding travel days / evidence or assumption",
+        "Arrival / departure / usable charging window / alternative day",
+        "Parking location / access / reach / permission owner",
+        "Qualified confirmation needed / provider / next response"
+      ]
+    ],
+    [
+      "Professional assessment and option record",
+      [
+        "Brief revision / assessor / dated report reference",
+        "Vehicle and current/future equipment inputs supplied",
+        "Assessed alternatives / exact limitations / provider conclusion",
+        "Missing information / responsibility / reassessment trigger",
+        "Selected scope or clarification request / evidence required"
+      ]
+    ],
+    [
+      "Installed offer scope comparison",
+      [
+        "Offer IDs / revision dates / same vehicle and parking brief",
+        "Equipment / assessment / installation / included tasks",
+        "Approvals / supporting work / restoration / separate costs",
+        "Comparable totals / unmatched scope / unresolved exclusions",
+        "Provider written revision requested / next decision"
+      ]
+    ],
+    [
+      "Route and supporting-work allowance register",
+      [
+        "Baseline offer / included quantity / billable unit / scope",
+        "Provider-confirmed actual quantity / incremental unit price",
+        "Included supporting-work allowance / revised same-scope amount",
+        "Increment counted once / revised analysis / owner ceiling",
+        "Unresolved work / written price confirmation / decision owner"
+      ]
+    ],
+    [
+      "Charging-window and whole-tariff scenario",
+      [
+        "Meter energy / period / vehicle needs / source boundary",
+        "Usable windows / proposed energy split / evidence limits",
+        "Applicable rates / whole-home effects / actual tariff document",
+        "Energy-only arithmetic / fixed and other omitted charges",
+        "Utility confirmation / no switch assumed / next review date"
+      ]
+    ],
+    [
+      "Permissions and handover tracker",
+      [
+        "Relevant parties / authority requirements / responsible provider",
+        "Applications / approvals / inspections / actual status records",
+        "Access / equipment arrival / tentative dates / dependencies",
+        "Accepted model / final documents / service and warranty contacts",
+        "Open items / provider demonstration / completion evidence"
+      ]
+    ]
+  ],
+  "completed_worksheets": [
+    {
+      "worksheet": 1,
+      "title": "Completed example: vehicle and window",
+      "note": "Invented record linked to Case 1; not a design or actual household result.",
+      "values": [
+        "Vehicle V-01 / manufacturer document requested / connector compatibility pending installer confirmation",
+        "Ordinary trip 45 miles; fictional 0.30 battery kWh/mile; 90% grid-to-battery factor supplied only for this model",
+        "Usable window six hours; modeled grid need 15.00 kWh; 2.50 kW arithmetic average, not a circuit rating",
+        "Exclusive driveway parking assumed; inlet position and reach awaiting site assessment; no owner route selected",
+        "Electrician to confirm vehicle acceptance, feasible options and complete scope; four-hour alternative remains unresolved"
+      ]
+    },
+    {
+      "worksheet": 4,
+      "title": "Completed example: allowance revision",
+      "note": "Invented record linked to Case 3; owner calculation is not a revised contractor offer.",
+      "values": [
+        "Offer E-01 / $2,400 complete baseline / 18 included provider-defined route feet",
+        "Actual assessed route 45 feet; 27 additional at $19 = $513; access assumed included in the stated rule",
+        "Same finish restoration: $200 included allowance replaced by provider price $300; adjustment +$100",
+        "Revised owner analysis $3,013; $3,200 ceiling leaves $187 before other unresolved costs",
+        "Ask provider for written revised scope and fixed price; approvals and completion evidence remain separate"
+      ]
+    }
+  ],
+  "questions": [
+    "Which exact vehicle and charging-use brief did you assess?",
+    "Who confirms the connector, model compatibility and vehicle acceptance limits?",
+    "What site-specific parking and reach assumptions does this offer include?",
+    "Which report supports the proposed electrical solution and its alternatives?",
+    "What equipment, assessment and installation work is inside the total?",
+    "What route quantity is included, in what billing unit, and what defines an extra?",
+    "Which supporting work and restoration amounts are allowances rather than fixed prices?",
+    "Who determines and handles applicable permissions, permits and inspections?",
+    "What depends on utility coordination, equipment delivery or another party?",
+    "Which functions require internet, accounts or recurring charges?",
+    "What changes if a second vehicle or a different model is selected later?",
+    "Which final documents, demonstration and service contacts will you supply?"
+  ],
+  "sources": [
+    [
+      "AFDC",
+      "https://afdc.energy.gov/fuels/electricity-charging-home",
+      "Qualified electrical assessment and state/local requirements. No installation procedure or current price/tariff benchmark reproduced."
+    ],
+    [
+      "EPA",
+      "https://www.epa.gov/greenvehicles/getting-started-home-ev-charging",
+      "Vehicle, parking, connector and professional-assessment context. Its generic sizing shortcuts and numerical cost ranges are not used as a home-specific assessment."
+    ],
+    [
+      "ENERGY STAR",
+      "https://www.energystar.gov/products/ev_chargers",
+      "Certified-product listings and connected-feature context only. No claimed household savings percentage, universal compatibility or incentive eligibility."
+    ]
+  ],
+  "source_limits": "Primary pages retrieved October 29, 2026. These sources provide limited consumer context, not approval of a household installation or endorsement of this product. All four numerical cases, completed records and worksheet prompts are original hypothetical teaching material. No published market prices, current tax credits or generic charging speeds are used.",
+  "overlap": "The electrical panel guide covers broader electrical assessments, system boundaries and upgrade decisions; the home energy guide covers household measures and bills. General scope and evidence concepts are related. This title adds a vehicle/parking-window brief, EV installation-quantity revision, charging tariff-window case and EV handover records. No substantive paragraph or worked example is copied. Layout and verified delivery code are reused.",
+  "final_checks": [
+    "Can the provider identify the exact vehicle, parking arrangement and usable charging window?",
+    "Are battery-side and grid-side energy distinguished, with all performance inputs labeled as assumptions or actual evidence?",
+    "Does every ranked offer cover the same assessed outcome, including separate approvals and supporting work?",
+    "Are included quantities and allowances replaced once, without treating the whole revised amount as an extra?",
+    "Are whole-home tariff effects and missing charges visible before describing an energy-cost difference?",
+    "Are permissions, completion evidence and provider responsibilities recorded without substituting for professional approval?",
+    "Keep a blank master and save/reopen a completed copy. Free checklist: https://homecostengine.com/blog/what-is-included-home-ev-charger-installation-quote"
+  ]
+}
