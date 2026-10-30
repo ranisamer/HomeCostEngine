@@ -4,7 +4,7 @@
   "widgets": 35,
   "sha256": "2a95e08e4240d10c86937f319e99eb70eee593a4e9d67a1e439c46631f80fa32",
   "sources_checked": "2026-10-30",
-  "status": "local automated and visual QA passed; deployment pending",
+  "status": "local QA passed; Cloudflare deployed; live/UI verification blocked",
   "arithmetic": "all 4 cases independently recomputed with Decimal: area denominators, displaced storage, revised budget gap and parallel schedule",
   "field_roundtrip": "35 canonical and widget values over 100 characters, saved appearances, 1,000-character limits, 4 URL links and 26 outline entries verified",
   "demonstrations": "two labeled completed records use the five prompts of worksheets 3 and 6; no actual customer data",
@@ -14,5 +14,8 @@
   "visual": "26-page contact sheet and full-size case, completed budget record and saved multiline field render inspected; no observed overlap or clipping.",
   "delivery": "25 book routes and mini regression; all 26 GBP products and matching mocked webhook title/amount/private-order links passed.",
   "privacy": "QA exclusion, event sanitization and private-build-artifact guards passed.",
-  "limitations": "No real purchase/email, reader trial, mobile-device trial or universal PDF-reader compatibility test."
+  "limitations": "No real purchase/email, reader trial, mobile-device trial or universal PDF-reader compatibility test.",
+  "release_commit": "e0bef0cb77602f4c347c94b9e386ad67fb003207",
+  "cloudflare_check": 123916601578,
+  "live": "UNPERFORMED: browser runtime fails before navigation (bwrap cannot create /home/agent/.codex/sessions on read-only filesystem); prior transport disconnect/kernel reset. Direct HTTP fetch returned 403, web retrieval could not access either new URL. This is not evidence of site downtime or a site-served bot block. Exact live content, image loading and responsive UI not independently verified. No real purchase or external email."
 }

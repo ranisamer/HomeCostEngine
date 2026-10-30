@@ -200,7 +200,7 @@
       "queue_day": 5,
       "slug": "garage-conversion-decision-workbook",
       "title": "Garage Conversion Decision Workbook",
-      "status": "ready_pending_deployment",
+      "status": "deployed_live_verification_pending",
       "queue_price_hypothesis_gbp": "12.99",
       "proposed_price_gbp": "9.99",
       "implemented_price_gbp": "9.99",
@@ -234,7 +234,7 @@
         "widgets": 35,
         "sha256": "2a95e08e4240d10c86937f319e99eb70eee593a4e9d67a1e439c46631f80fa32",
         "sources_checked": "2026-10-30",
-        "status": "local automated and visual QA passed; deployment pending",
+        "status": "local QA passed; Cloudflare deployed; live/UI verification blocked",
         "arithmetic": "all 4 cases independently recomputed with Decimal: area denominators, displaced storage, revised budget gap and parallel schedule",
         "field_roundtrip": "35 canonical and widget values over 100 characters, saved appearances, 1,000-character limits, 4 URL links and 26 outline entries verified",
         "demonstrations": "two labeled completed records use the five prompts of worksheets 3 and 6; no actual customer data",
@@ -295,7 +295,10 @@
       "demand": "GSC window predates book. Two garage calculator queries had one impression each and zero clicks; no returned conversion intent. Top-row and anonymization limits apply, so absence is not no market demand. No connected GA4 funnel activity, live Stripe paid/refund/net-revenue data or actual reader feedback; missing is not zero. Usefulness and willingness to pay unvalidated.",
       "product_url": "https://homecostengine.com/ebooks/garage-conversion-decision-workbook",
       "blog_url": "https://homecostengine.com/blog/questions-before-budgeting-garage-conversion",
-      "live_checks": "Pending successful deployment."
+      "live_checks": "UNPERFORMED: browser runtime fails before navigation (bwrap cannot create /home/agent/.codex/sessions on read-only filesystem); prior transport disconnect/kernel reset. Direct HTTP fetch returned 403, web retrieval could not access either new URL. This is not evidence of site downtime or a site-served bot block. Exact live content, image loading and responsive UI not independently verified. No real purchase or external email.",
+      "release_commit": "e0bef0cb77602f4c347c94b9e386ad67fb003207",
+      "deployment": "Cloudflare Pages check 123916601578 completed successfully",
+      "recovery": "Next run first verify this existing release and reconcile status; do not create another garage title. Daily schedule retained."
     }
   ],
   "companion_articles": [
@@ -333,7 +336,7 @@
       "date": "2026-10-30",
       "book": "garage-conversion-decision-workbook",
       "article": "questions-before-budgeting-garage-conversion",
-      "status": "ready_pending_deployment"
+      "status": "deployed_live_verification_pending"
     }
   ]
 }

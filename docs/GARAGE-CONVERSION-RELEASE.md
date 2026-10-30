@@ -1,5 +1,5 @@
 # Garage Conversion Decision Workbook — October 30, 2026
-Status: local gates passed; deployment pending. Queue day 5; no existing matching product or ledger entry found on fresh main b1297c4d84b9964e3a0059fe9b66b71b1fa8590c.
+Status: DEPLOYED, LIVE VERIFICATION PENDING. Release e0bef0cb77602f4c347c94b9e386ad67fb003207; successful Cloudflare Pages check 123916601578. Queue day 5; no existing matching product or ledger entry found on fresh main b1297c4d84b9964e3a0059fe9b66b71b1fa8590c.
 
 Product: https://homecostengine.com/ebooks/garage-conversion-decision-workbook
 
@@ -37,3 +37,8 @@ Latest available successful USA Web GSC run 40828930490, artifact 12877922086, g
 GA4 article/product/preview/checkout counts, live Stripe paid orders/refunds/net revenue and real reader feedback are unavailable. Missing does not mean zero. Technical tests do not validate purchase demand or reader usefulness. No mobile-device, real paid checkout or homeowner trial. Compatible readers required; detailed notes belong in attachments.
 
 Known existing protection limit: public repository includes embedded PDF bytes. Verified live delivery is not DRM or source confidentiality. No credentials or customer data added.
+
+## Verification blocker and recovery
+UNPERFORMED: browser runtime fails before navigation (bwrap cannot create /home/agent/.codex/sessions on read-only filesystem); prior transport disconnect/kernel reset. Direct HTTP fetch returned 403, web retrieval could not access either new URL. This is not evidence of site downtime or a site-served bot block. Exact live content, image loading and responsive UI not independently verified. No real purchase or external email.
+
+Next run first verify this existing release and reconcile status; do not create another garage title. Daily schedule retained. The release must not be reported as fully live-verified. No rollback or price change made; authoring, actual PDF, images and build/delivery tests are durable. No extra automation was created or existing schedule changed.
