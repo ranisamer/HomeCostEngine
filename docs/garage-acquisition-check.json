@@ -1,0 +1,45 @@
+{
+  "run_id": 40828930490,
+  "artifact_id": 12877922086,
+  "generated": "2026-10-29T06:23:49.834931+00:00",
+  "period": [
+    "2026-09-28",
+    "2026-10-25"
+  ],
+  "country": "usa",
+  "search_type": "web",
+  "totals": [
+    {
+      "clicks": 1,
+      "impressions": 2917,
+      "ctr": 0.00034281796366129587,
+      "position": 50.76037024340076
+    }
+  ],
+  "queries": [
+    {
+      "keys": [
+        "garage calculator"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 87
+    },
+    {
+      "keys": [
+        "garage construction calculator"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 84
+    }
+  ],
+  "limitations": [
+    "API returns available top rows, not a guaranteed exhaustive keyword inventory.",
+    "Anonymized queries are omitted. Query/page row totals may differ from property totals.",
+    "No activity on a date does not distinguish zero traffic from unavailable history.",
+    "This report does not measure calculator engagement or diagnose indexing coverage."
+  ]
+}

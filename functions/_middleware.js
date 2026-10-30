@@ -354,7 +354,7 @@ export async function onRequest(context) {
     }
   });
 
-  if (isBlogArticle && !["/blog/is-home-energy-audit-worth-it", "/blog/check-contractor-change-order-price", "/blog/why-same-size-solar-quotes-differ", "/blog/what-to-ask-before-comparing-home-battery-prices", "/blog/what-is-included-home-ev-charger-installation-quote"].includes(pathname.replace(/\.html$/, ""))) {
+  if (isBlogArticle && !["/blog/is-home-energy-audit-worth-it", "/blog/check-contractor-change-order-price", "/blog/why-same-size-solar-quotes-differ", "/blog/what-to-ask-before-comparing-home-battery-prices", "/blog/what-is-included-home-ev-charger-installation-quote", "/blog/questions-before-budgeting-garage-conversion"].includes(pathname.replace(/\.html$/, ""))) {
     rewriter.on("main article.info-copy", {
       element(element) {
         element.append(externalLinksSection(pathname), { html: true });

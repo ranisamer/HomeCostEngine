@@ -194,6 +194,108 @@
       "live_checks": "Exact clean product and article URLs opened. Desktop width 1348 px, no horizontal overflow; \u00a37.99 panels and Book schema, 25 pages/4 cases/6 sheets/30 fields/2 records verified; cover and all three real previews loaded; article has three contextual primary links and reciprocal product/tool links without injected generic resources. Missing-session download rejected as Invalid checkout session. Live catalogue shows 24 books and EV title in Electrical. No real purchase/email or mobile-device/reader trial.",
       "release_commit": "ccff7392d8e2268fc1a319aefd54497ed8928816",
       "deployment": "Cloudflare Pages check 123285488248 completed successfully"
+    },
+    {
+      "date": "2026-10-30",
+      "queue_day": 5,
+      "slug": "garage-conversion-decision-workbook",
+      "title": "Garage Conversion Decision Workbook",
+      "status": "ready_pending_deployment",
+      "queue_price_hypothesis_gbp": "12.99",
+      "proposed_price_gbp": "9.99",
+      "implemented_price_gbp": "9.99",
+      "price_reason": "Conservative test price for garage-specific feasibility packet, 4 checked cases, 7 reusable sheets and 2 completed records. Higher queue hypothesis not supported by willingness-to-pay evidence; no old amounts changed.",
+      "pages": 26,
+      "fillable_fields": 35,
+      "article": "questions-before-budgeting-garage-conversion",
+      "source_checks": [
+        {
+          "url": "https://www.portland.gov/ppd/residential-permitting/home-projects/attic-basement-or-garage-conversion",
+          "checked": "2026-10-30",
+          "result": "primary page retrieved",
+          "scope": "Local example: conversion permits, use/ADU distinction and permit history. No Portland code dimension or parking rule is presented as national guidance."
+        },
+        {
+          "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home",
+          "checked": "2026-10-30",
+          "result": "primary page retrieved",
+          "scope": "Moisture-control context only; no diagnosis, cleanup instructions or readiness threshold supplied."
+        },
+        {
+          "url": "https://www.epa.gov/lead/renovation-repair-and-painting-program-consumers",
+          "checked": "2026-10-30",
+          "result": "primary page retrieved",
+          "scope": "Consumer lead-safe renovation context for relevant pre-1978 housing. Actual applicability and work belong with qualified parties."
+        }
+      ],
+      "checks": {
+        "pages": 26,
+        "fields": 35,
+        "widgets": 35,
+        "sha256": "2a95e08e4240d10c86937f319e99eb70eee593a4e9d67a1e439c46631f80fa32",
+        "sources_checked": "2026-10-30",
+        "status": "local automated and visual QA passed; deployment pending",
+        "arithmetic": "all 4 cases independently recomputed with Decimal: area denominators, displaced storage, revised budget gap and parallel schedule",
+        "field_roundtrip": "35 canonical and widget values over 100 characters, saved appearances, 1,000-character limits, 4 URL links and 26 outline entries verified",
+        "demonstrations": "two labeled completed records use the five prompts of worksheets 3 and 6; no actual customer data",
+        "copy_screen": "0 of 36 substantive paragraphs exactly copied from existing manuscript files; semantic originality assessed editorially",
+        "links": "new local links, one H1, three primary article references, sitemap XML passed",
+        "prices": "all 25 prior catalog amounts preserved against immutable recorded baseline; 999 pence for new product",
+        "visual": "26-page contact sheet and full-size case, completed budget record and saved multiline field render inspected; no observed overlap or clipping.",
+        "delivery": "25 book routes and mini regression; all 26 GBP products and matching mocked webhook title/amount/private-order links passed.",
+        "privacy": "QA exclusion, event sanitization and private-build-artifact guards passed.",
+        "limitations": "No real purchase/email, reader trial, mobile-device trial or universal PDF-reader compatibility test."
+      },
+      "originality": "36 newly authored method paragraphs; original cases, seven prompt sets and two demonstrations. Editorial assessment meets 80% original substantive content target; layout and general planning methods reused/disclosed. Zero exact copied method paragraphs is not a semantic originality percentage.",
+      "acquisition": {
+        "run_id": 40828930490,
+        "artifact_id": 12877922086,
+        "generated": "2026-10-29T06:23:49.834931+00:00",
+        "period": [
+          "2026-09-28",
+          "2026-10-25"
+        ],
+        "country": "usa",
+        "search_type": "web",
+        "totals": [
+          {
+            "clicks": 1,
+            "impressions": 2917,
+            "ctr": 0.00034281796366129587,
+            "position": 50.76037024340076
+          }
+        ],
+        "queries": [
+          {
+            "keys": [
+              "garage calculator"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 87
+          },
+          {
+            "keys": [
+              "garage construction calculator"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 84
+          }
+        ],
+        "limitations": [
+          "API returns available top rows, not a guaranteed exhaustive keyword inventory.",
+          "Anonymized queries are omitted. Query/page row totals may differ from property totals.",
+          "No activity on a date does not distinguish zero traffic from unavailable history.",
+          "This report does not measure calculator engagement or diagnose indexing coverage."
+        ]
+      },
+      "demand": "GSC window predates book. Two garage calculator queries had one impression each and zero clicks; no returned conversion intent. Top-row and anonymization limits apply, so absence is not no market demand. No connected GA4 funnel activity, live Stripe paid/refund/net-revenue data or actual reader feedback; missing is not zero. Usefulness and willingness to pay unvalidated.",
+      "product_url": "https://homecostengine.com/ebooks/garage-conversion-decision-workbook",
+      "blog_url": "https://homecostengine.com/blog/questions-before-budgeting-garage-conversion",
+      "live_checks": "Pending successful deployment."
     }
   ],
   "companion_articles": [
@@ -226,6 +328,12 @@
       "book": "ev-charger-installation-quote-planner",
       "article": "what-is-included-home-ev-charger-installation-quote",
       "status": "published"
+    },
+    {
+      "date": "2026-10-30",
+      "book": "garage-conversion-decision-workbook",
+      "article": "questions-before-budgeting-garage-conversion",
+      "status": "ready_pending_deployment"
     }
   ]
 }
