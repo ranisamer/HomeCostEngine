@@ -41,7 +41,7 @@
       "deployment": "Cloudflare Pages check 121413958721 succeeded",
       "product_url": "https://homecostengine.com/ebooks/change-order-cost-control-workbook",
       "blog_url": "https://homecostengine.com/blog/check-contractor-change-order-price",
-      "live_checks": "Desktop product layout, \u00a39.99 GBP, 22 pages/30 fields, real sample links and blog reciprocal link verified in browser; no real checkout started."
+      "live_checks": "Desktop product layout, £9.99 GBP, 22 pages/30 fields, real sample links and blog reciprocal link verified in browser; no real checkout started."
     },
     {
       "date": "2026-10-27",
@@ -88,7 +88,7 @@
       "deployment": "Cloudflare Pages check 122027201189 completed successfully",
       "product_url": "https://homecostengine.com/ebooks/solar-quote-comparison-workbook",
       "blog_url": "https://homecostengine.com/blog/why-same-size-solar-quotes-differ",
-      "live_checks": "Both exact clean URLs opened in browser; desktop layout and no horizontal overflow; \u00a39.99 GBP and 25/4/8/40 counts; cover and 3 real preview images loaded; article has 4 contextual primary references, reciprocal book link and no extra generic source panel. No real checkout started; no mobile-device trial."
+      "live_checks": "Both exact clean URLs opened in browser; desktop layout and no horizontal overflow; £9.99 GBP and 25/4/8/40 counts; cover and 3 real preview images loaded; article has 4 contextual primary references, reciprocal book link and no extra generic source panel. No real checkout started; no mobile-device trial."
     },
     {
       "date": "2026-10-28",
@@ -133,7 +133,7 @@
       "demand": "Latest available U.S. GSC export: run 40455797015, artifact 12711219903, generated 2026-10-27; finalized 2026-09-26 through 2026-10-23, USA Web, 2,951 impressions and 1 click for the whole property. No returned battery/backup query rows; top/anonymized query limits apply. Predates this book. GA4 article-to-product, preview and checkout counts, live Stripe orders/refunds/net revenue and real reader feedback not accessible. Missing data is not zero; demand/usefulness unvalidated.",
       "product_url": "https://homecostengine.com/ebooks/home-battery-backup-budget-planner",
       "blog_url": "https://homecostengine.com/blog/what-to-ask-before-comparing-home-battery-prices",
-      "live_checks": "Both exact clean product/article URLs opened in browser. Desktop layout at 1348 px without horizontal overflow; both \u00a39.99 GBP price panels and 26/4/7/35/2 counts; Book schema; cover and three actual interior previews loaded. Article has four contextual primary links, reciprocal product link and no extra generic resources panel. Missing-session download returns Invalid checkout session. No real checkout, payment or external email; no mobile-device or real-reader trial.",
+      "live_checks": "Both exact clean product/article URLs opened in browser. Desktop layout at 1348 px without horizontal overflow; both £9.99 GBP price panels and 26/4/7/35/2 counts; Book schema; cover and three actual interior previews loaded. Article has four contextual primary links, reciprocal product link and no extra generic resources panel. Missing-session download returns Invalid checkout session. No real checkout, payment or external email; no mobile-device or real-reader trial.",
       "release_commit": "825eca1b44279e558325f4f7afbb1898faefd145",
       "deployment": "Cloudflare Pages check 122647101807 completed successfully",
       "catalogue_correction": "Post-deploy catalog review found stale inherited 20-book/all-64-page headline and first-category daily card placement. Corrected to 23 books with actual per-product lengths; solar/battery in HVAC & Home Energy and change orders in Contractors & Quotes. No price changes."
@@ -191,7 +191,7 @@
       "demand": "Latest available USA Web GSC report run 40642504704 / artifact 12795484785 generated 2026-10-28. Finalized 2026-09-27 through 2026-10-24: 2,918 property impressions, 1 click, average position 50.80. No returned EV-charger query rows; top/anonymized query limits apply. Period predates this title. No GA4 funnel counts, live Stripe paid/refund/net-revenue data or real reader feedback connected; missing is not zero. Demand/usefulness unvalidated.",
       "product_url": "https://homecostengine.com/ebooks/ev-charger-installation-quote-planner",
       "blog_url": "https://homecostengine.com/blog/what-is-included-home-ev-charger-installation-quote",
-      "live_checks": "Exact clean product and article URLs opened. Desktop width 1348 px, no horizontal overflow; \u00a37.99 panels and Book schema, 25 pages/4 cases/6 sheets/30 fields/2 records verified; cover and all three real previews loaded; article has three contextual primary links and reciprocal product/tool links without injected generic resources. Missing-session download rejected as Invalid checkout session. Live catalogue shows 24 books and EV title in Electrical. No real purchase/email or mobile-device/reader trial.",
+      "live_checks": "Exact clean product and article URLs opened. Desktop width 1348 px, no horizontal overflow; £7.99 panels and Book schema, 25 pages/4 cases/6 sheets/30 fields/2 records verified; cover and all three real previews loaded; article has three contextual primary links and reciprocal product/tool links without injected generic resources. Missing-session download rejected as Invalid checkout session. Live catalogue shows 24 books and EV title in Electrical. No real purchase/email or mobile-device/reader trial.",
       "release_commit": "ccff7392d8e2268fc1a319aefd54497ed8928816",
       "deployment": "Cloudflare Pages check 123285488248 completed successfully"
     },
@@ -433,7 +433,9 @@
       "intended_product_url": "https://homecostengine.com/ebooks/insulation-quote-scope-workbook",
       "intended_blog_url": "https://homecostengine.com/blog/compare-insulation-quotes-without-unlike-work",
       "blocker": "Browser fails before navigation: bwrap cannot create /home/agent/.codex/sessions on read-only filesystem. Public web retrieval of garage product/article also unavailable. The previous garage release remains deployed_live_verification_pending.",
-      "recovery": "First close garage live verification, then resume this SAME draft. Do not create a duplicate insulation title or skip automatically to queue day 7. Publish active product/checkout/article/index/sitemap only after all release gates pass."
+      "recovery": "First close garage live verification, then resume this SAME draft. Do not create a duplicate insulation title or skip automatically to queue day 7. Publish active product/checkout/article/index/sitemap only after all release gates pass.",
+      "draft_commit": "40348ebb087a5e59f2dc6e7090944617ab58f861",
+      "draft_storage_deployment": "Cloudflare Pages check 124457862670 succeeded; only draft/QA maintenance saved, no active product publication."
     }
   ]
 }

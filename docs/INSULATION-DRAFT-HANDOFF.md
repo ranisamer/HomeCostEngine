@@ -46,3 +46,5 @@ First verify the existing garage release, then resume this exact insulation draf
 Latest available successful USA Web GSC run 41013698041 / artifact 12958407480, generated October 30: finalized September 29–October 26, 2,862 property impressions, 1 click, average position 51.09. No returned insulation query rows; top/anonymization limits apply. Not evidence of no global market. The window predates this draft; no conversion/growth inference.
 
 GA4 U.S. product/article/preview/checkout activity, live Stripe orders/refunds/net revenue and actual reader feedback unavailable. Missing does not mean zero. Technical tests do not validate demand/usefulness. No customer contacted or additional automation created; ongoing publishing retained. Public source PDF availability remains an inherited limit; draft is explicitly not sold.
+
+Draft-storage commit 40348ebb087a5e59f2dc6e7090944617ab58f861; Cloudflare Pages check 124457862670 succeeded. This deploys draft/QA maintenance files, not an active sale release. Live verification remains blocked; current catalog unchanged.
