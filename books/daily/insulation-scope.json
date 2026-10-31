@@ -1,0 +1,255 @@
+{
+  "slug": "insulation-quote-scope-workbook",
+  "title": "Insulation Quote & Scope Workbook",
+  "subtitle": "Compare the same zones, stated result, removal boundary and completion evidence.",
+  "date": "2026-10-31",
+  "price_pence": 799,
+  "route": "download-insulation-workbook",
+  "article": "compare-insulation-quotes-without-unlike-work",
+  "cover_lines": [
+    "DRAFT - not offered for sale",
+    "4 checked hypothetical cases / 6 reusable worksheets",
+    "30 fillable fields / 2 completed records"
+  ],
+  "outcome": "Prepare a matched insulation-zone schedule, product/result evidence register, complete-cost bridge and provider clarification request.",
+  "intro": [
+    "DRAFT: live-page verification is unavailable, so this edition is not offered for sale. Proposed price \u00a37.99 GBP is a test hypothesis, not an implemented charge or validated willingness to pay.",
+    "For U.S. homeowners comparing actual professionally assessed insulation proposals. Bring accessible reports and product information. Do not enter unsafe spaces or disturb material to gather worksheet inputs.",
+    "All rates, coverage amounts, areas and examples are invented teaching inputs. Product suitability, technical requirements, installation and appropriate verification belong with qualified providers and applicable documentation.",
+    "This workbook is distinct from the whole-home energy guide: it follows an insulation offer from zone definition through supporting scope and completion records. No current incentive, national market price, recommended R-value or household saving is claimed."
+  ],
+  "sections": [
+    {
+      "title": "Give every bidder the same insulation boundary",
+      "paras": [
+        "Define the part of the home being priced before comparing a total or an advertised R-value. Name each zone on a provider-supplied drawing or report: attic floor, wall section, crawlspace boundary or another actual assembly. Do not assume that two proposals mentioning the attic cover the same surface.",
+        "Describe the comfort concern and the evidence available, without choosing a material or a technical assembly yourself. Ask the assessor which boundary and scope address the actual findings. Keep accessible prior reports and quotations; do not enter unsafe spaces, disturb insulation or uncover assemblies to fill this workbook.",
+        "The reader outcome is a provider-ready zone schedule, comparable scope record, arithmetic audit and completion-document request. It does not select an insulation thickness, prescribe installation, determine code compliance or guarantee a bill reduction. Unknowns can remain open questions rather than becoming zero-cost assumptions."
+      ]
+    },
+    {
+      "title": "Distinguish existing condition, added material and proposed result",
+      "paras": [
+        "Ask whether each R-value statement describes a product, new material being added, an existing condition estimate or a proposed installed result. The FTC consumer guide explains R-value as resistance to heat flow and discusses fact sheets [FTC]. Retain the actual product information and the provider's explanation with the offer.",
+        "Do not infer a whole assembly's performance from a single product label or calculate an existing condition from a photograph. A proposed result needs an identified boundary, assessment basis and applicable product information. An R-value in one zone should not silently become the specification for every part of the house.",
+        "Ask who confirms climate, assembly suitability and applicable requirements for the property. Product substitution can change the scope and documentation needed even if a sales heading looks similar. This workbook supplies no recommended R-value, brand selection, national code target or installation depth."
+      ]
+    },
+    {
+      "title": "Case 1: audit overlapping excluded areas",
+      "paras": [
+        "Invented provider area record: the stated boundary contains 1,250 square feet. A 100-square-foot service zone and a 150-square-foot retained zone are excluded, but 40 square feet belongs to both exclusions. Their combined excluded area is 100 + 150 - 40 = 210 square feet.",
+        "The modeled treatment area is 1,250 - 210 = 1,040 square feet. Subtracting both exclusions without restoring the overlap would give 1,000 square feet, understating the modeled scope by 40. This is a bookkeeping exercise, not a physical insulation plan or permission to leave any actual area untreated.",
+        "Have the provider confirm what is included and excluded, whether the figures overlap and which drawing revision controls. If two bids price different boundaries, request matched scope before ranking unit rates. The owner's arithmetic cannot determine which areas require treatment or whether the actual quantities are correct."
+      ]
+    },
+    {
+      "title": "Separate insulation work from air and moisture questions",
+      "paras": [
+        "ENERGY STAR groups air sealing and insulation in its planning resources and notes that not every insulation suits every location [ENERGY STAR]. Ask whether the quote includes separately assessed air-sealing work or only insulation. Do not treat a bag count or material purchase as evidence that air-leakage issues were addressed.",
+        "Request qualified review of relevant moisture, ventilation, combustion, electrical or other interfaces before authorizing dependent work. EPA identifies moisture control as central to mold prevention [EPA]. An observation of staining is not a diagnosis, and a new finish or fresh insulation does not demonstrate that the source was resolved.",
+        "Keep responsibility for prerequisite findings and required evidence explicit. The workbook gives no sealing detail, vent alteration, fixture-clearance instruction, hazardous-material disturbance or cleanup procedure. A budget allowance cannot close a technical readiness question."
+      ]
+    },
+    {
+      "title": "Case 2: check a fictional coverage declaration",
+      "paras": [
+        "Invented product-document exercise at one expressly stated target condition: a fictional manufacturer's table declares 28 square feet per bag for that condition. A provider proposes 34 bags for a 1,000-square-foot zone. The declared coverage arithmetic is 34 x 28 = 952 square feet, leaving a 48-square-foot documentation gap.",
+        "Dividing 1,000 by 28 gives 35.714... bags; the next whole number is 36, corresponding to 1,008 square feet under this fictional table. That is an arithmetic consistency check, not an instruction to buy or install 36 bags. Real product requirements may include other conditions and quantities that only the actual documentation and qualified provider establish.",
+        "Ask the installer to reconcile the area, product, stated result and material record. Never use this fictional coverage rate for a real product or extrapolate from one condition to another. A reconciled paperwork figure still does not prove the material was installed correctly or the desired performance achieved."
+      ]
+    },
+    {
+      "title": "Make removal and retention a separate decision",
+      "paras": [
+        "Ask the provider whether existing material is retained, removed in selected zones or removed throughout the defined boundary, and why. Request the assessment supporting that scope. Two offers with identical new-product descriptions can involve very different preparation and disposal services.",
+        "Record how access, protection, removal, transport and disposal are priced, including any investigation or specialist assessment needed before disturbance. Keep a suspected material concern unresolved until the appropriate qualified party addresses it. This book supplies no asbestos, lead, contamination or pest identification method.",
+        "If the owner selects a different removal boundary, ask the team to update related quantities, preparation, timing and completion records together. Do not remove a line solely to make one total resemble another while assuming the finished result stays equivalent. Retained conditions and exclusions belong beside the comparison."
+      ]
+    },
+    {
+      "title": "Case 3: include a minimum charge in the unit-rate comparison",
+      "paras": [
+        "Invented removal-only quotes for the same assessed 420-square-foot boundary: A advertises $1.10 per square foot with a $600 job minimum, and B offers a fixed $575. A's unit multiplication gives $462, so the contractual minimum controls: its stated price is $600.",
+        "On this stipulated identical scope, B is $25 lower. Comparing $462 to $575 would wrongly show A as $113 lower. Assume taxes, transport, disposal and access are already included for this illustration; an actual offer needs those terms confirmed rather than assumed.",
+        "If another zone is added, ask whether the minimum applies to the combined job, each zone or a separate visit. Do not multiply a minimum across areas without the actual pricing rule. This example is not a market removal rate and makes no recommendation to disturb existing material."
+      ]
+    },
+    {
+      "title": "Translate a quote into provider-owned deliverables",
+      "paras": [
+        "Request a current zone schedule, exact product description, stated installed-result basis, preparation/removal boundary and completion-document list. The FTC describes R-value information obligations for sellers and installers [FTC rule]; ask the provider to supply the actual applicable documents, not a generic sales claim.",
+        "Keep access arrangements, owner belongings, protection and restoration visible. Record whether a quoted allowance becomes a measured charge, a revised fixed amount or another contractual mechanism. A unit price without its billable definition is not a complete cost commitment.",
+        "Ask how substitutions, quantity changes and unexpected findings are authorized and documented. Preserve the original proposal and separate owner analysis until a written revision is supplied. The workbook's prompts are communication aids, not a contract or an interpretation of legal rights."
+      ]
+    },
+    {
+      "title": "Case 4: normalize scope, then replace an allowance once",
+      "paras": [
+        "Invented matched-scope exercise: A quotes $2,080 for new insulation, but separately excludes $360 assessed air-sealing scope, $240 disposal and a $180 access-preparation allowance. Its owner analysis is $2,860. B quotes $2,750 including the same defined work and the same $180 allowance. On those stipulated assumptions B is $110 lower.",
+        "When the actual same-scope access preparation is confirmed at $300, replace the $180 allowance by adding only $120 to each comparison. A becomes $2,980 and B becomes $2,870. Adding the whole $300 would count the already included $180 twice.",
+        "The totals do not establish technical equivalence. If either offer uses a different boundary, product, stated result, removal policy or completion evidence, record that difference before ranking prices. Request a revised written offer; no actual savings or contractor result is claimed by these fictional numbers."
+      ]
+    },
+    {
+      "title": "Keep completion evidence separate from a paid invoice",
+      "paras": [
+        "Before accepting a proposal, ask which zone-specific product and installed-result records the provider will supply and how the owner can identify unresolved items. Link the final documents to the actual model, quantity and scope revision. A receipt showing payment alone does not answer every scope question.",
+        "Agree with qualified parties what appropriate verification and handover apply to the actual work. Retain photographs supplied by the provider, relevant reports, care/warranty contacts and any required records without entering unsafe spaces to reproduce them yourself.",
+        "Record later comfort observations separately from proof of energy savings. Weather, household use and tariffs can change bills. The broad Home Energy Audit Cost Guide discusses whole-home measurement context; this workbook stops at insulation-offer scope and supporting records rather than claiming a financial return."
+      ]
+    },
+    {
+      "title": "Use the completed records as a guide to uncertainty",
+      "paras": [
+        "The completed zone-area record reproduces Case 1's overlapping exclusions and identifies what still needs provider confirmation. The completed cost bridge reproduces Case 4's allowance replacement. Both use invented data and the exact prompts of their matching blank sheets.",
+        "Begin with the zone schedule, attach the actual product information and request any assessment still missing. Then use the coverage and minimum-charge cases to check the internal consistency of a proposal, without treating owner arithmetic as an engineering approval or an installed inspection.",
+        "The six sheets are compact records, not a replacement for detailed drawings, full product instructions or contract terms. Save a blank master, add dated attachments where needed and distinguish assumed, quoted and verified information. Do not upload unrelated personal or billing details when sharing a completed file."
+      ]
+    },
+    {
+      "title": "Finish with the clarification that changes the decision",
+      "paras": [
+        "Name one unresolved item that would change your comparison: the exact treatment area, whether the stated R-value is a product or installed-result claim, unpriced removal, an unreconciled material record or a prerequisite finding. Assign a provider and request a dated answer.",
+        "A useful packet can end with a narrower assessed alternative or a pause. It need not identify a winning bidder if equivalence remains unresolved. Update the scope and arithmetic together when the provider changes a boundary or replaces an allowance.",
+        "The existing energy and garage books include broad condition, envelope and budget questions. This title's distinct work is insulation-zone matching, product/installed-result evidence, coverage reconciliation, removal pricing and insulation handover records. General comparison methods are shared and disclosed; these passages, cases and prompt sets are newly authored."
+      ]
+    }
+  ],
+  "worksheets": [
+    [
+      "Insulation zone and area schedule",
+      [
+        "Assembly or zone / drawing and revision / provider",
+        "Gross area / measurement source / verification status",
+        "Excluded zones / overlapping area / combined exclusion",
+        "Treatment area / retained conditions / actual scope",
+        "Provider questions / required correction / next evidence"
+      ]
+    ],
+    [
+      "R-value and product evidence register",
+      [
+        "Zone / existing-condition source / assessment status",
+        "Exact product / fact sheet / document date",
+        "Added material versus proposed installed result / stated conditions",
+        "Coverage or quantity record / applicable manufacturer information",
+        "Unresolved suitability or compliance question / qualified provider"
+      ]
+    ],
+    [
+      "Preparation and removal comparison",
+      [
+        "Existing material / retained or removed zones / assessment basis",
+        "Prerequisite condition questions / responsible qualified party",
+        "Access / protection / transport / disposal inclusions",
+        "Unit rate / minimum charge / billable definition / actual terms",
+        "Unmatched scope / revised offer / no owner disturbance required"
+      ]
+    ],
+    [
+      "Complete offer and allowance bridge",
+      [
+        "Offer IDs / same zone boundary / product and result basis",
+        "Headline / separately priced supporting work / exclusions",
+        "Included allowance / actual same-scope amount / replacement delta",
+        "Comparable total / revised scenario / unresolved differences",
+        "Provider written revision / decision / next confirmation"
+      ]
+    ],
+    [
+      "Coverage and documentation reconciliation",
+      [
+        "Actual zone area / product table / target condition source",
+        "Proposed quantity / declared coverage basis / assumptions",
+        "Arithmetic coverage / gap or surplus / rounding basis",
+        "Other product conditions / provider reconciliation / verification limits",
+        "Corrected documents / unresolved installation evidence / next action"
+      ]
+    ],
+    [
+      "Completion and reader decision record",
+      [
+        "Accepted zone and scope revision / provider deliverables",
+        "Final product and installed-result records / missing documents",
+        "Appropriate verification / warranty and service contacts",
+        "Observed comfort / unverified savings / context and limits",
+        "Proceed / clarify / pause / evidence needed / review date"
+      ]
+    ]
+  ],
+  "completed_worksheets": [
+    {
+      "worksheet": 1,
+      "title": "Completed example: overlapping exclusions",
+      "note": "Invented demonstration from Case 1; not a physical treatment plan.",
+      "values": [
+        "Zone I-01 / fictional provider plan revision A",
+        "Gross boundary 1,250 sq ft / assumed provider record / not independently measured",
+        "100 service + 150 retained - 40 overlap = 210 combined excluded sq ft",
+        "1,250 - 210 = 1,040 modeled treatment sq ft; technical suitability unresolved",
+        "Provider to confirm overlap and exact zones; no owner access or disturbance requested"
+      ]
+    },
+    {
+      "worksheet": 4,
+      "title": "Completed example: allowance replacement",
+      "note": "Invented demonstration from Case 4; not an amended contractor offer.",
+      "values": [
+        "Offers A/B / identical fictional zone/product/result assumed only for arithmetic",
+        "A $2,080 + $360 air sealing + $240 disposal + $180 access allowance = $2,860; B $2,750 includes same scope",
+        "Access actual $300 minus included $180 = +$120 once per offer",
+        "Revised A $2,980 / B $2,870; B $110 lower only if scopes remain matched",
+        "Request complete revised offers and provider confirmation; no actual customer outcome"
+      ]
+    }
+  ],
+  "questions": [
+    "Which exact assembly and drawing revision does your area cover?",
+    "Are exclusions overlapping, and how is the billable treatment area calculated?",
+    "Does each R-value refer to a product, an added layer or a proposed installed result?",
+    "Which fact sheet and actual manufacturer conditions support the proposal?",
+    "Who assessed suitability and the relevant technical or local requirements?",
+    "Is air-sealing scope included, separately assessed or excluded?",
+    "What is retained or removed, and which assessment supports that choice?",
+    "Are transport, disposal, protection and access priced inside the total?",
+    "How do minimum charges and changed quantities apply to the actual job?",
+    "Which allowance is replaced, and what is the net adjustment?",
+    "How will you reconcile coverage, quantity and final product records?",
+    "Which completion documents and appropriate verification will you provide?"
+  ],
+  "sources": [
+    [
+      "FTC",
+      "https://consumer.ftc.gov/articles/what-know-when-youre-buying-home-insulation",
+      "R-value meaning and consumer fact-sheet context; not a product recommendation or household savings claim."
+    ],
+    [
+      "FTC rule",
+      "https://www.ftc.gov/legal-library/browse/rules/r-value-rule",
+      "Federal rule overview on R-value information; exact product/application obligations require actual applicable documents."
+    ],
+    [
+      "ENERGY STAR",
+      "https://www.energystar.gov/saveathome/seal_insulate",
+      "Planning air sealing with insulation and location suitability context only; no published percentage saving adopted."
+    ],
+    [
+      "EPA",
+      "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home",
+      "Moisture-control context only; no diagnosis, cleanup or installation procedure supplied."
+    ]
+  ],
+  "source_limits": "Primary pages retrieved October 31, 2026. Limited consumer context only; no organization endorses this draft. All worked examples and records are original invented teaching material. Product and assembly suitability must be established for the actual home. No code target, actual installed result, tax incentive or sales demand is claimed.",
+  "overlap": "General envelope and scope concepts overlap with the energy and garage guides. This title adds zone exclusions, product-versus-result records, coverage and minimum-charge reconciliation, removal boundaries and insulation-specific handover prompts. No substantive passage or worked case is copied. Rendering and established delivery code are reused.",
+  "final_checks": [
+    "Do all offers use the same identified zone boundary and actual drawing revision?",
+    "Are product, added-material and installed-result claims distinguished with evidence?",
+    "Are coverage arithmetic, quantities and product conditions reconciled by the provider?",
+    "Are preparation, removal and disposal boundaries and minimum charges explicit?",
+    "Does the comparison replace allowances once and retain unresolved technical questions?",
+    "Are completion records identified without promising an energy or bill result?",
+    "DRAFT companion: https://homecostengine.com/blog/compare-insulation-quotes-without-unlike-work - intended URL only; not published."
+  ],
+  "status": "draft_live_verification_blocked"
+}

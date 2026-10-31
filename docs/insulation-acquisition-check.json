@@ -1,0 +1,26 @@
+{
+  "run": 41013698041,
+  "artifact": 12958407480,
+  "generated": "2026-10-30T06:22:40.846455+00:00",
+  "period": [
+    "2026-09-29",
+    "2026-10-26"
+  ],
+  "country": "usa",
+  "search_type": "web",
+  "totals": [
+    {
+      "clicks": 1,
+      "impressions": 2862,
+      "ctr": 0.00034940600978336826,
+      "position": 51.089797344514324
+    }
+  ],
+  "queries": [],
+  "limits": [
+    "API returns available top rows, not a guaranteed exhaustive keyword inventory.",
+    "Anonymized queries are omitted. Query/page row totals may differ from property totals.",
+    "No activity on a date does not distinguish zero traffic from unavailable history.",
+    "This report does not measure calculator engagement or diagnose indexing coverage."
+  ]
+}

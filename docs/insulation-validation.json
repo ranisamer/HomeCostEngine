@@ -1,0 +1,17 @@
+{
+  "pages": 25,
+  "fields": 30,
+  "widgets": 30,
+  "sha256": "88e9f3b9ae5b05a51a8cb81ecd0f6082b4f9a044c372b3d809311c22a8bdf6da",
+  "sources_checked": "2026-10-31",
+  "status": "draft: local authoring, visual and isolated delivery tests passed; publication blocked by live verification",
+  "arithmetic": "4 cases independently recomputed with Decimal including overlap, coverage ceiling, job minimum and net allowance",
+  "field_roundtrip": "30 canonical/widget values and saved appearances; 25 outline entries; 1,000-character limits",
+  "originality": "Zero exact copies among 36 method paragraphs; semantic originality requires editorial judgment",
+  "publication": "Absent from live catalog, blog index and sitemap; no active checkout",
+  "visual": "Entire 25-page contact sheet, full-size fictional coverage case, completed allowance record and saved multiline sheet inspected; no observed clipping or overlap.",
+  "staging": "Isolated fixture: server-controlled 799 pence GBP ignores client amount/currency; paid+complete matching entitlement; exact reviewed PDF bytes; missing/unpaid/wrong-book denied; matching mocked webhook title/GBP amount/private order link and retry behavior passed.",
+  "live_regressions": "All 26 existing catalog products retain prices; 25 book route regressions, GBP/webhook/privacy/private-artifact guards passed.",
+  "qa_repair": "Solar, battery, EV and garage artifact QA now accept later additions while checking frozen prior amounts; all four pass on current main plus changes.",
+  "limitations": "No new live product/article, checkout, index or sitemap entry. No real payment/email. Browser runtime fails before navigation; live responsive/image checks unavailable. No actual reader or purchase-demand validation."
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "insulation-quote-scope-workbook",
+  "title": "Insulation Quote & Scope Workbook",
+  "desc": "25-page draft insulation scope workbook",
+  "amount": 799,
+  "pages": 25,
+  "download": "/api/download-insulation-workbook"
+}

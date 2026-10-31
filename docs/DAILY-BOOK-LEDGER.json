@@ -298,7 +298,8 @@
       "live_checks": "UNPERFORMED: browser runtime fails before navigation (bwrap cannot create /home/agent/.codex/sessions on read-only filesystem); prior transport disconnect/kernel reset. Direct HTTP fetch returned 403, web retrieval could not access either new URL. This is not evidence of site downtime or a site-served bot block. Exact live content, image loading and responsive UI not independently verified. No real purchase or external email.",
       "release_commit": "e0bef0cb77602f4c347c94b9e386ad67fb003207",
       "deployment": "Cloudflare Pages check 123916601578 completed successfully",
-      "recovery": "Next run first verify this existing release and reconcile status; do not create another garage title. Daily schedule retained."
+      "recovery": "Next run first verify this existing release and reconcile status; do not create another garage title. Daily schedule retained.",
+      "recovery_attempt_2026_10_31": "Retried browser and public retrieval; runtime still cannot start, so live status not upgraded. Local garage QA and delivery regressions passed; no duplicate garage title created."
     }
   ],
   "companion_articles": [
@@ -337,6 +338,102 @@
       "book": "garage-conversion-decision-workbook",
       "article": "questions-before-budgeting-garage-conversion",
       "status": "deployed_live_verification_pending"
+    },
+    {
+      "date": "2026-10-31",
+      "book": "insulation-quote-scope-workbook",
+      "article": "compare-insulation-quotes-without-unlike-work",
+      "status": "draft_live_verification_blocked"
+    }
+  ],
+  "draft_books": [
+    {
+      "date": "2026-10-31",
+      "queue_day": 6,
+      "slug": "insulation-quote-scope-workbook",
+      "title": "Insulation Quote & Scope Workbook",
+      "status": "draft_live_verification_blocked",
+      "proposed_price_gbp": "7.99",
+      "implemented_price_gbp": null,
+      "price_reason": "Focused insulation quote reconciliation workflow, four checked cases, six reusable sheets and two completed records; queue-aligned conservative test proposal, not validated willingness to pay. No live price added.",
+      "pages": 25,
+      "fillable_fields": 30,
+      "article": "compare-insulation-quotes-without-unlike-work",
+      "source_checks": [
+        {
+          "url": "https://consumer.ftc.gov/articles/what-know-when-youre-buying-home-insulation",
+          "checked": "2026-10-31",
+          "result": "primary page retrieved",
+          "scope": "R-value meaning and consumer fact-sheet context; not a product recommendation or household savings claim."
+        },
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/rules/r-value-rule",
+          "checked": "2026-10-31",
+          "result": "primary page retrieved",
+          "scope": "Federal rule overview on R-value information; exact product/application obligations require actual applicable documents."
+        },
+        {
+          "url": "https://www.energystar.gov/saveathome/seal_insulate",
+          "checked": "2026-10-31",
+          "result": "primary page retrieved",
+          "scope": "Planning air sealing with insulation and location suitability context only; no published percentage saving adopted."
+        },
+        {
+          "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home",
+          "checked": "2026-10-31",
+          "result": "primary page retrieved",
+          "scope": "Moisture-control context only; no diagnosis, cleanup or installation procedure supplied."
+        }
+      ],
+      "originality": "36 newly authored substantive paragraphs, four original cases and six prompt sets; editorial assessment meets 80% original-content goal. No exact paragraph copied; this is not an automated semantic percentage. General envelope/scope concepts and renderer are reused and disclosed.",
+      "checks": {
+        "pages": 25,
+        "fields": 30,
+        "widgets": 30,
+        "sha256": "88e9f3b9ae5b05a51a8cb81ecd0f6082b4f9a044c372b3d809311c22a8bdf6da",
+        "sources_checked": "2026-10-31",
+        "status": "draft: local authoring, visual and isolated delivery tests passed; publication blocked by live verification",
+        "arithmetic": "4 cases independently recomputed with Decimal including overlap, coverage ceiling, job minimum and net allowance",
+        "field_roundtrip": "30 canonical/widget values and saved appearances; 25 outline entries; 1,000-character limits",
+        "originality": "Zero exact copies among 36 method paragraphs; semantic originality requires editorial judgment",
+        "publication": "Absent from live catalog, blog index and sitemap; no active checkout",
+        "visual": "Entire 25-page contact sheet, full-size fictional coverage case, completed allowance record and saved multiline sheet inspected; no observed clipping or overlap.",
+        "staging": "Isolated fixture: server-controlled 799 pence GBP ignores client amount/currency; paid+complete matching entitlement; exact reviewed PDF bytes; missing/unpaid/wrong-book denied; matching mocked webhook title/GBP amount/private order link and retry behavior passed.",
+        "live_regressions": "All 26 existing catalog products retain prices; 25 book route regressions, GBP/webhook/privacy/private-artifact guards passed.",
+        "qa_repair": "Solar, battery, EV and garage artifact QA now accept later additions while checking frozen prior amounts; all four pass on current main plus changes.",
+        "limitations": "No new live product/article, checkout, index or sitemap entry. No real payment/email. Browser runtime fails before navigation; live responsive/image checks unavailable. No actual reader or purchase-demand validation."
+      },
+      "acquisition": {
+        "run": 41013698041,
+        "artifact": 12958407480,
+        "generated": "2026-10-30T06:22:40.846455+00:00",
+        "period": [
+          "2026-09-29",
+          "2026-10-26"
+        ],
+        "country": "usa",
+        "search_type": "web",
+        "totals": [
+          {
+            "clicks": 1,
+            "impressions": 2862,
+            "ctr": 0.00034940600978336826,
+            "position": 51.089797344514324
+          }
+        ],
+        "queries": [],
+        "limits": [
+          "API returns available top rows, not a guaranteed exhaustive keyword inventory.",
+          "Anonymized queries are omitted. Query/page row totals may differ from property totals.",
+          "No activity on a date does not distinguish zero traffic from unavailable history.",
+          "This report does not measure calculator engagement or diagnose indexing coverage."
+        ]
+      },
+      "demand": "Latest available USA Web report predates this draft; no returned insulation query rows. Top/anonymized query limits apply. No connected GA4 product funnel, live Stripe paid/refund/net-revenue or actual reader feedback; missing is not zero. Demand/usefulness unvalidated.",
+      "intended_product_url": "https://homecostengine.com/ebooks/insulation-quote-scope-workbook",
+      "intended_blog_url": "https://homecostengine.com/blog/compare-insulation-quotes-without-unlike-work",
+      "blocker": "Browser fails before navigation: bwrap cannot create /home/agent/.codex/sessions on read-only filesystem. Public web retrieval of garage product/article also unavailable. The previous garage release remains deployed_live_verification_pending.",
+      "recovery": "First close garage live verification, then resume this SAME draft. Do not create a duplicate insulation title or skip automatically to queue day 7. Publish active product/checkout/article/index/sitemap only after all release gates pass."
     }
   ]
 }
