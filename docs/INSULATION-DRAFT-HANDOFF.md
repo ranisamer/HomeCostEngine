@@ -48,3 +48,15 @@ Latest available successful USA Web GSC run 41013698041 / artifact 12958407480, 
 GA4 U.S. product/article/preview/checkout activity, live Stripe orders/refunds/net revenue and actual reader feedback unavailable. Missing does not mean zero. Technical tests do not validate demand/usefulness. No customer contacted or additional automation created; ongoing publishing retained. Public source PDF availability remains an inherited limit; draft is explicitly not sold.
 
 Draft-storage commit 40348ebb087a5e59f2dc6e7090944617ab58f861; Cloudflare Pages check 124457862670 succeeded. This deploys draft/QA maintenance files, not an active sale release. Live verification remains blocked; current catalog unchanged.
+
+## Recovery check — November 1, 2026
+
+Current main b62fe61d603c974d16e781953d9c8d9c2c0af9ae was fetched into a fresh checkout. No additional book or article was published. The existing insulation draft remains queue day 6, with proposed £7.99 and no implemented price or active checkout. Garage live verification remains pending.
+
+Re-ran artifact QA, all four independently computed cases, 30-field save/reopen, draft link/registration guards, isolated checkout/download mocks and all 27 webhook fixtures. All passed. Exact draft PDF SHA256 remains 88e9f3b9ae5b05a51a8cb81ecd0f6082b4f9a044c372b3d809311c22a8bdf6da. Inspected its current contact sheet; earlier full-size review remains historical evidence. No new PDF authoring or regeneration. FTC consumer, ENERGY STAR and EPA primary pages above were retrieved again November 1; the manuscript retains its original October 31 source date.
+
+Connected browser again failed before navigation: node_repl exited because bwrap cannot create /home/agent/.codex/sessions on a read-only filesystem. Direct HTTP retrieval of the garage product and companion returned 403. These access failures do not prove site downtime or a site-served bot block. Live page, image and responsive checks are unperformed.
+
+The existing daily publishing task was explicitly paused (confirmed disabled) after repeated access failures prevented release verification. Its prompt and schedule were not edited; no other task was changed. Restore an authorized working live-verification channel, close the garage gate, then resume THIS draft through the release checklist above and re-enable daily publishing. Do not generate a duplicate or automatically advance to gutter.
+
+This recovery receipt changes documentation only; successful deployment of these notes must not be reported as book/article publication. No live catalog, payment/entitlement code, existing price/currency, analytics, site index or sitemap changed. No real payment or email. No fresh GA4 U.S. funnel, live paid/refund/net-revenue data or reader feedback inspected; technical readiness is not demand/usefulness validation.

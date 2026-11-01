@@ -437,5 +437,61 @@
       "draft_commit": "40348ebb087a5e59f2dc6e7090944617ab58f861",
       "draft_storage_deployment": "Cloudflare Pages check 124457862670 succeeded; only draft/QA maintenance saved, no active product publication."
     }
+  ],
+  "recovery_attempts": [
+    {
+      "date": "2026-11-01",
+      "queue_day": 6,
+      "slug": "insulation-quote-scope-workbook",
+      "status": "blocked_no_new_publication",
+      "base_main": "b62fe61d603c974d16e781953d9c8d9c2c0af9ae",
+      "outcome": "Resumed the existing insulation draft; did not create a duplicate book, advance queue, register a product, or publish an article. Garage remains deployed_live_verification_pending. Proposed GBP 7.99 remains unimplemented.",
+      "checks_rerun": {
+        "artifact": "qa_insulation_draft.py passed: 25 pages, 30 fields/widgets, 25 outline entries, all four Decimal cases, saved values/appearances, draft links and absence from live catalog/index/sitemap.",
+        "pdf_sha256": "88e9f3b9ae5b05a51a8cb81ecd0f6082b4f9a044c372b3d809311c22a8bdf6da",
+        "visual": "Current exact-byte PDF contact sheet inspected; prior full-size inspection retained. No new authoring or PDF regeneration.",
+        "delivery": "test_insulation_stage.mjs passed fixed 799 pence GBP, ignored client price/currency, paid+complete matching entitlement, exact PDF bytes and denials; fixture only.",
+        "webhook": "test_insulation_webhook_stage.mjs passed 27 fixtures (26 existing plus draft), matching titles/GBP/private-order links and deduplication. No external payment or email."
+      },
+      "source_rechecks": [
+        {
+          "url": "https://consumer.ftc.gov/articles/what-know-when-youre-buying-home-insulation",
+          "checked": "2026-11-01",
+          "result": "Retrieved primary page, dated May 2021. R-value and product-information context unchanged for draft claims."
+        },
+        {
+          "url": "https://www.energystar.gov/saveathome/seal_insulate",
+          "checked": "2026-11-01",
+          "result": "Retrieved primary page. Location suitability and coordinated air-sealing context; no savings percentage adopted."
+        },
+        {
+          "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home",
+          "checked": "2026-11-01",
+          "result": "Retrieved primary page. Moisture-control context only; no diagnosis or remediation procedures."
+        }
+      ],
+      "live_attempts": [
+        {
+          "target": "https://homecostengine.com/ebooks/garage-conversion-decision-workbook?hce_qa=1",
+          "method": "connected browser",
+          "result": "Runtime failed before navigation: node_repl kernel exited; bwrap cannot create /home/agent/.codex/sessions on read-only filesystem."
+        },
+        {
+          "target": "https://homecostengine.com/ebooks/garage-conversion-decision-workbook?hce_qa=1",
+          "method": "direct HTTP retrieval",
+          "result": "HTTP 403; no page content verified."
+        },
+        {
+          "target": "https://homecostengine.com/blog/questions-before-budgeting-garage-conversion?hce_qa=1",
+          "method": "direct HTTP retrieval",
+          "result": "HTTP 403; no page content verified."
+        }
+      ],
+      "unperformed": "Live garage UI/images/responsiveness and sale-path verification; insulation sale publication and live verification. Access results do not establish site downtime or a site-served bot block.",
+      "automation": "Existing daily publishing task paused with confirmed is_enabled=false because live-verification access remains blocked across repeated runs. No prompt or schedule edits, no additional automation, no changes to review tasks.",
+      "recovery": "Restore a working authorized live-verification channel, verify the existing garage release, then resume this exact insulation draft through remaining release gates. Do not skip to gutter or create another insulation title. Publishing automation requires re-enabling after the blocker is resolved.",
+      "commercial": "No fresh GA4 U.S. funnel, live Stripe paid/refund/net-revenue dataset or actual reader feedback inspected in this recovery run. Missing data is not zero; technical tests do not validate demand or reader usefulness.",
+      "scope": "Recovery documentation only. Production checkout, currency, prices, delivery, analytics, product/blog indexes and sitemap unchanged. No real payment, customer email, ad spending or social posting."
+    }
   ]
 }
