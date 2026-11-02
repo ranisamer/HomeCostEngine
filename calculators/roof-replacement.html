@@ -13,6 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HomeCostEngine">
 <link rel="stylesheet" href="/assets/styles.css?v=20260916-value1">
+<style>#roof-project-save [hidden]{display:none!important}</style>
 </head>
 <body data-calculator="roof">
 <div class="topbar">Independent planning tools for U.S. homeowners • Estimates are for budgeting, not contractor quotes</div>
@@ -75,6 +76,7 @@
   <p class="micro" style="color:#aebdca">Use this as a budgeting starting point and compare multiple local quotes before hiring.</p></aside>
 </div></section>
 <section class="section alt" id="roof-scenarios" aria-labelledby="roof-scenario-title"><div class="container info-copy"><span class="eyebrow">TEST YOUR OPTIONS</span><h2 id="roof-scenario-title">Compare two roof budget scenarios</h2><p>Calculate your first estimate and save it as Scenario A. Then change a material, repair allowance or other assumption and calculate again to compare Scenario B.</p><p id="roof-current-summary" aria-live="polite">Calculate an estimate above to start.</p><div class="hero-actions"><button class="btn secondary" type="button" id="roof-save-scenario" disabled>Save as Scenario A</button><button class="btn" type="button" id="roof-compare-scenario" disabled>Compare A with current estimate</button></div><p id="roof-scenario-status" role="status" aria-live="polite"></p><p class="micro">Scenario A lasts until this page is refreshed. Your latest calculated estimate is available in the quote tool in this tab for up to two hours.</p>
+<div class="notice" id="roof-project-save"><h3>Keep this project for another day</h3><p>Save the calculated inputs and range on this browser, then add real quotes and a budget. No account or email needed. ZIP data is not stored; export a backup from your project before switching devices.</p><div class="hero-actions"><button class="btn" type="button" id="roof-save-project" disabled>Save estimate to My roof project</button><button class="btn secondary" type="button" id="roof-restore-project" hidden>Restore saved inputs</button><a class="btn secondary" data-project-link href="/projects.html#my-roof-project">Open My roof project →</a></div><p id="roof-project-save-status" role="status" aria-live="polite">Calculate first to enable saving. Replacing a saved estimate keeps your quotes and budget.</p></div>
 <div class="notice" id="roof-next-step" hidden><h3>Have proposals? Check what each price includes.</h3><p>Take your planning range to the quote comparison tool. Enter the actual contractor totals and compare allowances, written scope and warranty clarity.</p><p><a class="btn" id="roof-quote-link" data-roof-link href="/calculators/contractor-quote-comparison">Compare my roofing quotes →</a></p><p>No proposals yet? <a data-roof-link href="/free-home-project-cost-planning-guide">Get the free scope and budget worksheets</a>.</p></div></div></section>
 <section class="section" style="padding-top:24px"><div class="container"><div class="cta-band"><div><span class="kicker">ROOFING COST LIBRARY</span><h2>Need to understand one line of the estimate?</h2><p>Break the project into materials, labor, tear-off, decking, flashing, ventilation, permits, size and location.</p></div><a class="btn" href="/roofing/">Explore the roofing cost database →</a></div></div></section><section class="section alt"><div class="container info-copy">
 <h2>How this roof replacement cost calculator works</h2><p>Before comparing a model result with a proposal, <a href="/blog/roof-replacement-cost-per-square-foot#denominator-audit">audit the roof-surface unit cost and separate material-order allowances</a>. Keep the same measured area when moving between system-only and complete-project totals.</p><p>The calculator starts with an installed cost-per-square-foot planning range for the selected material. It adjusts that range for pitch and complexity, building height, broad state price levels and local-market sensitivity. It then adds tear-off layers, decking-repair allowance, skylights or other complex roof details, permits and owner-controlled contingency.</p>
@@ -112,5 +114,6 @@
 </footer>
 <script src="/assets/app.js?v=20260924-local1"></script><script src="/assets/us-state-rpp-2024.js?v=20260915"></script><script src="/assets/calculators.js?v=20260924-local1"></script><script src="/assets/local-cost.js?v=20260924-local1"></script>
 <script defer src="/assets/roof-journey.js?v=20261024-1"></script>
+<script defer src="/assets/roof-project.js?v=20261101"></script>
 </body>
 </html>
